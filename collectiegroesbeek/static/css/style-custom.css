@@ -1,0 +1,36 @@
+
+#fh5co-home .text-inner h2 {
+    margin: 0 0 40px 0;
+}
+
+#fh5co-home .text-inner .form-control {
+    height: 3em;
+    font-size: 1em;
+    margin: 0 0 15px 0;
+}
+
+.price-box em {
+    /* Emphasis on words where the query hit. */
+	background-color: #ffffb3;
+}
+
+.text-resultaten {
+	padding-left: 1.25rem;
+}
+
+.fh5co-pricing .price-box {
+    text-align: left;
+}
+
+.fh5co-pricing .price-box h4, .fh5co-pricing .price-box h5, .fh5co-pricing .price-box p {
+    margin: 0 0 10px 0;
+}
+
+.price-box-title {
+    margin-bottom: 20px;
+}
+
+.fh5co-pricing .price-box.names {
+    margin-bottom: 30px;
+    padding: 20px 30px;
+}

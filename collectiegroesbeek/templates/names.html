@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section id="fh5co-pricing" style="background: #fafafa">
+    <div class="fh5co-pricing" style="background: #fafafa">
+        <div class="container">
+            {% if hits_total %}
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <p class="text-resultaten text-muted">
+                            {{ hits_total }} resultaten
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    {% for naam in namen %}
+						<div class="price-box names">
+                            <a href="/?q={{ naam['key'] }}">{{ naam['key'].title() }}</a>
+                            &nbsp; ({{ naam['doc_count'] }})
+						</div>
+					{% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

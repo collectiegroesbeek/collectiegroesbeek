@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Collectie Groesbeek</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Collectie Groesbeek" />
+<meta name="keywords" content="archief, collectie, Groesbeek" />
+<meta name="author" content="Groesbeek" />
+
+<!--
+//////////////////////////////////////////////////////
+
+FREE HTML5 TEMPLATE
+DESIGNED & DEVELOPED by FREEHTML5.CO
+
+Website: 		http://freehtml5.co/
+Email: 			info@freehtml5.co
+Twitter: 		http://twitter.com/fh5co
+Facebook: 		https://www.facebook.com/fh5co
+
+//////////////////////////////////////////////////////
+ -->
+
+<!-- <link rel="shortcut icon" href="favicon.ico">-->
+
+<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+      integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+      crossorigin="anonymous">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Style -->
+<link rel="stylesheet" href="/static/css/style.css">
+<!-- Custom style -->
+<link rel="stylesheet" href="/static/css/style-custom.css">
+
+<!-- Modernizr JS (custom) -->
+<script src="/static/js/modernizr-2.6.2.min.js"></script>
+
+</head>
+
+
+<body>
+
+<header role="banner" id="fh5co-header">
+    <div class="fluid-container">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <!-- Mobile Toggle Menu Button -->
+                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                <a class="navbar-brand" href="/">Collectie <span>Groesbeek</span></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                {% block navbar_items %}
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a class="external" href="/"><span>Home</span></a></li>
+                    </ul>
+                    <form role="search" action="/zoek">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="" name="q">
+                            <div class="input-group-btn">
+                                <button class="btn" type="submit"><i class="icon-magnifier" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {% endblock %}
+            </div>
+        </nav>
+  </div>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<div id="fh5co-footer" role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                        <img alt="Creative Commons-Licentie" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+                    </a><br />
+                    Dit werk valt onder een <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Naamsvermelding 4.0 Internationaal-licentie.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+<!-- Waypoints -->
+<script src="/static/js/jquery.waypoints.min.js"></script>
+<!-- Stellar Parallax -->
+<script src="/static/js/jquery.stellar.min.js"></script>
+<!-- Main JS -->
+<script src="/static/js/main.js"></script>
+
+</body>
+
+
+</html>
