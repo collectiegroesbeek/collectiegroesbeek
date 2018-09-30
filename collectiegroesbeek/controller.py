@@ -108,7 +108,7 @@ def get_page_range(hits_total, page, cards_per_page):
 def get_names_list(q):
     payload = {"size": 0,
                "aggs": {"op_naam": {"terms": {"field": "naam_keyword",
-                                              "order": {"_term": "asc"},
+                                              "order": {"_key": "asc"},
                                               "include": "{}.*".format(q.title()),
                                               "size": 2000}
                }}}

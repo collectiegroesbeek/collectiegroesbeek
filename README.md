@@ -1,6 +1,7 @@
 # collectiegroesbeek
 Flask and Elasticsearch webapp for the Collectie Groesbeek historical index.
 
+
 ## About
 Collectie Groesbeek is a Dutch historical index, compiled between 1925 and 1994 by
 mr. J.W. Groesbeek. During his lifetime he made notes of deeds and other historical documents
@@ -18,16 +19,45 @@ Elasticsearch backend.
 A development server is running occasionally on https://www.collectiegroesbeek.nl
 
 
-## Installation
+## Installation part 1: data
+The first part of the installation guide sets up the Elasticsearch system and the data.
+This is needed for both development and production.
 
-We are running Ubuntu 16.04 LTS on our server. The installation instructions are
-fairly specific for this system.
-
-### Elasticsearch
+### Elasticsearch with Docker
 Elasticsearch is a database system. We let it ingest our data and make it available through
 a REST API.
 
-[ to be written ]
+We use Docker to run Elasticsearch in. First install Docker if not already done.
+You can also do this on Windows if you're developing the Flask website part.
+
+There is a docker-compose file that you can use to setup Elasticsearch.
+
+`docker-compose up`
+
+We use a Docker image provided by Elasticsearch, create a new volume `esdata` where the
+data will be stored, so it can be reused by multiple containers.
+
+You can see that it's working by doing a HTTP GET request with for example `curl`
+on `http://localhost:9200`.
+
+### Data ingestion
+
+The data is in a separate Github repository. It needs to be ingested into Elasticsearch.
+In the `elasticsearch` folder are two scripts to do that. 
+
+- First run `index_operations.py` to create the needed indices. 
+  Note that if the indices already existed, it will delete the data.
+- Then run `add_documents.py` to read the csv files and add the data to Elasticsearch.
+
+You can check this by doing a HTTP GET request with for example `curl` on
+`http://localhost:9200/_cat/indices?v`.
+You will see that an index has been made and that `docs.count` shows data has been added.
+
+
+## Installation part 2: webserver
+At this point you can run the Flask debug server to start developing. The following points are
+for a production environment, we're setting up a webserver. Note that these instructions
+are for a Ubuntu environment.
 
 ### Install nginx and uWSGI
 
@@ -49,18 +79,19 @@ https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#installing-uwsgi
 
 
 ### Python and Flask
-Copy this project to your local user folder. Install the needed requirements:
+Copy this project to a local folder. In this guide I'm using `/usr/local/collgroesbeek`.
+Install the needed requirements:
 
 `pip install --user -r /path/to/requirements.txt`
 
 
-## Systemd services
+### Systemd services
 
 We use two systemd services: one starts the uWSGI service, the second starts the nginx webserver.
 
-The uWSGI service needs to be created, we call it `collectiegroesbeek-uwsgi.service`:
+The uWSGI service needs to be created, we call it `collgroesbeek-uwsgi.service`:
 
-`sudo nano /etc/systemd/system/collectiegroesbeek-uwsgi.service`
+`sudo nano /etc/systemd/system/collgroesbeek-uwsgi.service`
 
 Add the following configuration in the new file, make sure to change the username and path:
 
@@ -68,7 +99,7 @@ Add the following configuration in the new file, make sure to change the usernam
 [Service]
 User=username
 Group=www-data
-WorkingDirectory=/home/username/collectiegroesbeek
+WorkingDirectory=/usr/local/collgroesbeek
 ExecStart=/usr/local/bin/uwsgi --ini collectiegroesbeek.ini
 
 [Install]
@@ -80,19 +111,19 @@ Now enable and start the service:
 
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable collectiegroesbeek-uwsgi
-sudo systemctl start collectiegroesbeek-uwsgi
+sudo systemctl enable collgroesbeek-uwsgi
+sudo systemctl start collgroesbeek-uwsgi
 ```
 
 The nginx service is called `nginx.service` and already exists. Just make sure it's enabled.
 
 
-## nginx website configuration
+### nginx website configuration
 Create a new configuration file for nginx:
 
-`sudo nano /etc/nginx/sites-available/collectiegroesbeek`
+`sudo nano /etc/nginx/sites-available/collgroesbeek`
 
-Add the following text, make sure to update the paths:
+Add the following text, make sure to update the paths if needed:
 
 ```
 server {
@@ -101,11 +132,11 @@ server {
     location / { try_files $uri @app; }
     location @app {
         include uwsgi_params;
-        uwsgi_pass unix:/home/username/collectiegroesbeek/collectiegroesbeek.sock;
+        uwsgi_pass unix:/usr/local/collgroesbeek/collectiegroesbeek.sock;
     }
     location ^~ /static/  {
         include  /etc/nginx/mime.types;
-        root /home/username/collectiegroesbeek/collectiegroesbeek/static;
+        root /usr/local/collgroesbeek/collectiegroesbeek/static;
     }
 }
 
@@ -118,8 +149,7 @@ server {
 
 In the following section we will use Certbot to add the HTTPS parts to this config file.
 
-
-## HTTPS
+### HTTPS
 
 Add a Let's Encrypt certificate using Certbot from EFF. Check out their
 documentation for how to do this:
@@ -130,11 +160,10 @@ You can test your configuration at:
 - https://www.ssllabs.com/ssltest/analyze.html?d=collectiegroesbeek.nl
 - https://www.ssllabs.com/ssltest/analyze.html?d=www.collectiegroesbeek.nl
 
-
-## Debugging
+### Debugging
 Check the status of the uWSGI and nginx services:
 
-`systemctl status collectiegroesbeek-uwsgi`
+`systemctl status collgroesbeek-uwsgi`
 
 `systemctl status nginx`
 
