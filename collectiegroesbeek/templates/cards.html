@@ -1,77 +1,77 @@
 
 {% extends "layout.html" %}
 
+{% block title %}Zoekresultaten{% endblock %}
+
+
 {% block content %}
 
-<section id="fh5co-pricing" style="background: #fafafa">
-    <div class="fh5co-pricing" style="background: #fafafa">
-        <div class="container">
-            {% if hits_total %}
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <p class="text-resultaten text-muted">
-                            {{ hits_total }} resultaten
-                        </p>
+    {% if hits_total %}
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <p class="text-resultaten text-muted">
+                    {{ hits_total }} resultaten
+                </p>
+            </div>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            {% for hit in hits %}
+                <div class="card mb-5">
+                    <div class="card-body">
+                        <h4 class="card-title" title="id: {{ hit['id'] }}, score: {{ hit['score'] }}">
+                            {{ hit['naam']|safe }}
+                            {% if hit['datum'] %}
+                                | {{ hit['datum']|safe }}
+                            {% endif %}
+                        </h4>
+                        {% if hit['bron'] %}
+                            <h5 class="text-muted m-b-1">{{ hit['bron']|safe }}</h5>
+                        {% endif %}
+                        {% if hit['inhoud'] %}
+                        <p class="card-text">{{ hit['inhoud']|safe }}</p>
+                        {% endif %}
+                        {% if hit['getuigen'] %}
+                            <p class="card-text">{{ hit['getuigen']|safe }}</p>
+                        {% endif %}
+                        {% if hit['bijzonderheden'] %}
+                            <p class="card-text">{{ hit['bijzonderheden'] }}</p>
+                        {% endif %}
                     </div>
                 </div>
-            {% endif %}
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    {% for hit in hits %}
-                        <div class="price-box to-animate">
-                            <div class="price-box-title">
-                                <h4 title="id: {{ hit['id'] }}, score: {{ hit['score'] }}">
-                                    {{ hit['naam']|safe }}
-                                    {% if hit['datum'] %}
-                                        | {{ hit['datum']|safe }}
-                                    {% endif %}
-                                </h4>
-                                {% if hit['bron'] %}
-                                    <h5 class="text-muted m-b-1">{{ hit['bron']|safe }}</h5>
-                                {% endif %}
-                            </div>
-                            <p>{{ hit['inhoud']|safe }}</p>
-                            {% if hit['getuigen'] %}
-                                <p>{{ hit['getuigen']|safe }}</p>
-                            {% endif %}
-                            {% if hit['bijzonderheden'] %}
-                                <p>{{ hit['bijzonderheden'] }}</p>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-            {% if page %}
-            <nav aria-label="Page navigation" class="text-center">
-                <ul class="pagination">
-                    {% if page_range|length > 0 and page > page_range[0] %}
-                        <li class="page-item">
-                            <a class="page-link" href="{{ query_string }}{{ page - 1 }}" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-                    {% endif %}
-                    {% for number in page_range %}
-                        {% if number == page %}
-                            <li class="page-item active"><a class="page-link" href="" style="pointer-events: none;">{{number}}</a></li>
-                        {% else %}
-                            <li class="page-item"><a class="page-link" href="{{query_string}}{{number}}">{{number}}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                    {% if page_range|length > 1 and page < page_range[-1] %}
-                        <li class="page-item">
-                            <a class="page-link" href="{{ query_string }}{{ page + 1 }}" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </nav>
-            {% endif %}
+            {% endfor %}
         </div>
     </div>
-</section>
+
+    {% if page %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_range|length > 0 and page > page_range[0] %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ query_string }}{{ page - 1 }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% for number in page_range %}
+                    {% if number == page %}
+                        <li class="page-item active"><a class="page-link" href="" style="pointer-events: none;">{{number}}</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="{{query_string}}{{number}}">{{number}}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_range|length > 1 and page < page_range[-1] %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ query_string }}{{ page + 1 }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
 
 {% endblock %}

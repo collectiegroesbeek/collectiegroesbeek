@@ -1,144 +1,95 @@
 
 {% extends "layout.html" %}
 
-{% block navbar_items %}
- <ul class="nav navbar-nav navbar-right">
-    <li><a href="#" data-nav-section="home"><span>Home</span></a></li>
-    <li><a href="#" data-nav-section="intro"><span>Introductie</span></a></li>
-    <li><a href="#" data-nav-section="uitleg"><span>Uitleg</span></a></li>
- </ul>
-{% endblock %}
+{% block title %}Collectie Groesbeek{% endblock %}
+
 
 {% block content %}
 
-<section id="fh5co-home" data-section="home" style="background-image: url(/static/img/home-back.jpg);" data-stellar-background-ratio="0.5">
-    <div class="gradient"></div>
-    <div class="container">
-        <div class="text-wrap">
-            <div class="text-inner">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="to-animate">Collectie Groesbeek</h1>
-                        <h2 class="to-animate">Indexen uit het archief van mr. J.W. Groesbeek, oud-rijksarchivaris</h2>
-                        <form action="/zoek">
-                            <div class="form-group row m-b-2 search-bar to-animate">
-                                <div class="col-12-lg">
-                                    <input type="text" class="form-control" name="q" placeholder="zoek op naam (Berkel), plaats (Leiden), jaartal (1316), of letters (k of ke)" autofocus>
-                                </div>
-                            </div>
-                            <div class="call-to-action navbar">
-                                <a href="#" class="demo to-animate scroll-to-intro">Lees meer</a>
-                                <a href="#" class="download to-animate" onclick="$(this).closest('form').submit()">Zoek</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+<div class="jumbotron text-center border-bottom">
+    <h1 class="display-4">Collectie Groesbeek</h1>
+    <p class="lead">Indexen uit het archief van mr. J.W. Groesbeek, oud-rijksarchivaris</p>
+
+    <form action="/zoek">
+        <div class="form-group">
+            <div class="col-lg-8 offset-lg-2">
+                <input type="text" class="form-control" name="q" placeholder="zoek op naam (Altena), plaats (Leiden), jaartal (1316), of letters (k of ke)" autofocus>
             </div>
         </div>
-    </div>
-</section>
+        <button type="submit" class="btn">Zoek</button>
+    </form>
+</div>
 
-<section id="fh5co-services" data-section="intro">
-    <div class="fh5co-services">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 section-heading text-center">
-                    <h2>Over de collectie</h2>
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2 subtext">
-                            <h3>De collectie Groesbeek is een kaartsysteem, samengesteld tussen 1925 en 1994 door mr.&nbsp;J.W.&nbsp;Groesbeek. Hij heeft gedurende zijn leven van allerlei akten en andere geschiedkundige stukken aantekeningen gemaakt en deze in zijn persoonlijke kaartsysteem opgeslagen. Als rijksarchivaris van de provincie Noord-Holland heeft hij hier verder aan gewerkt, en het archief gebruikt voor verschillende publicaties.</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2 subtext">
-                            <h3>De collectie heeft een brede opzet en bevat informatie over archiefstukken van de middeleeuwen tot ongeveer 1800. Het is opgedeeld in twee delen: geslachtsnamen en plaatsnamen. Iedere kaart bevat een bronverwijzing, de meeste hebben een korte inhoud, en sommige bevatten volledige aktes.</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2 subtext">
-                            <h3>Er zitten naar schatting 25000 kaartjes in de collectie. Hiervan is ongeveer een kwart gedigitaliseerd en op deze website opgenomen. Er wordt ondertussen verder gewerkt aan het digitaliseren.</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="index-item border-bottom">
+<div class="row">
+    <div class="col-md-12 section-heading">
+        <h1>Over de collectie</h1>
+        <p class="lead">
+            De collectie Groesbeek is een kaartsysteem, samengesteld tussen 1925 en 1994 door
+            mr.&nbsp;J.W.&nbsp;Groesbeek.
+        </p>
+        <p>
+            Hij heeft gedurende zijn leven van allerlei akten en andere
+            geschiedkundige stukken aantekeningen gemaakt en deze in zijn persoonlijke kaartsysteem
+            opgeslagen. Als rijksarchivaris van de provincie Noord-Holland heeft hij hier verder aan
+            gewerkt, en het archief gebruikt voor verschillende publicaties.
+        </p>
+        <p>
+            De collectie heeft een brede opzet en bevat informatie over archiefstukken van de
+            middeleeuwen tot ongeveer 1800. Het is opgedeeld in twee delen: geslachtsnamen en
+            plaatsnamen. Iedere kaart bevat een bronverwijzing, de meeste hebben een korte inhoud,
+            en sommige bevatten volledige aktes.
+        </p>
+        <p>
+            Er zitten naar schatting 125&nbsp;000 kaartjes in de collectie. Hiervan is ongeveer een kwart
+            gedigitaliseerd en op deze website opgenomen. Er wordt ondertussen verder gewerkt aan
+            het digitaliseren.
+        </p>
+    </div>
+</div>
+    </div>
+
+
+<div class="index-item border-bottom">
+<div class="row">
+    <div class="col-md-4">
+        <h3>Inhoud</h3>
+        <p>Van sommige kaartjes zijn niet alle velden gevuld, dan was deze informatie niet beschikbaar.</p>
+        <p>Familienamen zijn waar mogelijk eenduidig gehouden. In de inhoud kan deze op verschillende manieren geschreven zijn. Bijvoorbeeld: k&nbsp;=&nbsp;c en y&nbsp;=&nbsp;ie&nbsp;of&nbsp;i&nbsp;of&nbsp;ij (Brien&nbsp;=&nbsp;Bryn).</p>
+        <p>De tabellen zijn eerst gesorteerd op naam en vervolgens op jaartal, al is dit niet overal consequent.</p>
+        <p>De oude bronaanduiding is gehandhaafd, dit kan verschillen met wat nu gebruikelijk is.</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Tekens</h3>
+        <p>x betekent gehuwd met</p>
+        <p>; scheidt verschillende bronnen</p>
+        <p>/ betekent twee verschillende bronnen over hetzelfde onderwerp</p>
+        <p>~ achter een jaartal geeft onzekerheid aan</p>
+        <p>< en > betekent voor respectievelijk na de genoemde datum</p>
+        <p>[ ]  bevatten commentaar van de auteur</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Gebruik</h3>
+        <p>Het zoekvak bovenin kan gebruikt worden om de database te doorzoeken.</p>
+        <p>Er kan op alles gezocht worden: namen, jaartallen, plaatsen of bronnen.</p>
+        <p>Door te zoeken op &eacute;&eacute;n of twee letters wordt een lijst met namen weergegeven.</p>
+    </div>
+</div>
+    </div>
+
+
+<div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Namenindex</h3>
+            <p>De namenindex is geneologisch van aard en bestaat uit naar schatting 100&nbsp;000 kaartjes.
+                Hiervan is nu 50&nbsp;% gedigitaliseerd, vooral het oudste deel.</p>
+        </div>
+        <div class="col-md-6 offset-md-2">
+            <img class="img-fluid" src="/static/img/rijksarchivaris_groesbeek.jpg">
         </div>
     </div>
-</section>
+</div>
 
-
-<section id="fh5co-faq" data-section="uitleg" style="background: #f1f1f1">
-    <div class="fh5co-faq">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 section-heading text-center">
-                    <h2>Uitleg</h2>
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2 subtext">
-                            <h3>Voor gebruik van de index staan hier enkele tips.</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="box-services">
-                        <div class="fh5co-post">
-                            <h3>Inhoud</h3>
-                            <p>Van sommige kaartjes zijn niet alle velden gevuld, dan was deze informatie niet beschikbaar.</p>
-                            <p>Familienamen zijn waar mogelijk eenduidig gehouden. In de inhoud kan deze op verschillende manieren geschreven zijn. Bijvoorbeeld: k&nbsp;=&nbsp;c en y&nbsp;=&nbsp;ie&nbsp;of&nbsp;i&nbsp;of&nbsp;ij (Brien&nbsp;=&nbsp;Bryn).</p>
-                            <p>De tabellen zijn eerst gesorteerd op naam en vervolgens op jaartal, al is dit niet overal consequent.</p>
-                            <p>De oude bronaanduiding is gehandhaafd, dit kan verschillen met wat nu gebruikelijk is.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="box-services">
-                        <div class="fh5co-post">
-                            <h3>Tekens</h3>
-                            <p>x betekent gehuwd met</p>
-                            <p>; scheidt verschillende bronnen</p>
-                            <p>/ betekent twee verschillende bronnen over hetzelfde onderwerp</p>
-                            <p>~ achter een jaartal geeft onzekerheid aan</p>
-                            <p>< en > betekent voor respectievelijk na de genoemde datum</p>
-                            <p>[ ]  bevatten commentaar van de auteur</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="box-services">
-                        <div class="fh5co-post">
-                            <h3>Gebruik</h3>
-                            <p>Het zoekvak bovenin kan gebruikt worden om de database te doorzoeken.</p>
-                            <p>Er kan op alles gezocht worden: namen, jaartallen, plaatsen of bronnen.</p>
-                            <p>Door te zoeken op &eacute;&eacute;n of twee letters wordt een lijst met namen weergegeven.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!--<section id="fh5co-explore" data-section="indexen">-->
-    <!--<div class="fh5co-explore">-->
-        <!--<div class="container">-->
-            <!--<div class="row">-->
-                <!--<div class="col-md-8 col-md-push-5">-->
-                    <!--<img class="img-responsive" src="/static/img/rijksarchivaris_groesbeek.jpg">-->
-                <!--</div>-->
-                <!--<div class="col-md-4 col-md-pull-8">-->
-                    <!--<div class="mt">-->
-                        <!--<h3>Namenindex</h3>-->
-                        <!--<p>De namenindex is geneologisch van aard en bestaat uit naar schatting 100&nbsp;000 kaartjes. Hiervan is nu 8&nbsp;% gedigitaliseerd, vooral het oudste deel.</p>-->
-                        <!--<div class="call-to-action">-->
-                            <!--<a href="archief-namen.html">Bekijk de namenindex</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</section>-->
 
 {% endblock %}
