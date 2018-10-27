@@ -17,7 +17,7 @@ def home():
 def search():
     q = flask.request.args.get('q')
     if not q:
-        return flask.render_template('index.html')
+        return flask.render_template('search.html')
     elif len(q) <= 2:
         return show_names_list(q)
     cards_per_page = 10

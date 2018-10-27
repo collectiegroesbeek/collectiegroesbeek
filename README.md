@@ -40,6 +40,10 @@ data will be stored, so it can be reused by multiple containers.
 You can see that it's working by doing a HTTP GET request with for example `curl`
 on `http://localhost:9200`.
 
+### Restarting the Elasticsearch Docker image
+You can check if the image is available with `docker ps -a`. Start it with
+`docker start elasticsearch`.
+
 ### Data ingestion
 
 The data is in a separate Github repository. It needs to be ingested into Elasticsearch.

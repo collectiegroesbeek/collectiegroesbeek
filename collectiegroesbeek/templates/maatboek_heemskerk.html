@@ -1,93 +1,71 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Maatboek Heemskerk - Collectie Groesbeek</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link href="/static/bootstrap.min.css" rel="stylesheet" type="text/css">
-		<link href="/static/style.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
-	</head>
-	<body>
-		<nav class="navbar navbar-light bg-faded m-b-1">
-			<a class="navbar-brand" href="/">Collectie <span>Groesbeek</span></a> 
 
-			<div class="col-sm-6 col-md-5 col-lg-3 pull-xs-right">
-				<form class="navbar-form" role="search">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="" name="q">
-						<div class="input-group-btn">
-							<button class="btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-						</div>
-					</div>
-				</form>
-			</div>
+{% extends "layout.html" %}
 
-		</nav>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					{% if hits_total %}
-						<p class="text-resultaten text-muted">
-							{{ hits_total }} resultaten
-						</p>
-					{% endif %}
-					{% for hit in hits %}					
-						<div class="card">
-							<div class="card-block">
-                                {% if hit['sector'] or hit['gebied'] %}
-                                    <h4 class="card-title" title="id: {{ hit['id'] }}, score: {{ hit['score'] }}">
-                                        {% if hit['sector'] %}
-                                            {{ hit['sector']|safe }} {{ hit['nummer']|safe }}
-                                        {% endif %}
-                                        {% if hit['gebied'] %}
-                                            (<i>{{ hit['gebied']|safe }}</i>)
-                                        {% endif %}
-                                    </h4>
-                                {% endif %}
-								{% if hit['bron'] %}
-									<h6 class="card-subtitle text-muted m-b-1">{{ hit['bron']|safe }}</h6>
-								{% endif %}
-                                <p class="card-text">
-                                {% if hit['oppervlakte'] %}
-								    Oppervlakte: {{ hit['oppervlakte']|safe }}<br />
-                                {% endif %}
-								{% if hit['eigenaar'] %}
-									Eigenaar: {{ hit['eigenaar']|safe }}<br />
-								{% endif %}
-								{% if hit['huurder'] %}
-									Huurder: {{ hit['huurder'] }}<br />
-								{% endif %}
-                                {% if hit['bedrag'] %}
-									Bedrag: {{ hit['bedrag'] }}<br />
-								{% endif %}
-                                {% if hit['jaar'] %}
-									Jaar: {{ hit['jaar'] }}<br />
-								{% endif %}
-                                {% if hit['opmerkingen'] %}
-									Opmerkingen: {{ hit['opmerkingen'] }}<br />
-								{% endif %}
-                                </p>
-							</div>
-						</div>
-					{% endfor %}
-					{% if page %}
-					<nav aria-label="Page navigation">
-						<ul class="pagination">
-							{% for number in page_range %}
-								{% if number == page %}
-									<li class="page-item active"><a class="page-link" href="{{query_string}}{{number}}">{{number}}</a></li>
-								{% else %}
-									<li class="page-item"><a class="page-link" href="{{query_string}}{{number}}">{{number}}</a></li>
-								{% endif %}
-							{% endfor %}
-						</ul>
-					</nav>
-					{% endif %}
-				</div>
-			</div>
-		</div>
-		<script src="/static/tether.min.js"></script>
-		<script src="/static/bootstrap.min.js"></script>
-		<script src="/static/analytics.js"></script>
-	</body>
-</html>
+{% block title %}Maatboek Heemskerk{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        {% if hits_total %}
+        <p class="text-resultaten text-muted">
+            {{ hits_total }} resultaten
+        </p>
+        {% endif %}
+        {% for hit in hits %}
+        <div class="card">
+            <div class="card-block">
+                {% if hit['sector'] or hit['gebied'] %}
+                <h4 class="card-title" title="id: {{ hit['id'] }}, score: {{ hit['score'] }}">
+                    {% if hit['sector'] %}
+                    {{ hit['sector']|safe }} {{ hit['nummer']|safe }}
+                    {% endif %}
+                    {% if hit['gebied'] %}
+                    (<i>{{ hit['gebied']|safe }}</i>)
+                    {% endif %}
+                </h4>
+                {% endif %}
+                {% if hit['bron'] %}
+                <h6 class="card-subtitle text-muted m-b-1">{{ hit['bron']|safe }}</h6>
+                {% endif %}
+                <p class="card-text">
+                    {% if hit['oppervlakte'] %}
+                    Oppervlakte: {{ hit['oppervlakte']|safe }}<br />
+                    {% endif %}
+                    {% if hit['eigenaar'] %}
+                    Eigenaar: {{ hit['eigenaar']|safe }}<br />
+                    {% endif %}
+                    {% if hit['huurder'] %}
+                    Huurder: {{ hit['huurder'] }}<br />
+                    {% endif %}
+                    {% if hit['bedrag'] %}
+                    Bedrag: {{ hit['bedrag'] }}<br />
+                    {% endif %}
+                    {% if hit['jaar'] %}
+                    Jaar: {{ hit['jaar'] }}<br />
+                    {% endif %}
+                    {% if hit['opmerkingen'] %}
+                    Opmerkingen: {{ hit['opmerkingen'] }}<br />
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+        {% if page %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                {% for number in page_range %}
+                {% if number == page %}
+                <li class="page-item active"><a class="page-link" href="{{query_string}}{{number}}">{{number}}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="{{query_string}}{{number}}">{{number}}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
