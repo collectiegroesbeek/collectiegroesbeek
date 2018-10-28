@@ -1,24 +1,12 @@
 
 {% extends "layout.html" %}
+{% import 'macros.html' as macros %}
 
 {% block title %}Collectie Groesbeek{% endblock %}
 
 
 {% block content %}
 
-<div class="jumbotron text-center">
-    <h1 class="display-4">Collectie Groesbeek</h1>
-    <p class="lead">Indexen uit het archief van mr. J.W. Groesbeek, oud-rijksarchivaris</p>
-
-    <form action="/zoek">
-        <div class="form-group">
-            <div class="col-lg-8 offset-lg-2">
-                <input type="text" class="form-control" name="q" placeholder="zoek op naam (Altena), plaats (Leiden), jaartal (1316), of letters (k of ke)" autofocus>
-            </div>
-        </div>
-        <button type="submit" class="btn">Zoek</button>
-    </form>
-</div>
-
+{{ macros.jumbotron_search(show_search) }}
 
 {% endblock %}
