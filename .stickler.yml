@@ -3,5 +3,7 @@ linters:
         python: 3
         config: 'tox.ini'
         fixer: true
-        max-complexity: 10
     csslint:
+
+fixers:
+    enable: true
