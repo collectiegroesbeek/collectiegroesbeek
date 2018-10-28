@@ -1,2 +1,5 @@
 requests
 flask
+pytest
+mypy
+flake8

@@ -86,7 +86,8 @@ def handle_results(r, keywords, keys):
                         i = 0
                         a = item[key][:start[i]] + u'<em>' + item[key][start[i]:end[i]] + u'</em>'
                         for i in range(1, len(start)):
-                            a += item[key][end[i-1]:start[i]]+ u'<em>' + item[key][start[i]:end[i]] + u'</em>'
+                            a += (item[key][end[i - 1]:start[i]] + u'<em>'
+                                  + item[key][start[i]:end[i]] + u'</em>')
                         a += item[key][end[i]:]
                         item[key] = a
         res.append(item)
@@ -98,9 +99,9 @@ def get_page_range(hits_total, page, cards_per_page):
     ext = 3
     first_item = max((page - ext, 1))
     last_item = min((page + ext, page_total))
-    if page < ext+1:
-        last_item = min((last_item + ext+1 - page, page_total))
-    if page_total - page < ext+1:
+    if page < ext + 1:
+        last_item = min((last_item + ext + 1 - page, page_total))
+    if page_total - page < ext + 1:
         first_item = max((first_item - ext + (page_total - page), 1))
     return list(range(first_item, last_item + 1))
 
@@ -111,7 +112,7 @@ def get_names_list(q):
                                               "order": {"_key": "asc"},
                                               "include": "{}.*".format(q.title()),
                                               "size": 2000}
-               }}}
+                                    }}}
     resp = requests.post('http://localhost:9200/namenindex/_search', json=payload)
     resp.raise_for_status()
     raw = resp.json()
