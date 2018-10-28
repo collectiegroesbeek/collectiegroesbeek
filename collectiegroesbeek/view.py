@@ -7,17 +7,24 @@ from . import controller
 @app.route('/')
 def home():
     q = flask.request.args.get('q')
-    if not q:
-        return flask.render_template('index.html')
-    else:
-        return search()
+    return index() if not q else search()
+
+
+def index():
+    return flask.render_template(
+        'index.html',
+        show_search=controller.is_elasticsearch_reachable(),
+    )
 
 
 @app.route('/zoek')
 def search():
     q = flask.request.args.get('q')
     if not q:
-        return flask.render_template('search.html')
+        return flask.render_template(
+            'search.html',
+            show_search=controller.is_elasticsearch_reachable(),
+        )
     elif len(q) <= 2:
         return show_names_list(q)
     cards_per_page = 10
@@ -40,7 +47,7 @@ def search():
 def show_names_list(q):
     for letter in q.lower():
         if not letter.isalpha():
-            return flask.render_template('index.html')
+            return index()
     names_list = controller.get_names_list(q)
     hits_total = len(names_list)
     return flask.render_template('names.html', namen=names_list, hits_total=hits_total)

@@ -117,3 +117,14 @@ def get_names_list(q):
     raw = resp.json()
     names_list = raw['aggregations']['op_naam']['buckets']
     return names_list
+
+
+def is_elasticsearch_reachable() -> bool:
+    """Return a boolean whether the Elasticsearch service is available on localhost."""
+    try:
+        resp = requests.get('http://localhost:9200')
+        resp.raise_for_status()
+    except requests.exceptions.ConnectionError:
+        return False
+    else:
+        return True
