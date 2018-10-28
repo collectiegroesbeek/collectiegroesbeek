@@ -5,3 +5,6 @@ linters:
         fixer: true
         max-complexity: 10
     csslint:
+
+fixers:
+    enable: true
