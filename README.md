@@ -16,7 +16,8 @@ Elasticsearch backend.
 
 **Note that both dataset and this project are very early stage and far from complete!**
 
-A development server is running occasionally on https://www.collectiegroesbeek.nl
+A development server is running on https://collectiegroesbeek.azurewebsites.net/,
+but note that the Elasticsearch backend is currently not always enabled.
 
 
 ## Installation part 1: data
