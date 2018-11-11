@@ -4,6 +4,8 @@ import requests
 
 def get_query(q):
     """Turn the user entry q into a Elasticsearch query."""
+    query_year, q = get_year_range(q)
+    # q is returned without the year range
     queries = []
     if ':' in q:
         query_list, keywords = handle_specific_field_request(q)
@@ -11,6 +13,9 @@ def get_query(q):
     else:
         queries.append(get_regular_query(q))
         keywords = q.split(' ')
+    if query_year:
+        return {'bool': {'must': queries,
+                         'filter': query_year}}, keywords
     if len(queries) == 0:
         raise RuntimeError('No query.')
     elif len(queries) == 1:
@@ -56,6 +61,24 @@ def get_regular_query(keywords):
                             'fields': ['naam^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron']
                             }
             }
+
+
+def get_year_range(q: str):
+    pattern = re.compile(r'(\d{4})-(\d{4})')
+    match = pattern.search(q)
+    if match is None:
+        return {}, q
+    year_start = match.group(1)
+    year_end = match.group(2)
+    q_without_year_range = pattern.sub(repl='', string=q).strip()
+    return {
+        "range": {
+            "jaar": {
+                "gte": year_start,
+                "lte": year_end,
+            }
+        }
+    }, q_without_year_range
 
 
 def post_query(query, index, start, size):
