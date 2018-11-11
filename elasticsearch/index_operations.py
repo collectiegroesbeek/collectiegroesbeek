@@ -30,6 +30,7 @@ def get_mapping_namenindex():
     for name in ['naam', 'inhoud', 'getuigen', 'datum', 'bron', 'bijzonderheden']:
         mapping['properties'][name] = _get_field('text', norms=False)
     mapping['properties']['naam_keyword'] = _get_field('keyword')
+    mapping['properties']['jaar'] = _get_field('short')  # signed 16 bit integer
     return mapping
 
 
