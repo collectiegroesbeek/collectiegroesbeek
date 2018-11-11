@@ -15,6 +15,7 @@ path_data = r'C:\Users\Frank\Documents\GitHub\collectiegroesbeek-data'
 
 
 class CardNameIndex:
+
     def __init__(self, line: list):
         self._line: list = line
         self.valid = False  # Assume invalid unless end is reached.
@@ -28,6 +29,7 @@ class CardNameIndex:
         self.getuigen: typing.Optional[str] = self.parse_entry(line[5])
         self.bijzonderheden: typing.Optional[str] = self.parse_entry(line[6])
         self.naam_keyword: typing.Optional[str] = None  # placeholder
+        self.jaar: typing.Optional[int] = None          # placeholder
         # At the end of a file there may be empty lines, skip them.
         if self.id is None:
             return
@@ -51,6 +53,14 @@ class CardNameIndex:
             self.naam_keyword = self.naam.split(' ')[0]
         else:
             self.naam_keyword = self.naam
+
+    def create_year(self) -> None:
+        """Parse a year from the datum field."""
+        if self.datum is None or len(self.datum) < 4 or not self.datum[:5].isdigit():
+            return
+        jaar = int(self.datum[:5])
+        if 1000 < jaar < 2000:
+            self.jaar = jaar
 
     def to_dict(self):
         return self.__dict__
@@ -76,9 +86,8 @@ def run(path):
                 card = CardNameIndex(line)
                 if not card.valid:
                     continue
-                # split name in normal and keyword version
-                if isinstance(card, CardNameIndex):
-                    card.create_name_keyword()
+                card.create_name_keyword()
+                card.create_year()
                 # start sending data
                 url = urljoin(address, 'namenindex', 'doc', str(card.id))
                 resp = session.put(url, json=card.to_dict())
