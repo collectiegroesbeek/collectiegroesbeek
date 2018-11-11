@@ -37,11 +37,11 @@ def handle_specific_field_request(q):
     keywords_sets.append(parts[-1].strip(' '))
     # Edge case when question starts with a normal search term
     if len(keywords_sets) > len(fields):
-        fields = [u'alles'] + fields
+        fields = ['alles'] + fields
     queries = []
     keywords = []
     for i in range(len(fields)):
-        if fields[i] == u'alles':
+        if fields[i] == 'alles':
             queries.append(get_regular_query(keywords_sets[i]))
         else:
             queries.append(get_specific_field_query(fields[i], keywords_sets[i]))
@@ -107,10 +107,10 @@ def handle_results(r, keywords, keys):
                         start = [m.start() for m in re.finditer(keyword, item[key].lower())]
                         end = [m.end() for m in re.finditer(keyword, item[key].lower())]
                         i = 0
-                        a = item[key][:start[i]] + u'<em>' + item[key][start[i]:end[i]] + u'</em>'
+                        a = item[key][:start[i]] + '<em>' + item[key][start[i]:end[i]] + '</em>'
                         for i in range(1, len(start)):
-                            a += (item[key][end[i - 1]:start[i]] + u'<em>'
-                                  + item[key][start[i]:end[i]] + u'</em>')
+                            a += (item[key][end[i - 1]:start[i]] + '<em>'
+                                  + item[key][start[i]:end[i]] + '</em>')
                         a += item[key][end[i]:]
                         item[key] = a
         res.append(item)
