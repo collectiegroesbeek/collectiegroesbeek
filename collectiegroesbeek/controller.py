@@ -64,7 +64,7 @@ def get_regular_query(keywords: str) -> dict:
             }
 
 
-def get_year_range(q: str):
+def get_year_range(q: str) -> Tuple[dict, str]:
     pattern = re.compile(r'(\d{4})-(\d{4})')
     match = pattern.search(q)
     if match is None:
