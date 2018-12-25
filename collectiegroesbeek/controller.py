@@ -1,5 +1,10 @@
 import re
+
+import elasticsearch
 import requests
+
+
+client = elasticsearch.Elasticsearch()
 
 
 def get_query(q):
@@ -63,13 +68,10 @@ def post_query(query, index, start, size):
     payload = {'query': query,
                'from': start,
                'size': size}
-    resp = requests.post('http://localhost:9200/{}/_search'.format(index), json=payload)
-    resp.raise_for_status()
-    return resp
+    return client.search(index=index, body=payload)
 
 
-def handle_results(r, keywords, keys):
-    raw = r.json()
+def handle_results(raw, keywords, keys):
     hits_total = raw['hits']['total']
     res = []
     for hit in raw['hits']['hits']:
@@ -113,10 +115,8 @@ def get_names_list(q):
                                               "include": "{}.*".format(q.title()),
                                               "size": 2000}
                                     }}}
-    resp = requests.post('http://localhost:9200/namenindex/_search', json=payload)
-    resp.raise_for_status()
-    raw = resp.json()
-    names_list = raw['aggregations']['op_naam']['buckets']
+    res = client.search(index='namenindex', body=payload)
+    names_list = res['aggregations']['op_naam']['buckets']
     return names_list
 
 
