@@ -1,6 +1,7 @@
 import re
 
 import elasticsearch
+import elasticsearch_dsl
 import requests
 
 
@@ -109,14 +110,15 @@ def get_page_range(hits_total, page, cards_per_page):
 
 
 def get_names_list(q):
-    payload = {"size": 0,
-               "aggs": {"op_naam": {"terms": {"field": "naam_keyword",
-                                              "order": {"_key": "asc"},
-                                              "include": "{}.*".format(q.title()),
-                                              "size": 2000}
-                                    }}}
-    res = client.search(index='namenindex', body=payload)
-    names_list = res['aggregations']['op_naam']['buckets']
+    s = elasticsearch_dsl.Search(using=client, index='namenindex')
+    s.aggs.bucket(name='op_naam',
+                  agg_type='terms',
+                  field='naam_keyword',
+                  order={'_key': 'asc'},
+                  include=f'{q.title()}.*',
+                  size=2000)
+    res = s.execute()
+    names_list = res.aggregations['op_naam'].buckets
     return names_list
 
 
