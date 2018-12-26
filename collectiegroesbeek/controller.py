@@ -1,4 +1,5 @@
 import re
+from typing import List, Tuple, Any
 
 import elasticsearch
 import elasticsearch_dsl
@@ -8,7 +9,7 @@ import requests
 client = elasticsearch.Elasticsearch()
 
 
-def get_query(q):
+def get_query(q: str):
     """Turn the user entry q into a Elasticsearch query."""
     queries = []
     if ':' in q:
@@ -25,24 +26,24 @@ def get_query(q):
         return {'bool': {'should': queries}}, keywords
 
 
-def handle_specific_field_request(q):
+def handle_specific_field_request(q: str) -> Tuple[List[dict], List[str]]:
     """Get queries when user specified field by using a colon."""
-    parts = q.split(':')
-    fields = []
-    keywords_sets = []
+    parts: List[str] = q.split(':')
+    fields: List[str] = []
+    keywords_sets: List[str] = []
     for part in parts[:-1]:
-        words = part.split(' ')
+        words: List[str] = part.split(' ')
         fields.append(words[-1].strip(' '))
         if len(words[:-1]) > 0:
             keywords_sets.append(' '.join(words[:-1]).strip(' '))
     keywords_sets.append(parts[-1].strip(' '))
     # Edge case when question starts with a normal search term
     if len(keywords_sets) > len(fields):
-        fields = [u'alles'] + fields
-    queries = []
-    keywords = []
+        fields = ['alles'] + fields
+    queries: List[dict] = []
+    keywords: List[str] = []
     for i in range(len(fields)):
-        if fields[i] == u'alles':
+        if fields[i] == 'alles':
             queries.append(get_regular_query(keywords_sets[i]))
         else:
             queries.append(get_specific_field_query(fields[i], keywords_sets[i]))
@@ -51,12 +52,12 @@ def handle_specific_field_request(q):
     return queries, keywords
 
 
-def get_specific_field_query(field, keywords):
+def get_specific_field_query(field: str, keywords: str) -> dict:
     """Return the query if user wants to search a specific field."""
     return {'match': {field: {'query': keywords}}}
 
 
-def get_regular_query(keywords):
+def get_regular_query(keywords: str) -> dict:
     """Return the query if user wants to search in all fields."""
     return {'multi_match': {'query': keywords,
                             'fields': ['naam^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron']
