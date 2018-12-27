@@ -3,15 +3,17 @@ from typing import List, Tuple, Any
 
 import elasticsearch
 import elasticsearch_dsl
+from elasticsearch_dsl import connections
 import requests
 
 
 client = elasticsearch.Elasticsearch()
+connections.create_connection()
 
 
-def get_query(q: str):
+def get_query(q: str) -> Tuple[dict, List[str]]:
     """Turn the user entry q into a Elasticsearch query."""
-    queries = []
+    queries: List[dict] = []
     if ':' in q:
         query_list, keywords = handle_specific_field_request(q)
         queries.extend(query_list)
@@ -111,7 +113,7 @@ def get_page_range(hits_total, page, cards_per_page):
 
 
 def get_names_list(q):
-    s = elasticsearch_dsl.Search(using=client, index='namenindex')
+    s = elasticsearch_dsl.Search(index='namenindex')
     s.aggs.bucket(name='op_naam',
                   agg_type='terms',
                   field='naam_keyword',
