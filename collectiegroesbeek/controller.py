@@ -108,17 +108,6 @@ class Searcher:
             for key in self.keys:
                 if key in hit['_source'] and hit['_source'][key] is not None:
                     item[key] = hit['_source'][key]
-                    for keyword in self.keywords:
-                        if keyword in item[key].lower():
-                            start = [m.start() for m in re.finditer(keyword, item[key].lower())]
-                            end = [m.end() for m in re.finditer(keyword, item[key].lower())]
-                            i = 0
-                            a = item[key][:start[i]] + '<em>' + item[key][start[i]:end[i]] + '</em>'
-                            for i in range(1, len(start)):
-                                a += (item[key][end[i - 1]:start[i]] + '<em>'
-                                      + item[key][start[i]:end[i]] + '</em>')
-                            a += item[key][end[i]:]
-                            item[key] = a
             res.append(item)
         return res, hits_total
 
