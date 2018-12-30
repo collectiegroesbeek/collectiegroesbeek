@@ -19,7 +19,7 @@ def index():
 
 @app.route('/zoek')
 def search():
-    q = flask.request.args.get('q')
+    q: str = flask.request.args.get('q')
     if not q:
         return flask.render_template(
             'search.html',
@@ -37,7 +37,7 @@ def search():
                                                 keys=['naam', 'datum', 'inhoud', 'getuigen',
                                                       'bron', 'bijzonderheden'])
     page_range = controller.get_page_range(hits_total, page, cards_per_page)
-    query_string = u'?q={}&page='.format(q)
+    query_string = f'?q={q}&page='
     return flask.render_template('cards.html', hits=res,
                                  hits_total=hits_total,
                                  query_string=query_string,
