@@ -3,7 +3,8 @@ from typing import List, Tuple, Any
 
 import elasticsearch
 import elasticsearch_dsl
-from elasticsearch_dsl import connections
+from elasticsearch_dsl import connections, Q
+from elasticsearch_dsl.query import Match, MultiMatch, Query
 import requests
 
 
@@ -11,9 +12,9 @@ client = elasticsearch.Elasticsearch()
 connections.create_connection()
 
 
-def get_query(q: str) -> Tuple[dict, List[str]]:
+def get_query(q: str) -> Tuple[Query, List[str]]:
     """Turn the user entry q into a Elasticsearch query."""
-    queries: List[dict] = []
+    queries: List[Query] = []
     if ':' in q:
         query_list, keywords = handle_specific_field_request(q)
         queries.extend(query_list)
@@ -25,10 +26,10 @@ def get_query(q: str) -> Tuple[dict, List[str]]:
     elif len(queries) == 1:
         return queries[0], keywords
     else:
-        return {'bool': {'should': queries}}, keywords
+        return Q('bool', should=queries)
 
 
-def handle_specific_field_request(q: str) -> Tuple[List[dict], List[str]]:
+def handle_specific_field_request(q: str) -> Tuple[List[Query], List[str]]:
     """Get queries when user specified field by using a colon."""
     parts: List[str] = q.split(':')
     fields: List[str] = []
@@ -42,7 +43,7 @@ def handle_specific_field_request(q: str) -> Tuple[List[dict], List[str]]:
     # Edge case when question starts with a normal search term
     if len(keywords_sets) > len(fields):
         fields = ['alles'] + fields
-    queries: List[dict] = []
+    queries: List[Query] = []
     keywords: List[str] = []
     for i in range(len(fields)):
         if fields[i] == 'alles':
@@ -54,25 +55,22 @@ def handle_specific_field_request(q: str) -> Tuple[List[dict], List[str]]:
     return queries, keywords
 
 
-def get_specific_field_query(field: str, keywords: str) -> dict:
+def get_specific_field_query(field: str, keywords: str) -> Match:
     """Return the query if user wants to search a specific field."""
-    return {'match': {field: {'query': keywords}}}
+    # return {'match': {field: {'query': keywords}}}
+    return Match(query=keywords, field=field)
 
 
-def get_regular_query(keywords: str) -> dict:
-    """Return the query if user wants to search in all fields."""
-    return {'multi_match': {'query': keywords,
-                            'fields': ['naam^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron']
-                            }
-            }
+def get_regular_query(keywords: str) -> MultiMatch:
+    return MultiMatch('multi_match', query=keywords,
+                      fields=['naam^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron'])
 
 
 def post_query(query, index, start, size):
     """Post the query to the localhost Elasticsearch server."""
-    payload = {'query': query,
-               'from': start,
-               'size': size}
-    return client.search(index=index, body=payload)
+    s = elasticsearch_dsl.Search(index=index).query(query)
+    s = s[start:start+size]
+    return s.execute()
 
 
 def handle_results(raw, keywords, keys):
