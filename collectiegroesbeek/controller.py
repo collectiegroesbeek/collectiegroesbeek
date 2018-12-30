@@ -1,9 +1,10 @@
 import re
-from typing import List, Tuple, Iterable
+from typing import List, Tuple, Iterable, Optional
 
 import elasticsearch
 import elasticsearch_dsl
-from elasticsearch_dsl import connections, Q
+from elasticsearch_dsl import connections, Q, Search
+from elasticsearch_dsl.response import Response
 from elasticsearch_dsl.query import Match, MultiMatch, Query
 import requests
 
@@ -12,112 +13,114 @@ client = elasticsearch.Elasticsearch()
 connections.create_connection()
 
 
-def get_query(q: str) -> Tuple[Query, List[str]]:
-    """Turn the user entry q into a Elasticsearch query."""
-    query_year, q = get_year_range(q)
-    # q is returned without the year range
-    queries: List[Query] = []
-    if ':' in q:
-        query_list, keywords = handle_specific_field_request(q)
-        queries.extend(query_list)
-    else:
-        queries.append(get_regular_query(q))
-        keywords = q.split(' ')
-    if query_year:
-        return {'bool': {'must': queries,
-                         'filter': query_year}}, keywords
-    if len(queries) == 0:
-        raise RuntimeError('No query.')
-    elif len(queries) == 1:
-        return queries[0], keywords
-    else:
-        return Q('bool', should=queries)
+class Searcher:
 
+    def __init__(self, q, index, start, size):
+        self.keys: Iterable[str] = ['naam', 'datum', 'inhoud', 'getuigen', 'bron', 'bijzonderheden']
+        self.q: str = q
+        self.index: str = index
+        self.start: int = start
+        self.size: int = size
+        year_range: Optional[Tuple[int, int]] = self.parse_year_range()
+        query, keywords = self.get_query()
+        self.keywords: Iterable[str] = keywords
+        self.resp: Response = self.post_query(query, year_range)
 
-def handle_specific_field_request(q: str) -> Tuple[List[Query], List[str]]:
-    """Get queries when user specified field by using a colon."""
-    parts: List[str] = q.split(':')
-    fields: List[str] = []
-    keywords_sets: List[str] = []
-    for part in parts[:-1]:
-        words: List[str] = part.split(' ')
-        fields.append(words[-1].strip(' '))
-        if len(words[:-1]) > 0:
-            keywords_sets.append(' '.join(words[:-1]).strip(' '))
-    keywords_sets.append(parts[-1].strip(' '))
-    # Edge case when question starts with a normal search term
-    if len(keywords_sets) > len(fields):
-        fields = ['alles'] + fields
-    queries: List[Query] = []
-    keywords: List[str] = []
-    for i in range(len(fields)):
-        if fields[i] == 'alles':
-            queries.append(get_regular_query(keywords_sets[i]))
+    def get_query(self) -> Tuple[Query, List[str]]:
+        """Turn the user entry q into a Elasticsearch query."""
+        queries: List[Query] = []
+        if ':' in self.q:
+            query_list, keywords = self.handle_specific_field_request()
+            queries.extend(query_list)
         else:
-            queries.append(get_specific_field_query(fields[i], keywords_sets[i]))
-        for keyword in keywords_sets[i].split(' '):
-            keywords.append(keyword)
-    return queries, keywords
+            queries.append(self.get_regular_query(self.q))
+            keywords = self.q.split(' ')
+        if len(queries) == 0:
+            raise RuntimeError('No query.')
+        elif len(queries) == 1:
+            return queries[0], keywords
+        else:
+            return Q('bool', should=queries), keywords
 
+    def handle_specific_field_request(self) -> Tuple[List[Query], List[str]]:
+        """Get queries when user specified field by using a colon."""
+        parts: List[str] = self.q.split(':')
+        fields: List[str] = []
+        keywords_sets: List[str] = []
+        for part in parts[:-1]:
+            words: List[str] = part.split(' ')
+            fields.append(words[-1].strip(' '))
+            if len(words[:-1]) > 0:
+                keywords_sets.append(' '.join(words[:-1]).strip(' '))
+        keywords_sets.append(parts[-1].strip(' '))
+        # Edge case when question starts with a normal search term
+        if len(keywords_sets) > len(fields):
+            fields = ['alles'] + fields
+        queries: List[Query] = []
+        keywords: List[str] = []
+        for i in range(len(fields)):
+            if fields[i] == 'alles':
+                queries.append(self.get_regular_query(keywords_sets[i]))
+            else:
+                queries.append(self.get_specific_field_query(fields[i], keywords_sets[i]))
+            for keyword in keywords_sets[i].split(' '):
+                keywords.append(keyword)
+        return queries, keywords
 
-def get_specific_field_query(field: str, keywords: str) -> Match:
-    """Return the query if user wants to search a specific field."""
-    return Match(query=keywords, field=field)
+    @staticmethod
+    def get_specific_field_query(field: str, keywords: str) -> Match:
+        """Return the query if user wants to search a specific field."""
+        return Match(query=keywords, field=field)
 
+    @staticmethod
+    def get_regular_query(keywords: str) -> MultiMatch:
+        """Return the query if user wants to search in all fields."""
+        return MultiMatch('multi_match', query=keywords,
+                          fields=['naam^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron'])
 
-def get_regular_query(keywords: str) -> MultiMatch:
-    """Return the query if user wants to search in all fields."""
-    return MultiMatch('multi_match', query=keywords,
-                      fields=['naam^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron'])
+    def parse_year_range(self) -> Optional[Tuple[int, int]]:
+        pattern = re.compile(r'(\d{4})-(\d{4})')
+        match = pattern.search(self.q)
+        if match is None:
+            return None
+        year_start = int(match.group(1))
+        year_end = int(match.group(2))
+        self.q = pattern.sub(repl='', string=self.q).strip()
+        return year_start, year_end
 
+    def post_query(self, query, filter_year) -> Response:
+        """Post the query to the localhost Elasticsearch server."""
+        s: Search = elasticsearch_dsl.Search(index=self.index).query(query)
+        s = s[self.start:self.start+self.size]
+        if filter_year:
+            s = s.filter('range', **{'jaar': {'gte': filter_year[0], 'lte': filter_year[1]}})
+        s = s.highlight('*', number_of_fragments=0)
+        return s.execute()
 
-def get_year_range(q: str) -> Tuple[dict, str]:
-    pattern = re.compile(r'(\d{4})-(\d{4})')
-    match = pattern.search(q)
-    if match is None:
-        return {}, q
-    year_start = match.group(1)
-    year_end = match.group(2)
-    q_without_year_range = pattern.sub(repl='', string=q).strip()
-    return {
-        "range": {
-            "jaar": {
-                "gte": year_start,
-                "lte": year_end,
-            }
-        }
-    }, q_without_year_range
-
-
-def post_query(query: dict, index: str, start: int, size: int) -> requests.Response:
-    """Post the query to the localhost Elasticsearch server."""
-    s = elasticsearch_dsl.Search(index=index).query(query)
-    s = s[start:start+size]
-    return s.execute()
-
-
-def handle_results(raw, keywords: Iterable[str], keys: Iterable[str]
-                   ) -> Tuple[List[dict], int]:
-    hits_total: int = raw['hits']['total']
-    res: List[dict] = []
-    for hit in raw['hits']['hits']:
-        item: dict = {'score': hit['_score'], 'id': hit['_id']}
-        for key in keys:
-            if key in hit['_source'] and hit['_source'][key] is not None:
-                item[key] = hit['_source'][key]
-                for keyword in keywords:
-                    if keyword in item[key].lower():
-                        start = [m.start() for m in re.finditer(keyword, item[key].lower())]
-                        end = [m.end() for m in re.finditer(keyword, item[key].lower())]
-                        i = 0
-                        a = item[key][:start[i]] + '<em>' + item[key][start[i]:end[i]] + '</em>'
-                        for i in range(1, len(start)):
-                            a += (item[key][end[i - 1]:start[i]] + '<em>'
-                                  + item[key][start[i]:end[i]] + '</em>')
-                        a += item[key][end[i]:]
-                        item[key] = a
-        res.append(item)
-    return res, hits_total
+    def handle_results(self) -> Tuple[List[dict], int]:
+        hits_total: int = self.resp['hits']['total']
+        res: List[dict] = []
+        for hit in self.resp:
+            for key, values in hit.meta.highlight.to_dict().items():
+                setattr(hit, key, u' '.join(values))
+        for hit in self.resp['hits']['hits']:
+            item: dict = {'score': hit['_score'], 'id': hit['_id']}
+            for key in self.keys:
+                if key in hit['_source'] and hit['_source'][key] is not None:
+                    item[key] = hit['_source'][key]
+                    for keyword in self.keywords:
+                        if keyword in item[key].lower():
+                            start = [m.start() for m in re.finditer(keyword, item[key].lower())]
+                            end = [m.end() for m in re.finditer(keyword, item[key].lower())]
+                            i = 0
+                            a = item[key][:start[i]] + '<em>' + item[key][start[i]:end[i]] + '</em>'
+                            for i in range(1, len(start)):
+                                a += (item[key][end[i - 1]:start[i]] + '<em>'
+                                      + item[key][start[i]:end[i]] + '</em>')
+                            a += item[key][end[i]:]
+                            item[key] = a
+            res.append(item)
+        return res, hits_total
 
 
 def get_page_range(hits_total: int, page: int, cards_per_page: int) -> List[int]:

@@ -29,13 +29,9 @@ def search():
         return show_names_list(q)
     cards_per_page = 10
     page = flask.request.args.get('page', default=1, type=int)
-    query, keywords = controller.get_query(q.lower())
-    r = controller.post_query(query, index='namenindex',
-                              start=(page - 1) * cards_per_page,
-                              size=cards_per_page)
-    res, hits_total = controller.handle_results(r, keywords,
-                                                keys=['naam', 'datum', 'inhoud', 'getuigen',
-                                                      'bron', 'bijzonderheden'])
+    searcher = controller.Searcher(q.lower(), index='namenindex', start=(page - 1) * cards_per_page,
+                                   size=cards_per_page)
+    res, hits_total = searcher.handle_results()
     page_range = controller.get_page_range(hits_total, page, cards_per_page)
     query_string = f'?q={q}&page='
     return flask.render_template('cards.html', hits=res,
