@@ -3,3 +3,5 @@ flask
 pytest
 mypy
 flake8
+elasticsearch
+elasticsearch-dsl
