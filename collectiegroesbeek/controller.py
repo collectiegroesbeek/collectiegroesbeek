@@ -1,7 +1,6 @@
 import re
 from typing import List, Tuple, Iterable, Optional
 
-import elasticsearch
 import elasticsearch_dsl
 from elasticsearch_dsl import connections, Q, Search
 from elasticsearch_dsl.response import Response
@@ -9,7 +8,6 @@ from elasticsearch_dsl.query import Match, MultiMatch, Query
 import requests
 
 
-client = elasticsearch.Elasticsearch()
 connections.create_connection()
 
 
@@ -91,7 +89,7 @@ class Searcher:
     def post_query(self, query, filter_year) -> Response:
         """Post the query to the localhost Elasticsearch server."""
         s: Search = elasticsearch_dsl.Search(index=self.index).query(query)
-        s = s[self.start:self.start+self.size]
+        s = s[self.start: self.start + self.size]
         if filter_year:
             s = s.filter('range', **{'jaar': {'gte': filter_year[0], 'lte': filter_year[1]}})
         s = s.highlight('*', number_of_fragments=0)

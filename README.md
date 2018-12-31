@@ -230,8 +230,7 @@ We have some exceptions to PEP8, and other conventions:
 ### Check code quality
 
 You can check your code quality by running an analysis tool. We use `flake8` to check for PEP8
-errors and `Mypy` to check typing. Both are included in the test suite if you are working on
-Windows.
+errors and `Mypy` to check typing.
 
 ### Auto-formatter
 
