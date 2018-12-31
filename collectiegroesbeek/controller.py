@@ -1,7 +1,6 @@
 import re
 from typing import List, Tuple, Iterable, Optional
 
-import elasticsearch
 import elasticsearch_dsl
 from elasticsearch_dsl import connections, Q, Search
 from elasticsearch_dsl.response import Response
@@ -9,7 +8,6 @@ from elasticsearch_dsl.query import Match, MultiMatch, Query
 import requests
 
 
-client = elasticsearch.Elasticsearch()
 connections.create_connection()
 
 
