@@ -80,4 +80,3 @@ if __name__ == '__main__':
     do_the_thing('namenindex')
     # do_the_thing('maatboek_heemskerk')
     print('Finished!')
-

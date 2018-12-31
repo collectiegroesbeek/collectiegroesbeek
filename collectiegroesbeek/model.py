@@ -17,8 +17,8 @@ class CardNameIndex(Document):
     @classmethod
     def from_csv_line(cls, line: List[str]) -> 'CardNameIndex':
         doc = cls()
-        doc.meta['id']: Optional[int] = int(line[0]) if len(line[0]) > 0 else None
-        doc.meta['index']: str = 'namenindex'
+        doc.meta['id'] = int(line[0]) if len(line[0]) > 0 else None
+        doc.meta['index'] = 'namenindex'
         doc.datum = cls.parse_entry(line[1])
         doc.naam = cls.parse_entry(line[2])
         doc.inhoud = cls.parse_entry(line[3])

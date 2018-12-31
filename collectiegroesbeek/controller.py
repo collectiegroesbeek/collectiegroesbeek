@@ -89,7 +89,7 @@ class Searcher:
     def post_query(self, query, filter_year) -> Response:
         """Post the query to the localhost Elasticsearch server."""
         s: Search = elasticsearch_dsl.Search(index=self.index).query(query)
-        s = s[self.start:self.start+self.size]
+        s = s[self.start: self.start + self.size]
         if filter_year:
             s = s.filter('range', **{'jaar': {'gte': filter_year[0], 'lte': filter_year[1]}})
         s = s.highlight('*', number_of_fragments=0)
