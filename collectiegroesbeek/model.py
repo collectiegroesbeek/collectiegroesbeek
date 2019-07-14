@@ -1,6 +1,6 @@
 from typing import Optional, List
 
-from elasticsearch_dsl import Document, Text, Keyword, Short
+from elasticsearch_dsl import Document, Index, Text, Keyword, Short
 
 
 class CardNameIndex(Document):
@@ -13,6 +13,12 @@ class CardNameIndex(Document):
 
     naam_keyword = Keyword()
     jaar = Short()
+
+    class Index:
+        name = 'namenindex'
+
+        def __new__(cls):
+            return Index(name=cls.name)
 
     @classmethod
     def from_csv_line(cls, line: List[str]) -> 'CardNameIndex':
