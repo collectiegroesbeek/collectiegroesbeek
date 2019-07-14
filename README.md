@@ -48,11 +48,10 @@ You can check if the image is available with `docker ps -a`. Start it with
 ### Data ingestion
 
 The data is in a separate Github repository. It needs to be ingested into Elasticsearch.
-In the `elasticsearch` folder are two scripts to do that. 
+In the `elasticsearch` folder there is a script to do that:
 
-- First run `index_operations.py` to create the needed indices. 
-  Note that if the indices already existed, it will delete the data.
-- Then run `add_documents.py` to read the csv files and add the data to Elasticsearch.
+`add_documents.py` will read the csv files and add the data to Elasticsearch. It has an option
+to delete and create the index first.
 
 You can check this by doing a HTTP GET request with for example `curl` on
 `http://localhost:9200/_cat/indices?v`.
@@ -63,6 +62,11 @@ You will see that an index has been made and that `docs.count` shows data has be
 At this point you can run the Flask debug server to start developing. The following points are
 for a production environment, we're setting up a webserver. Note that these instructions
 are for a Ubuntu environment.
+
+### Python
+
+Make sure your system has Python 3. In this guide I'm using `pip`, but that may be `pip3` on your
+system.
 
 ### Install nginx and uWSGI
 
@@ -84,19 +88,23 @@ https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#installing-uwsgi
 
 
 ### Python and Flask
-Copy this project to a local folder. In this guide I'm using `/usr/local/collgroesbeek`.
+Copy this project to a local folder. In this guide I'm using my user directory `~/collectiegroesbeek`.
 Install the needed requirements:
 
-`pip install --user -r /path/to/requirements.txt`
+`pip install --user -r ~/collectiegroesbeek/requirements.txt`
 
 
 ### Systemd services
 
 We use two systemd services: one starts the uWSGI service, the second starts the nginx webserver.
 
-The uWSGI service needs to be created, we call it `collgroesbeek-uwsgi.service`:
+First find out what the path to your uWSGI executable is:
 
-`sudo nano /etc/systemd/system/collgroesbeek-uwsgi.service`
+`which uwsgi`
+
+The uWSGI service needs to be created, we call it `collectiegroesbeek-uwsgi.service`:
+
+`sudo nano /etc/systemd/system/collectiegroesbeek-uwsgi.service`
 
 Add the following configuration in the new file, make sure to change the username and path:
 
@@ -104,8 +112,8 @@ Add the following configuration in the new file, make sure to change the usernam
 [Service]
 User=username
 Group=www-data
-WorkingDirectory=/usr/local/collgroesbeek
-ExecStart=/usr/local/bin/uwsgi --ini collectiegroesbeek.ini
+WorkingDirectory=/home/<your username>/collectiegroesbeek
+ExecStart=/home/<your username>/.local/bin/uwsgi --ini collectiegroesbeek.ini
 
 [Install]
 WantedBy=multi-user.target
@@ -116,8 +124,8 @@ Now enable and start the service:
 
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable collgroesbeek-uwsgi
-sudo systemctl start collgroesbeek-uwsgi
+sudo systemctl enable collectiegroesbeek-uwsgi
+sudo systemctl start collectiegroesbeek-uwsgi
 ```
 
 The nginx service is called `nginx.service` and already exists. Just make sure it's enabled.
@@ -126,7 +134,7 @@ The nginx service is called `nginx.service` and already exists. Just make sure i
 ### nginx website configuration
 Create a new configuration file for nginx:
 
-`sudo nano /etc/nginx/sites-available/collgroesbeek`
+`sudo nano /etc/nginx/sites-available/collectiegroesbeek`
 
 Add the following text, make sure to update the paths if needed:
 
@@ -137,11 +145,11 @@ server {
     location / { try_files $uri @app; }
     location @app {
         include uwsgi_params;
-        uwsgi_pass unix:/usr/local/collgroesbeek/collectiegroesbeek.sock;
+        uwsgi_pass unix:/usr/local/collectiegroesbeek/collectiegroesbeek.sock;
     }
     location ^~ /static/  {
         include  /etc/nginx/mime.types;
-        root /usr/local/collgroesbeek/collectiegroesbeek/static;
+        root /usr/local/collectiegroesbeek/collectiegroesbeek/static;
     }
 }
 
@@ -168,7 +176,7 @@ You can test your configuration at:
 ### Debugging
 Check the status of the uWSGI and nginx services:
 
-`systemctl status collgroesbeek-uwsgi`
+`systemctl status collectiegroesbeek-uwsgi`
 
 `systemctl status nginx`
 
