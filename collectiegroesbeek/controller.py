@@ -3,12 +3,11 @@ from typing import List, Tuple, Iterable, Optional
 
 import elasticsearch_dsl
 from elasticsearch_dsl import connections, Q, Search
-from elasticsearch_dsl.response import Response
 from elasticsearch_dsl.query import Match, MultiMatch, Query
-import requests
 
+from .model import CardNameIndex
 
-connections.create_connection()
+connections.create_connection('default', hosts=['localhost:9200'])
 
 
 class Searcher:
@@ -22,7 +21,7 @@ class Searcher:
         year_range: Optional[Tuple[int, int]] = self.parse_year_range()
         query, keywords = self.get_query()
         self.keywords: Iterable[str] = keywords
-        self.resp: Response = self.post_query(query, year_range)
+        self.s = self.get_search(query, year_range)
 
     def get_query(self) -> Tuple[Query, List[str]]:
         """Turn the user entry q into a Elasticsearch query."""
@@ -86,28 +85,24 @@ class Searcher:
         self.q = pattern.sub(repl='', string=self.q).strip()
         return year_start, year_end
 
-    def post_query(self, query, filter_year) -> Response:
-        """Post the query to the localhost Elasticsearch server."""
-        s: Search = elasticsearch_dsl.Search(index=self.index).query(query)
+    def get_search(self, query, filter_year) -> Search:
+        """Get the final Search object with all queries.."""
+        s: Search = CardNameIndex.search().query(query)
         s = s[self.start: self.start + self.size]
         if filter_year:
             s = s.filter('range', **{'jaar': {'gte': filter_year[0], 'lte': filter_year[1]}})
         s = s.highlight('*', number_of_fragments=0)
-        return s.execute()
+        return s
 
-    def handle_results(self) -> Tuple[List[dict], int]:
-        hits_total: int = self.resp['hits']['total']
-        res: List[dict] = []
-        for hit in self.resp:
+    def count(self) -> int:
+        return self.s.count().value
+
+    def get_results(self) -> List[CardNameIndex]:
+        res: List[CardNameIndex] = list(self.s)
+        for hit in res:
             for key, values in hit.meta.highlight.to_dict().items():
                 setattr(hit, key, u' '.join(values))
-        for hit in self.resp['hits']['hits']:
-            item: dict = {'score': hit['_score'], 'id': hit['_id']}
-            for key in self.keys:
-                if key in hit['_source'] and hit['_source'][key] is not None:
-                    item[key] = hit['_source'][key]
-            res.append(item)
-        return res, hits_total
+        return res
 
 
 def get_page_range(hits_total: int, page: int, cards_per_page: int) -> List[int]:
@@ -138,10 +133,4 @@ def get_names_list(q: str) -> List[dict]:
 
 def is_elasticsearch_reachable() -> bool:
     """Return a boolean whether the Elasticsearch service is available on localhost."""
-    try:
-        resp = requests.get('http://localhost:9200')
-        resp.raise_for_status()
-    except requests.exceptions.ConnectionError:
-        return False
-    else:
-        return True
+    return connections.get_connection().ping()

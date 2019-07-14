@@ -31,10 +31,11 @@ def search():
     page = flask.request.args.get('page', default=1, type=int)
     searcher = controller.Searcher(q.lower(), index='namenindex', start=(page - 1) * cards_per_page,
                                    size=cards_per_page)
-    res, hits_total = searcher.handle_results()
+    hits = searcher.get_results()
+    hits_total = searcher.count()
     page_range = controller.get_page_range(hits_total, page, cards_per_page)
     query_string = f'?q={q}&page='
-    return flask.render_template('cards.html', hits=res,
+    return flask.render_template('cards.html', hits=hits,
                                  hits_total=hits_total,
                                  query_string=query_string,
                                  page_range=page_range, page=page)

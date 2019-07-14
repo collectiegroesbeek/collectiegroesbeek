@@ -20,23 +20,23 @@
             {% for hit in hits %}
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h4 class="card-title" title="id: {{ hit['id'] }}, score: {{ hit['score'] }}">
-                            {{ hit['naam']|safe }}
-                            {% if hit['datum'] %}
-                                | {{ hit['datum']|safe }}
+                        <h4 class="card-title" title="id: {{ hit.id }}, score: {{ hit.meta.score }}">
+                            {{ hit.naam|safe }}
+                            {% if hit.datum %}
+                                | {{ hit.datum|safe }}
                             {% endif %}
                         </h4>
-                        {% if hit['bron'] %}
-                            <h5 class="text-muted m-b-1">{{ hit['bron']|safe }}</h5>
+                        {% if hit.bron %}
+                            <h5 class="text-muted m-b-1">{{ hit.bron|safe }}</h5>
                         {% endif %}
-                        {% if hit['inhoud'] %}
-                        <p class="card-text">{{ hit['inhoud']|safe }}</p>
+                        {% if hit.inhoud %}
+                        <p class="card-text">{{ hit.inhoud|safe }}</p>
                         {% endif %}
-                        {% if hit['getuigen'] %}
-                            <p class="card-text">{{ hit['getuigen']|safe }}</p>
+                        {% if hit.getuigen %}
+                            <p class="card-text">{{ hit.getuigen|safe }}</p>
                         {% endif %}
-                        {% if hit['bijzonderheden'] %}
-                            <p class="card-text">{{ hit['bijzonderheden'] }}</p>
+                        {% if hit.bijzonderheden %}
+                            <p class="card-text">{{ hit.bijzonderheden }}</p>
                         {% endif %}
                     </div>
                 </div>

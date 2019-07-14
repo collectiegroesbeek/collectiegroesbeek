@@ -23,15 +23,16 @@ class CardNameIndex(Document):
     @classmethod
     def from_csv_line(cls, line: List[str]) -> 'CardNameIndex':
         doc = cls()
-        doc.meta['id'] = int(line[0]) if len(line[0]) > 0 else None
-        doc.meta['index'] = 'namenindex'
+        if len(line[0]) == 0:
+            return doc
+        doc.meta.id = int(line[0])
         doc.datum = cls.parse_entry(line[1])
         doc.naam = cls.parse_entry(line[2])
         doc.inhoud = cls.parse_entry(line[3])
         doc.bron = cls.parse_entry(line[4])
         doc.getuigen = cls.parse_entry(line[5])
         doc.bijzonderheden = cls.parse_entry(line[6])
-        if not doc.valid:
+        if not doc.is_valid():
             return doc
         if doc.naam is not None:
             doc.naam_keyword = cls.create_name_keyword(str(doc.naam))
@@ -39,10 +40,9 @@ class CardNameIndex(Document):
             doc.jaar = cls.create_year(str(doc.datum))
         return doc
 
-    @property
-    def valid(self):
+    def is_valid(self):
         # At the end of a file there may be empty lines, skip them.
-        if self.meta['id'] is None:
+        if getattr(self.meta, 'id', None) is None:
             return False
         # Skip row if there is no data except an id. This happens a lot at the end of a file.
         if self.naam is None and self.datum is None:

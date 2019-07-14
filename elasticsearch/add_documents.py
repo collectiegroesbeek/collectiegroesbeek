@@ -66,7 +66,7 @@ def run(path):
                 if line[0] == 'id':  # First line contains header
                     continue
                 card = CardNameIndex.from_csv_line(line)
-                if not card.valid:
+                if not card.is_valid():
                     continue
                 card_processor.add(card)
     card_processor.flush()
