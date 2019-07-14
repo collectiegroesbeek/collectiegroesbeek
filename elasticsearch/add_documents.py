@@ -53,7 +53,7 @@ class CardProcessor:
 
 
 def run(path):
-    # reset_index()
+    reset_index()
     card_processor = CardProcessor()
     filenames = sorted(filename for filename in os.listdir(path) if filename.endswith('.csv'))
     pbar = tqdm.tqdm(filenames)
