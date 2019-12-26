@@ -134,3 +134,24 @@ def get_names_list(q: str) -> List[dict]:
 def is_elasticsearch_reachable() -> bool:
     """Return a boolean whether the Elasticsearch service is available on localhost."""
     return connections.get_connection().ping()
+
+
+def get_suggestions(q: str):
+    q = q.lower()
+    s = CardNameIndex.search()
+    for field in ['naam', 'inhoud', 'bron', 'getuigen']:
+        s = s.suggest(name=field, text=q, term={'field': field, 'size': 5,
+                                                'suggest_mode': 'always'})
+    s = s.extra(size=0)
+    resp = s.execute()
+    suggestions = set()
+    for res_per_token in resp.suggest.to_dict().values():
+        suggestions.update(option['text']
+                           for token_res in res_per_token
+                           for option in token_res['options'])
+    for token in q.split():
+        try:
+            suggestions.remove(token)
+        except KeyError:
+            pass
+    return sorted(suggestions)

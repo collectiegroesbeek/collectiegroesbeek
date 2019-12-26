@@ -6,6 +6,18 @@
 
 {% block content %}
 
+  {% if suggestions %}
+    <div class="row mb-4">
+      <div class="col-md-8 offset-md-2">
+        <p>Bedoelde u soms?</p>
+        {% for suggestion in suggestions %}
+          <a href="/?q={{ q }}+{{ suggestion }}">{{ suggestion }}</a>
+          {% if not loop.last %} | {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
     {% if hits_total %}
         <div class="row">
             <div class="col-md-8 offset-md-2">
