@@ -1,9 +1,9 @@
 import re
-from typing import List, Tuple, Iterable, Optional
+from typing import List, Tuple, Iterable, Optional, Set
 
 import elasticsearch_dsl
 from elasticsearch_dsl import connections, Q, Search
-from elasticsearch_dsl.query import Match, MultiMatch, Query
+from elasticsearch_dsl.query import MultiMatch, Query
 
 from .model import CardNameIndex
 
@@ -19,29 +19,35 @@ class Searcher:
         self.start: int = start
         self.size: int = size
         year_range: Optional[Tuple[int, int]] = self.parse_year_range()
-        query, keywords = self.get_query()
-        self.keywords: Iterable[str] = keywords
+        queries_must = []
+        self.keywords: Set[str] = set()
+        for part in self.q.split('&'):
+            part = part.strip()
+            if part:
+                queries_must.append(self.get_query(part))
+        query = Q('bool', must=queries_must)
         self.s = self.get_search(query, year_range)
 
-    def get_query(self) -> Tuple[Query, List[str]]:
+    def get_query(self, q) -> Query:
         """Turn the user entry q into a Elasticsearch query."""
         queries: List[Query] = []
-        if ':' in self.q:
-            query_list, keywords = self.handle_specific_field_request()
+        if ':' in q:
+            query_list, keywords = self.handle_specific_field_request(q)
             queries.extend(query_list)
         else:
-            queries.append(self.get_regular_query(self.q))
-            keywords = self.q.split(' ')
+            queries.append(self.get_regular_query(q))
+            keywords = q.split()
+        self.keywords.update(keywords)
         if len(queries) == 0:
             raise RuntimeError('No query.')
         elif len(queries) == 1:
-            return queries[0], keywords
+            return queries[0]
         else:
-            return Q('bool', should=queries), keywords
+            return Q('bool', should=queries)
 
-    def handle_specific_field_request(self) -> Tuple[List[Query], List[str]]:
+    def handle_specific_field_request(self, q) -> Tuple[List[Query], List[str]]:
         """Get queries when user specified field by using a colon."""
-        parts: List[str] = self.q.split(':')
+        parts: List[str] = q.split(':')
         fields: List[str] = []
         keywords_sets: List[str] = []
         for part in parts[:-1]:
@@ -65,9 +71,9 @@ class Searcher:
         return queries, keywords
 
     @staticmethod
-    def get_specific_field_query(field: str, keywords: str) -> Match:
+    def get_specific_field_query(field: str, keywords: str) -> Query:
         """Return the query if user wants to search a specific field."""
-        return Match(query=keywords, field=field)
+        return Q('match', **{field: keywords})
 
     @staticmethod
     def get_regular_query(keywords: str) -> MultiMatch:
@@ -95,7 +101,7 @@ class Searcher:
         return s
 
     def count(self) -> int:
-        return self.s.count().value
+        return self.s.count()
 
     def get_results(self) -> List[CardNameIndex]:
         res: List[CardNameIndex] = list(self.s)

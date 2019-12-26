@@ -1,3 +1,6 @@
+import re
+from urllib.parse import quote
+
 import flask
 
 from . import app
@@ -35,7 +38,7 @@ def search():
     hits_total = searcher.count()
     page_range = controller.get_page_range(hits_total, page, cards_per_page)
     query = '+'.join(q.split())
-    query_string = f'?q={query}&page='
+    query_string = f'?q={quote(q)}&page='
 
     if page == 1:
         suggestions = controller.get_suggestions(q)
