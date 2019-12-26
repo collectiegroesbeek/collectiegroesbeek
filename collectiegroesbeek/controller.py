@@ -142,22 +142,21 @@ def is_elasticsearch_reachable() -> bool:
     return connections.get_connection().ping()
 
 
-def get_suggestions(q: str):
-    q = q.lower()
+def get_suggestions(keywords: Iterable[str]):
+    tokens = [token for token in keywords if not token.isdigit()]
     s = CardNameIndex.search()
     for field in ['naam', 'inhoud', 'bron', 'getuigen']:
-        s = s.suggest(name=field, text=q, term={'field': field, 'size': 5,
-                                                'suggest_mode': 'always'})
+        s = s.suggest(name=field, text=' '.join(tokens),
+                      term={'field': field, 'size': 5, 'suggest_mode': 'always'})
     s = s.extra(size=0)
     resp = s.execute()
-    suggestions = set()
+    suggestions = {}
+    tokens_set = set(tokens)
     for res_per_token in resp.suggest.to_dict().values():
-        suggestions.update(option['text']
-                           for token_res in res_per_token
-                           for option in token_res['options'])
-    for token in q.split():
-        try:
-            suggestions.remove(token)
-        except KeyError:
-            pass
-    return sorted(suggestions)
+        for token_res in res_per_token:
+            token = token_res['text']
+            for option in token_res['options']:
+                suggestion = option['text']
+                if suggestion not in tokens_set:
+                    suggestions.setdefault(token, set()).add(suggestion)
+    return {k: sorted(v) for k, v in suggestions.items()}
