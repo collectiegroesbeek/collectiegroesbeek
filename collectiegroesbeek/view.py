@@ -37,20 +37,24 @@ def search():
     hits = searcher.get_results()
     hits_total = searcher.count()
     page_range = controller.get_page_range(hits_total, page, cards_per_page)
-    query = '+'.join(q.split())
     query_string = f'?q={quote(q)}&page='
 
     if page == 1:
-        suggestions = controller.get_suggestions(q)
+        suggestions = controller.get_suggestions(searcher.keywords)
     else:
-        suggestions = []
+        suggestions = {}
+    suggestion_urls = {}
+    for token, _suggs in suggestions.items():
+        for suggestion in _suggs:
+            q_new = re.sub(r'\b{}\b'.format(token), f'{token} {suggestion}', q)
+            url = f'/?q={quote(q_new)}'
+            suggestion_urls[suggestion] = url
 
     return flask.render_template('cards.html', hits=hits,
                                  hits_total=hits_total,
                                  query_string=query_string,
-                                 q=query,
                                  page_range=page_range, page=page,
-                                 suggestions=suggestions)
+                                 suggestions=suggestion_urls)
 
 
 @app.route('/namen')

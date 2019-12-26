@@ -10,8 +10,8 @@
     <div class="row mb-4">
       <div class="col-md-8 offset-md-2">
         <p>Bedoelde u soms?</p>
-        {% for suggestion in suggestions %}
-          <a href="/?q={{ q }}+{{ suggestion }}">{{ suggestion }}</a>
+        {% for suggestion, url in suggestions.items() %}
+          <a href="{{ url }}">{{ suggestion }}</a>
           {% if not loop.last %} | {% endif %}
         {% endfor %}
       </div>
