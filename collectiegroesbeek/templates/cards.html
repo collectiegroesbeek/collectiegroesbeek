@@ -1,15 +1,25 @@
 
 {% extends "layout.html" %}
+{% import 'macros.html' as macros %}
 
 {% block title %}Zoekresultaten{% endblock %}
 
 
 {% block content %}
 
+  <div class="row">
+  <div class="col-md-8 offset-md-2">
+
+    <div class="row mb-2">
+      <div class="col">
+        {{ macros.search_input(q=q, autofocus=False) }}
+      </div>
+    </div>
+
   {% if suggestions %}
     <div class="row mb-4">
-      <div class="col-md-8 offset-md-2">
-        <p>Bedoelde u soms?</p>
+      <div class="col">
+        Bedoelde u soms?<br />
         {% for suggestion, url in suggestions.items() %}
           <a href="{{ url }}">{{ suggestion }}</a>
           {% if not loop.last %} | {% endif %}
@@ -20,7 +30,7 @@
 
     {% if hits_total %}
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col">
                 <p class="text-resultaten text-muted">
                     {{ hits_total }} resultaten
                 </p>
@@ -28,7 +38,7 @@
         </div>
     {% endif %}
     <div class="row">
-        <div class="col-md-8 offset-md-2">
+        <div class="col">
             {% for hit in hits %}
                 <div class="card mb-5">
                     <div class="card-body">
@@ -85,5 +95,8 @@
             </ul>
         </nav>
     {% endif %}
+
+  </div>
+  </div>
 
 {% endblock %}

@@ -52,6 +52,7 @@ def search():
 
     return flask.render_template('cards.html', hits=hits,
                                  hits_total=hits_total,
+                                 q=q,
                                  query_string=query_string,
                                  page_range=page_range, page=page,
                                  suggestions=suggestion_urls)
