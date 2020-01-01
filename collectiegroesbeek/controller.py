@@ -5,9 +5,11 @@ import elasticsearch_dsl
 from elasticsearch_dsl import connections, Q, Search
 from elasticsearch_dsl.query import MultiMatch, Query
 
+from . import app
 from .model import CardNameIndex
 
-connections.create_connection('default', hosts=['localhost:9200'])
+
+connections.create_connection('default', hosts=[app.config['elasticsearch_host']])
 
 
 class Searcher:
