@@ -60,9 +60,11 @@ def run(path):
     for filename in pbar:
         pbar.set_postfix(filename=filename)
         filepath = os.path.join(path, filename)
-        with open(filepath, newline='\r\n', encoding='utf-16') as f:
-            csvreader = csv.reader(f, dialect=csv.excel_tab)
+        with open(filepath) as f:
+            csvreader = csv.reader(f)
             for line in csvreader:
+                if not line:
+                    continue
                 if line[0] == 'id':  # First line contains header
                     continue
                 card = CardNameIndex.from_csv_line(line)
