@@ -1,12 +1,12 @@
 import re
-from typing import List, Tuple, Iterable, Optional, Set
+from typing import Dict, List, Tuple, Iterable, Optional, Set
 
 import elasticsearch_dsl
 from elasticsearch_dsl import connections, Q, Search
 from elasticsearch_dsl.query import MultiMatch, Query
 
 from . import app
-from .model import CardNameIndex
+from .model import CardNameDoc
 
 
 connections.create_connection('default', hosts=[app.config['elasticsearch_host']])
@@ -95,7 +95,7 @@ class Searcher:
 
     def get_search(self, query, filter_year) -> Search:
         """Get the final Search object with all queries.."""
-        s: Search = CardNameIndex.search().query(query)
+        s: Search = CardNameDoc.search().query(query)
         s = s[self.start: self.start + self.size]
         if filter_year:
             s = s.filter('range', **{'jaar': {'gte': filter_year[0], 'lte': filter_year[1]}})
@@ -105,8 +105,8 @@ class Searcher:
     def count(self) -> int:
         return self.s.count()
 
-    def get_results(self) -> List[CardNameIndex]:
-        res: List[CardNameIndex] = list(self.s)
+    def get_results(self) -> List[CardNameDoc]:
+        res: List[CardNameDoc] = list(self.s)
         for hit in res:
             for key, values in hit.meta.highlight.to_dict().items():
                 setattr(hit, key, u' '.join(values))
@@ -146,13 +146,13 @@ def is_elasticsearch_reachable() -> bool:
 
 def get_suggestions(keywords: Iterable[str]):
     tokens = [token for token in keywords if not token.isdigit()]
-    s = CardNameIndex.search()
+    s = CardNameDoc.search()
     for field in ['naam', 'inhoud', 'bron', 'getuigen']:
         s = s.suggest(name=field, text=' '.join(tokens),
                       term={'field': field, 'size': 5, 'suggest_mode': 'always'})
     s = s.extra(size=0)
     resp = s.execute()
-    suggestions = {}
+    suggestions: Dict[str, Set[str]] = {}
     tokens_set = set(tokens)
     for res_per_token in resp.suggest.to_dict().values():
         for token_res in res_per_token:

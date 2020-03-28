@@ -1,9 +1,17 @@
+import re
 from typing import Optional, List
 
 from elasticsearch_dsl import Document, Index, Text, Keyword, Short
 
 
-class CardNameIndex(Document):
+class BaseDocument(Document):
+
+    @classmethod
+    def from_csv_line(cls, line: List[str]) -> Optional['BaseDocument']:
+        raise NotImplementedError()
+
+
+class CardNameDoc(BaseDocument):
     datum = Text(norms=False)
     naam = Text(norms=False)
     inhoud = Text(norms=False)
@@ -21,19 +29,19 @@ class CardNameIndex(Document):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> 'CardNameIndex':
+    def from_csv_line(cls, line: List[str]) -> Optional['CardNameDoc']:
         doc = cls()
         if len(line[0]) == 0:
-            return doc
+            return None
         doc.meta.id = int(line[0])
-        doc.datum = cls.parse_entry(line[1])
-        doc.naam = cls.parse_entry(line[2])
-        doc.inhoud = cls.parse_entry(line[3])
-        doc.bron = cls.parse_entry(line[4])
-        doc.getuigen = cls.parse_entry(line[5])
-        doc.bijzonderheden = cls.parse_entry(line[6])
+        doc.datum = parse_entry(line[1])
+        doc.naam = parse_entry(line[2])
+        doc.inhoud = parse_entry(line[3])
+        doc.bron = parse_entry(line[4])
+        doc.getuigen = parse_entry(line[5])
+        doc.bijzonderheden = parse_entry(line[6])
         if not doc.is_valid():
-            return doc
+            return None
         if doc.naam is not None:
             doc.naam_keyword = cls.create_name_keyword(str(doc.naam))
         if doc.datum is not None:
@@ -48,10 +56,6 @@ class CardNameIndex(Document):
         if self.naam is None and self.datum is None:
             return False
         return True
-
-    @staticmethod
-    def parse_entry(entry: str) -> Optional[str]:
-        return entry.strip() or None
 
     @staticmethod
     def create_name_keyword(naam: str) -> str:
@@ -75,3 +79,65 @@ class CardNameIndex(Document):
         if 1000 < jaar < 2000:
             return jaar
         return None
+
+
+class HeemskerkMaatboekDoc(BaseDocument):
+    locatie = Text(fields={'keyword': Keyword()}, norms=False)
+    sector = Text(fields={'keyword': Keyword()}, norms=False)
+
+    eigenaar = Text(fields={'keyword': Keyword()}, norms=False)
+    huurder = Text(fields={'keyword': Keyword()}, norms=False)
+
+    oppervlakte = Keyword()
+    prijs = Keyword()
+
+    datum = Text(fields={'keyword': Keyword()}, norms=False)
+    jaar = Short()
+
+    bron = Text(fields={'keyword': Keyword()}, norms=False)
+    opmerkingen = Text(norms=False)
+
+    class Index:
+        name = 'heemskerk_maatboek_index'
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    @classmethod
+    def from_csv_line(cls, line: List[str]) -> Optional['HeemskerkMaatboekDoc']:
+        # Return early, we'll discard it later using `is_valid`.
+        if not parse_entry(line[0]) or not any(parse_entry(value) for value in line[1:]):
+            return None
+        doc = cls()
+        doc.meta.id = line[0]
+        doc.locatie = parse_entry(line[1])
+        doc.sector = parse_entry(line[2])
+        doc.oppervlakte = parse_entry(line[3])
+        doc.eigenaar = parse_entry(line[4])
+        doc.huurder = parse_entry(line[5])
+        doc.prijs = parse_entry(line[6])
+        doc.datum = parse_entry(line[7])
+        doc.bron = parse_entry(line[8])
+        doc.opmerkingen = parse_entry(line[9])
+        doc.jaar = cls.parse_year(doc.datum)
+        return doc
+
+    @staticmethod
+    def parse_year(datum: Optional[str]) -> Optional[int]:
+        res = re.search(r'\d{4}', datum or '')
+        return int(res[0]) if res else None
+
+
+class HeemskerkAktenDoc(BaseDocument):
+
+    class Index:
+        name = 'heemskerk_akten_index'
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    # TODO: finish this stub
+
+
+def parse_entry(entry: str) -> Optional[str]:
+    return entry.strip() or None

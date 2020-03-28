@@ -3,12 +3,14 @@ import logging
 import sys
 import csv
 import argparse
+import time
+from typing import Type, Dict, Optional
 
 from elasticsearch.helpers import bulk
-from elasticsearch_dsl import connections
+from elasticsearch_dsl import connections, Index
 import tqdm
 
-from collectiegroesbeek.model import CardNameIndex
+from collectiegroesbeek.model import HeemskerkMaatboekDoc, BaseDocument, CardNameDoc, HeemskerkAktenDoc
 
 
 if sys.version_info[0] < 3:
@@ -26,23 +28,25 @@ def logging_setup():
     logging.getLogger('elasticsearch').setLevel(logging.WARNING)
 
 
-def reset_index():
-    index = CardNameIndex.Index()
-    if index.exists():
-        index.delete()
-    CardNameIndex.init()
-    assert index.exists()
-
-
 class CardProcessor:
 
     def __init__(self, batch_size=500):
         self.batch_size = batch_size
         self.client = connections.get_connection()
+        self._movers: Dict[str, IndexMover] = {}
         self._items = []
 
-    def add(self, card: CardNameIndex):
-        self._items.append(card.to_dict(include_meta=True))
+    def register_index(self, doctype):
+        """Mark an index as being updated, creating an IndexMover instance."""
+        key = doctype.Index.name
+        if key in self._movers:
+            return
+        self._movers[key] = IndexMover(doctype)
+
+    def add(self, card: BaseDocument):
+        d = card.to_dict(include_meta=True)
+        d['_index'] = self._movers[d['_index']].new_name
+        self._items.append(d)
         if len(self._items) > self.batch_size:
             self.flush()
 
@@ -51,27 +55,69 @@ class CardProcessor:
             bulk(self.client, self._items)
         self._items = []
 
+    def finalize(self):
+        self.flush()
+        for mover in self._movers.values():
+            mover.move_alias_to_new()
 
-def run(path):
-    reset_index()
-    card_processor = CardProcessor()
+
+class IndexMover:
+
+    def __init__(self, doctype: Type[BaseDocument]):
+        self.alias = doctype.Index.name
+        if doctype.Index().exists():
+            self.old_name = next(iter(doctype.Index().get_alias().keys()))
+            self.old_es_index: Optional[Index] = Index(name=self.old_name)
+        else:
+            self.old_es_index = None
+            self.old_name = None
+        self.new_name = '{}_{:.0f}'.format(self.alias, time.time())
+        self.new_es_index = Index(name=self.new_name)
+        doctype.init(index=self.new_name)
+
+    def move_alias_to_new(self):
+        if self.old_es_index:
+            self.old_es_index.delete_alias(name=self.alias)
+        self.new_es_index.put_alias(name=self.alias)
+        if self.old_es_index:
+            self.old_es_index.delete()
+
+
+def filename_to_doctype(filename):
+    filename = filename.lower()
+    if filename.startswith('coll gr'):
+        return CardNameDoc
+    if 'heemskerk' in filename:
+        if 'maatboek' in filename:
+            return HeemskerkMaatboekDoc
+        if 'eigendomsakten' in filename:
+            return HeemskerkAktenDoc
+    else:
+        raise ValueError('Cannot determine doctype from filename "{}"'.format(filename))
+
+
+def run(path, doctype_name):
+    processor = CardProcessor()
     filenames = sorted(filename for filename in os.listdir(path) if filename.endswith('.csv'))
     pbar = tqdm.tqdm(filenames)
     for filename in pbar:
         pbar.set_postfix(filename=filename)
+        doctype = filename_to_doctype(filename)
+        if doctype_name and doctype.__name__ != doctype_name:
+            continue
+        processor.register_index(doctype)
         filepath = os.path.join(path, filename)
         with open(filepath) as f:
             csvreader = csv.reader(f)
+            next(csvreader)  # skip first line
             for line in csvreader:
                 if not line:
                     continue
-                if line[0] == 'id':  # First line contains header
+                card = doctype.from_csv_line(line)
+                if card is None:
                     continue
-                card = CardNameIndex.from_csv_line(line)
-                if not card.is_valid():
-                    continue
-                card_processor.add(card)
-    card_processor.flush()
+                processor.add(card)
+    processor.finalize()
 
 
 if __name__ == '__main__':
@@ -80,5 +126,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--path', default='../collectiegroesbeek-data',
                         help='Folder with the CSV data files.')
+    parser.add_argument('--doctype', required=False, help='Limit ingestion to this index only')
     options = parser.parse_args()
-    run(path=options.path)
+    run(path=options.path, doctype_name=options.doctype)
