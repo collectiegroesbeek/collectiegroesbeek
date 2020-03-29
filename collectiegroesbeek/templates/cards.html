@@ -42,24 +42,16 @@
             {% for hit in hits %}
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h4 class="card-title" title="id: {{ hit.id }}, score: {{ hit.meta.score }}">
-                            {{ hit.naam|safe }}
-                            {% if hit.datum %}
-                                | {{ hit.datum|safe }}
-                            {% endif %}
+                        <h4 class="card-title" title="id: {{ hit.id }}, score: {{ hit.score }}">
+                            {{ hit.title|safe }}
                         </h4>
-                        {% if hit.bron %}
-                            <h5 class="text-muted m-b-1">{{ hit.bron|safe }}</h5>
+                        {% if hit.subtitle %}
+                            <h5 class="text-muted m-b-1">{{ hit.subtitle|safe }}</h5>
                         {% endif %}
-                        {% if hit.inhoud %}
-                        <p class="card-text">{{ hit.inhoud|safe }}</p>
-                        {% endif %}
-                        {% if hit.getuigen %}
-                            <p class="card-text">{{ hit.getuigen|safe }}</p>
-                        {% endif %}
-                        {% if hit.bijzonderheden %}
-                            <p class="card-text">{{ hit.bijzonderheden }}</p>
-                        {% endif %}
+                        <h5 class="text-muted m-b-1">{{ hit.index|safe }}</h5>
+                        {% for line in hit.body_lines %}
+                          <p class="card-text">{{ line|safe }}</p>
+                        {% endfor %}
                     </div>
                 </div>
             {% endfor %}

@@ -4,9 +4,11 @@ from typing import Dict, List, Tuple, Iterable, Optional, Set
 import elasticsearch_dsl
 from elasticsearch_dsl import connections, Q, Search
 from elasticsearch_dsl.query import MultiMatch, Query
+from elasticsearch_dsl.response import Hit
 
 from . import app
-from .model import CardNameDoc
+from . import model
+from .model import CardNameDoc, get_all_multimatch_fields, BaseDocument, list_doctypes
 
 
 connections.create_connection('default', hosts=[app.config['elasticsearch_host']])
@@ -14,12 +16,25 @@ connections.create_connection('default', hosts=[app.config['elasticsearch_host']
 
 class Searcher:
 
-    def __init__(self, q, index, start, size):
-        self.keys: Iterable[str] = ['naam', 'datum', 'inhoud', 'getuigen', 'bron', 'bijzonderheden']
+    def __init__(
+            self,
+            q: str,
+            start: int,
+            size: int,
+            doctype_name: Optional[str] = None,
+    ):
         self.q: str = q
-        self.index: str = index
         self.start: int = start
         self.size: int = size
+        if doctype_name is None:
+            index = '*'
+            self.multimatch_fields = get_all_multimatch_fields()
+            doctypes = list_doctypes()
+        else:
+            doctype: BaseDocument = getattr(model, doctype_name)
+            index = doctype.Index.name
+            self.multimatch_fields = doctype.get_multimatch_fields()
+            doctypes = [doctype]
         year_range: Optional[Tuple[int, int]] = self.parse_year_range()
         queries_must = []
         self.keywords: Set[str] = set()
@@ -28,7 +43,12 @@ class Searcher:
             if part:
                 queries_must.append(self.get_query(part))
         query = Q('bool', must=queries_must)
-        self.s = self.get_search(query, year_range)
+        s: Search = Search(index=index, doc_type=doctypes).query(query)
+        s = s[self.start: self.start + self.size]
+        if year_range:
+            s = s.filter('range', **{'jaar': {'gte': year_range[0], 'lte': year_range[1]}})
+        s = s.highlight('*', number_of_fragments=0)
+        self.s = s
 
     def get_query(self, q) -> Query:
         """Turn the user entry q into a Elasticsearch query."""
@@ -77,11 +97,9 @@ class Searcher:
         """Return the query if user wants to search a specific field."""
         return Q('match', **{field: keywords})
 
-    @staticmethod
-    def get_regular_query(keywords: str) -> MultiMatch:
+    def get_regular_query(self, keywords: str) -> MultiMatch:
         """Return the query if user wants to search in all fields."""
-        return MultiMatch('multi_match', query=keywords,
-                          fields=['naam^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron'])
+        return MultiMatch('multi_match', query=keywords, fields=self.multimatch_fields)
 
     def parse_year_range(self) -> Optional[Tuple[int, int]]:
         pattern = re.compile(r'(\d{4})-(\d{4})')
@@ -93,20 +111,11 @@ class Searcher:
         self.q = pattern.sub(repl='', string=self.q).strip()
         return year_start, year_end
 
-    def get_search(self, query, filter_year) -> Search:
-        """Get the final Search object with all queries.."""
-        s: Search = CardNameDoc.search().query(query)
-        s = s[self.start: self.start + self.size]
-        if filter_year:
-            s = s.filter('range', **{'jaar': {'gte': filter_year[0], 'lte': filter_year[1]}})
-        s = s.highlight('*', number_of_fragments=0)
-        return s
-
     def count(self) -> int:
         return self.s.count()
 
-    def get_results(self) -> List[CardNameDoc]:
-        res: List[CardNameDoc] = list(self.s)
+    def get_results(self) -> List[Hit]:
+        res: List[Hit] = list(self.s)
         for hit in res:
             for key, values in hit.meta.highlight.to_dict().items():
                 setattr(hit, key, u' '.join(values))
@@ -126,7 +135,7 @@ def get_page_range(hits_total: int, page: int, cards_per_page: int) -> List[int]
 
 
 def get_names_list(q: str) -> List[dict]:
-    s = elasticsearch_dsl.Search(index='namenindex')
+    s = elasticsearch_dsl.Search(index=CardNameDoc.Index.name)
     s.aggs.bucket(name='op_naam',
                   agg_type='terms',
                   field='naam_keyword',

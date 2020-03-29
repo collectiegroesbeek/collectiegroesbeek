@@ -5,6 +5,7 @@ import flask
 
 from . import app
 from . import controller
+from .model import BaseDocument
 
 
 @app.route('/')
@@ -32,9 +33,10 @@ def search():
         return show_names_list(q)
     cards_per_page = 10
     page = flask.request.args.get('page', default=1, type=int)
-    searcher = controller.Searcher(q.lower(), index='namenindex', start=(page - 1) * cards_per_page,
+    searcher = controller.Searcher(q.lower(), start=(page - 1) * cards_per_page,
                                    size=cards_per_page)
     hits = searcher.get_results()
+    hits_formatted = [format_hit(hit) for hit in hits]
     hits_total = searcher.count()
     page_range = controller.get_page_range(hits_total, page, cards_per_page)
     query_string = f'?q={quote(q)}&page='
@@ -50,12 +52,16 @@ def search():
             url = f'/?q={quote(q_new)}'
             suggestion_urls[suggestion] = url
 
-    return flask.render_template('cards.html', hits=hits,
-                                 hits_total=hits_total,
-                                 q=q,
-                                 query_string=query_string,
-                                 page_range=page_range, page=page,
-                                 suggestions=suggestion_urls)
+    return flask.render_template(
+        'cards.html',
+        hits=hits_formatted,
+        hits_total=hits_total,
+        q=q,
+        query_string=query_string,
+        page_range=page_range,
+        page=page,
+        suggestions=suggestion_urls,
+    )
 
 
 @app.route('/namen')
@@ -68,28 +74,12 @@ def show_names_list(q):
     return flask.render_template('names.html', namen=names_list, hits_total=hits_total)
 
 
-@app.route('/maatboek_heemskerk')
-def search_maatboek_heemskerk():
-    q = flask.request.args.get('q')
-    if not q:
-        return flask.render_template('maatboek_heemskerk.html', hits=[], hits_total=0,
-                                     query_string='', page_range=[], page=1)
-    cards_per_page = 10
-    page = flask.request.args.get('page', default=1, type=int)
-    query = {'multi_match': {'query': q.lower(),
-                             'fields': ['gebied', 'sector', 'eigenaar', 'huurder', 'bron']}}
-    keywords = q.lower().split(' ')
-    r = controller.post_query(query, index='maatboek_heemskerk', start=(page - 1) * cards_per_page,
-                              size=cards_per_page)
-    res, hits_total = controller.handle_results(
-        r,
-        keywords,
-        keys=['gebied', 'sector', 'nummer', 'oppervlakte', 'eigenaar', 'huurder', 'bedrag',
-              'jaar', 'bron', 'opmerkingen']
-    )
-    page_range = controller.get_page_range(hits_total, page, cards_per_page)
-    query_string = u'?q={}&page='.format(q)
-    return flask.render_template('maatboek_heemskerk.html', hits=res,
-                                 hits_total=hits_total,
-                                 query_string=query_string,
-                                 page_range=page_range, page=page)
+def format_hit(doc: BaseDocument) -> dict:
+    return {
+        'id': doc.meta.id,
+        'score': doc.meta.score,
+        'index': doc.get_index_name_pretty(),
+        'title': doc.get_title(),
+        'subtitle': doc.get_subtitle(),
+        'body_lines': doc.get_body_lines(),
+    }

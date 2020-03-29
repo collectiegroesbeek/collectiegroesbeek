@@ -1,29 +1,55 @@
 import re
-from typing import Optional, List
+from typing import Optional, List, Type
 
 from elasticsearch_dsl import Document, Index, Text, Keyword, Short
 
 
 class BaseDocument(Document):
 
+    class Index:
+        name: str = ''
+
+    @classmethod
+    def _matches(cls, hit):
+        # override _matches to match indices in a pattern instead of just ALIAS
+        # hit is the raw dict as returned by elasticsearch
+        return bool(re.search(cls.Index.name + r'_\d{10}', hit['_index']))
+
     @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional['BaseDocument']:
         raise NotImplementedError()
 
+    @staticmethod
+    def get_multimatch_fields() -> List[str]:
+        raise NotImplementedError()
+
+    @staticmethod
+    def get_index_name_pretty() -> str:
+        raise NotImplementedError()
+
+    def get_title(self) -> str:
+        raise NotImplementedError()
+
+    def get_subtitle(self) -> str:
+        raise NotImplementedError()
+
+    def get_body_lines(self) -> List[str]:
+        raise NotImplementedError()
+
 
 class CardNameDoc(BaseDocument):
-    datum = Text(norms=False)
-    naam = Text(norms=False)
-    inhoud = Text(norms=False)
-    bron = Text(norms=False)
-    getuigen = Text(norms=False)
-    bijzonderheden = Text(norms=False)
+    datum: Optional[str] = Text(norms=False)
+    naam: Optional[str] = Text(norms=False)
+    inhoud: Optional[str] = Text(norms=False)
+    bron: Optional[str] = Text(norms=False)
+    getuigen: Optional[str] = Text(norms=False)
+    bijzonderheden: Optional[str] = Text(norms=False)
 
-    naam_keyword = Keyword()
-    jaar = Short()
+    naam_keyword: Optional[str] = Keyword()
+    jaar: Optional[int] = Short()
 
     class Index:
-        name = 'namenindex'
+        name: str = 'namenindex'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -80,25 +106,43 @@ class CardNameDoc(BaseDocument):
             return jaar
         return None
 
+    @staticmethod
+    def get_multimatch_fields() -> List[str]:
+        return ['naam^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron']
+
+    @staticmethod
+    def get_index_name_pretty():
+        return 'Namenindex'
+
+    def get_title(self) -> str:
+        return '{} | {}'.format(self.naam or '', self.datum or '')
+
+    def get_subtitle(self) -> str:
+        return self.bron or ''
+
+    def get_body_lines(self) -> List[str]:
+        out = [self.inhoud, self.getuigen, self.bijzonderheden]
+        return [value for value in out if value]
+
 
 class HeemskerkMaatboekDoc(BaseDocument):
-    locatie = Text(fields={'keyword': Keyword()}, norms=False)
-    sector = Text(fields={'keyword': Keyword()}, norms=False)
+    locatie: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    sector: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
 
-    eigenaar = Text(fields={'keyword': Keyword()}, norms=False)
-    huurder = Text(fields={'keyword': Keyword()}, norms=False)
+    eigenaar: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    huurder: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
 
-    oppervlakte = Keyword()
-    prijs = Keyword()
+    oppervlakte: Optional[str] = Keyword()
+    prijs: Optional[str] = Keyword()
 
-    datum = Text(fields={'keyword': Keyword()}, norms=False)
-    jaar = Short()
+    datum: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    jaar: Optional[int] = Short()
 
-    bron = Text(fields={'keyword': Keyword()}, norms=False)
-    opmerkingen = Text(norms=False)
+    bron: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    opmerkingen: Optional[str] = Text(norms=False)
 
     class Index:
-        name = 'heemskerk_maatboek_index'
+        name: str = 'heemskerk_maatboek_index'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -127,6 +171,37 @@ class HeemskerkMaatboekDoc(BaseDocument):
         res = re.search(r'\d{4}', datum or '')
         return int(res[0]) if res else None
 
+    @staticmethod
+    def get_multimatch_fields() -> List[str]:
+        return ['locatie^3', 'sector^3', 'datum^3', 'eigenaar^2', 'huurder^2', 'oppervlakte', 'bron']
+
+    @staticmethod
+    def get_index_name_pretty():
+        return 'Maatboek Heemskerk'
+
+    def get_title(self) -> str:
+        title = self.sector or self.locatie or self.eigenaar or self.huurder or ''
+        if len(title) > 40:
+            title = title[:40] + '...'
+        if self.datum:
+            title += ' | ' + self.datum
+        return title
+
+    def get_subtitle(self) -> str:
+        return self.bron or ''
+
+    def get_body_lines(self) -> List[str]:
+        out = [
+            self.locatie,
+            self.sector,
+            'eigenaar: ' + self.eigenaar if self.eigenaar else None,
+            'huurder: ' + self.huurder if self.huurder else None,
+            self.oppervlakte,
+            self.prijs,
+            self.opmerkingen,
+        ]
+        return [value for value in out if value]
+
 
 class HeemskerkAktenDoc(BaseDocument):
 
@@ -141,3 +216,23 @@ class HeemskerkAktenDoc(BaseDocument):
 
 def parse_entry(entry: str) -> Optional[str]:
     return entry.strip() or None
+
+
+def list_doctypes() -> List[Type[BaseDocument]]:
+    return [CardNameDoc, HeemskerkMaatboekDoc]
+
+
+# MAPPING = {
+#     doctype.Index.name: doctype
+#     for doctype in list_doctypes()
+# }
+#
+#
+# def index_to_doctype(index_name: str) -> Type[BaseDocument]:
+#     # remove optional timestamp
+#     index_name = re.sub(r'_\d{10}', '', index_name)
+#     return MAPPING[index_name]
+
+
+def get_all_multimatch_fields() -> List[str]:
+    return [field for doctype in list_doctypes() for field in doctype.get_multimatch_fields()]
