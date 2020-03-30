@@ -1,5 +1,5 @@
 import re
-from typing import Dict, List, Tuple, Iterable, Optional, Set
+from typing import Dict, List, Tuple, Iterable, Optional, Set, Type
 
 import elasticsearch_dsl
 from elasticsearch_dsl import connections, Q, Search
@@ -7,8 +7,7 @@ from elasticsearch_dsl.query import MultiMatch, Query
 from elasticsearch_dsl.response import Hit
 
 from . import app
-from . import model
-from .model import CardNameDoc, get_all_multimatch_fields, BaseDocument, list_doctypes
+from .model import CardNameDoc, BaseDocument, list_doctypes
 
 
 connections.create_connection('default', hosts=[app.config['elasticsearch_host']])
@@ -21,20 +20,14 @@ class Searcher:
             q: str,
             start: int,
             size: int,
-            doctype_name: Optional[str] = None,
+            doctypes: List[Type[BaseDocument]],
     ):
         self.q: str = q
         self.start: int = start
         self.size: int = size
-        if doctype_name is None:
-            index = '*'
-            self.multimatch_fields = get_all_multimatch_fields()
+        if doctypes is None:
             doctypes = list_doctypes()
-        else:
-            doctype: BaseDocument = getattr(model, doctype_name)
-            index = doctype.Index.name
-            self.multimatch_fields = doctype.get_multimatch_fields()
-            doctypes = [doctype]
+        self.multimatch_fields = [field for doctype in doctypes for field in doctype.get_multimatch_fields()]
         year_range: Optional[Tuple[int, int]] = self.parse_year_range()
         queries_must = []
         self.keywords: Set[str] = set()
@@ -43,7 +36,8 @@ class Searcher:
             if part:
                 queries_must.append(self.get_query(part))
         query = Q('bool', must=queries_must)
-        s: Search = Search(index=index, doc_type=doctypes).query(query)
+        indices = [doctype.Index.name for doctype in doctypes]
+        s: Search = Search(index=indices, doc_type=doctypes).query(query)
         s = s[self.start: self.start + self.size]
         if year_range:
             s = s.filter('range', **{'jaar': {'gte': year_range[0], 'lte': year_range[1]}})
@@ -114,8 +108,8 @@ class Searcher:
     def count(self) -> int:
         return self.s.count()
 
-    def get_results(self) -> List[Hit]:
-        res: List[Hit] = list(self.s)
+    def get_results(self) -> List[BaseDocument]:
+        res: List[BaseDocument] = list(self.s)
         for hit in res:
             for key, values in hit.meta.highlight.to_dict().items():
                 setattr(hit, key, u' '.join(values))

@@ -1,12 +1,12 @@
 
-{% macro jumbotron_search(show_search) -%}
+{% macro jumbotron_search(show_search, doctypes=[]) -%}
 
 <div class="jumbotron text-center border-bottom">
     <h1 class="display-4">Collectie Groesbeek</h1>
     <p class="lead">Indexen uit het archief van mr. J.W. Groesbeek, oud-rijksarchivaris</p>
 
     {% if show_search == true %}
-    {{ search_input() }}
+    {{ search_input(doctypes=doctypes) }}
     {% elif show_search == false %}
     <p>De zoekfunctie is op dit moment niet online. Probeer het later nog eens of neem contact op met de beheerder.</p>
     {% endif %}
@@ -14,7 +14,7 @@
 
 {%- endmacro %}
 
-{% macro search_input(q='', autofocus=True) %}
+{% macro search_input(q='', autofocus=True, doctypes=[]) %}
   <form action="/zoek" class="text-center">
     <div class="form-group">
       <div class="col-lg-8 offset-lg-2">
@@ -24,6 +24,17 @@
                value="{{ q }}"
         >
       </div>
+    </div>
+    <div class="form-group">
+      {% for name, value, checked in doctypes %}
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="{{ value }}"
+                   {% if checked %}checked{% endif %}>
+            {{ name }}
+          </label>
+        </div>
+      {% endfor %}
     </div>
     <button type="submit" class="btn">Zoek</button>
   </form>

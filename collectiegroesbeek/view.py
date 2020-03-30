@@ -1,11 +1,12 @@
 import re
 from urllib.parse import quote
+from typing import List, Tuple
 
 import flask
 
 from . import app
 from . import controller
-from .model import BaseDocument
+from .model import BaseDocument, list_doctypes
 
 
 @app.route('/')
@@ -24,17 +25,28 @@ def index():
 @app.route('/zoek')
 def search():
     q: str = flask.request.args.get('q')
+    doctypes_selection: List[Type[BaseDocument]] = [
+        doctype for doctype in list_doctypes()
+        if flask.request.args.get(doctype.__name__) == 'on'
+    ]
+    if not doctypes_selection:
+        doctypes_selection = list_doctypes()
+    doctypes: List[Tuple[str, str, bool]] = [
+        (doctype.get_index_name_pretty(), doctype.__name__, doctype in doctypes_selection)
+        for doctype in list_doctypes()
+    ]
     if not q:
         return flask.render_template(
             'search.html',
             show_search=controller.is_elasticsearch_reachable(),
+            doctypes=doctypes,
         )
     elif len(q) <= 2:
         return show_names_list(q)
     cards_per_page = 10
     page = flask.request.args.get('page', default=1, type=int)
     searcher = controller.Searcher(q.lower(), start=(page - 1) * cards_per_page,
-                                   size=cards_per_page)
+                                   size=cards_per_page, doctypes=doctypes_selection)
     hits = searcher.get_results()
     hits_formatted = [format_hit(hit) for hit in hits]
     hits_total = searcher.count()
@@ -61,6 +73,7 @@ def search():
         page_range=page_range,
         page=page,
         suggestions=suggestion_urls,
+        doctypes=doctypes,
     )
 
 

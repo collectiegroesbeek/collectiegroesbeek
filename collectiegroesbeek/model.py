@@ -232,7 +232,3 @@ def list_doctypes() -> List[Type[BaseDocument]]:
 #     # remove optional timestamp
 #     index_name = re.sub(r'_\d{10}', '', index_name)
 #     return MAPPING[index_name]
-
-
-def get_all_multimatch_fields() -> List[str]:
-    return [field for doctype in list_doctypes() for field in doctype.get_multimatch_fields()]
