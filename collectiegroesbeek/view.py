@@ -1,6 +1,6 @@
 import re
 from urllib.parse import quote
-from typing import List, Tuple
+from typing import List, Tuple, Type
 
 import flask
 

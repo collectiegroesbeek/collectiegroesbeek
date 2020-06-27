@@ -69,9 +69,9 @@ class CardNameDoc(BaseDocument):
         if not doc.is_valid():
             return None
         if doc.naam is not None:
-            doc.naam_keyword = cls.create_name_keyword(str(doc.naam))
+            doc.naam_keyword = create_name_keyword(str(doc.naam))
         if doc.datum is not None:
-            doc.jaar = cls.create_year(str(doc.datum))
+            doc.jaar = create_year(str(doc.datum))
         return doc
 
     def is_valid(self):
@@ -84,29 +84,6 @@ class CardNameDoc(BaseDocument):
         return True
 
     @staticmethod
-    def create_name_keyword(naam: str) -> str:
-        """Get a single keyword from the name field."""
-        # todo: fix this one: Albrecht (St), van
-        if len(naam.split(',')) >= 2:
-            return naam.split(',')[0]
-        elif len(naam.split('~')) >= 2:
-            return naam.split('~')[0]
-        elif len(naam.split(' ')) >= 2:
-            return naam.split(' ')[0]
-        else:
-            return naam
-
-    @staticmethod
-    def create_year(datum: str) -> Optional[int]:
-        """Parse a year from the datum field."""
-        if datum is None or len(datum) < 4 or not datum[:4].isdigit():
-            return None
-        jaar = int(datum[:4])
-        if 1000 < jaar < 2000:
-            return jaar
-        return None
-
-    @staticmethod
     def get_multimatch_fields() -> List[str]:
         return ['naam^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron']
 
@@ -116,6 +93,93 @@ class CardNameDoc(BaseDocument):
 
     def get_title(self) -> str:
         return '{} | {}'.format(self.naam or '', self.datum or '')
+
+    def get_subtitle(self) -> str:
+        return self.bron or ''
+
+    def get_body_lines(self) -> List[str]:
+        out = [self.inhoud, self.getuigen, self.bijzonderheden]
+        return [value for value in out if value]
+
+
+def create_name_keyword(naam: str) -> str:
+    """Get a single keyword from the name field."""
+    # todo: fix this one: Albrecht (St), van
+    if len(naam.split(',')) >= 2:
+        return naam.split(',')[0]
+    elif len(naam.split('~')) >= 2:
+        return naam.split('~')[0]
+    elif len(naam.split(' ')) >= 2:
+        return naam.split(' ')[0]
+    else:
+        return naam
+
+
+def create_year(datum: str) -> Optional[int]:
+    """Parse a year from the datum field."""
+    if datum is None or len(datum) < 4 or not datum[:4].isdigit():
+        return None
+    jaar = int(datum[:4])
+    if 1000 < jaar < 2000:
+        return jaar
+    return None
+
+
+class VoornamenDoc(BaseDocument):
+    datum: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    voornaam: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    patroniem: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    inhoud: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    bron: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    getuigen: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+
+    jaar: Optional[int] = Short()
+
+    class Index:
+        name: str = 'voornamenindex'
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    @classmethod
+    def from_csv_line(cls, line: List[str]) -> Optional['VoornamenDoc']:
+        doc = cls()
+        if len(line[0]) == 0:
+            return None
+        doc.meta.id = int(line[0])
+        doc.datum = parse_entry(line[1])
+        doc.voornaam = parse_entry(line[2])
+        doc.patroniem = parse_entry(line[3])
+        doc.inhoud = parse_entry(line[4])
+        doc.bron = parse_entry(line[5])
+        doc.getuigen = parse_entry(line[6])
+        doc.bijzonderheden = parse_entry(line[7])
+        if not doc.is_valid():
+            return None
+        if doc.datum is not None:
+            doc.jaar = create_year(str(doc.datum))
+        return doc
+
+    def is_valid(self):
+        # At the end of a file there may be empty lines, skip them.
+        if getattr(self.meta, 'id', None) is None:
+            return False
+        # Skip row if there is no data except an id. This happens a lot at the end of a file.
+        if self.voornaam is None and self.datum is None:
+            return False
+        return True
+
+    @staticmethod
+    def get_multimatch_fields() -> List[str]:
+        return ['voornaam^3', 'patroniem^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron']
+
+    @staticmethod
+    def get_index_name_pretty():
+        return 'Voornamenindex'
+
+    def get_title(self) -> str:
+        return '{} {} | {}'.format(self.voornaam or '', self.patroniem or '', self.datum or '')
 
     def get_subtitle(self) -> str:
         return self.bron or ''
@@ -219,7 +283,7 @@ def parse_entry(entry: str) -> Optional[str]:
 
 
 def list_doctypes() -> List[Type[BaseDocument]]:
-    return [CardNameDoc, HeemskerkMaatboekDoc]
+    return [CardNameDoc, VoornamenDoc, HeemskerkMaatboekDoc]
 
 
 # MAPPING = {

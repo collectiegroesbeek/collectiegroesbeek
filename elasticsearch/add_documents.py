@@ -10,8 +10,7 @@ from elasticsearch.helpers import bulk
 from elasticsearch_dsl import connections, Index
 import tqdm
 
-from collectiegroesbeek.model import HeemskerkMaatboekDoc, BaseDocument, CardNameDoc, HeemskerkAktenDoc
-
+from collectiegroesbeek.model import HeemskerkMaatboekDoc, BaseDocument, CardNameDoc, HeemskerkAktenDoc, VoornamenDoc
 
 if sys.version_info[0] < 3:
     raise ImportError('Python < 3 is not supported.')
@@ -86,6 +85,8 @@ class IndexMover:
 def filename_to_doctype(filename):
     filename = filename.lower()
     if filename.startswith('coll gr'):
+        if 'voornamen' in filename:
+            return VoornamenDoc
         return CardNameDoc
     if 'heemskerk' in filename:
         if 'maatboek' in filename:
