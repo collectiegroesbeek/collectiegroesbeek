@@ -51,7 +51,10 @@ def search():
     hits_formatted = [format_hit(hit) for hit in hits]
     hits_total = searcher.count()
     page_range = controller.get_page_range(hits_total, page, cards_per_page)
-    query_string = f'?q={quote(q)}&page='
+    query_string = f'?q={quote(q)}'
+    for doctype in doctypes_selection:
+        query_string += '&{}=on'.format(doctype.__name__)
+    query_string += '&page='
 
     if page == 1:
         suggestions = controller.get_suggestions(searcher.keywords)
