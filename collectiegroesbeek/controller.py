@@ -89,7 +89,7 @@ class Searcher:
     @staticmethod
     def get_specific_field_query(field: str, keywords: str) -> Query:
         """Return the query if user wants to search a specific field."""
-        return Q('match', **{field: keywords})
+        return Q('match', **{field: {'query': keywords, 'operator': 'and'}})
 
     def get_regular_query(self, keywords: str) -> MultiMatch:
         """Return the query if user wants to search in all fields."""
