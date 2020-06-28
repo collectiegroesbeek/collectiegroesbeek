@@ -38,12 +38,12 @@ class BaseDocument(Document):
 
 
 class CardNameDoc(BaseDocument):
-    datum: Optional[str] = Text(norms=False)
-    naam: Optional[str] = Text(norms=False)
-    inhoud: Optional[str] = Text(norms=False)
-    bron: Optional[str] = Text(norms=False)
-    getuigen: Optional[str] = Text(norms=False)
-    bijzonderheden: Optional[str] = Text(norms=False)
+    datum: Optional[str] = Text()
+    naam: Optional[str] = Text()
+    inhoud: Optional[str] = Text()
+    bron: Optional[str] = Text()
+    getuigen: Optional[str] = Text()
+    bijzonderheden: Optional[str] = Text()
 
     naam_keyword: Optional[str] = Keyword()
     jaar: Optional[int] = Short()
