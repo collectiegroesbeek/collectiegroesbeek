@@ -196,14 +196,14 @@ class HeemskerkMaatboekDoc(BaseDocument):
     eigenaar: Optional[str] = Text(fields={'keyword': Keyword()})
     huurder: Optional[str] = Text(fields={'keyword': Keyword()})
 
-    oppervlakte: Optional[str] = Keyword()
-    prijs: Optional[str] = Keyword()
+    oppervlakte: Optional[str] = Text(fields={'keyword': Keyword()})
+    prijs: Optional[str] = Text(fields={'keyword': Keyword()})
 
     datum: Optional[str] = Text(fields={'keyword': Keyword()})
     jaar: Optional[int] = Short()
 
     bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    opmerkingen: Optional[str] = Text(norms=False)
+    opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
 
     class Index:
         name: str = 'heemskerk_maatboek_index'
