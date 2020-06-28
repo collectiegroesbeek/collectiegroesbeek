@@ -126,13 +126,13 @@ def create_year(datum: str) -> Optional[int]:
 
 
 class VoornamenDoc(BaseDocument):
-    datum: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    voornaam: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    patroniem: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    inhoud: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    bron: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    getuigen: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    voornaam: Optional[str] = Text(fields={'keyword': Keyword()})
+    patroniem: Optional[str] = Text(fields={'keyword': Keyword()})
+    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
+    bron: Optional[str] = Text(fields={'keyword': Keyword()})
+    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
 
     jaar: Optional[int] = Short()
 
@@ -190,19 +190,19 @@ class VoornamenDoc(BaseDocument):
 
 
 class HeemskerkMaatboekDoc(BaseDocument):
-    locatie: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    sector: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    locatie: Optional[str] = Text(fields={'keyword': Keyword()})
+    sector: Optional[str] = Text(fields={'keyword': Keyword()})
 
-    eigenaar: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    huurder: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    eigenaar: Optional[str] = Text(fields={'keyword': Keyword()})
+    huurder: Optional[str] = Text(fields={'keyword': Keyword()})
 
     oppervlakte: Optional[str] = Keyword()
     prijs: Optional[str] = Keyword()
 
-    datum: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    datum: Optional[str] = Text(fields={'keyword': Keyword()})
     jaar: Optional[int] = Short()
 
-    bron: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    bron: Optional[str] = Text(fields={'keyword': Keyword()})
     opmerkingen: Optional[str] = Text(norms=False)
 
     class Index:
