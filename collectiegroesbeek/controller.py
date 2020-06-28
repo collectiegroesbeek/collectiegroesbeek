@@ -59,7 +59,7 @@ class Searcher:
         elif len(queries) == 1:
             return queries[0]
         else:
-            return Q('bool', should=queries)
+            return Q('bool', must=queries)
 
     def handle_specific_field_request(self, q) -> Tuple[List[Query], List[str]]:
         """Get queries when user specified field by using a colon."""
