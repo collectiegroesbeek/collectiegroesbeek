@@ -245,8 +245,6 @@ class HeemskerkMaatboekDoc(BaseDocument):
 
     def get_title(self) -> str:
         title = self.sector or self.locatie or self.eigenaar or self.huurder or ''
-        if len(title) > 40:
-            title = title[:40] + '...'
         if self.datum:
             title += ' | ' + self.datum
         return title
