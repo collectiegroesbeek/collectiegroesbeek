@@ -111,8 +111,9 @@ class Searcher:
     def get_results(self) -> List[BaseDocument]:
         res: List[BaseDocument] = list(self.s)
         for hit in res:
-            for key, values in hit.meta.highlight.to_dict().items():
-                setattr(hit, key, u' '.join(values))
+            if hasattr(hit.meta, 'highlight'):
+                for key, values in hit.meta.highlight.to_dict().items():
+                    setattr(hit, key, u' '.join(values))
         return res
 
 
