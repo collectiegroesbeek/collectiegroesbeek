@@ -13,7 +13,7 @@ class BaseDocument(Document):
     def _matches(cls, hit):
         # override _matches to match indices in a pattern instead of just ALIAS
         # hit is the raw dict as returned by elasticsearch
-        return bool(re.search(cls.Index.name + r'_\d{10}', hit['_index']))
+        return bool(re.match(cls.Index.name + r'_\d{10}', hit['_index']))
 
     @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional['BaseDocument']:
