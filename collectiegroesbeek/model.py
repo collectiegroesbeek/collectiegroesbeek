@@ -13,7 +13,7 @@ class BaseDocument(Document):
     def _matches(cls, hit):
         # override _matches to match indices in a pattern instead of just ALIAS
         # hit is the raw dict as returned by elasticsearch
-        return bool(re.search(cls.Index.name + r'_\d{10}', hit['_index']))
+        return bool(re.match(cls.Index.name + r'_\d{10}', hit['_index']))
 
     @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional['BaseDocument']:
@@ -38,12 +38,12 @@ class BaseDocument(Document):
 
 
 class CardNameDoc(BaseDocument):
-    datum: Optional[str] = Text(norms=False)
-    naam: Optional[str] = Text(norms=False)
-    inhoud: Optional[str] = Text(norms=False)
-    bron: Optional[str] = Text(norms=False)
-    getuigen: Optional[str] = Text(norms=False)
-    bijzonderheden: Optional[str] = Text(norms=False)
+    datum: Optional[str] = Text()
+    naam: Optional[str] = Text()
+    inhoud: Optional[str] = Text()
+    bron: Optional[str] = Text()
+    getuigen: Optional[str] = Text()
+    bijzonderheden: Optional[str] = Text()
 
     naam_keyword: Optional[str] = Keyword()
     jaar: Optional[int] = Short()
@@ -126,13 +126,13 @@ def create_year(datum: str) -> Optional[int]:
 
 
 class VoornamenDoc(BaseDocument):
-    datum: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    voornaam: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    patroniem: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    inhoud: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    bron: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    getuigen: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    voornaam: Optional[str] = Text(fields={'keyword': Keyword()})
+    patroniem: Optional[str] = Text(fields={'keyword': Keyword()})
+    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
+    bron: Optional[str] = Text(fields={'keyword': Keyword()})
+    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
 
     jaar: Optional[int] = Short()
 
@@ -190,20 +190,20 @@ class VoornamenDoc(BaseDocument):
 
 
 class HeemskerkMaatboekDoc(BaseDocument):
-    locatie: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    sector: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    locatie: Optional[str] = Text(fields={'keyword': Keyword()})
+    sector: Optional[str] = Text(fields={'keyword': Keyword()})
 
-    eigenaar: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    huurder: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    eigenaar: Optional[str] = Text(fields={'keyword': Keyword()})
+    huurder: Optional[str] = Text(fields={'keyword': Keyword()})
 
-    oppervlakte: Optional[str] = Keyword()
-    prijs: Optional[str] = Keyword()
+    oppervlakte: Optional[str] = Text(fields={'keyword': Keyword()})
+    prijs: Optional[str] = Text(fields={'keyword': Keyword()})
 
-    datum: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
+    datum: Optional[str] = Text(fields={'keyword': Keyword()})
     jaar: Optional[int] = Short()
 
-    bron: Optional[str] = Text(fields={'keyword': Keyword()}, norms=False)
-    opmerkingen: Optional[str] = Text(norms=False)
+    bron: Optional[str] = Text(fields={'keyword': Keyword()})
+    opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
 
     class Index:
         name: str = 'heemskerk_maatboek_index'
@@ -245,8 +245,6 @@ class HeemskerkMaatboekDoc(BaseDocument):
 
     def get_title(self) -> str:
         title = self.sector or self.locatie or self.eigenaar or self.huurder or ''
-        if len(title) > 40:
-            title = title[:40] + '...'
         if self.datum:
             title += ' | ' + self.datum
         return title

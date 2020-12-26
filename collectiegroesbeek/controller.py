@@ -59,7 +59,7 @@ class Searcher:
         elif len(queries) == 1:
             return queries[0]
         else:
-            return Q('bool', should=queries)
+            return Q('bool', must=queries)
 
     def handle_specific_field_request(self, q) -> Tuple[List[Query], List[str]]:
         """Get queries when user specified field by using a colon."""
@@ -89,7 +89,7 @@ class Searcher:
     @staticmethod
     def get_specific_field_query(field: str, keywords: str) -> Query:
         """Return the query if user wants to search a specific field."""
-        return Q('match', **{field: keywords})
+        return Q('match', **{field: {'query': keywords, 'operator': 'and'}})
 
     def get_regular_query(self, keywords: str) -> MultiMatch:
         """Return the query if user wants to search in all fields."""
@@ -111,8 +111,9 @@ class Searcher:
     def get_results(self) -> List[BaseDocument]:
         res: List[BaseDocument] = list(self.s)
         for hit in res:
-            for key, values in hit.meta.highlight.to_dict().items():
-                setattr(hit, key, u' '.join(values))
+            if hasattr(hit.meta, 'highlight'):
+                for key, values in hit.meta.highlight.to_dict().items():
+                    setattr(hit, key, u' '.join(values))
         return res
 
 
