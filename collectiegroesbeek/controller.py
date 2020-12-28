@@ -53,6 +53,7 @@ class Searcher:
         else:
             queries.append(self.get_regular_query(q))
             keywords = q.split()
+        keywords = [word.strip('"') for word in keywords]
         self.keywords.update(keywords)
         if len(queries) == 0:
             raise RuntimeError('No query.')
@@ -93,7 +94,26 @@ class Searcher:
 
     def get_regular_query(self, keywords: str) -> MultiMatch:
         """Return the query if user wants to search in all fields."""
-        return MultiMatch('multi_match', query=keywords, fields=self.multimatch_fields)
+        try:
+            return self.get_partial_phrase_match_query(keywords)
+        except ValueError:
+            return MultiMatch('multi_match', query=keywords, fields=self.multimatch_fields)
+
+    def get_partial_phrase_match_query(self, keywords: str) -> Query:
+        matches = re.findall(r'("[^"]*")', keywords)
+        if not matches:
+            raise ValueError('Query doesnt have double double quotes.')
+        queries = [
+            Q('multi_match', type='phrase', query=match.strip('"'), fields=self.multimatch_fields)
+            for match in matches
+        ]
+        leftover = keywords
+        for match in matches:
+            leftover = leftover.replace(match, '')
+        leftover = leftover.strip()
+        if leftover:
+            queries.append(MultiMatch('multi_match', query=leftover, fields=self.multimatch_fields))
+        return Q('bool', must=queries)
 
     def parse_year_range(self) -> Optional[Tuple[int, int]]:
         pattern = re.compile(r'(\d{4})-(\d{4})')
