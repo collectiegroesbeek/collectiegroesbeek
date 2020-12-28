@@ -52,8 +52,7 @@ def search():
     hits_total = searcher.count()
     page_range = controller.get_page_range(hits_total, page, cards_per_page)
     query_string = f'?q={quote(q)}'
-    for doctype in doctypes_selection:
-        query_string += '&{}=on'.format(doctype.__name__)
+    query_string = add_selected_doctypes_to_query_string(query_string, doctypes_selection)
     query_string += '&page='
 
     if page == 1:
@@ -65,6 +64,7 @@ def search():
         for suggestion in _suggs:
             q_new = re.sub(r'\b{}\b'.format(token), f'{token} {suggestion}', q)
             url = f'/?q={quote(q_new)}'
+            url = add_selected_doctypes_to_query_string(url, doctypes_selection)
             suggestion_urls[suggestion] = url
 
     return flask.render_template(
@@ -78,6 +78,15 @@ def search():
         suggestions=suggestion_urls,
         doctypes=doctypes,
     )
+
+
+def add_selected_doctypes_to_query_string(
+        query_string: str,
+        doctypes_selection: List[Type[BaseDocument]]
+) -> str:
+    for doctype in doctypes_selection:
+        query_string += '&{}=on'.format(doctype.__name__)
+    return query_string
 
 
 @app.route('/namen')
