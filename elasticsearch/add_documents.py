@@ -1,16 +1,23 @@
-import os
-import logging
-import sys
-import csv
 import argparse
+import csv
+import logging
+import os
+import sys
 import time
-from typing import Type, Dict, Optional
+from typing import Dict, Optional, Type
 
 from elasticsearch.helpers import bulk
-from elasticsearch_dsl import connections, Index
+from elasticsearch_dsl import Index, connections
 import tqdm
 
-from collectiegroesbeek.model import HeemskerkMaatboekDoc, BaseDocument, CardNameDoc, HeemskerkAktenDoc, VoornamenDoc
+from collectiegroesbeek.model import (
+    BaseDocument,
+    CardNameDoc,
+    HeemskerkAktenDoc,
+    HeemskerkMaatboekDoc,
+    JaartallenDoc,
+    VoornamenDoc,
+)
 
 if sys.version_info[0] < 3:
     raise ImportError('Python < 3 is not supported.')
@@ -87,6 +94,8 @@ def filename_to_doctype(filename):
     if filename.startswith('coll gr'):
         if 'voornamen' in filename:
             return VoornamenDoc
+        elif 'jaartallen' in filename:
+            return JaartallenDoc
         return CardNameDoc
     if 'heemskerk' in filename:
         if 'maatboek' in filename:
@@ -97,7 +106,7 @@ def filename_to_doctype(filename):
         raise ValueError('Cannot determine doctype from filename "{}"'.format(filename))
 
 
-def run(path, doctype_name):
+def run(path, doctype_name: Optional[str]):
     processor = CardProcessor()
     filenames = sorted(filename for filename in os.listdir(path) if filename.endswith('.csv'))
     pbar = tqdm.tqdm(filenames)

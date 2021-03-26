@@ -92,7 +92,7 @@ class Searcher:
         """Return the query if user wants to search a specific field."""
         return Q('match', **{field: {'query': keywords, 'operator': 'and'}})
 
-    def get_regular_query(self, keywords: str) -> MultiMatch:
+    def get_regular_query(self, keywords: str) -> Query:
         """Return the query if user wants to search in all fields."""
         try:
             return self.get_partial_phrase_match_query(keywords)

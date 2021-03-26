@@ -189,6 +189,66 @@ class VoornamenDoc(BaseDocument):
         return [value for value in out if value]
 
 
+class JaartallenDoc(BaseDocument):
+    datum: Optional[str] = Text()
+    inhoud: Optional[str] = Text()
+    bron: Optional[str] = Text()
+    getuigen: Optional[str] = Text()
+    bijzonderheden: Optional[str] = Text()
+
+    jaar: Optional[int] = Short()
+
+    class Index:
+        name: str = 'jaartallenindex'
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    @classmethod
+    def from_csv_line(cls, line: List[str]) -> Optional['JaartallenDoc']:
+        doc = cls()
+        if len(line[0]) == 0:
+            return None
+        doc.meta.id = int(line[0])
+        doc.datum = parse_entry(line[1])
+        doc.inhoud = parse_entry(line[2])
+        doc.bron = parse_entry(line[3])
+        doc.getuigen = parse_entry(line[4])
+        doc.bijzonderheden = parse_entry(line[5])
+        if not doc.is_valid():
+            return None
+        if doc.datum is not None:
+            doc.jaar = create_year(str(doc.datum))
+        return doc
+
+    def is_valid(self):
+        # At the end of a file there may be empty lines, skip them.
+        if getattr(self.meta, 'id', None) is None:
+            return False
+        # Skip row if there is no data except an id. This happens a lot at the end of a file.
+        if self.datum is None:
+            return False
+        return True
+
+    @staticmethod
+    def get_multimatch_fields() -> List[str]:
+        return ['datum^3', 'inhoud^2', 'getuigen', 'bron']
+
+    @staticmethod
+    def get_index_name_pretty():
+        return 'Jaartallenindex'
+
+    def get_title(self) -> str:
+        return '{}'.format(self.datum or '')
+
+    def get_subtitle(self) -> str:
+        return self.bron or ''
+
+    def get_body_lines(self) -> List[str]:
+        out = [self.inhoud, self.getuigen, self.bijzonderheden]
+        return [value for value in out if value]
+
+
 class HeemskerkMaatboekDoc(BaseDocument):
     locatie: Optional[str] = Text(fields={'keyword': Keyword()})
     sector: Optional[str] = Text(fields={'keyword': Keyword()})
@@ -281,7 +341,7 @@ def parse_entry(entry: str) -> Optional[str]:
 
 
 def list_doctypes() -> List[Type[BaseDocument]]:
-    return [CardNameDoc, VoornamenDoc, HeemskerkMaatboekDoc]
+    return [CardNameDoc, VoornamenDoc, JaartallenDoc, HeemskerkMaatboekDoc]
 
 
 # MAPPING = {
