@@ -190,9 +190,10 @@ class VoornamenDoc(BaseDocument):
 
 
 class JaartallenDoc(BaseDocument):
-    datum: Optional[str] = Text()
+    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    locatie: Optional[str] = Text(fields={'keyword': Keyword()})
     inhoud: Optional[str] = Text()
-    bron: Optional[str] = Text()
+    bron: Optional[str] = Text(fields={'keyword': Keyword()})
     getuigen: Optional[str] = Text()
     bijzonderheden: Optional[str] = Text()
 
@@ -211,10 +212,11 @@ class JaartallenDoc(BaseDocument):
             return None
         doc.meta.id = int(line[0])
         doc.datum = parse_entry(line[1])
-        doc.inhoud = parse_entry(line[2])
-        doc.bron = parse_entry(line[3])
-        doc.getuigen = parse_entry(line[4])
-        doc.bijzonderheden = parse_entry(line[5])
+        doc.locatie = parse_entry(line[2])
+        doc.inhoud = parse_entry(line[3])
+        doc.bron = parse_entry(line[4])
+        doc.getuigen = parse_entry(line[5])
+        doc.bijzonderheden = parse_entry(line[6])
         if not doc.is_valid():
             return None
         if doc.datum is not None:
@@ -232,14 +234,14 @@ class JaartallenDoc(BaseDocument):
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['datum^3', 'inhoud^2', 'getuigen', 'bron']
+        return ['datum^3', 'locatie^3', 'inhoud^2', 'getuigen', 'bron']
 
     @staticmethod
     def get_index_name_pretty():
         return 'Jaartallenindex'
 
     def get_title(self) -> str:
-        return '{}'.format(self.datum or '')
+        return '{} | {}'.format(self.datum or '', self.locatie or '')
 
     def get_subtitle(self) -> str:
         return self.bron or ''
@@ -336,12 +338,95 @@ class HeemskerkAktenDoc(BaseDocument):
     # TODO: finish this stub
 
 
+class BaseTransportregisterDoc(BaseDocument):
+    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    inhoud: Optional[str] = Text()
+    bron: Optional[str] = Text(fields={'keyword': Keyword()})
+    getuigen: Optional[str] = Text()
+    bijzonderheden: Optional[str] = Text()
+
+    jaar: Optional[int] = Short()
+
+    @classmethod
+    def from_csv_line(cls, line: List[str]) -> Optional['BaseTransportregisterDoc']:
+        doc = cls()
+        if len(line[0]) == 0:
+            return None
+        doc.meta.id = int(line[0])
+        doc.datum = parse_entry(line[1])
+        doc.inhoud = parse_entry(line[2])
+        doc.bron = parse_entry(line[3])
+        doc.getuigen = parse_entry(line[4])
+        doc.bijzonderheden = parse_entry(line[5])
+        if not doc.is_valid():
+            return None
+        if doc.datum is not None:
+            doc.jaar = create_year(str(doc.datum))
+        return doc
+
+    def is_valid(self):
+        # At the end of a file there may be empty lines, skip them.
+        if getattr(self.meta, 'id', None) is None:
+            return False
+        # Skip row if there is no data except an id. This happens a lot at the end of a file.
+        if self.datum is None:
+            return False
+        return True
+
+    @staticmethod
+    def get_multimatch_fields() -> List[str]:
+        return ['datum^3', 'inhoud^2', 'getuigen', 'bron']
+
+    def get_title(self) -> str:
+        return '{}'.format(self.datum or '')
+
+    def get_subtitle(self) -> str:
+        return self.bron or ''
+
+    def get_body_lines(self) -> List[str]:
+        out = [self.inhoud, self.getuigen, self.bijzonderheden]
+        return [value for value in out if value]
+
+
+class TransportRegisterEgmondDoc(BaseTransportregisterDoc):
+
+    class Index:
+        name: str = 'transportregister_egmond'
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    @staticmethod
+    def get_index_name_pretty():
+        return 'Transportregister Egmond'
+
+
+class TransportRegisterBloemendaalDoc(BaseTransportregisterDoc):
+
+    class Index:
+        name: str = 'transportregister_bloemendaal'
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    @staticmethod
+    def get_index_name_pretty():
+        return 'Transportregister Bloemendaal'
+
+
 def parse_entry(entry: str) -> Optional[str]:
     return entry.strip() or None
 
 
 def list_doctypes() -> List[Type[BaseDocument]]:
-    return [CardNameDoc, VoornamenDoc, JaartallenDoc, HeemskerkMaatboekDoc]
+    return [
+        CardNameDoc,
+        VoornamenDoc,
+        JaartallenDoc,
+        HeemskerkMaatboekDoc,
+        TransportRegisterEgmondDoc,
+        TransportRegisterBloemendaalDoc,
+    ]
 
 
 # MAPPING = {
