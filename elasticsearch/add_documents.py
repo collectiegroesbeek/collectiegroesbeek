@@ -17,6 +17,8 @@ from collectiegroesbeek.model import (
     HeemskerkMaatboekDoc,
     JaartallenDoc,
     VoornamenDoc,
+    TransportRegisterEgmondDoc,
+    TransportRegisterBloemendaalDoc,
 )
 
 if sys.version_info[0] < 3:
@@ -91,6 +93,10 @@ class IndexMover:
 
 def filename_to_doctype(filename):
     filename = filename.lower()
+    if filename.startswith('coll gr 6 egmond transportregister'):
+        return TransportRegisterEgmondDoc
+    elif filename.startswith('coll gr 7 bloemendaal transportregister'):
+        return TransportRegisterBloemendaalDoc
     if filename.startswith('coll gr'):
         if 'voornamen' in filename:
             return VoornamenDoc
