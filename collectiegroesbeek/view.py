@@ -35,13 +35,13 @@ def search():
         (doctype.get_index_name_pretty(), doctype.__name__, doctype in doctypes_selection)
         for doctype in list_doctypes()
     ]
-    if not q:
+    if q is None:
         return flask.render_template(
             'search.html',
             show_search=controller.is_elasticsearch_reachable(),
             doctypes=doctypes,
         )
-    elif len(q) <= 2:
+    if 0 < len(q) <= 2:
         return show_names_list(q)
     cards_per_page = 10
     page = flask.request.args.get('page', default=1, type=int)
