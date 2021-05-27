@@ -1,0 +1,22 @@
+
+{% extends "layout.html" %}
+{% import 'macros.html' as macros %}
+
+{% block title %}{{ hit.title|safe }}{% endblock %}
+
+
+{% block content %}
+
+  <div class="row">
+  <div class="col-md-8 offset-md-2">
+
+    <div class="row">
+        <div class="col">
+          {{ macros.card(hit, fullscreen_link=False) }}
+        </div>
+    </div>
+
+  </div>
+  </div>
+
+{% endblock %}

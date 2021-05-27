@@ -6,6 +6,7 @@ import flask
 
 from . import app
 from . import controller
+from .controller import get_doc
 from .model import BaseDocument, list_doctypes
 
 
@@ -108,3 +109,10 @@ def format_hit(doc: BaseDocument) -> dict:
         'subtitle': doc.get_subtitle(),
         'body_lines': doc.get_body_lines(),
     }
+
+
+@app.route('/doc/<doc_id>')
+def get_product(doc_id):
+    doc = get_doc(int(doc_id))
+    doc_formatted = format_hit(doc)
+    return flask.render_template('card.html', hit=doc_formatted)

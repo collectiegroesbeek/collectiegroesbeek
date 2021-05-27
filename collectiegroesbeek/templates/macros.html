@@ -39,3 +39,30 @@
     <button type="submit" class="btn">Zoek</button>
   </form>
 {% endmacro %}
+
+
+{% macro card(hit, fullscreen_link=True) %}
+  <div class="card mb-5">
+    {% if fullscreen_link %}
+      <a href="{{ url_for('get_product', doc_id=hit.id) }}" class="btn" style="position:absolute; top:0.5rem; right:0;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: text-bottom;">
+          <path fill-rule="evenodd" d="M4.75 4.5a.25.25 0 00-.25.25v3.5a.75.75 0 01-1.5 0v-3.5C3 3.784 3.784 3 4.75 3h3.5a.75.75 0 010 1.5h-3.5zM15 3.75a.75.75 0 01.75-.75h3.5c.966 0 1.75.784 1.75 1.75v3.5a.75.75 0 01-1.5 0v-3.5a.25.25 0 00-.25-.25h-3.5a.75.75 0 01-.75-.75zM3.75 15a.75.75 0 01.75.75v3.5c0 .138.112.25.25.25h3.5a.75.75 0 010 1.5h-3.5A1.75 1.75 0 013 19.25v-3.5a.75.75 0 01.75-.75zm16.5 0a.75.75 0 01.75.75v3.5A1.75 1.75 0 0119.25 21h-3.5a.75.75 0 010-1.5h3.5a.25.25 0 00.25-.25v-3.5a.75.75 0 01.75-.75z">
+          </path>
+        </svg>
+      </a>
+    {% endif %}
+
+    <div class="card-body">
+      <h4 class="card-title" title="id: {{ hit.id }}, score: {{ hit.score }}">
+        {{ hit.title|safe }}
+      </h4>
+      {% if hit.subtitle %}
+        <h5 class="text-muted m-b-1">{{ hit.subtitle|safe }}</h5>
+      {% endif %}
+      <h5 class="text-muted m-b-1">{{ hit.index|safe }}</h5>
+      {% for line in hit.body_lines %}
+        <p class="card-text">{{ line|safe }}</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endmacro %}

@@ -186,3 +186,9 @@ def get_suggestions(keywords: Iterable[str]):
                 if suggestion not in tokens_set:
                     suggestions.setdefault(token, set()).add(suggestion)
     return {k: sorted(v) for k, v in suggestions.items()}
+
+
+def get_doc(doc_id: int) -> BaseDocument:
+    s = Search(index='*', doc_type=list_doctypes())
+    s = s.filter('ids', values=[doc_id])
+    return list(s)[0]

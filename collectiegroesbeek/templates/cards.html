@@ -40,20 +40,7 @@
     <div class="row">
         <div class="col">
             {% for hit in hits %}
-                <div class="card mb-5">
-                    <div class="card-body">
-                        <h4 class="card-title" title="id: {{ hit.id }}, score: {{ hit.score }}">
-                            {{ hit.title|safe }}
-                        </h4>
-                        {% if hit.subtitle %}
-                            <h5 class="text-muted m-b-1">{{ hit.subtitle|safe }}</h5>
-                        {% endif %}
-                        <h5 class="text-muted m-b-1">{{ hit.index|safe }}</h5>
-                        {% for line in hit.body_lines %}
-                          <p class="card-text">{{ line|safe }}</p>
-                        {% endfor %}
-                    </div>
-                </div>
+                {{ macros.card(hit) }}
             {% endfor %}
         </div>
     </div>
