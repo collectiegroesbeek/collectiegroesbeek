@@ -21,7 +21,7 @@
         {% for naam in namen %}
         <div class="card mb-3">
             <div class="card-body">
-            <a href="/?q={{ naam['key'] }}">{{ naam['key'].title() }}</a>
+            <a href="/zoek?q={{ naam['key'] }}">{{ naam['key'].title() }}</a>
             &nbsp; ({{ naam['doc_count'] }})
         </div>
         </div>

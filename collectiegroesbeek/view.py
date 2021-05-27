@@ -1,4 +1,5 @@
 import re
+import string
 from urllib.parse import quote
 from typing import List, Tuple, Type
 
@@ -90,8 +91,11 @@ def add_selected_doctypes_to_query_string(
     return query_string
 
 
-@app.route('/namen')
-def show_names_list(q):
+@app.route('/namen/')
+@app.route('/namen/<q>')
+def show_names_list(q=''):
+    if not q:
+        return flask.render_template('names_letters.html', letters=string.ascii_lowercase[:27], hits_total=None)
     for letter in q.lower():
         if not letter.isalpha():
             return index()
@@ -111,8 +115,8 @@ def format_hit(doc: BaseDocument) -> dict:
     }
 
 
-@app.route('/doc/<doc_id>')
+@app.route('/doc/<int:doc_id>')
 def get_product(doc_id):
-    doc = get_doc(int(doc_id))
+    doc = get_doc(doc_id)
     doc_formatted = format_hit(doc)
     return flask.render_template('card.html', hit=doc_formatted)

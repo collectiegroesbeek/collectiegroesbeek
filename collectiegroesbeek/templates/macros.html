@@ -36,7 +36,10 @@
         </div>
       {% endfor %}
     </div>
-    <button type="submit" class="btn">Zoek</button>
+    <button type="submit" class="btn btn-secondary mr-3">Zoek</button>
+    <a href="{{ url_for('show_names_list') }}">
+      <button type="button" class="btn">Namenlijst</button>
+    </a>
   </form>
 {% endmacro %}
 

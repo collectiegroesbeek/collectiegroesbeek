@@ -150,7 +150,7 @@ def get_page_range(hits_total: int, page: int, cards_per_page: int) -> List[int]
 
 
 def get_names_list(q: str) -> List[dict]:
-    s = elasticsearch_dsl.Search(index=CardNameDoc.Index.name)
+    s = elasticsearch_dsl.Search()
     s.aggs.bucket(name='op_naam',
                   agg_type='terms',
                   field='naam_keyword',
