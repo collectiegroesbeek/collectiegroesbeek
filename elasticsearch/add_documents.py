@@ -13,12 +13,13 @@ import tqdm
 from collectiegroesbeek.model import (
     BaseDocument,
     CardNameDoc,
-    HeemskerkAktenDoc,
-    HeemskerkMaatboekDoc,
     JaartallenDoc,
-    VoornamenDoc,
-    TransportRegisterEgmondDoc,
+    MaatboekBroekInWaterlandDoc,
+    MaatboekHeemskerkDoc,
+    MaatboekHeemstedeDoc,
     TransportRegisterBloemendaalDoc,
+    TransportRegisterEgmondDoc,
+    VoornamenDoc,
 )
 
 if sys.version_info[0] < 3:
@@ -97,17 +98,18 @@ def filename_to_doctype(filename):
         return TransportRegisterEgmondDoc
     elif filename.startswith('coll gr 7 bloemendaal transportregister'):
         return TransportRegisterBloemendaalDoc
+    elif filename.startswith('heemskerk maatboek'):
+        return MaatboekHeemskerkDoc
+    elif filename.startswith('maatboek heemstede'):
+        return MaatboekHeemstedeDoc
+    elif filename.startswith('maatboek broek in waterland'):
+        return MaatboekBroekInWaterlandDoc
     if filename.startswith('coll gr'):
         if 'voornamen' in filename:
             return VoornamenDoc
         elif 'jaartallen' in filename:
             return JaartallenDoc
         return CardNameDoc
-    if 'heemskerk' in filename:
-        if 'maatboek' in filename:
-            return HeemskerkMaatboekDoc
-        if 'eigendomsakten' in filename:
-            return HeemskerkAktenDoc
     else:
         raise ValueError('Cannot determine doctype from filename "{}"'.format(filename))
 
