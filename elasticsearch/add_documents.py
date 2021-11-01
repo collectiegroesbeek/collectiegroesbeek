@@ -98,7 +98,7 @@ def filename_to_doctype(filename):
         return TransportRegisterEgmondDoc
     elif filename.startswith('coll gr 7 bloemendaal transportregister'):
         return TransportRegisterBloemendaalDoc
-    elif filename.startswith('heemskerk maatboek'):
+    elif filename.startswith(('heemskerk maatboek', 'maatboek heemskerk')):
         return MaatboekHeemskerkDoc
     elif filename.startswith('maatboek heemstede'):
         return MaatboekHeemstedeDoc
