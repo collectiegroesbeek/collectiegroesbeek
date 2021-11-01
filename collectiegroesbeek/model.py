@@ -251,7 +251,7 @@ class JaartallenDoc(BaseDocument):
         return [value for value in out if value]
 
 
-class HeemskerkMaatboekDoc(BaseDocument):
+class MaatboekHeemskerkDoc(BaseDocument):
     locatie: Optional[str] = Text(fields={'keyword': Keyword()})
     sector: Optional[str] = Text(fields={'keyword': Keyword()})
 
@@ -274,7 +274,7 @@ class HeemskerkMaatboekDoc(BaseDocument):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['HeemskerkMaatboekDoc']:
+    def from_csv_line(cls, line: List[str]) -> Optional['MaatboekHeemskerkDoc']:
         # Return early, we'll discard it later using `is_valid`.
         if not parse_entry(line[0]) or not any(parse_entry(value) for value in line[1:]):
             return None
@@ -327,15 +327,136 @@ class HeemskerkMaatboekDoc(BaseDocument):
         return [value for value in out if value]
 
 
-class HeemskerkAktenDoc(BaseDocument):
+class MaatboekHeemstedeDoc(BaseDocument):
+    ligging: Optional[str] = Text(fields={'keyword': Keyword()})
+    eigenaar: Optional[str] = Text(fields={'keyword': Keyword()})
+    huurder: Optional[str] = Text(fields={'keyword': Keyword()})
+    prijs: Optional[str] = Text(fields={'keyword': Keyword()})
+    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    jaar: Optional[int] = Short()
+    bron: Optional[str] = Text(fields={'keyword': Keyword()})
+    opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
 
     class Index:
-        name = 'heemskerk_akten_index'
+        name: str = 'maatboek_heemstede_index'
 
         def __new__(cls):
             return Index(name=cls.name)
 
-    # TODO: finish this stub
+    @classmethod
+    def from_csv_line(cls, line: List[str]) -> Optional['MaatboekHeemstedeDoc']:
+        # Return early, we'll discard it later using `is_valid`.
+        if not any(parse_entry(value) for value in line[1:]):
+            return None
+        doc = cls()
+        doc.meta.id = line[0]
+        doc.ligging = parse_entry(line[1])
+        doc.eigenaar = parse_entry(line[2])
+        doc.huurder = parse_entry(line[3])
+        doc.prijs = parse_entry(line[4])
+        doc.datum = parse_entry(line[5])
+        doc.bron = parse_entry(line[6])
+        doc.opmerkingen = parse_entry(line[7])
+        doc.jaar = cls.parse_year(doc.datum)
+        return doc
+
+    @staticmethod
+    def parse_year(datum: Optional[str]) -> Optional[int]:
+        res = re.search(r'\d{4}', datum or '')
+        return int(res[0]) if res else None
+
+    @staticmethod
+    def get_multimatch_fields() -> List[str]:
+        return ['liggng^3', 'datum^3', 'eigenaar^2', 'huurder^2', 'bron']
+
+    @staticmethod
+    def get_index_name_pretty():
+        return 'Maatboek Heemstede'
+
+    def get_title(self) -> str:
+        title = self.ligging or self.eigenaar or self.huurder or ''
+        if self.datum:
+            title += ' | ' + self.datum
+        return title
+
+    def get_subtitle(self) -> str:
+        return self.bron or ''
+
+    def get_body_lines(self) -> List[str]:
+        out = [
+            self.ligging,
+            'eigenaar: ' + self.eigenaar if self.eigenaar else None,
+            'huurder: ' + self.huurder if self.huurder else None,
+            self.prijs,
+            self.opmerkingen,
+        ]
+        return [value for value in out if value]
+
+
+class MaatboekBroekInWaterlandDoc(BaseDocument):
+    sector: Optional[str] = Text(fields={'keyword': Keyword()})
+    ligging: Optional[str] = Text(fields={'keyword': Keyword()})
+    oppervlakte: Optional[str] = Text(fields={'keyword': Keyword()})
+    eigenaar: Optional[str] = Text(fields={'keyword': Keyword()})
+    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    jaar: Optional[int] = Short()
+    bron: Optional[str] = Text(fields={'keyword': Keyword()})
+    opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
+
+    class Index:
+        name: str = 'maatboek_broek_in_waterland_index'
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    @classmethod
+    def from_csv_line(cls, line: List[str]) -> Optional['MaatboekBroekInWaterlandDoc']:
+        # Return early, we'll discard it later using `is_valid`.
+        if not any(parse_entry(value) for value in line[1:]):
+            return None
+        doc = cls()
+        doc.meta.id = line[0]
+        doc.sector = parse_entry(line[1])
+        doc.ligging = parse_entry(line[2])
+        doc.oppervlakte = parse_entry(line[3])
+        doc.eigenaar = parse_entry(line[4])
+        doc.datum = parse_entry(line[5])
+        doc.bron = parse_entry(line[6])
+        doc.opmerkingen = parse_entry(line[7])
+        doc.jaar = cls.parse_year(doc.datum)
+        return doc
+
+    @staticmethod
+    def parse_year(datum: Optional[str]) -> Optional[int]:
+        res = re.search(r'\d{4}', datum or '')
+        return int(res[0]) if res else None
+
+    @staticmethod
+    def get_multimatch_fields() -> List[str]:
+        return ['sector^3', 'ligging^3', 'datum^3', 'eigenaar^2', 'oppervlakte', 'bron']
+
+    @staticmethod
+    def get_index_name_pretty():
+        return 'Maatboek Broek in Waterland'
+
+    def get_title(self) -> str:
+        title = self.sector or self.ligging or self.eigenaar or ''
+        if self.datum:
+            title += ' | ' + self.datum
+        return title
+
+    def get_subtitle(self) -> str:
+        return self.bron or ''
+
+    def get_body_lines(self) -> List[str]:
+        out = [
+            self.sector,
+            self.ligging,
+            self.oppervlakte,
+            'eigenaar: ' + self.eigenaar if self.eigenaar else None,
+            self.opmerkingen,
+        ]
+        return [value for value in out if value]
 
 
 class BaseTransportregisterDoc(BaseDocument):
@@ -423,7 +544,9 @@ def list_doctypes() -> List[Type[BaseDocument]]:
         CardNameDoc,
         VoornamenDoc,
         JaartallenDoc,
-        HeemskerkMaatboekDoc,
+        MaatboekHeemskerkDoc,
+        MaatboekHeemstedeDoc,
+        MaatboekBroekInWaterlandDoc,
         TransportRegisterEgmondDoc,
         TransportRegisterBloemendaalDoc,
     ]
