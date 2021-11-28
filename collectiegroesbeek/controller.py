@@ -100,9 +100,9 @@ class Searcher:
             return MultiMatch('multi_match', query=keywords, fields=self.multimatch_fields)
 
     def get_partial_phrase_match_query(self, keywords: str) -> Query:
-        matches = re.findall(r'("[^"]*")', keywords)
+        matches = re.findall(r'("[^"]*"|\d+-\d+(?:-\d+)?)', keywords)
         if not matches:
-            raise ValueError('Query doesnt have double double quotes.')
+            raise ValueError('no phrases')
         queries = [
             Q('multi_match', type='phrase', query=match.strip('"'), fields=self.multimatch_fields)
             for match in matches
