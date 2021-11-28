@@ -89,7 +89,7 @@ class CardNameDoc(BaseDocument):
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Namenindex'
+        return 'Achternamenindex'
 
     def get_title(self) -> str:
         return '{} | {}'.format(self.naam or '', self.datum or '')
