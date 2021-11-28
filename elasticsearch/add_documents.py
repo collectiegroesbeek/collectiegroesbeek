@@ -13,10 +13,12 @@ import tqdm
 from collectiegroesbeek.model import (
     BaseDocument,
     CardNameDoc,
+    EigendomsaktenHeemskerk,
     JaartallenDoc,
     MaatboekBroekInWaterlandDoc,
     MaatboekHeemskerkDoc,
     MaatboekHeemstedeDoc,
+    MaatboekSuderwoude,
     TransportRegisterBloemendaalDoc,
     TransportRegisterEgmondDoc,
     VoornamenDoc,
@@ -104,6 +106,10 @@ def filename_to_doctype(filename):
         return MaatboekHeemstedeDoc
     elif filename.startswith('maatboek broek in waterland'):
         return MaatboekBroekInWaterlandDoc
+    elif filename.startswith('maatboek suderwoude'):
+        return MaatboekSuderwoude
+    elif filename.startswith('heemskerk eigendomsakten'):
+        return EigendomsaktenHeemskerk
     if filename.startswith('coll gr'):
         if 'voornamen' in filename:
             return VoornamenDoc
