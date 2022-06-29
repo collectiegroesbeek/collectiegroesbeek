@@ -160,6 +160,13 @@ server {
 }
 ```
 
+To enable the Nginx server block configuration you’ve just created, link the file to the sites-enabled directory:
+
+```
+sudo ln -s /etc/nginx/sites-available/collectiegroesbeek /etc/nginx/sites-enabled
+```
+
+
 In the following section we will use Certbot to add the HTTPS parts to this config file.
 
 ### HTTPS
