@@ -28,7 +28,7 @@ if sys.version_info[0] < 3:
     raise ImportError('Python < 3 is not supported.')
 
 
-connections.create_connection(hosts=['localhost:9203'])
+connections.create_connection(hosts=['localhost:9200'])
 
 
 def logging_setup():
