@@ -24,26 +24,30 @@ but note that the Elasticsearch backend is currently not always enabled.
 The first part of the installation guide sets up the Elasticsearch system and the data.
 This is needed for both development and production.
 
-### Elasticsearch with Docker
+### Setting up Elasticsearch
 Elasticsearch is a database system. We let it ingest our data and make it available through
 a REST API.
 
-We use Docker to run Elasticsearch in. First install Docker if not already done.
-You can also do this on Windows if you're developing the Flask website part.
+For info on how to install Elasticsearch on your system, please refer to https://www.elastic.co/.
 
-There is a docker-compose file that you can use to setup Elasticsearch.
+### Security
+Newer versions of ELasticsearch have some security features by default. Since we are running only 
+a single node,  without any critical data, we'll make it easier by disabling some of those.
 
-`docker-compose up`
+`sudo nano /etc/elasticsearch/elasticsearch.yml`
 
-We use a Docker image provided by Elasticsearch, create a new volume `esdata` where the
-data will be stored, so it can be reused by multiple containers.
+Here disable HTTP encryption by setting `xpack.security.http.ssh` `enabled` to false.
 
-You can see that it's working by doing a HTTP GET request with for example `curl`
-on `http://localhost:9200`.
+Next, add the following to allow anonymous access to everything:
 
-### Restarting the Elasticsearch Docker image
-You can check if the image is available with `docker ps -a`. Start it with
-`docker start elasticsearch`.
+```
+xpack.security.authc:
+  anonymous:
+    username: anonymous_user
+    roles: superuser
+    authz_exception: false
+```
+
 
 ### Data ingestion
 
@@ -63,36 +67,63 @@ At this point you can run the Flask debug server to start developing. The follow
 for a production environment, we're setting up a webserver. Note that these instructions
 are for a Ubuntu environment.
 
+### Users and permission
+I'm assuming you created a non-root user for yourself that you are using. Nginx uses a `www-data`
+user and group.
+
+Add your user to the `www-data` group:
+
+`sudo adduser <username> www-data`
+
+You may have to give permission on your user folder to execute for other users, such that
+Nginx can see what files exist there:
+
+`sudo chmod o+x /home/<username>`
+
 ### Python
 
 Make sure your system has Python 3. In this guide I'm using `pip`, but that may be `pip3` on your
 system.
 
-### Install nginx and uWSGI
-
-nginx is the webserver, uWSGI is the webserver-gateway-interface (it links nginx with Flask).
-
-You can install nginx with `apt`:
+### Install nginx
+nginx is the webserver we'll use. You can install nginx with `apt`:
 
 `sudo apt install nginx`
 
-Install uWSGI with pip:
+### Create a Python virtual environment
+We'll create a virtual environment to install our Python packages. First install `virtualenv`:
 
-`pip install --user uwsgi`
+`sudo apt install virtualenv`
 
-If you're having trouble with this check out the documenation for both:
+Now we create the actual virtual environment. It's a folder that will be placed in our current
+directory, I'm calling it 'venv-collgroesbeek':
 
-https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/#prebuilt_ubuntu
+`virtualenv venv-collgroesbeek`
 
-https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#installing-uwsgi-with-python-support
+Now activate the virtual environment:
 
+`source venv-collgroesbeek/bin/activate`
 
-### Python and Flask
-Copy this project to a local folder. In this guide I'm using my user directory `~/collectiegroesbeek`.
+### Install Python packages
+When you install Python packages make sure the virtual environment is activated.
+
+uWSGI is the webserver-gateway-interface (it links nginx with Flask). Install uWSGI with pip:
+
+`pip install uwsgi`
+
+Copy this project to a local folder. In this guide I'm using my user directory `~/collgroesbeek`.
 Install the needed requirements:
 
-`pip install --user -r ~/collectiegroesbeek/requirements.txt`
+`pip install -r ~/collgroesbeek/requirements.txt`
 
+### Logging
+You may have to create a folder in which uWSGI can put its logs:
+
+`sudo mkdir /var/log/uwsgi`
+
+And give ownership to your user:
+
+`sudo chown <username> /var/log/uwsgi`
 
 ### Systemd services
 
@@ -102,18 +133,18 @@ First find out what the path to your uWSGI executable is:
 
 `which uwsgi`
 
-The uWSGI service needs to be created, we call it `collectiegroesbeek-uwsgi.service`:
+The uWSGI service needs to be created, we call it `collgroesbeek.service`:
 
-`sudo nano /etc/systemd/system/collectiegroesbeek-uwsgi.service`
+`sudo nano /etc/systemd/system/collgroesbeek.service`
 
 Add the following configuration in the new file, make sure to change the username and path:
 
 ```
 [Service]
-User=username
+User=<username>
 Group=www-data
-WorkingDirectory=/home/<your username>/collectiegroesbeek
-ExecStart=/home/<your username>/.local/bin/uwsgi --ini collectiegroesbeek.ini
+WorkingDirectory=/home/<username>/collgroesbeek
+ExecStart=/home/<username>/venv-collgroesbeek/bin/uwsgi --ini collectiegroesbeek.ini
 
 [Install]
 WantedBy=multi-user.target
@@ -124,8 +155,8 @@ Now enable and start the service:
 
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable collectiegroesbeek-uwsgi
-sudo systemctl start collectiegroesbeek-uwsgi
+sudo systemctl enable collgroesbeek
+sudo systemctl start collgroesbeek
 ```
 
 The nginx service is called `nginx.service` and already exists. Just make sure it's enabled.
@@ -134,7 +165,7 @@ The nginx service is called `nginx.service` and already exists. Just make sure i
 ### nginx website configuration
 Create a new configuration file for nginx:
 
-`sudo nano /etc/nginx/sites-available/collectiegroesbeek`
+`sudo nano /etc/nginx/sites-available/collgroesbeek`
 
 Add the following text, make sure to update the paths if needed:
 
@@ -145,11 +176,11 @@ server {
     location / { try_files $uri @app; }
     location @app {
         include uwsgi_params;
-        uwsgi_pass unix:/usr/local/collectiegroesbeek/collectiegroesbeek.sock;
+        uwsgi_pass unix:<path to project>/collgroesbeek.sock;
     }
     location ^~ /static/  {
         include  /etc/nginx/mime.types;
-        root /usr/local/collectiegroesbeek/collectiegroesbeek/static;
+        root <path to project>/collectiegroesbeek;
     }
 }
 
@@ -158,15 +189,20 @@ server {
     server_name collectiegroesbeek.nl;
     return 301 $scheme://www.collectiegroesbeek.nl$request_uri;
 }
+
 ```
+
+Enable this configuration by creating a symbolic link to it:
+
+`sudo ln -s /etc/nginx/sites-available/collgroesbeek /etc/nginx/sites-enabled/`
+
 
 In the following section we will use Certbot to add the HTTPS parts to this config file.
 
 ### HTTPS
-
 Add a Let's Encrypt certificate using Certbot from EFF. Check out their
 documentation for how to do this:
-https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx
+https://certbot.eff.org/instructions
 
 You can test your configuration at:
 
@@ -176,7 +212,7 @@ You can test your configuration at:
 ### Debugging
 Check the status of the uWSGI and nginx services:
 
-`systemctl status collectiegroesbeek-uwsgi`
+`systemctl status collgroesbeek`
 
 `systemctl status nginx`
 
@@ -201,8 +237,6 @@ Contributions are welcome! Just open an issue or PR.
 We have some exceptions to PEP8, and other conventions:
 
 - Comparing booleans may be explicit. E.g. `if variable is True:`.
-- Bare exceptions may occur when warranted. You don't have to raise `BaseException`.
-- Unused imports may happen to expose a class/function at a certain point.
 - Line break _before_ operator. The new line starts with the operator.
   ```
   value = abs(some_long_value_name
@@ -214,17 +248,7 @@ We have some exceptions to PEP8, and other conventions:
   long_string = ('This is a very long'
                  ' string.')
   ```
-- There are two allowed ways to split lines:
-  ```
-  value = some_function(argument1, argument2,
-                        argument3)
-  ```
-  ```
-  value = some_function(
-      argument1, argument2, argument3,
-      argument4, argument5      
-  )           
-  ```
+
 - Split a function definition over multiple lines as follows. Note the double indentation of
   the arguments. Note how we can add spaces around the `=` operator for setting the default
   values in this case.
