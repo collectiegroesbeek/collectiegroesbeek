@@ -592,6 +592,68 @@ class EigendomsaktenHeemskerk(BaseDocument):
         return [value for value in out if value]
 
 
+class TiendeEnHonderdstePenning(BaseDocument):
+    datum: str = Text(fields={'keyword': Keyword()})
+    inhoud: str = Text(fields={'keyword': Keyword()})
+    folio_nr: str = Text(fields={'keyword': Keyword()})
+    vervolg_nr: Optional[str] = Text(fields={'keyword': Keyword()})
+    bron: str = Text(fields={'keyword': Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
+
+    jaar: Optional[int] = Short()
+
+    class Index:
+        name: str = 'tiende_en_honderdste_penning'
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    @classmethod
+    def from_csv_line(cls, line: List[str]) -> Optional['TiendeEnHonderdstePenning']:
+        # Return early, we'll discard it later using `is_valid`.
+        if not any(parse_entry(value) for value in line[1:]):
+            return None
+        doc = cls()
+        doc.meta.id = line[0]
+        doc.datum = parse_entry(line[1])
+        doc.inhoud = parse_entry(line[2])
+        doc.folio_nr = parse_entry(line[3])
+        doc.vervolg_nr = parse_entry(line[4])
+        doc.bron = parse_entry(line[5])
+        doc.bijzonderheden = parse_entry(line[6])
+        doc.jaar = cls.parse_year(doc.datum)
+        return doc
+
+    @staticmethod
+    def parse_year(datum: Optional[str]) -> Optional[int]:
+        res = re.search(r'\d{4}', datum or '')
+        return int(res[0]) if res else None
+
+    @staticmethod
+    def get_multimatch_fields() -> List[str]:
+        return ['datum^3', 'inhoud', 'folio_nr', 'vervolg_nr', 'bron']
+
+    @staticmethod
+    def get_index_name_pretty():
+        return '10e en 100e Penning Aelbrechtsberg, Overveen, Vogelensang'
+
+    def get_title(self) -> str:
+        title = self.datum or ''
+        return title
+
+    def get_subtitle(self) -> str:
+        return self.bron or ''
+
+    def get_body_lines(self) -> List[str]:
+        out = [
+            self.inhoud,
+            'folio nummer: ' + self.folio_nr,
+            'vervolg nummer: ' + self.vervolg_nr if self.vervolg_nr else None,
+            self.bijzonderheden,
+        ]
+        return [value for value in out if value]
+
+
 class BaseTransportregisterDoc(BaseDocument):
     datum: Optional[str] = Text(fields={'keyword': Keyword()})
     inhoud: Optional[str] = Text()
@@ -668,6 +730,19 @@ class TransportRegisterBloemendaalDoc(BaseTransportregisterDoc):
         return 'Transportregister Bloemendaal'
 
 
+class TransportRegisterZijpeDoc(BaseTransportregisterDoc):
+
+    class Index:
+        name: str = 'transportregister_zijpe'
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    @staticmethod
+    def get_index_name_pretty():
+        return 'Transportregister Zijpe'
+
+
 def parse_entry(entry: str) -> Optional[str]:
     return entry.strip() or None
 
@@ -682,8 +757,10 @@ def list_doctypes() -> List[Type[BaseDocument]]:
         MaatboekBroekInWaterlandDoc,
         MaatboekSuderwoude,
         EigendomsaktenHeemskerk,
+        TiendeEnHonderdstePenning,
         TransportRegisterEgmondDoc,
         TransportRegisterBloemendaalDoc,
+        TransportRegisterZijpeDoc,
     ]
 
 

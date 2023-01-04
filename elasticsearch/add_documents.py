@@ -19,8 +19,10 @@ from collectiegroesbeek.model import (
     MaatboekHeemskerkDoc,
     MaatboekHeemstedeDoc,
     MaatboekSuderwoude,
+    TiendeEnHonderdstePenning,
     TransportRegisterBloemendaalDoc,
     TransportRegisterEgmondDoc,
+    TransportRegisterZijpeDoc,
     VoornamenDoc,
 )
 
@@ -100,6 +102,8 @@ def filename_to_doctype(filename):
         return TransportRegisterEgmondDoc
     elif filename.startswith('coll gr 7 bloemendaal transportregister'):
         return TransportRegisterBloemendaalDoc
+    elif filename.startswith('coll gr 11 zijpe transportregister'):
+        return TransportRegisterZijpeDoc
     elif filename.startswith(('heemskerk maatboek', 'maatboek heemskerk')):
         return MaatboekHeemskerkDoc
     elif filename.startswith('maatboek heemstede'):
@@ -110,6 +114,8 @@ def filename_to_doctype(filename):
         return MaatboekSuderwoude
     elif filename.startswith('heemskerk eigendomsakten'):
         return EigendomsaktenHeemskerk
+    elif filename == 'coll gr 10 10e en 100e penning aelbrechtsberg, overveen, vogelensang.csv':
+        return TiendeEnHonderdstePenning
     if filename.startswith('coll gr'):
         if 'voornamen' in filename:
             return VoornamenDoc
