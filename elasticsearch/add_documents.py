@@ -22,6 +22,7 @@ from collectiegroesbeek.model import (
     TiendeEnHonderdstePenning,
     TransportRegisterBloemendaalDoc,
     TransportRegisterEgmondDoc,
+    TransportRegisterHaarlemDoc,
     TransportRegisterZijpeDoc,
     VoornamenDoc,
 )
@@ -102,6 +103,8 @@ def filename_to_doctype(filename):
         return TransportRegisterEgmondDoc
     elif filename.startswith('coll gr 7 bloemendaal transportregister'):
         return TransportRegisterBloemendaalDoc
+    elif filename == "coll gr 9 haarlem transportregister.csv":
+        return TransportRegisterHaarlemDoc
     elif filename.startswith('coll gr 11 zijpe transportregister'):
         return TransportRegisterZijpeDoc
     elif filename.startswith(('heemskerk maatboek', 'maatboek heemskerk')):
@@ -121,9 +124,9 @@ def filename_to_doctype(filename):
             return VoornamenDoc
         elif 'jaartallen' in filename:
             return JaartallenDoc
-        return CardNameDoc
-    else:
-        raise ValueError('Cannot determine doctype from filename "{}"'.format(filename))
+        elif len(filename) < 18:
+            return CardNameDoc
+    raise ValueError('Cannot determine doctype from filename "{}"'.format(filename))
 
 
 def run(path, doctype_name: Optional[str]):

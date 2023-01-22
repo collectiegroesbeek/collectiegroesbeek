@@ -743,6 +743,66 @@ class TransportRegisterZijpeDoc(BaseTransportregisterDoc):
         return 'Transportregister Zijpe'
 
 
+class TransportRegisterHaarlemDoc(BaseDocument):
+    datum: str = Text(fields={'keyword': Keyword()})
+    inhoud: str = Text(fields={'keyword': Keyword()})
+    folio_nr: str = Text(fields={'keyword': Keyword()})
+    register_nr: str = Text(fields={'keyword': Keyword()})
+    vervolg_nr: str = Text(fields={'keyword': Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
+
+    jaar: Optional[int] = Short()
+
+    class Index:
+        name: str = 'transportregister_haarlem'
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    @classmethod
+    def from_csv_line(cls, line: List[str]) -> Optional['TransportRegisterHaarlemDoc']:
+        # Return early, we'll discard it later using `is_valid`.
+        if not any(parse_entry(value) for value in line[1:]):
+            return None
+        doc = cls()
+        doc.meta.id = line[0]
+        doc.datum = parse_entry(line[1])
+        doc.inhoud = parse_entry(line[2])
+        doc.folio_nr = parse_entry(line[3])
+        doc.register_nr = parse_entry(line[4])
+        doc.vervolg_nr = parse_entry(line[5])
+        # Skip 'bron' column
+        doc.bijzonderheden = parse_entry(line[7])
+        doc.jaar = cls.parse_year(doc.datum)
+        return doc
+
+    @staticmethod
+    def parse_year(datum: Optional[str]) -> Optional[int]:
+        res = re.search(r'\d{4}', datum or '')
+        return int(res[0]) if res else None
+
+    @staticmethod
+    def get_multimatch_fields() -> List[str]:
+        return ['datum^3', 'inhoud', 'folio_nr', 'vervolg_nr']
+
+    @staticmethod
+    def get_index_name_pretty():
+        return 'Transportregister Haarlem'
+
+    def get_title(self) -> str:
+        return self.datum or ''
+
+    def get_subtitle(self) -> str:
+        return f"folio {self.folio_nr} {self.vervolg_nr} {self.register_nr}"
+
+    def get_body_lines(self) -> List[str]:
+        out = [
+            self.inhoud,
+            self.bijzonderheden,
+        ]
+        return [value for value in out if value]
+
+
 def parse_entry(entry: str) -> Optional[str]:
     return entry.strip() or None
 
@@ -761,6 +821,7 @@ def list_doctypes() -> List[Type[BaseDocument]]:
         TransportRegisterEgmondDoc,
         TransportRegisterBloemendaalDoc,
         TransportRegisterZijpeDoc,
+        TransportRegisterHaarlemDoc,
     ]
 
 
