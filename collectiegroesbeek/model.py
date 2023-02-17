@@ -807,22 +807,25 @@ def parse_entry(entry: str) -> Optional[str]:
     return entry.strip() or None
 
 
+index_number_to_doctype = {
+    1: CardNameDoc,
+    2: VoornamenDoc,
+    3: JaartallenDoc,
+    4: MaatboekHeemskerkDoc,
+    5: EigendomsaktenHeemskerk,
+    6: TransportRegisterEgmondDoc,
+    7: TransportRegisterBloemendaalDoc,
+    9: TransportRegisterHaarlemDoc,
+    10: TiendeEnHonderdstePenning,
+    11: TransportRegisterZijpeDoc,
+    12: MaatboekBroekInWaterlandDoc,
+    13: MaatboekHeemstedeDoc,
+    14: MaatboekSuderwoude,
+}
+
+
 def list_doctypes() -> List[Type[BaseDocument]]:
-    return [
-        CardNameDoc,
-        VoornamenDoc,
-        JaartallenDoc,
-        MaatboekHeemskerkDoc,
-        MaatboekHeemstedeDoc,
-        MaatboekBroekInWaterlandDoc,
-        MaatboekSuderwoude,
-        EigendomsaktenHeemskerk,
-        TiendeEnHonderdstePenning,
-        TransportRegisterEgmondDoc,
-        TransportRegisterBloemendaalDoc,
-        TransportRegisterZijpeDoc,
-        TransportRegisterHaarlemDoc,
-    ]
+    return list(index_number_to_doctype.values())
 
 
 # MAPPING = {

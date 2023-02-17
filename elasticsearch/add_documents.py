@@ -2,6 +2,7 @@ import argparse
 import csv
 import logging
 import os
+import re
 import sys
 import time
 from typing import Dict, Optional, Type
@@ -25,6 +26,7 @@ from collectiegroesbeek.model import (
     TransportRegisterHaarlemDoc,
     TransportRegisterZijpeDoc,
     VoornamenDoc,
+    index_number_to_doctype,
 )
 
 if sys.version_info[0] < 3:
@@ -79,8 +81,9 @@ class IndexMover:
 
     def __init__(self, doctype: Type[BaseDocument]):
         self.alias = doctype.Index.name
-        if doctype.Index().exists():
-            self.old_name = next(iter(doctype.Index().get_alias().keys()))
+        es_index: Index = doctype.Index()
+        if es_index.exists():
+            self.old_name = next(iter(es_index.get_alias().keys()))
             self.old_es_index: Optional[Index] = Index(name=self.old_name)
         else:
             self.old_es_index = None
@@ -99,34 +102,8 @@ class IndexMover:
 
 def filename_to_doctype(filename):
     filename = filename.lower()
-    if filename.startswith('coll gr 6 egmond transportregister'):
-        return TransportRegisterEgmondDoc
-    elif filename.startswith('coll gr 7 bloemendaal transportregister'):
-        return TransportRegisterBloemendaalDoc
-    elif filename == "coll gr 9 haarlem transportregister.csv":
-        return TransportRegisterHaarlemDoc
-    elif filename.startswith('coll gr 11 zijpe transportregister'):
-        return TransportRegisterZijpeDoc
-    elif filename.startswith(('heemskerk maatboek', 'maatboek heemskerk')):
-        return MaatboekHeemskerkDoc
-    elif filename.startswith('maatboek heemstede'):
-        return MaatboekHeemstedeDoc
-    elif filename.startswith('maatboek broek in waterland'):
-        return MaatboekBroekInWaterlandDoc
-    elif filename.startswith('maatboek suderwoude'):
-        return MaatboekSuderwoude
-    elif filename.startswith('heemskerk eigendomsakten'):
-        return EigendomsaktenHeemskerk
-    elif filename == 'coll gr 10 10e en 100e penning aelbrechtsberg, overveen, vogelensang.csv':
-        return TiendeEnHonderdstePenning
-    if filename.startswith('coll gr'):
-        if 'voornamen' in filename:
-            return VoornamenDoc
-        elif 'jaartallen' in filename:
-            return JaartallenDoc
-        elif len(filename) < 18:
-            return CardNameDoc
-    raise ValueError('Cannot determine doctype from filename "{}"'.format(filename))
+    index_number = int(re.match(r"coll gr (\d+) .*", filename).group(1))
+    return index_number_to_doctype[index_number]
 
 
 def run(path, doctype_name: Optional[str]):
