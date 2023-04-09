@@ -7,6 +7,15 @@
 
 {% block content %}
 
-{{ macros.jumbotron_search(show_search, doctypes=doctypes) }}
+<div class="jumbotron text-center border-bottom">
+    <h1 class="display-4">Collectie Groesbeek</h1>
+    <p class="lead">Indexen uit het archief van mr. J.W. Groesbeek, oud-rijksarchivaris</p>
+
+    {% if show_search == false %}
+    <p>De zoekfunctie is op dit moment niet online. Probeer het later nog eens of neem contact op met de beheerder.</p>
+    {% else %}
+    {{ macros.search_input(doctypes=doctypes) }}
+    {% endif %}
+</div>
 
 {% endblock %}

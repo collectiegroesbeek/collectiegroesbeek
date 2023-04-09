@@ -7,14 +7,14 @@
 
 {% block content %}
 
-  <div class="row">
-  <div class="col-md-8 offset-md-2">
-
-    <div class="row mb-2">
+  <div class="row mb-2">
       <div class="col">
         {{ macros.search_input(q=q, autofocus=False, doctypes=doctypes) }}
       </div>
     </div>
+
+  <div class="row">
+  <div class="col-md-8 offset-md-2">
 
   {% if suggestions %}
     <div class="row mb-4">

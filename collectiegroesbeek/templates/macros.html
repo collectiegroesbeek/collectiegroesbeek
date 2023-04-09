@@ -1,18 +1,4 @@
 
-{% macro jumbotron_search(show_search, doctypes=[]) -%}
-
-<div class="jumbotron text-center border-bottom">
-    <h1 class="display-4">Collectie Groesbeek</h1>
-    <p class="lead">Indexen uit het archief van mr. J.W. Groesbeek, oud-rijksarchivaris</p>
-
-    {% if show_search == true %}
-    {{ search_input(doctypes=doctypes) }}
-    {% elif show_search == false %}
-    <p>De zoekfunctie is op dit moment niet online. Probeer het later nog eens of neem contact op met de beheerder.</p>
-    {% endif %}
-</div>
-
-{%- endmacro %}
 
 {% macro search_input(q='', autofocus=True, doctypes=[]) %}
   <form action="/zoek" class="text-center">
