@@ -42,3 +42,12 @@ main {
     /* align the result count with the card content */
 	padding-left: 1.25rem;
 }
+.list-indexes > a {
+    border: none;
+    color: #212529;
+}
+.list-indexes > a:hover {
+    color: #000;
+    background-color: #eee;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out;
+}

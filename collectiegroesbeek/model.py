@@ -36,6 +36,10 @@ class BaseDocument(Document):
     def get_body_lines(self) -> List[str]:
         raise NotImplementedError()
 
+    def get_description(self) -> str:
+        # TODO implement in all subclasses
+        raise NotImplementedError()
+
 
 class CardNameDoc(BaseDocument):
     datum: Optional[str] = Text()
