@@ -34,7 +34,7 @@ def search():
         if flask.request.args.get(doctype.__name__) == 'on'
     ]
     if not doctypes_selection:
-        doctypes_selection = list_doctypes()
+        doctypes_selection = [list_doctypes()[0]]
     doctypes: List[Tuple[str, str, bool]] = [
         (doctype.get_index_name_pretty(), doctype.__name__, doctype in doctypes_selection)
         for doctype in list_doctypes()
