@@ -7,7 +7,7 @@ import flask
 
 from . import app
 from . import controller
-from .controller import get_doc
+from .controller import get_doc, get_number_of_total_docs
 from .model import BaseDocument, list_doctypes
 
 
@@ -18,9 +18,12 @@ def home():
 
 
 def index():
+    n_total_docs = get_number_of_total_docs()
+    n_total_docs_str = f'{n_total_docs:,d}'.replace(',', '&nbsp;')
     return flask.render_template(
         'index.html',
         show_search=controller.is_elasticsearch_reachable(),
+        n_total_docs=n_total_docs_str
     )
 
 

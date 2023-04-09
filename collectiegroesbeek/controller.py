@@ -192,3 +192,9 @@ def get_doc(doc_id: int) -> BaseDocument:
     s = Search(index='*', doc_type=list_doctypes())
     s = s.filter('ids', values=[doc_id])
     return list(s)[0]
+
+
+def get_number_of_total_docs() -> int:
+    s = Search()
+    n_total_docs = s.count()
+    return n_total_docs
