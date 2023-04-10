@@ -17,7 +17,8 @@ def home():
     n_total_docs_str = f'{n_total_docs:,d}'.replace(',', '&nbsp;')
     return flask.render_template(
         'index.html',
-        n_total_docs=n_total_docs_str
+        n_total_docs=n_total_docs_str,
+        doctypes=list_doctypes(),
     )
 
 

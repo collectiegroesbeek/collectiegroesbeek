@@ -36,9 +36,13 @@ class BaseDocument(Document):
     def get_body_lines(self) -> List[str]:
         raise NotImplementedError()
 
-    def get_description(self) -> str:
-        # TODO implement in all subclasses
+    @staticmethod
+    def get_description() -> str:
         raise NotImplementedError()
+
+    @classmethod
+    def get_class_name(cls) -> str:
+        return str(cls.__name__)
 
 
 class CardNameDoc(BaseDocument):
@@ -104,6 +108,10 @@ class CardNameDoc(BaseDocument):
     def get_body_lines(self) -> List[str]:
         out = [self.inhoud, self.getuigen, self.bijzonderheden]
         return [value for value in out if value]
+
+    @staticmethod
+    def get_description() -> str:
+        return "Nederlandse achternamen vanaf middeleeuwen tot ± 1800, zie ook de knop Namenlijst"
 
 
 def create_name_keyword(naam: str) -> str:
@@ -192,6 +200,14 @@ class VoornamenDoc(BaseDocument):
         out = [self.inhoud, self.getuigen, self.bijzonderheden]
         return [value for value in out if value]
 
+    @staticmethod
+    def get_description() -> str:
+        return (
+            "(Nederlandse voornamen met patroniem, meestal zonder geslachtsnaam, vanaf "
+            "middeleeuwen tot ± 1800, zie ook de knop namenlijst"
+        )
+
+
 
 class JaartallenDoc(BaseDocument):
     datum: Optional[str] = Text(fields={'keyword': Keyword()})
@@ -253,6 +269,15 @@ class JaartallenDoc(BaseDocument):
     def get_body_lines(self) -> List[str]:
         out = [self.inhoud, self.getuigen, self.bijzonderheden]
         return [value for value in out if value]
+
+    @staticmethod
+    def get_description() -> str:
+        return (
+            "(akten vanaf middeleeuwen tot ongeveer 1800, gerangschikt op datum, vooral Hollandse "
+            "akten, uit archieven van Noord-Holland, Zuid-Holland, Zeeland, en in mindere mate "
+            "Utrecht, Zwolle, Arnhem etc, nog niet gereed"
+        )
+
 
 
 class MaatboekHeemskerkDoc(BaseDocument):
@@ -330,6 +355,13 @@ class MaatboekHeemskerkDoc(BaseDocument):
         ]
         return [value for value in out if value]
 
+    @staticmethod
+    def get_description() -> str:
+        return (
+            "Het volledige belastingquohier Heemskerk is verwerkt: 10 e penning 1539, 1561 en 1570,"
+            " gerangschikt op sector"
+        )
+
 
 class MaatboekHeemstedeDoc(BaseDocument):
     ligging: Optional[str] = Text(fields={'keyword': Keyword()})
@@ -395,6 +427,12 @@ class MaatboekHeemstedeDoc(BaseDocument):
             self.opmerkingen,
         ]
         return [value for value in out if value]
+
+    @staticmethod
+    def get_description() -> str:
+        return (
+            "Maatboek 1544 en Register 10 e penning 1561, eigenaren en huurders van land en huizen"
+        )
 
 
 class MaatboekBroekInWaterlandDoc(BaseDocument):
@@ -462,6 +500,10 @@ class MaatboekBroekInWaterlandDoc(BaseDocument):
         ]
         return [value for value in out if value]
 
+    @staticmethod
+    def get_description() -> str:
+        return "Inventaris Hoogheemraadschap Waterland no 63, 1589, in sectoren"
+
 
 class MaatboekSuderwoude(BaseDocument):
     sector: Optional[str] = Text(fields={'keyword': Keyword()})
@@ -527,6 +569,11 @@ class MaatboekSuderwoude(BaseDocument):
             self.opmerkingen,
         ]
         return [value for value in out if value]
+
+    @staticmethod
+    def get_description() -> str:
+        return "Inventaris Hoogheemraadschap Waterland no 63, 1589, in sectoren"
+
 
 
 class EigendomsaktenHeemskerk(BaseDocument):
@@ -595,6 +642,13 @@ class EigendomsaktenHeemskerk(BaseDocument):
         ]
         return [value for value in out if value]
 
+    @staticmethod
+    def get_description() -> str:
+        return (
+            "Uit Rijksarchief Haarlem, eigenaren, kopers en verkopers van land, huizen in "
+            "Heemskerk in de 16e eeuw"
+        )
+
 
 class TiendeEnHonderdstePenning(BaseDocument):
     datum: str = Text(fields={'keyword': Keyword()})
@@ -639,7 +693,7 @@ class TiendeEnHonderdstePenning(BaseDocument):
 
     @staticmethod
     def get_index_name_pretty():
-        return '10e en 100e Penning Aelbrechtsberg, Overveen, Vogelensang'
+        return '10e en 100e Penning Bloemendaal'
 
     def get_title(self) -> str:
         title = self.datum or ''
@@ -656,6 +710,13 @@ class TiendeEnHonderdstePenning(BaseDocument):
             self.bijzonderheden,
         ]
         return [value for value in out if value]
+
+    @staticmethod
+    def get_description() -> str:
+        return (
+            "Belastingregister uit Algemeen Rijksarchief betreffende Aelbrechtsberg, Tetrode, "
+            "Overveen, Vogelensang, de jaren 1542, 1544, 1558, 1562, 1569"
+        )
 
 
 class BaseTransportregisterDoc(BaseDocument):
@@ -720,6 +781,13 @@ class TransportRegisterEgmondDoc(BaseTransportregisterDoc):
     def get_index_name_pretty():
         return 'Transportregister Egmond'
 
+    @staticmethod
+    def get_description() -> str:
+        return (
+            "Uit Rijksarchief Haarlem, transport van huizen en landen, vooral in Egmond, "
+            "± 1580-1625"
+        )
+
 
 class TransportRegisterBloemendaalDoc(BaseTransportregisterDoc):
 
@@ -733,6 +801,13 @@ class TransportRegisterBloemendaalDoc(BaseTransportregisterDoc):
     def get_index_name_pretty():
         return 'Transportregister Bloemendaal'
 
+    @staticmethod
+    def get_description() -> str:
+        return (
+            "Uit Rijksarchief Haarlem, transport van huizen en landen Aelbrechtsberg, Tetrode, "
+            "Overveen, Vogelensang, ± 1580-1800"
+        )
+
 
 class TransportRegisterZijpeDoc(BaseTransportregisterDoc):
 
@@ -745,6 +820,10 @@ class TransportRegisterZijpeDoc(BaseTransportregisterDoc):
     @staticmethod
     def get_index_name_pretty():
         return 'Transportregister Zijpe'
+
+    @staticmethod
+    def get_description() -> str:
+        return "Uit Rijksarchief Haarlem, transport van huizen en land, 17e eeuw"
 
 
 class TransportRegisterHaarlemDoc(BaseDocument):
@@ -805,6 +884,14 @@ class TransportRegisterHaarlemDoc(BaseDocument):
             self.bijzonderheden,
         ]
         return [value for value in out if value]
+
+    @staticmethod
+    def get_description() -> str:
+        return (
+            "Uit Noord-Hollands Archief Collectie Groesbeek, transport van huizen en landen in "
+            "Haarlem en een enkele in Noord-Holland, 1471-1473, 1485-1501, 1558-1562, "
+            "nog niet gereed"
+        )
 
 
 def parse_entry(entry: str) -> Optional[str]:
