@@ -8,7 +8,7 @@ import flask
 from . import app
 from . import controller
 from .controller import get_doc, get_number_of_total_docs
-from .model import BaseDocument, list_doctypes
+from .model import BaseDocument, list_doctypes, index_name_to_doctype
 
 
 @app.route('/')
@@ -25,15 +25,14 @@ def home():
 @app.route('/zoek')
 def search():
     q: str = flask.request.args.get('q')
-    doctypes_selection_names: set[str] = set(flask.request.args.getlist('index'))
     doctypes_selection: List[Type[BaseDocument]] = [
-        doctype for doctype in list_doctypes()
-        if doctype.__name__ in doctypes_selection_names
+         index_name_to_doctype[index_name]
+         for index_name in flask.request.args.getlist('index')
     ]
     if not doctypes_selection:
         doctypes_selection = [list_doctypes()[0]]
     doctypes: List[Tuple[str, str, bool]] = [
-        (doctype.get_index_name_pretty(), doctype.__name__, doctype in doctypes_selection)
+        (doctype.get_index_name_pretty(), doctype.Index.name, doctype in doctypes_selection)
         for doctype in list_doctypes()
     ]
     if q is None:

@@ -53,7 +53,7 @@ class CardNameDoc(BaseDocument):
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'namenindex'
+        name: str = 'achternamen'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -145,7 +145,7 @@ class VoornamenDoc(BaseDocument):
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'voornamenindex'
+        name: str = 'voornamen'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -216,7 +216,7 @@ class JaartallenDoc(BaseDocument):
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'jaartallenindex'
+        name: str = 'jaartallen'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -293,7 +293,7 @@ class MaatboekHeemskerkDoc(BaseDocument):
     opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
 
     class Index:
-        name: str = 'heemskerk_maatboek_index'
+        name: str = 'maatboek-heemskerk'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -370,7 +370,7 @@ class MaatboekHeemstedeDoc(BaseDocument):
     opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
 
     class Index:
-        name: str = 'maatboek_heemstede_index'
+        name: str = 'maatboek-heemstede'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -442,7 +442,7 @@ class MaatboekBroekInWaterlandDoc(BaseDocument):
     opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
 
     class Index:
-        name: str = 'maatboek_broek_in_waterland_index'
+        name: str = 'maatboek-broek-in-waterland'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -512,7 +512,7 @@ class MaatboekSuderwoude(BaseDocument):
     opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
 
     class Index:
-        name: str = 'maatboek_suderwoude_index'
+        name: str = 'maatboek-suderwoude'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -585,7 +585,7 @@ class EigendomsaktenHeemskerk(BaseDocument):
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'eigendomsakten_heemskerk_index'
+        name: str = 'eigendomsakten-heemskerk'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -657,7 +657,7 @@ class TiendeEnHonderdstePenning(BaseDocument):
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'tiende_en_honderdste_penning'
+        name: str = 'tiende-en-honderdste-penning-bloemendaal'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -768,7 +768,7 @@ class BaseTransportregisterDoc(BaseDocument):
 class TransportRegisterEgmondDoc(BaseTransportregisterDoc):
 
     class Index:
-        name: str = 'transportregister_egmond'
+        name: str = 'transportregister-egmond'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -788,7 +788,7 @@ class TransportRegisterEgmondDoc(BaseTransportregisterDoc):
 class TransportRegisterBloemendaalDoc(BaseTransportregisterDoc):
 
     class Index:
-        name: str = 'transportregister_bloemendaal'
+        name: str = 'transportregister-bloemendaal'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -808,7 +808,7 @@ class TransportRegisterBloemendaalDoc(BaseTransportregisterDoc):
 class TransportRegisterZijpeDoc(BaseTransportregisterDoc):
 
     class Index:
-        name: str = 'transportregister_zijpe'
+        name: str = 'transportregister-zijpe'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -833,7 +833,7 @@ class TransportRegisterHaarlemDoc(BaseDocument):
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'transportregister_haarlem'
+        name: str = 'transportregister-haarlem'
 
         def __new__(cls):
             return Index(name=cls.name)
@@ -908,6 +908,12 @@ index_number_to_doctype = {
     12: MaatboekBroekInWaterlandDoc,
     13: MaatboekHeemstedeDoc,
     14: MaatboekSuderwoude,
+}
+
+
+index_name_to_doctype = {
+    doctype.Index.name: doctype
+    for doctype in index_number_to_doctype.values()
 }
 
 
