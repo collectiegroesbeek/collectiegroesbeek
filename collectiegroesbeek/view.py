@@ -13,11 +13,6 @@ from .model import BaseDocument, list_doctypes
 
 @app.route('/')
 def home():
-    q = flask.request.args.get('q')
-    return index() if not q else search()
-
-
-def index():
     n_total_docs = get_number_of_total_docs()
     n_total_docs_str = f'{n_total_docs:,d}'.replace(',', '&nbsp;')
     return flask.render_template(
