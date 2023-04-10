@@ -28,11 +28,6 @@ def index():
 
 @app.route('/zoek')
 def search():
-    if not controller.is_elasticsearch_reachable():
-        return flask.render_template(
-            'search.html',
-            show_search=False,
-        )
     q: str = flask.request.args.get('q')
     doctypes_selection: List[Type[BaseDocument]] = [
         doctype for doctype in list_doctypes()

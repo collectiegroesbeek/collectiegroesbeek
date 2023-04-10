@@ -163,11 +163,6 @@ def get_names_list(q: str) -> List[dict]:
     return names_list
 
 
-def is_elasticsearch_reachable() -> bool:
-    """Return a boolean whether the Elasticsearch service is available on localhost."""
-    return connections.get_connection().ping()
-
-
 def get_suggestions(keywords: Iterable[str]):
     tokens = [token for token in keywords if not token.isdigit()]
     s = CardNameDoc.search()
