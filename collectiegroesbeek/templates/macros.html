@@ -16,7 +16,7 @@
       {% for name, value, checked in doctypes %}
         <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="{{ value }}"
+            <input class="form-check-input" type="checkbox" name="index" value="{{ value }}"
                    {% if checked %}checked{% endif %}>
             {{ name }}
           </label>

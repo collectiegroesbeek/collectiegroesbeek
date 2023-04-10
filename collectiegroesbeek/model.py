@@ -40,10 +40,6 @@ class BaseDocument(Document):
     def get_description() -> str:
         raise NotImplementedError()
 
-    @classmethod
-    def get_class_name(cls) -> str:
-        return str(cls.__name__)
-
 
 class CardNameDoc(BaseDocument):
     datum: Optional[str] = Text()

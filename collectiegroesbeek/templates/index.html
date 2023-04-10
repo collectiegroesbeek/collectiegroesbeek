@@ -59,7 +59,7 @@
       <h1>Indexen</h1>
       <div class="list-group list-indexes">
         {% for doctype in doctypes %}
-          <a href="/zoek?{{ doctype.get_class_name() }}=on"
+          <a href="/zoek?index={{ doctype.__name__ }}"
              class="list-group-item list-group-item-action">
             <h5>{{ doctype.get_index_name_pretty() }}</h5>
             {{ doctype.get_description() }}
