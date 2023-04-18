@@ -42,12 +42,12 @@ class BaseDocument(Document):
 
 
 class CardNameDoc(BaseDocument):
-    datum: Optional[str] = Text()
-    naam: Optional[str] = Text()
-    inhoud: Optional[str] = Text()
-    bron: Optional[str] = Text()
-    getuigen: Optional[str] = Text()
-    bijzonderheden: Optional[str] = Text()
+    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    naam: Optional[str] = Text(fields={'keyword': Keyword()})
+    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
+    bron: Optional[str] = Text(fields={'keyword': Keyword()})
+    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
 
     naam_keyword: Optional[str] = Keyword()
     jaar: Optional[int] = Short()
@@ -208,10 +208,10 @@ class VoornamenDoc(BaseDocument):
 class JaartallenDoc(BaseDocument):
     datum: Optional[str] = Text(fields={'keyword': Keyword()})
     locatie: Optional[str] = Text(fields={'keyword': Keyword()})
-    inhoud: Optional[str] = Text()
+    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
     bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    getuigen: Optional[str] = Text()
-    bijzonderheden: Optional[str] = Text()
+    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
 
     jaar: Optional[int] = Short()
 
@@ -717,10 +717,10 @@ class TiendeEnHonderdstePenning(BaseDocument):
 
 class BaseTransportregisterDoc(BaseDocument):
     datum: Optional[str] = Text(fields={'keyword': Keyword()})
-    inhoud: Optional[str] = Text()
+    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
     bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    getuigen: Optional[str] = Text()
-    bijzonderheden: Optional[str] = Text()
+    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
 
     jaar: Optional[int] = Short()
 
