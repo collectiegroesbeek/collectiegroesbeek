@@ -18,6 +18,8 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/style.css">
 
+    {% block css %}{% endblock %}
+
     <title>{% block title %}{% endblock %} | Collectie Groesbeek</title>
 
 </head>
@@ -54,6 +56,9 @@
                 Creative Commons BY 4.0</a>
     </div>
 </footer>
+
+
+{% block js %}{% endblock %}
 
 
 </body>

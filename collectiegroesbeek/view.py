@@ -117,3 +117,40 @@ def get_product(doc_id):
     doc = get_doc(doc_id)
     doc_formatted = format_hit(doc)
     return flask.render_template('card.html', hit=doc_formatted)
+
+
+@app.route('/verken/')
+def browse():
+    return flask.render_template("browse.html")
+
+
+@app.route('/api/columns/')
+def datatables_api_columns():
+    return [
+        {'data': 'naam', 'title': 'naam'},
+        {'data': 'jaar'},
+        {'data': 'inhoud'},
+    ]
+
+
+@app.route('/api/rows/', methods=["POST"])
+def datatables_api():
+    req = flask.request.json
+
+    from elasticsearch_dsl import Search
+    s = Search()
+    s = s.extra(from_=req['start'], size=req['length'])
+    s = s.sort(
+        *[
+            {req['columns'][item['column']]['data']: {'order': item['dir']}}
+            for item in req['order']
+        ]
+    )
+    docs = s.execute().to_dict()
+    resp = {
+        "draw": int(req["draw"]),
+        "recordsTotal": docs['hits']['total']['value'],
+        "recordsFiltered": docs['hits']['total']['value'],
+        "data": [hit['_source'] for hit in docs['hits']['hits']],
+    }
+    return resp

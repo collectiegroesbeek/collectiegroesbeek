@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+
+
+{% block css %}
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+{% endblock %}
+
+
+{% block title %}Collectie Groesbeek{% endblock %}
+
+
+{% block content %}
+  <table id="theTable" class="display" style="width:100%">
+    <thead>
+
+    </thead>
+    <tfoot>
+
+    </tfoot>
+  </table>
+{% endblock %}
+
+
+{% block js %}
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+          integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+  <script>
+      $(document).ready(function () {
+          $.getJSON('/api/columns/', function(json) {
+              $('#theTable').DataTable({
+                  processing: true,
+                  serverSide: true,
+                  columns : json,
+                  ajax: {
+                      "url": "/api/rows/",
+                      "type": "POST",
+                      dataType: "json",
+                      contentType: 'application/json',
+                      data: function(d) {
+                          return JSON.stringify(d);
+                      }
+                  },
+              })
+          });
+
+      });
+  </script>
+{% endblock %}
