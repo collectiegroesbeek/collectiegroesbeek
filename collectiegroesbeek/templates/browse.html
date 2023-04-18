@@ -11,14 +11,27 @@
 
 
 {% block content %}
-  <table id="theTable" class="display" style="width:100%">
-    <thead>
+  <div class="row mb-3">
+    <div class="col">
+      <form class="form-inline">
+        <label>
+          <span class="mr-1">Selecteer index</span>
+          <select class="form-control" id="selectIndex">
+            {% for doctype in doctypes %}
+              <option value="{{ doctype.Index.name }}">{{ doctype.get_index_name_pretty() }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      </form>
+    </div>
+  </div>
 
-    </thead>
-    <tfoot>
+  <div class="row">
+    <div class="col">
+      <table id="theTable" class="display" style="width:100%"></table>
+    </div>
+  </div>
 
-    </tfoot>
-  </table>
 {% endblock %}
 
 
@@ -30,22 +43,31 @@
 
   <script>
       $(document).ready(function () {
-          $.getJSON('/api/columns/', function(json) {
-              $('#theTable').DataTable({
-                  processing: true,
-                  serverSide: true,
-                  columns : json,
-                  ajax: {
-                      "url": "/api/rows/",
-                      "type": "POST",
-                      dataType: "json",
-                      contentType: 'application/json',
-                      data: function(d) {
-                          return JSON.stringify(d);
-                      }
+          $("#selectIndex").on("change", function() {
+              $.getJSON(
+                  '/api/columns/',
+                  {
+                      index: $("#selectIndex").val(),
                   },
-              })
+                  function(json) {
+                      $('#theTable').DataTable({
+                          processing: true,
+                          serverSide: true,
+                          columns : json,
+                          ajax: {
+                              "url": "/api/rows/",
+                              "type": "POST",
+                              dataType: "json",
+                              contentType: 'application/json',
+                              data: function(d) {
+                                  return JSON.stringify(d);
+                              }
+                          },
+                      });
+                  }
+              );
           });
+
 
       });
   </script>

@@ -95,7 +95,7 @@ def show_names_list(q=''):
         return flask.render_template('names_letters.html', letters=string.ascii_lowercase[:27], hits_total=None)
     for letter in q.lower():
         if not letter.isalpha():
-            return index()
+            return home()
     names_list = controller.get_names_list(q)
     hits_total = len(names_list)
     return flask.render_template('names.html', namen=names_list, hits_total=hits_total)
@@ -121,11 +121,17 @@ def get_product(doc_id):
 
 @app.route('/verken/')
 def browse():
-    return flask.render_template("browse.html")
+    return flask.render_template(
+        "browse.html",
+        doctypes=list_doctypes(),
+    )
 
 
 @app.route('/api/columns/')
 def datatables_api_columns():
+    index_name = flask.request.args.get('index')
+    doctype = index_name_to_doctype[index_name]
+    doctype.get_mapping()
     return [
         {'data': 'naam', 'title': 'naam'},
         {'data': 'jaar'},
@@ -140,12 +146,13 @@ def datatables_api():
     from elasticsearch_dsl import Search
     s = Search()
     s = s.extra(from_=req['start'], size=req['length'])
-    s = s.sort(
-        *[
-            {req['columns'][item['column']]['data']: {'order': item['dir']}}
-            for item in req['order']
-        ]
-    )
+    # TODO: check data type om veld te bepalen
+    # s = s.sort(
+    #     *[
+    #         {req['columns'][item['column']]['data'] + ".keyword": {'order': item['dir']}}
+    #         for item in req['order']
+    #     ]
+    # )
     docs = s.execute().to_dict()
     resp = {
         "draw": int(req["draw"]),
