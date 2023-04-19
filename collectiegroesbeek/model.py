@@ -910,6 +910,67 @@ class TransportRegisterHaarlemDoc(BaseDocument):
         )
 
 
+class HaarlemAlgemeenDoc(BaseDocument):
+    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    locatie: Optional[str] = Text(fields={'keyword': Keyword()})
+    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
+    bron: Optional[str] = Text(fields={'keyword': Keyword()})
+    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
+
+    jaar: Optional[int] = Short()
+
+    class Index:
+        name: str = 'haarlem-algemeen'
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    @classmethod
+    def from_csv_line(cls, line: List[str]) -> Optional['JaartallenDoc']:
+        doc = cls()
+        if len(line[0]) == 0:
+            return None
+        if not any(parse_entry(value) for value in line[1:]):
+            return None
+        doc.meta.id = int(line[0])
+        doc.datum = parse_entry(line[1])
+        doc.locatie = parse_entry(line[2])
+        doc.inhoud = parse_entry(line[3])
+        doc.bron = parse_entry(line[4])
+        doc.getuigen = parse_entry(line[5])
+        doc.bijzonderheden = parse_entry(line[6])
+        if doc.datum is not None:
+            doc.jaar = create_year(str(doc.datum))
+        return doc
+
+    @staticmethod
+    def get_multimatch_fields() -> List[str]:
+        return ['datum^3', 'locatie^3', 'inhoud^2', 'getuigen', 'bron']
+
+    @staticmethod
+    def get_index_name_pretty():
+        return 'Haarlem Algemeen'
+
+    def get_title(self) -> str:
+        return '{} | {}'.format(self.datum or '', self.locatie or '')
+
+    def get_subtitle(self) -> str:
+        return self.bron or ''
+
+    def get_body_lines(self) -> List[str]:
+        out = [self.inhoud, self.getuigen, self.bijzonderheden]
+        return [value for value in out if value]
+
+    @staticmethod
+    def get_description() -> str:
+        return (
+            "Uit Noord-Hollands Archief Collectie Groesbeek, akten Haarlem (en omstreken) "
+            "uit diverse Archieven, o.a. Cartularium St Jan, St Elisabethsgasthuis, 1251-1667, "
+            "nog niet gereed"
+        )
+
+
 def parse_entry(entry: str) -> Optional[str]:
     return entry.strip() or None
 
@@ -928,6 +989,7 @@ index_number_to_doctype = {
     12: MaatboekBroekInWaterlandDoc,
     13: MaatboekHeemstedeDoc,
     14: MaatboekSuderwoude,
+    15: HaarlemAlgemeenDoc,
 }
 
 
