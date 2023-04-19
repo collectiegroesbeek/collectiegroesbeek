@@ -121,8 +121,10 @@ def get_product(doc_id):
 
 @app.route('/verken/')
 def browse():
+    index_name = flask.request.args.get('index', None)
     return flask.render_template(
         "browse.html",
+        index_name=index_name,
         doctypes=list_doctypes(),
     )
 

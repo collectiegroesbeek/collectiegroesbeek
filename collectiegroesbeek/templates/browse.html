@@ -18,7 +18,9 @@
           <span class="mr-1">Selecteer index</span>
           <select class="form-control" id="selectIndex">
             {% for doctype in doctypes %}
-              <option value="{{ doctype.Index.name }}">{{ doctype.get_index_name_pretty() }}</option>
+              <option value="{{ doctype.Index.name }}"
+                      {% if doctype.Index.name == index_name %} selected{% endif %}
+              >{{ doctype.get_index_name_pretty() }}</option>
             {% endfor %}
           </select>
         </label>
