@@ -43,14 +43,16 @@
 
   <script>
       $(document).ready(function () {
-          $("#selectIndex").on("change", function() {
+          let selectIndex = $("#selectIndex");
+          selectIndex.on("change", function() {
               $.getJSON(
                   '/api/columns/',
                   {
-                      index: $("#selectIndex").val(),
+                      index: selectIndex.val(),
                   },
                   function(json) {
                       $('#theTable').DataTable({
+                          searching: false,
                           processing: true,
                           serverSide: true,
                           columns : json,
@@ -60,6 +62,7 @@
                               dataType: "json",
                               contentType: 'application/json',
                               data: function(d) {
+                                  d["index"] = selectIndex.val();
                                   return JSON.stringify(d);
                               }
                           },
@@ -68,6 +71,7 @@
               );
           });
 
+          selectIndex.trigger("change");
 
       });
   </script>

@@ -131,33 +131,35 @@ def browse():
 def datatables_api_columns():
     index_name = flask.request.args.get('index')
     doctype = index_name_to_doctype[index_name]
-    doctype.get_mapping()
+    columns = doctype.get_columns()
     return [
-        {'data': 'naam', 'title': 'naam'},
-        {'data': 'jaar'},
-        {'data': 'inhoud'},
+        {'data': column, 'title': column}
+        for column in columns
     ]
 
 
 @app.route('/api/rows/', methods=["POST"])
 def datatables_api():
     req = flask.request.json
-
-    from elasticsearch_dsl import Search
-    s = Search()
+    index_name = req['index']
+    doctype = index_name_to_doctype[index_name]
+    s = doctype.search()
+    columns = doctype.get_columns()
+    s = s.source(columns)
     s = s.extra(from_=req['start'], size=req['length'])
-    # TODO: check data type om veld te bepalen
-    # s = s.sort(
-    #     *[
-    #         {req['columns'][item['column']]['data'] + ".keyword": {'order': item['dir']}}
-    #         for item in req['order']
-    #     ]
-    # )
-    docs = s.execute().to_dict()
+    s = s.sort(
+        *[
+            {doctype.get_sort_field(req['columns'][item['column']]['data']): {'order': item['dir']}}
+            for item in req['order']
+        ]
+    )
+    res = s.execute()
+    docs = [hit.to_dict() for hit in res]
+    docs = [{field: doc.get(field, None) for field in columns} for doc in docs]
     resp = {
         "draw": int(req["draw"]),
-        "recordsTotal": docs['hits']['total']['value'],
-        "recordsFiltered": docs['hits']['total']['value'],
-        "data": [hit['_source'] for hit in docs['hits']['hits']],
+        "recordsTotal": res['hits']['total']['value'],
+        "recordsFiltered": res['hits']['total']['value'],
+        "data": docs,
     }
     return resp

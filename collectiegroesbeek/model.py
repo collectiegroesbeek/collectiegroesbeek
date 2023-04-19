@@ -16,6 +16,26 @@ class BaseDocument(Document):
         return bool(re.match(cls.Index.name + r'_\d{10}', hit['_index']))
 
     @classmethod
+    def _get_mapping(cls) -> dict:
+        return cls._doc_type.mapping.to_dict()['properties']
+
+    @classmethod
+    def get_columns(cls) -> List[str]:
+        """Return the field names to display."""
+        return [field for field in cls._get_mapping().keys()
+                if field not in ('naam_keyword', 'jaar')]
+
+    @classmethod
+    def get_sort_field(cls, field: str) -> str:
+        """Return the correct ES field to sort on."""
+        mapping = cls._get_mapping()
+        field_definition = mapping[field]
+        if field_definition['type'] == 'text':
+            return f'{field}.keyword'
+        else:
+            return field
+
+    @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional['BaseDocument']:
         raise NotImplementedError()
 
