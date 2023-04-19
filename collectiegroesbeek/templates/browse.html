@@ -30,7 +30,7 @@
 
   <div class="row">
     <div class="col">
-      <table id="theTable" class="display" style="width:100%"></table>
+      <div id="tableWrapper"></div>
     </div>
   </div>
 
@@ -45,6 +45,7 @@
 
   <script>
       $(document).ready(function () {
+          let table;
           let selectIndex = $("#selectIndex");
           selectIndex.on("change", function() {
               $.getJSON(
@@ -53,9 +54,12 @@
                       index: selectIndex.val(),
                   },
                   function(json) {
-                      $('#theTable').DataTable({
+                      if (table !== undefined) {
+                          table.destroy(remove=true);
+                      }
+                      $("#tableWrapper").html(`<table id="tagTable" class="display" style="width:100%"></table>`);
+                      table = $('#tagTable').DataTable({
                           searching: false,
-                          processing: true,
                           serverSide: true,
                           columns : json,
                           ajax: {
