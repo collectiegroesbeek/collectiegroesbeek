@@ -95,7 +95,7 @@ def show_names_list(q=''):
         return flask.render_template('names_letters.html', letters=string.ascii_lowercase[:27], hits_total=None)
     for letter in q.lower():
         if not letter.isalpha():
-            return index()
+            return home()
     names_list = controller.get_names_list(q)
     hits_total = len(names_list)
     return flask.render_template('names.html', namen=names_list, hits_total=hits_total)
@@ -117,3 +117,51 @@ def get_product(doc_id):
     doc = get_doc(doc_id)
     doc_formatted = format_hit(doc)
     return flask.render_template('card.html', hit=doc_formatted)
+
+
+@app.route('/verken/')
+def browse():
+    index_name = flask.request.args.get('index', None)
+    return flask.render_template(
+        "browse.html",
+        index_name=index_name,
+        doctypes=list_doctypes(),
+    )
+
+
+@app.route('/api/columns/')
+def datatables_api_columns():
+    index_name = flask.request.args.get('index')
+    doctype = index_name_to_doctype[index_name]
+    columns = doctype.get_columns()
+    return [
+        {'data': column, 'title': column}
+        for column in columns
+    ]
+
+
+@app.route('/api/rows/', methods=["POST"])
+def datatables_api():
+    req = flask.request.json
+    index_name = req['index']
+    doctype = index_name_to_doctype[index_name]
+    s = doctype.search()
+    columns = doctype.get_columns()
+    s = s.source(columns)
+    s = s.extra(from_=req['start'], size=req['length'])
+    s = s.sort(
+        *[
+            {doctype.get_sort_field(req['columns'][item['column']]['data']): {'order': item['dir']}}
+            for item in req['order']
+        ]
+    )
+    res = s.execute()
+    docs = [hit.to_dict() for hit in res]
+    docs = [{field: doc.get(field, None) for field in columns} for doc in docs]
+    resp = {
+        "draw": int(req["draw"]),
+        "recordsTotal": res['hits']['total']['value'],
+        "recordsFiltered": res['hits']['total']['value'],
+        "data": docs,
+    }
+    return resp

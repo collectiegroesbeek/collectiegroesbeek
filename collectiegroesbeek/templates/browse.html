@@ -1,0 +1,84 @@
+
+{% extends "layout.html" %}
+
+
+{% block css %}
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+{% endblock %}
+
+
+{% block title %}Collectie Groesbeek{% endblock %}
+
+
+{% block content %}
+  <div class="row mb-3">
+    <div class="col">
+      <form class="form-inline">
+        <label>
+          <span class="mr-1">Selecteer index</span>
+          <select class="form-control" id="selectIndex">
+            {% for doctype in doctypes %}
+              <option value="{{ doctype.Index.name }}"
+                      {% if doctype.Index.name == index_name %} selected{% endif %}
+              >{{ doctype.get_index_name_pretty() }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div id="tableWrapper"></div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block js %}
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+          integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+  <script>
+      $(document).ready(function () {
+          let table;
+          let selectIndex = $("#selectIndex");
+          selectIndex.on("change", function() {
+              $.getJSON(
+                  '/api/columns/',
+                  {
+                      index: selectIndex.val(),
+                  },
+                  function(json) {
+                      if (table !== undefined) {
+                          table.destroy(remove=true);
+                      }
+                      $("#tableWrapper").html(`<table id="tagTable" class="display" style="width:100%"></table>`);
+                      table = $('#tagTable').DataTable({
+                          searching: false,
+                          serverSide: true,
+                          columns : json,
+                          ajax: {
+                              "url": "/api/rows/",
+                              "type": "POST",
+                              dataType: "json",
+                              contentType: 'application/json',
+                              data: function(d) {
+                                  d["index"] = selectIndex.val();
+                                  return JSON.stringify(d);
+                              }
+                          },
+                      });
+                  }
+              );
+          });
+
+          selectIndex.trigger("change");
+
+      });
+  </script>
+{% endblock %}

@@ -16,6 +16,26 @@ class BaseDocument(Document):
         return bool(re.match(cls.Index.name + r'_\d{10}', hit['_index']))
 
     @classmethod
+    def _get_mapping(cls) -> dict:
+        return cls._doc_type.mapping.to_dict()['properties']
+
+    @classmethod
+    def get_columns(cls) -> List[str]:
+        """Return the field names to display."""
+        return [field for field in cls._get_mapping().keys()
+                if field not in ('naam_keyword', 'jaar')]
+
+    @classmethod
+    def get_sort_field(cls, field: str) -> str:
+        """Return the correct ES field to sort on."""
+        mapping = cls._get_mapping()
+        field_definition = mapping[field]
+        if field_definition['type'] == 'text':
+            return f'{field}.keyword'
+        else:
+            return field
+
+    @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional['BaseDocument']:
         raise NotImplementedError()
 
@@ -42,12 +62,12 @@ class BaseDocument(Document):
 
 
 class CardNameDoc(BaseDocument):
-    datum: Optional[str] = Text()
-    naam: Optional[str] = Text()
-    inhoud: Optional[str] = Text()
-    bron: Optional[str] = Text()
-    getuigen: Optional[str] = Text()
-    bijzonderheden: Optional[str] = Text()
+    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    naam: Optional[str] = Text(fields={'keyword': Keyword()})
+    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
+    bron: Optional[str] = Text(fields={'keyword': Keyword()})
+    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
 
     naam_keyword: Optional[str] = Keyword()
     jaar: Optional[int] = Short()
@@ -208,10 +228,10 @@ class VoornamenDoc(BaseDocument):
 class JaartallenDoc(BaseDocument):
     datum: Optional[str] = Text(fields={'keyword': Keyword()})
     locatie: Optional[str] = Text(fields={'keyword': Keyword()})
-    inhoud: Optional[str] = Text()
+    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
     bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    getuigen: Optional[str] = Text()
-    bijzonderheden: Optional[str] = Text()
+    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
 
     jaar: Optional[int] = Short()
 
@@ -717,10 +737,10 @@ class TiendeEnHonderdstePenning(BaseDocument):
 
 class BaseTransportregisterDoc(BaseDocument):
     datum: Optional[str] = Text(fields={'keyword': Keyword()})
-    inhoud: Optional[str] = Text()
+    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
     bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    getuigen: Optional[str] = Text()
-    bijzonderheden: Optional[str] = Text()
+    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
 
     jaar: Optional[int] = Short()
 
