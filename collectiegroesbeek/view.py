@@ -156,8 +156,12 @@ def datatables_api():
         ]
     )
     res = s.execute()
-    docs = [hit.to_dict() for hit in res]
-    docs = [{field: doc.get(field, None) for field in columns} for doc in docs]
+    docs = []
+    for hit in res:
+        hit_dict = hit.to_dict()
+        doc = {field: hit_dict.get(field, None) for field in columns}
+        doc['id'] = hit.meta.id
+        docs.append(doc)
     resp = {
         "draw": int(req["draw"]),
         "recordsTotal": res['hits']['total']['value'],
