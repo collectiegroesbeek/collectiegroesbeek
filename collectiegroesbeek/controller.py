@@ -7,8 +7,7 @@ from elasticsearch_dsl.query import MultiMatch, Query
 from elasticsearch_dsl.response import Hit
 
 from . import app
-from .model import CardNameDoc, BaseDocument, list_doctypes
-
+from .model import CardNameDoc, BaseDocument, list_doctypes, index_name_to_doctype
 
 connections.create_connection('default', hosts=[app.config['elasticsearch_host']])
 
@@ -191,5 +190,6 @@ def get_doc(doc_id: int) -> BaseDocument:
 
 def get_number_of_total_docs() -> int:
     s = Search()
+    s = s.index(*index_name_to_doctype.keys())
     n_total_docs = s.count()
     return n_total_docs
