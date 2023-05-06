@@ -1,5 +1,7 @@
 import re
 import string
+import subprocess
+import time
 from urllib.parse import quote
 from typing import List, Tuple, Type
 
@@ -9,6 +11,9 @@ from . import app
 from . import controller
 from .controller import get_doc, get_number_of_total_docs
 from .model import BaseDocument, list_doctypes, index_name_to_doctype
+
+
+last_incoming_dropbox_webhook: float = 0.0
 
 
 @app.route('/')
@@ -169,3 +174,30 @@ def datatables_api():
         "data": docs,
     }
     return resp
+
+
+@app.route('/api/dropbox-webhook/', methods=['GET'])
+def dropbox_webhook_verification():
+    resp = flask.Response(flask.request.args.get('challenge'))
+    resp.headers['Content-Type'] = 'text/plain'
+    resp.headers['X-Content-Type-Options'] = 'nosniff'
+    return resp
+
+
+@app.route('/api/dropbox-webhook/', methods=['POST'])
+def dropbox_webhook():
+    # global last_incoming_dropbox_webhook
+    #
+    # timestamp = time.time()
+    # if (timestamp - last_incoming_dropbox_webhook) > 300:
+    #     with open("/var/log/dropbox.log", "a") as f_log:
+    #         f_log.write(f'{timestamp:.0f} incoming webhook')
+    #         subprocess.Popen(
+    #             ['elasticsearch/run_import.sh'],
+    #             stdout=f_log,
+    #             stderr=subprocess.STDOUT,
+    #             stdin=subprocess.DEVNULL,
+    #             close_fds=True,
+    #         )
+    # last_incoming_dropbox_webhook = timestamp
+    return flask.make_response("", 200)
