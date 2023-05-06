@@ -117,7 +117,7 @@ def run(path, doctype_name: Optional[str]):
             continue
         processor.register_index(doctype)
         filepath = os.path.join(path, filename)
-        with open(filepath) as f:
+        with open(filepath, encoding="utf-8") as f:
             csvreader = csv.reader(f)
             next(csvreader)  # skip first line
             for line in csvreader:
