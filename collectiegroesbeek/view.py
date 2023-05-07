@@ -2,6 +2,7 @@ import re
 import string
 import subprocess
 import time
+from datetime import datetime
 from urllib.parse import quote
 from typing import List, Tuple, Type
 
@@ -11,9 +12,6 @@ from . import app
 from . import controller
 from .controller import get_doc, get_number_of_total_docs
 from .model import BaseDocument, list_doctypes, index_name_to_doctype
-
-
-last_incoming_dropbox_webhook: float = 0.0
 
 
 @app.route('/')
@@ -186,18 +184,19 @@ def dropbox_webhook_verification():
 
 @app.route('/api/dropbox-webhook/', methods=['POST'])
 def dropbox_webhook():
-    # global last_incoming_dropbox_webhook
-    #
-    # timestamp = time.time()
-    # if (timestamp - last_incoming_dropbox_webhook) > 300:
-    #     with open("/var/log/dropbox.log", "a") as f_log:
-    #         f_log.write(f'{timestamp:.0f} incoming webhook')
-    #         subprocess.Popen(
-    #             ['elasticsearch/run_import.sh'],
-    #             stdout=f_log,
-    #             stderr=subprocess.STDOUT,
-    #             stdin=subprocess.DEVNULL,
-    #             close_fds=True,
-    #         )
-    # last_incoming_dropbox_webhook = timestamp
+    timestamp = int(time.time())
+    with open("webhook_timestamp.txt") as f:
+        timestamp_last_incoming_webhook = int(f.read())
+    if (timestamp - timestamp_last_incoming_webhook) > 300:
+        with open("/var/log/dropbox.log", "a") as f_log:
+            f_log.write(f'\n{datetime.now()} incoming webhook\n')
+            subprocess.Popen(
+                ['./run_import.sh'],
+                stdout=f_log,
+                stderr=f_log,
+                stdin=subprocess.DEVNULL,
+                close_fds=True,
+            )
+    with open("webhook_timestamp.txt", "w") as f:
+        f.write(str(timestamp))
     return flask.make_response("", 200)
