@@ -176,11 +176,14 @@ server {
     location / { try_files $uri @app; }
     location @app {
         include uwsgi_params;
-        uwsgi_pass unix:<path to project>/collgroesbeek.sock;
+        uwsgi_pass unix:<path to project>/collectiegroesbeek.sock;
     }
     location ^~ /static/  {
         include  /etc/nginx/mime.types;
         root <path to project>/collectiegroesbeek;
+    }
+    location = /robots.txt {
+        alias <path to project>/collectiegroesbeek/static/robots.txt;
     }
 }
 
