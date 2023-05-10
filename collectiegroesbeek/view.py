@@ -84,7 +84,7 @@ def add_selected_doctypes_to_query_string(
         doctypes_selection: List[Type[BaseDocument]]
 ) -> str:
     for doctype in doctypes_selection:
-        query_string += '&{}=on'.format(doctype.__name__)
+        query_string += f'&index={doctype.Index.name}'
     return query_string
 
 
