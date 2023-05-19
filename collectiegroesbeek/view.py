@@ -1,6 +1,7 @@
 import re
 import string
 import subprocess
+import threading
 import time
 from datetime import datetime
 from urllib.parse import quote
@@ -12,6 +13,9 @@ from . import app
 from . import controller
 from .controller import get_doc, get_number_of_total_docs
 from .model import BaseDocument, list_doctypes, index_name_to_doctype
+
+
+DROPBOX_TIMESTAMP_LOCK = threading.Lock()
 
 
 @app.route('/')
@@ -185,8 +189,11 @@ def dropbox_webhook_verification():
 @app.route('/api/dropbox-webhook/', methods=['POST'])
 def dropbox_webhook():
     timestamp = int(time.time())
-    with open("webhook_timestamp.txt") as f:
-        timestamp_last_incoming_webhook = int(f.read())
+    with DROPBOX_TIMESTAMP_LOCK:
+        with open("webhook_timestamp.txt") as f:
+            timestamp_last_incoming_webhook = int(f.read())
+        with open("webhook_timestamp.txt", "w") as f:
+            f.write(str(timestamp))
     if (timestamp - timestamp_last_incoming_webhook) > 300:
         with open("/var/log/dropbox.log", "a") as f_log:
             f_log.write(f'\n{datetime.now()} incoming webhook\n')
@@ -197,6 +204,4 @@ def dropbox_webhook():
                 stdin=subprocess.DEVNULL,
                 close_fds=True,
             )
-    with open("webhook_timestamp.txt", "w") as f:
-        f.write(str(timestamp))
     return flask.make_response("", 200)
