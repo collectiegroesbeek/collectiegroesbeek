@@ -3,37 +3,18 @@ import csv
 import logging
 import os
 import re
-import sys
 import time
 from typing import Dict, Optional, Type
 
+from dotenv import dotenv_values
 from elasticsearch.helpers import bulk
 from elasticsearch_dsl import Index, connections
 import tqdm
 
-from collectiegroesbeek.model import (
-    BaseDocument,
-    CardNameDoc,
-    EigendomsaktenHeemskerk,
-    JaartallenDoc,
-    MaatboekBroekInWaterlandDoc,
-    MaatboekHeemskerkDoc,
-    MaatboekHeemstedeDoc,
-    MaatboekSuderwoude,
-    TiendeEnHonderdstePenning,
-    TransportRegisterBloemendaalDoc,
-    TransportRegisterEgmondDoc,
-    TransportRegisterHaarlemDoc,
-    TransportRegisterZijpeDoc,
-    VoornamenDoc,
-    index_number_to_doctype,
-)
-
-if sys.version_info[0] < 3:
-    raise ImportError('Python < 3 is not supported.')
+from collectiegroesbeek.model import BaseDocument, index_number_to_doctype
 
 
-connections.create_connection(hosts=['localhost:9200'])
+connections.create_connection(hosts=[dotenv_values(".env")['elasticsearch_host']])
 
 
 def logging_setup():

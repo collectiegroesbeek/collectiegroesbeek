@@ -1,5 +1,8 @@
 import re
 import string
+import subprocess
+import time
+from datetime import datetime
 from urllib.parse import quote
 from typing import List, Tuple, Type
 
@@ -169,3 +172,31 @@ def datatables_api():
         "data": docs,
     }
     return resp
+
+
+@app.route('/api/dropbox-webhook/', methods=['GET'])
+def dropbox_webhook_verification():
+    resp = flask.Response(flask.request.args.get('challenge'))
+    resp.headers['Content-Type'] = 'text/plain'
+    resp.headers['X-Content-Type-Options'] = 'nosniff'
+    return resp
+
+
+@app.route('/api/dropbox-webhook/', methods=['POST'])
+def dropbox_webhook():
+    timestamp = int(time.time())
+    with open("webhook_timestamp.txt") as f:
+        timestamp_last_incoming_webhook = int(f.read())
+    if (timestamp - timestamp_last_incoming_webhook) > 300:
+        with open("/var/log/dropbox.log", "a") as f_log:
+            f_log.write(f'\n{datetime.now()} incoming webhook\n')
+            subprocess.Popen(
+                ['./run_import.sh'],
+                stdout=f_log,
+                stderr=f_log,
+                stdin=subprocess.DEVNULL,
+                close_fds=True,
+            )
+    with open("webhook_timestamp.txt", "w") as f:
+        f.write(str(timestamp))
+    return flask.make_response("", 200)

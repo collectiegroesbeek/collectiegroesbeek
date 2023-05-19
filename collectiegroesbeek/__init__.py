@@ -1,8 +1,10 @@
-import os
-
 import flask
+from dotenv import dotenv_values
+
 
 app = flask.Flask(__name__)
-app.config['elasticsearch_host'] = os.environ.get('ELASTICSEARCH_HOST', 'localhost:9200')
+
+_config = dotenv_values(".env")
+app.config['elasticsearch_host'] = _config['elasticsearch_host']
 
 from . import view  # noqa E402
