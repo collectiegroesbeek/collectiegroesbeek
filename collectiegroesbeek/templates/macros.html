@@ -5,7 +5,7 @@
     <div class="form-group">
       <div class="col-lg-8 offset-lg-2">
         <input type="text" class="form-control" name="q"
-               placeholder="zoek op naam (Altena), plaats (Leiden), jaartal (1316), of letters (k of ke)"
+               placeholder="bijvoorbeeld naam (Altena), plaats (Leiden), jaartal (1316), periode (1300-1400)"
                {% if autofocus %}autofocus{% endif %}
                value="{{ q }}"
         >
@@ -31,9 +31,6 @@
       </div>
     </div>
     <button type="submit" class="btn btn-secondary mr-3">Zoek</button>
-    <a href="{{ url_for('show_names_list') }}">
-      <button type="button" class="btn">Namenlijst</button>
-    </a>
   </form>
 
   <script>

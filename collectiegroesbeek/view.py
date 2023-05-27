@@ -1,5 +1,4 @@
 import re
-import string
 import subprocess
 import threading
 import time
@@ -47,8 +46,6 @@ def search():
             'search.html',
             doctypes=doctypes,
         )
-    if 0 < len(q) <= 2:
-        return show_names_list(q)
     cards_per_page = 10
     page = flask.request.args.get('page', default=1, type=int)
     searcher = controller.Searcher(q.lower(), start=(page - 1) * cards_per_page,
@@ -95,19 +92,6 @@ def add_selected_doctypes_to_query_string(
     return query_string
 
 
-@app.route('/namen/')
-@app.route('/namen/<q>')
-def show_names_list(q=''):
-    if not q:
-        return flask.render_template('names_letters.html', letters=string.ascii_lowercase[:27], hits_total=None)
-    for letter in q.lower():
-        if not letter.isalpha():
-            return home()
-    names_list = controller.get_names_list(q)
-    hits_total = len(names_list)
-    return flask.render_template('names.html', namen=names_list, hits_total=hits_total)
-
-
 def format_hit(doc: BaseDocument) -> dict:
     return {
         'id': doc.meta.id,
@@ -140,7 +124,7 @@ with open("names.txt", encoding="utf-8") as f:
     NAMES = f.readlines()
 
 
-@app.route('/namen-ner/')
+@app.route('/namen/')
 def names_ner():
     query = flask.request.args.get('q', '').lower().strip()
     page = int(flask.request.args.get('page', 1))
@@ -151,11 +135,11 @@ def names_ner():
     )
 
 
-@app.route('/namen-ner/search/', methods=['GET'])
+@app.route('/namen/search/', methods=['GET'])
 def search_names_ner():
     query = flask.request.args.get('q', '').lower().strip()
     page = int(flask.request.args.get('page', 1))
-    per_page = int(flask.request.args.get('per_page', 1000))
+    per_page = 1000
     if query:
         filtered_names = [name for name in NAMES if query in name.lower()]
     else:
