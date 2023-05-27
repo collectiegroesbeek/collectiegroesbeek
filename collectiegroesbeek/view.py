@@ -136,6 +136,28 @@ def browse():
     )
 
 
+with open("names.txt", encoding="utf-8") as f:
+    NAMES = f.readlines()
+
+
+@app.route('/namen-ner/')
+def names_ner():
+    return flask.render_template(
+        "names_ner.html",
+        names=NAMES,
+    )
+
+
+@app.route('/namen-ner/search/', methods=['GET'])
+def search_names_ner():
+    query = flask.request.args.get('q', '').lower().strip()
+    if query:
+        filtered_names = [name for name in NAMES if query in name.lower()]
+    else:
+        filtered_names = NAMES
+    return flask.jsonify(filtered_names)
+
+
 @app.route('/api/columns/')
 def datatables_api_columns():
     index_name = flask.request.args.get('index')

@@ -16,7 +16,10 @@
       <button type="submit" class="btn btn-secondary mr-3">Zoek</button>
       <a href="{{ url_for('browse') }}" class="btn btn-secondary mr-3">Verken</a>
       <a href="{{ url_for('show_names_list') }}">
-        <button type="button" class="btn">Namenlijst</button>
+        <button type="button" class="btn mr-3">Namenlijst</button>
+      </a>
+      <a href="{{ url_for('names_ner') }}">
+        <button type="button" class="btn mr-3">Namenlijst (nieuw)</button>
       </a>
     </form>
 </div>

@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}Namenlijst{% endblock %}
+
+
+{% block css %}
+  <style>
+      .name-list {
+          list-style-type: none;
+          padding: 0;
+      }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col">
+      <p>
+        Deze lijst bevat namen die op automatische wijze uit inhoud van de Namenindex en Voornamenindex zijn gehaald.
+        Hiermee kan je een overzicht krijgen van alle aanwezige namen. We zullen deze lijst ook gaan gebruiken om het
+        zoeken te verbeteren. Bedenk wel dat de automatische extractie niet perfect is, dus er kunnen fouten in zitten.
+      </p>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-6 offset-1">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="search-addon">Zoek</span>
+        </div>
+        <input type="text" class="form-control" id="searchInput" aria-label="Search" aria-describedby="search-addon">
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col6 offset-2">
+      <ul id="myList" class="name-list">
+        {%- for name in names %}
+          <li>{{ name }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block js %}
+  <script>
+      let debounceTimeout;
+      document.getElementById('searchInput').addEventListener('input', function() {
+          clearTimeout(debounceTimeout);
+          debounceTimeout = setTimeout(searchName, 300);
+      });
+
+      async function searchName() {
+          let input = document.getElementById('searchInput');
+          let query = input.value;
+          let response = await fetch(`/namen-ner/search/?q=${query}`);
+          let names = await response.json();
+
+          let list = document.getElementById('myList');
+          list.innerHTML = ''; // Clear the list
+
+          for (let name of names) {
+              let li = document.createElement('li');
+              li.textContent = name;
+              list.appendChild(li);
+          }
+      }
+
+  </script>
+{% endblock %}
