@@ -143,19 +143,30 @@ with open("names.txt", encoding="utf-8") as f:
 @app.route('/namen-ner/')
 def names_ner():
     return flask.render_template(
-        "names_ner.html",
-        names=NAMES,
+        "names_ner.html"
     )
 
 
 @app.route('/namen-ner/search/', methods=['GET'])
 def search_names_ner():
     query = flask.request.args.get('q', '').lower().strip()
+    page = int(flask.request.args.get('page', 1))
+    per_page = int(flask.request.args.get('per_page', 1000))
     if query:
         filtered_names = [name for name in NAMES if query in name.lower()]
     else:
         filtered_names = NAMES
-    return flask.jsonify(filtered_names)
+    # Pagination
+    start = (page - 1) * per_page
+    end = start + per_page
+    total_pages = -(-len(filtered_names) // per_page)  # Equivalent to ceiling division
+
+    return flask.jsonify({
+        'page': page,
+        'per_page': per_page,
+        'total_pages': total_pages,
+        'names': filtered_names[start:end]
+    })
 
 
 @app.route('/api/columns/')

@@ -24,22 +24,25 @@
   </div>
 
   <div class="row mt-4">
-    <div class="col-6 offset-1">
+    <div class="col-md-6 offset-md-1 col-12">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="search-addon">Zoek</span>
         </div>
         <input type="text" class="form-control" id="searchInput" aria-label="Search" aria-describedby="search-addon">
       </div>
+      <nav>
+        <ul id="pagination" class="pagination mt-3 justify-content-center">
+            <!-- Pagination buttons will be added here -->
+        </ul>
+      </nav>
     </div>
   </div>
 
   <div class="row mt-4">
-    <div class="col6 offset-2">
+    <div class="col-md-6 offset-md-2 col-10 offset-1">
       <ul id="myList" class="name-list">
-        {%- for name in names %}
-          <li>{{ name }}</li>
-        {%- endfor %}
+        <!-- Content will be added here -->
       </ul>
     </div>
   </div>
@@ -50,26 +53,81 @@
 {% block js %}
   <script>
       let debounceTimeout;
+      let currentPage = 1;
       document.getElementById('searchInput').addEventListener('input', function() {
           clearTimeout(debounceTimeout);
-          debounceTimeout = setTimeout(searchName, 300);
+          debounceTimeout = setTimeout(function() {
+            currentPage = 1; // Reset to page 1 when a new search is made
+            searchName();
+        }, 300);
       });
 
       async function searchName() {
           let input = document.getElementById('searchInput');
           let query = input.value;
-          let response = await fetch(`/namen-ner/search/?q=${query}`);
-          let names = await response.json();
+          let response = await fetch(`/namen-ner/search?q=${query}&page=${currentPage}&per_page=1000`);
+          let data = await response.json();
 
           let list = document.getElementById('myList');
           list.innerHTML = ''; // Clear the list
-
-          for (let name of names) {
+          for (let name of data.names) {
               let li = document.createElement('li');
               li.textContent = name;
               list.appendChild(li);
           }
+
+          let pagination = document.getElementById('pagination');
+          pagination.innerHTML = ''; // Clear pagination
+
+          let startPage = Math.max(currentPage - 3, 1);
+          let endPage = Math.min(currentPage + 4, data.total_pages);
+
+          // Add first page button
+          addPageButton(pagination, 1);
+          if (startPage > 3) addPageEllipsis(pagination);
+
+          // Add intermediate page buttons
+          for (let i = startPage; i <= endPage; i++) {
+              if (i !== 1 & i !== endPage) addPageButton(pagination, i);
+          }
+
+          if (endPage < data.total_pages - 1) addPageEllipsis(pagination);
+          // Add last page button
+          addPageButton(pagination, data.total_pages);
       }
+
+      function addPageButton(pagination, pageNumber) {
+          let li = document.createElement('li');
+          li.className = 'page-item';
+          if (pageNumber === currentPage) li.classList.add('active');
+
+          let a = document.createElement('a');
+          a.className = 'page-link';
+          a.textContent = pageNumber;
+          a.href = '#';
+          a.addEventListener('click', function(e) {
+              e.preventDefault();
+              currentPage = pageNumber;
+              searchName();
+          });
+
+          li.appendChild(a);
+          pagination.appendChild(li);
+      }
+
+      function addPageEllipsis(pagination) {
+          let li = document.createElement('li');
+          li.className = 'page-item disabled';
+
+          let a = document.createElement('a');
+          a.className = 'page-link';
+          a.textContent = '...';
+
+          li.appendChild(a);
+          pagination.appendChild(li);
+      }
+
+      searchName()
 
   </script>
 {% endblock %}
