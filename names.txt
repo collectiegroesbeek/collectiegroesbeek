@@ -66,6 +66,7 @@ Aagje Poelenburg
 Aagje Walraven
 Aagt Symons
 Aagte Willemsdr van Rietwijk
+Aal
 Aal Duynen
 Aalbert
 Aalbert Coenders
@@ -83,7 +84,11 @@ Aalbrecht van Egmonde Jansz
 Aalbrecht van Raaphorst
 Aalbrecht van Velsen
 Aalbrecht van Voorne
+Aalburg
 Aalfje
+Aalsfort
+Aalsmeer
+Aalst
 Aalt Pense van der Aa
 Aalte Klijmans
 Aaltje
@@ -127,8 +132,12 @@ Aaltje van der
 Aaltje van der Sluijs
 Aaltjen
 Aangever Cornelis
+Aanhout
+Aar
 Aard Vos
+Aardenburg
 Aardt Rase
+Aarle
 Aarnoud
 Aarnoud van Benscoop
 Aarnout
@@ -137,7 +146,11 @@ Aarnt Rotemuyl
 Aaron
 Aaron Duercant
 Aaron II
+Aarschot
+Aarschot van Riviere
+Aarsen
 Aarses
+Aarssen van Sommelsdijk
 Aart
 Aart Aartsz
 Aart Berwouts
@@ -190,6 +203,7 @@ Abbema
 Abbema van Ydde Abbema
 Abben
 Abbenbroec
+Abbenbroek
 Abbencamp
 Abbenkerc
 Abbenland
@@ -205,7 +219,9 @@ Abbo filiaeque ejus
 Abcou
 Abcou van Meerten
 Abcoude
+Abcoude van Meerten
 Abdis van het Cist
+Abeele
 Abekinus
 Abel
 Abel Evertsz
@@ -231,6 +247,7 @@ Abelsz
 Abercromby
 Abigael Braams
 Abigael Hendriks
+Ablaing
 Ablert Willemsz van Wingelaer
 Abraem Claesz
 Abraham
@@ -366,17 +383,23 @@ Absolons
 Absouw
 Absteden
 Acath
+Achel
+Achelen
 Achtenz
 Achter Camp
 Achterslote
+Achtevelt
 Achthoeven
+Achthoven
 Acker
 Ackerlaet van Zanten
 Ackerman
 Ackersdijk
 Ackersdyc
+Ackersdyck
 Ackoeij
 Ackoije
+Ackoy
 Ackoy's
 Ackoye
 Acrijn
@@ -592,6 +615,7 @@ Adde Warmboutsz
 Addewijn van Endegeest
 Ade
 Ade Gerbrantsz
+Adegeest
 Adel
 Adela
 Adelardus
@@ -639,6 +663,8 @@ Ademan Moenensoens
 Ademan Moenenz
 Ademan Moensoens
 Ademan Smerighenz
+Adena
+Adendonc
 Adenpuel
 Adenz
 Aderop
@@ -649,6 +675,7 @@ Adewin
 Adewy van Strijen
 Adgerus
 Adhad
+Adikendam
 Adilie van Heusden
 Adinc Doedenz
 Ading Doedenz
@@ -1989,6 +2016,7 @@ Advocaat
 Advocaat Blokland
 Advocatus
 Adwicus Strenkart
+Aebinge
 Aebinge van Humalda
 Aechat
 Aechgen Diercksdochter
@@ -2022,6 +2050,7 @@ Aecht Zegers
 Aecht c.s
 Aecht van Neck
 Aecht van den Dune
+Aechtdorp
 Aechte
 Aechte Allartsdochter
 Aechte Baertendr
@@ -2075,6 +2104,8 @@ Aechtenzone
 Aechtien Jacobs
 Aechtje Gerritsdr
 Aechtken Thiemans
+Aecken
+Aeckermonde
 Aecte Cox
 Aef
 Aef Allard Pieterszdr
@@ -2102,6 +2133,7 @@ Aef Tymansdochter
 Aef Tymansdr
 Aef Verniers
 Aeff Pietersdr
+Aefferden
 Aeffgien Franken
 Aefge
 Aefge Sybrants
@@ -2405,10 +2437,13 @@ Aelmansz
 Aelmer
 Aelmodis
 Aelmont van Ameronghen
+Aelrache
 Aelriaen Aertsz
 Aelrixsz
 Aelsfort
+Aelsmeer
 Aelsmerberchs
+Aelst
 Aelt Greve
 Aelt van Gelder
 Aelt van Hierde
@@ -2494,7 +2529,9 @@ Aenhout
 Aenrd Dankaerdsz
 Aentje Jans van der Verwen
 Aentken Spronck
+Aer
 Aerckel
+Aerdt
 Aerdt Blommert
 Aerent van Gent
 Aerentsbergh
@@ -3160,6 +3197,9 @@ Aerntsz van Dinter
 Aerntsz van Oudewater
 Aerntsz van Uytgeest
 Aernvelt
+Aerschot
+Aerse
+Aerssen
 Aerst
 Aerstensz van Vianen
 Aert
@@ -3281,10 +3321,12 @@ Aertsz van Grevenbroeck
 Aertsz van Zielijshoeck
 Aeryen Ghysberchts
 Aesswyn
+Aeswijn
 Aetsart
 Aetsert
 Aetsert van Ysselsteyn
 Aeylgher Teitenz
+Afferden
 Afflighem
 Affonis
 Afkijns
@@ -3377,6 +3419,7 @@ Agericus
 Agerlijn
 Agge Simensz
 Agger
+Aghle
 Agna
 Agneese
 Agnes
@@ -3574,7 +3617,11 @@ Agnita Fagel
 Agnyese
 Agnès dame
 Agustijn van Teylingen
+Ahaus
+Ahrenfels
+Ahrental
 Ahus
+Aijala
 Aijng
 Aijng Pietersz
 Ailbrecht van Teylingen
@@ -3605,9 +3652,14 @@ Airnt van Hairler
 Airnt van Wijck Herkenz
 Airnt van der Woude
 Airt van Gaveren
+Aisch
 Ake
+Aken
+Akendam
 Aker
+Akeren
 Akerlaeck
+Akerlaken
 Akerman
 Akersloot
 Akkooi
@@ -3723,6 +3775,7 @@ Albanensis
 Albarda
 Albaren Melis
 Albartus de Mi
+Albenburg
 Alberge
 Albericus
 Albericus Elisonis
@@ -4039,6 +4092,7 @@ Albertus van Vorne
 Albertus van Wulven
 Albertus van den Burg
 Albertus van den Hamme
+Alblas
 Albo
 Albont
 Albout
@@ -4048,6 +4102,7 @@ Albout Honninc~
 Albout Honning
 Alboutz
 Albout~
+Albrandswaard
 Albrandwaard
 Albrantswaard
 Albrecht
@@ -4195,8 +4250,13 @@ Alde
 Aldeburge
 Aldegonde
 Aldenbergh
+Aldenboekum
 Aldendorpe
+Aldenhoven
+Aldenkirchen
 Aldenzele
+Alderdelle
+Alderode
 Aldert
 Aldert Brederode
 Aldert Dam
@@ -4437,11 +4497,14 @@ Aleijte
 Aleise
 Aleise van Alphen
 Aleke Hertgersz
+Alem
 Aleman
 Alemans
 Alemans~
 Aleman~
 Alemoede
+Alen
+Alendorp
 Aleonora van Borssele
 Aleph Schelige
 Alet Muysse
@@ -4601,6 +4664,7 @@ Alfons de Vieri
 Alfons de Viri
 Alfraet van der Horst
 Alfraet van der Nederhorst
+Alfter
 Aliaen Jansz
 Alice
 Alice Pyck
@@ -4746,6 +4810,8 @@ Alithea Adriaensdochter
 Aliwyn van Bonternisse
 Alix
 Alize Wtenbroeck
+Alkemade
+Alkmaar
 Alkmade
 Alkmar
 Alkmare pro uno
@@ -4913,7 +4979,10 @@ Allart van Malsen
 Allart van Ryswyck
 Allart van Vueren
 Allekyn Roelofsz
+Allen
 Allenz
+Aller
+Aller van Stoutenborch
 Allerheilgendag
 Allersma
 Allert
@@ -4970,19 +5039,23 @@ Allyn Ysbrantsz
 Allynsz
 Allêu
 Almansweert
+Almelo
 Almer Bruinsz
 Almer Bruynsz
 Almer Jansz
 Almer Ubekenz
+Almeras
 Almericus de Heeswijk
 Almersdorp
 Almersdorpe
 Almesfute
+Almkerk
 Almmonde
 Almonda
 Almonde
 Almonde van den gasthusten Berch
 Almsteyn
+Almsvoet
 Alnoth
 Alnoth van Alkmaar
 Alnoud Ludekenz
@@ -4999,8 +5072,11 @@ Alout
 Alout Pape
 Alout van Ierseke's
 Alpaiz
+Alpem
+Alpen
 Alphardus van der A
 Alpheim
+Alphen
 Alphenhoorn
 Alpher van der Horst
 Alpherhorn
@@ -5011,7 +5087,9 @@ Alpheym
 Alras
 Alre Heyligen
 Alrixz
+Alsdorf
 Alsen
+Alsfort
 Alsoe
 Alsoe nae goede
 Alsteen
@@ -5023,10 +5101,13 @@ Altbern
 Altburga
 Altena
 Altenae
+Altenbruch
 Alterasch
 Altere
+Alteren
 Altetus Steveldsz
 Altetus dictus
+Altforst
 Altfrid
 Altfrit
 Altfurge
@@ -5040,6 +5121,7 @@ Alutarius
 Aluwijn
 Alva
 Alva's
+Alve
 Alverade
 Alverade Wouters
 Alverade van Cuyk
@@ -5053,6 +5135,7 @@ Alveraedt
 Alveraedt van Brederode
 Alveraet Claes Hoevenaersdochter
 Alvericus
+Alveringen
 Alvini de Revele
 Alwer Claesdochter
 Alwer Claesdr
@@ -5239,7 +5322,9 @@ Amalia van Brederode
 Amalrici V
 Amalrici VII domini de Landast
 Amalricus
+Ambe
 Ambele
+Amblo
 Ambre
 Ambroise van Dynther
 Ambrose Suijs
@@ -5300,6 +5385,7 @@ Amelrici
 Amelricus
 Amelrijc
 Amelrik
+Amelroy
 Amelys
 Amelys van Mijnden
 Amelys van Minden
@@ -5308,6 +5394,7 @@ Amerentia Isbrants
 Ameroede
 Amerongen
 Amersfoert
+Amersfoort
 Amersfort
 Amersouen
 Amersoyen
@@ -5315,6 +5402,7 @@ Amersoyen Well
 Amesfoort
 Amestel
 Amestellandt
+Ameyde
 Ameyden
 Ameyden bi den slusen
 Ameyden mit rove ende mit brand
@@ -5323,16 +5411,25 @@ Amilii fundata
 Amilius Dullaerts
 Amis Ernstsz
 Amis Ernstsz Bosman
+Amman
 Amman d'
 Ammeroy
 Ammers
+Ammersoyen
 Amons
 Amos
 Amos Schaep
 Amplinge
+Ampsen
 Amson
+Amstel
+Amstel van Doornenburg
+Amstel van Loenersloot
 Amstel van Mijnden
+Amstel van Mynden
 Amstelle jeghens den grave van Holland
+Amstenrade
+Amsterdam
 Amsterland
 Amsterlandt
 Amsterveen
@@ -5350,7 +5447,9 @@ Anchusen
 Ancker
 Andel
 Andels
+Andelst
 Andelyen
+Anderlecht
 Andolfus
 Andr gld
 Andre Fernandes Cardoso
@@ -5663,6 +5762,7 @@ Ane
 Ane Arnouds
 Ane Otten
 Anenz
+Angele
 Angelica Coerten
 Angelica Daeij
 Angelica Koerten
@@ -5672,6 +5772,7 @@ Angeline Schenck
 Angelis
 Angelus Wilhelmusz
 Angeneta Robberts
+Angeren
 Angerus
 Anghenvort
 Angilbaldus
@@ -5683,7 +5784,9 @@ Angniese kopen
 Angnijese
 Angnyese
 Angéline née baronne Schenck de Nydecken
+Anholt
 Anhonis
+Anle
 Ann
 Ann ac Juris
 Anna
@@ -6466,6 +6569,7 @@ Annitje
 Annocqueur
 Annocqué
 Annoqué
+Anrade
 Anraedt
 Ans
 Ansbaldus
@@ -6487,6 +6591,7 @@ Anselmus de Stege
 Anselmus dictus
 Anselmus van Foreest
 Anselmus~
+Ansem
 Ansem Alberts
 Ansem Albertsz
 Ansem Arnoudsz
@@ -6496,6 +6601,7 @@ Ansem Pietersz
 Ansem de smit
 Ansem van Aefferden
 Ansem van Roboetroeth
+Ansembourg
 Ansems
 Ansemsz
 Ansen Philipsz
@@ -6512,6 +6618,7 @@ Anssem Dirc hem tbv Wigger Jansz van Scye
 Anssen
 Anssum Jansz
 Anssum van Elderen et Elisabth
+Anster
 Ant
 Anth
 Anth Hovaens
@@ -6833,6 +6940,7 @@ Antoinette Fronacoise
 Antoinette de Merode
 Antoinette van Lynden
 Antoinette van Merode
+Antoing
 Anton
 Anton Adriaensz
 Anton Bernard Coenraad van Dongen
@@ -7009,9 +7117,16 @@ Antoon Spierinck
 Antoon van Berchem
 Antuensz van der Horst
 Antulf
+Antwerpen
+Antwilre
 Anwerpen
+Anxtelrode
+Anxter
 Apcouwe
+Ape
 Apehuse
+Apehusen
+Apeldoorn
 Aper
 Aper Dircsz
 Aper Dirksz
@@ -7036,7 +7151,10 @@ Apostel
 Apotheker
 Appel
 Appelboom
+Appeldoorn
+Appelen
 Appelman
+Appeltern
 Appollonia van Zweeten
 Appolonia Jansdochter
 Appolonia Michelsdochter
@@ -7048,10 +7166,14 @@ Ar
 Aram de Ahr
 Aras
 Arber Allardsz
+Arberg
 Arbersz
 Arboreta
+Arck
 Arckel
 Arckele
+Arda
+Arde
 Ardemburchambacht
 Arden van Asperen
 Ardewich Strengart
@@ -7063,6 +7185,7 @@ Arel van den Eynde
 Arem
 Aremerswet
 Arenberch
+Arenberg
 Arend
 Arend Avernary
 Arend Dierixz
@@ -7122,6 +7245,9 @@ Arend van der Dussen
 Arend van der Stok
 Arend van der Wede
 Arenda
+Arendael
+Arendel
+Arendonck
 Arends
 Arendsdochter
 Arendsz
@@ -7132,6 +7258,7 @@ Arendt Thonisz
 Arendt de Raidt
 Arendt van Bonynen
 Arendt van Wassenaer
+Arennest
 Arent
 Arent Adriaen Louisz van Dorp
 Arent Antoniesz
@@ -7449,6 +7576,7 @@ Arentswbergen
 Arentsz
 Arentsz van Arkel
 Arentsz van der Sluse
+Arersberg
 Argeman
 Argemantgen
 Ariaan van Sochel
@@ -7645,7 +7773,9 @@ Arkels leen
 Arkelsteijn
 Arkensteyn
 Arkensteyn één metalen pleijde
+Arkentel
 Arlanda van Outhoorn
+Arlar
 Arleveen
 Arlewijn
 Arlewijn Vranckenz
@@ -7657,6 +7787,7 @@ Arm
 Arma
 Armand de Caumont
 Armegaert
+Armeude
 Armgaert
 Armgaert van der Werken
 Armgard
@@ -7757,6 +7888,7 @@ Arne
 Arneem
 Arnemuyden
 Arnestus de Wulfin
+Arnhem
 Arnhemerbroeke
 Arnodi Kije
 Arnold
@@ -8963,6 +9095,7 @@ Arnouts
 Arnoutsgerecht
 Arnoutskercke van oversant
 Arnoutsz
+Arnsberg
 Arnst van Wulfen
 Arnst van Wulfin
 Arnstädt
@@ -9237,12 +9370,15 @@ Arpia
 Arregon
 Arris
 Arscheidt
+Arscheyt
 Arsen
+Arssen
 Arst
 Arst van den Broke
 Arthur Soyersz
 Artnt van Amerongen
 Artois
+Artoys
 Artum
 Artus
 Artus van de Voorde
@@ -9270,12 +9406,15 @@ Arys Pietersz
 Arys de goudsmit
 Asbeck
 Asborch venienti Xanctis
+Asborg
 Ascanus
 Ascelinus
 Ascelinus dit leen
+Asch
 Ascherweert
 Ascoldengim
 Ascricus
+Asdonck
 Asgrim
 Ashoeck
 Asige
@@ -9283,12 +9422,23 @@ Asiger Jeldricsz
 Asighe
 Asighen
 Asinier
+Aske
+Asperden
 Aspere superius
+Asperen
 Asperens
+Aspremont
+Assche
+Asschenbruch
 Asschet
+Assebroek
+Asseliers
 Asselijn
+Asselt
+Assem
 Assendelft
 Assendelver
+Assenstein
 Assewijn
 Assighe
 Asssendelft
@@ -9309,20 +9459,29 @@ Assumburch
 Assumpcio Mariae
 Assweer van Wynbergen
 Assweer van Zandwijk
+Asten
 Asverus Allinga
 Athalardus
 Athelbernus
 Athelgot
 Athelhilt
+Atherne
 Athia Oevema
+Atrebato
 Attalie Fransdochter
 Attalie Fransdr
+Attevelt
 Aubero
+Aubert
 Aubertum
 Aubertus de Bosinchem
+Aubremont
+Auca
+Audengie
 Audenhu
 Audenhuls
 Audescalc c.s
+Audforst
 Audhaes
 Audica Ludekinsz
 Audica Ludekinsz en
@@ -9347,6 +9506,8 @@ Augustin van den Eynde
 Augustinus
 Augustus Paulus
 Augustus van den heere van Brederode
+Aule
+Aumale
 Aurelia
 Austmora
 Autel
@@ -9369,13 +9530,19 @@ Avekinenz
 Avekyn Claes
 Aven sloet
 Avenhorn
+Avennes
 Avens.s
 Avensaet
 Avenum
 Avenzaet
+Averbergen
 Averdijcker
 Averdune
+Averhagen
+Averlake
+Averly
 Avernary
+Avervelt
 Avesaet
 Avesaet bij de gemene
 Avesaet bij transport
@@ -9386,10 +9553,16 @@ Avesotensone
 Avesotensone van corne
 Avezota
 Avlerade van Hogendorp
+Avolprech
 Avolprech~
+Avont
+Avoort
 Awijt
 Axel
+Ayala
 Ayleyt
+Aylsdorf
+Aylshoven
 Azani
 Azelinus
 Azo
@@ -9401,31 +9574,47 @@ B. van der Haer
 B.H. Slicker van Bath
 BH van Vlissingen
 Baafken Hermans
+Baak
 Baalde
 Baan
 Baander
 Baanst
+Baar
 Baard
 Baardemaker
 Baardinc
+Baardwijc
+Baardwyk
 Baarend van der Dussen
+Baarland
+Baarle
 Baarn
 Baarnt
 Baars
+Baarsdonk
+Baarsdorp
 Baarte
 Baartn Grauwert
 Baas
+Baax
+Baaxem
+Baaxen
 Babilonie
 Bac
 Bacham dedit
 Bachelier
+Bachuse
 Back
 Back/Berthout
+Backem
 Backem mansas tres
+Backenes
 Backer
 Backer Jacobsz
 Backersvenne
+Backerweerd
 Backgen
+Backum
 Bacselir
 Bacxter
 Badelet
@@ -9440,6 +9629,7 @@ Badeloghe Pietersdochter van Minnichem
 Badeloghen
 Baec
 Baeck
+Baecx
 Baef
 Baef Aeriaensdr
 Baef Gerritsdochter
@@ -9457,9 +9647,11 @@ Baen Ziboutsz
 Baenrosen cleder
 Baenrots
 Baens
+Baenst
 Baer
 Baer van Lathum
 Baerdze
+Baerle
 Baerll
 Baern
 Baernd
@@ -9468,6 +9660,8 @@ Baernt Vos
 Baernt van Welderen
 Baers
 Baers van Velaer
+Baersdonc
+Baersdorp
 Baert
 Baert Auwelsdochter
 Baert Baertsz
@@ -9524,12 +9718,17 @@ Baertraedt
 Baerts
 Baerts Pietersdochter
 Baertsz
+Baesrode
 Baete
+Baexem
+Baexen
 Bageren
 Bagijnenwaard
 Baijnier
 Baijser
 Bailiu
+Bailleul
+Bailleulmont
 Bairnt Jansz van Leyden
 Bairte van Brederode
 Bairten
@@ -9539,7 +9738,11 @@ Bairtout van Assendelft Gherydsz
 Bakara
 Bake
 Bake van Wynberge
+Bakel
 Bakelaer
+Bakenes
+Bakenesse
+Bakerweerde
 Bake~
 Bakkem dedit
 Bakker
@@ -9572,6 +9775,7 @@ Baldwinus Baldzo
 Baldwinus de Benthem
 Baldwinus de Vuchte
 Balen
+Balendonc
 Balgoye
 Baliaert
 Balich Adriaen Noydendochter
@@ -9585,6 +9789,7 @@ Balichs
 Baljuw
 Baljuw van 's Gravenhage
 Baljuw van Schoonhoven
+Balk
 Balle
 Ballemaker
 Ballike
@@ -9641,8 +9846,10 @@ Baltus de Bijter
 Baltus van Greevenbeeck
 Baltus van Wevelinckhoven
 Balua
+Balveren
 Bam
 Ban
+Banc
 Banchem
 Banchem~
 Banckert
@@ -9668,6 +9875,7 @@ Banninck
 Banning
 Bant
 Baptista
+Bar
 Baradot
 Baratholomeus van Rijbeeck
 Barbara
@@ -9770,6 +9978,7 @@ Barbier
 Barbiers
 Barch
 Barchmaker
+Barckelaer
 Bardes
 Bardesen
 Bardesius
@@ -9797,6 +10006,7 @@ Barend van der Dusse
 Barend van der Dussen
 Barend van der Dussen van Nieuwerkerk
 Barendina Bredenburgh
+Barendrecht
 Barendsz
 Barent
 Barent Baerntsz
@@ -9837,8 +10047,12 @@ Barentsz Botter
 Barg
 Bargerus
 Bargh
+Barlaymont
 Barlhese
+Barlinghe
+Barmentlo
 Barnadyn Dapijs
+Barneveld
 Barnier
 Barnt
 Barnt Scoutenz
@@ -9850,7 +10064,9 @@ Barre
 Barrenetel
 Barrensis
 Barrevelt
+Barry
 Barsala
+Barsdonk
 Barsingerhoern
 Bart
 Bart Aert
@@ -9900,6 +10116,7 @@ Barthel Jorisstraat
 Barthel Loosen
 Barthelmeus
 Barthelmeus Symonsz
+Barthem
 Barthold
 Barthold Jansz
 Barthold van Gent
@@ -10104,7 +10321,12 @@ Basilius
 Basin
 Basio
 Basius
+Basjens
 Basjens van der Hoolk
+Bassem
+Bassen
+Basserode
+Bassevelde
 Bast
 Bastert
 Bastiaan Jansz
@@ -10140,7 +10362,9 @@ Bastiaentje
 Bata uxor
 Bate
 Batenburch
+Batenburg
 Bathazar van ryensteyns
+Bathem
 Batrijs
 Batselir
 Batselir dedit
@@ -10165,7 +10389,10 @@ Baudwin Maes
 Baudwinus
 Baudwyn
 Bauke Evenblij
+Baulme
 Bausan
+Bautersem
+Bautersum
 Bava
 Bava uxor
 Bavaria
@@ -10173,6 +10400,7 @@ Bave
 Bave filius
 Bavekine bosch
 Bavelaer
+Bavendamme
 Bavenz
 Bavin
 Bavinc
@@ -10330,24 +10558,36 @@ Beatriz van Huessen
 Beatrys Arntsdochter van der Bussch en
 Beatrys Coninx
 Beatus
+Beaufort
+Beaulieu
 Beaumont
+Beauvoir
 Bebbekin
 Becelinus
+Bechusen
 Becker
 Becker Jacobsz
 Beckers
 Beckesteyn
 Beckevoert
+Beckevoort
 Beckevorts
+Becq
+Bedaff
 Bedbur
+Bedbuur
 Bedrongen
 Beduijnre
 Beduynre
 Beeck
+Beecke
 Beeckesteijn
+Beeckesteyn
 Beefland
+Beefting
 Beek
 Beeke
+Beekerke
 Beekman
 Beel
 Beel Arndtszdochter
@@ -10359,11 +10599,13 @@ Beelt
 Beeltken Jans
 Beeltsnyder
 Beemans
+Beemde
 Beeningerland
 Beer
 Beer Jacobsz
 Beer Jansz
 Beer Volkartsz
+Beerhem
 Beern
 Beerninck
 Beernink
@@ -10387,10 +10629,13 @@ Beernt van den Bongaert
 Beernt van den Bongart
 Beernt van der Haer
 Beers
+Beerse
+Beersel
 Beerte
 Beertje
 Beertje Dirx
 Beertje Pieters
+Beesdem
 Beesdt van Renoy
 Beeskinus
 Beest
@@ -10399,23 +10644,33 @@ Beets
 Bef
 Begga
 Beghinenhofstede
+Beheim
+Beheym
 Beier
+Beijaert
 Beije
 Beije Wollebrantsz
 Beijer
 Beijer Jansz
+Beijeren
 Beijn
 Beijnard
 Beijnem
 Beijnen
+Beijnhem
 Beijnken
 Beijselare
 Beijst
 Bein
 Beincken
+Beinhem
+Beinum
+Beistere
 Beke
 Beke capellaen
+Bekehem
 Bekemarke
+Bekerke
 Bekesteijn
 Bekesteyn
 Bel
@@ -10433,6 +10688,7 @@ Belcrum
 Beldekinus
 Bele
 Beleningen
+Belgerien
 Belgique
 Beli Gerbrandsdr
 Belia
@@ -10462,14 +10718,20 @@ Beligen
 Belije
 Belije Otten
 Belije Pieters
+Belijen
 Belijencamp
 Beljaert
 Bellaert
 Belle
 Belle voor Berwout
+Bellinchave
+Bellinchaven
+Bellinckhuysen
 Bellof
 Bellum-Pratum
 Belooy
+Beloys
+Belt
 Beltram
 Bely
 Bely Gaert
@@ -10486,11 +10748,14 @@ Belye
 Belytge Jansdochter
 Bemel
 Bemel copianti
+Bemelen
 Bemelstraet
+Bemmael
 Bemmel
 Bemmel c.s
 Bemmell
 Ben
+Bencvliet
 Bene
 Benedicte
 Benedictus
@@ -10507,13 +10772,16 @@ Benne
 Benne Gerbrandsz
 Benne van Aernem
 Bennebroeckerwech aen t
+Bennebroek
 Bennekom
 Bennenbroec
 Bennenz
+Benninchoven
 Benninck
 Bennincks
 Benning
 Benningebroec
+Benningford
 Benninghebroec
 Benno 3 mansus
 Benoit
@@ -10521,8 +10789,10 @@ Benon
 Benschop
 Benscop
 Bent
+Bentheim
 Benthem
 Bentinck
+Bentum
 Bentvriend
 Benyaert Seij
 Beoosterschelde
@@ -10535,17 +10805,27 @@ Berch
 Berchambacht
 Berchambacht, Stolwijc
 Bercheijne
+Berchem
+Berchen
 Berchlaan-O.Z. Grote Kerk
 Berchman
 Berchout
+Berchusen
 Berchwech
 Berck
 Bercka van Loe
 Berckel
+Berckelaer
 Berckenrode heyt
+Bercker
 Berckhout
+Berckhuysen
+Bercmede
 Bercmeer
 Berdbur
+Berelevedonk
+Berenbroek
+Berenchem
 Berend Freys
 Berend Paelken van Baer
 Berend Uteneng
@@ -10554,6 +10834,7 @@ Berend van Yerte
 Berend van Yrte
 Berend van den Bongard
 Berendina Lesier
+Berendrecht
 Berendt van Heerde
 Berendt van Heerdt
 Berengarius
@@ -10577,29 +10858,40 @@ Berent van Mane
 Berent van Nulde
 Berent van Tellight
 Berent van den Dorenweerde
+Berentrade
+Berentveld
 Beresteyn
 Beresz
 Berethinda
 Berewoldus
 Berewouts
+Berg
 Bergainge
 Bergan
 Bergardis
 Berge
 Berge an onser liever Vrouwen
 Bergele
+Bergen
+Bergen op Zoom
 Bergen van Daergeestertiend
 Berger
 Berger hiet
 Berger kerk
 Bergergoech
 Bergerhorst
+Bergerhusen
+Bergh
+Berghe
+Berghe von Trips
+Berghelen
 Berghen
 Berghen an den Zoom
 Berghen déclare
 Berghen et Alkmer
 Berghen noortwert
 Berhard Rappard
+Beringen
 Beringer
 Berk
 Berka ex
@@ -10607,11 +10899,22 @@ Berke
 Berke pro absolutione
 Berke pro impetratione
 Berkel
+Berkelaer
+Berkendale
+Berkenrise
 Berkenro
+Berkenrode
+Berkenvoorde
 Berkhout
 Berkhout~
+Berkout
+Berlaer
 Berlham
+Berlicum
+Berlinge
+Berlo
 Bermer
+Bern
 Bernaerds
 Bernaert
 Bernaert uten
@@ -10784,6 +11087,8 @@ Berndgen Berndts
 Berndt Vertbroich
 Berndt van Wely
 Berndts
+Berneau
+Bernemicourt
 Berner Vantenholte
 Bernert Nasschart
 Bernerus
@@ -10797,6 +11102,8 @@ Bernhardo de Dipenhem
 Bernhardus Preis
 Bernhardus de Zekelinge
 Bernhardus dictus Preis
+Bernhem
+Bernhese
 Bernier
 Berniers
 Bernildis
@@ -10852,8 +11159,11 @@ Bernt van Vauderick
 Bernt van der Haer
 Bernt van der Heyden
 Bernt van der Wilten
+Bernuy
 Beroaldi
 Berolt
+Bersdin
+Bersel
 Bert
 Bert Hughenz
 Bert Lambert Pijls
@@ -10877,6 +11187,7 @@ Berta van Ochten
 Berta van den Boetzelaar
 Bertahardus Sandyck
 Bertam
+Bertanghe
 Berte
 Berte dedit
 Berte van Egmond
@@ -11008,7 +11319,10 @@ Bertrand van Loutsenrode
 Bertrudenz van Haerlem
 Bertrudt
 Bertulfus
+Berwaerde
 Berwaerde~
+Berward
+Berwick
 Berwinus
 Berwoldi
 Berwoldus de Ecmunda
@@ -11025,10 +11339,13 @@ Besem
 Besemaker
 Besemer
 Besighe
+Besijn
+Besoyen
 Bessel
 Best
 Beste
 Besten de huva
+Bestenvelde
 Bestevaer
 Besting
 Bet
@@ -11037,6 +11354,7 @@ Betgen
 Beth
 Bethanie
 Bethue
+Bethune
 Betien Heijnes
 Betje Barg
 Betje van Sanen
@@ -11056,25 +11374,40 @@ Beuckelaer
 Beucker
 Beugholt
 Beukelaer
+Beuningen
+Beurgelen
 Beuselijn
+Beusichem
 Beust
 Beveland
+Bever
+Bevere
+Beveren
 Beverna
 Beversluys
+Bevervoorde
 Beverward
+Beverweerd
+Beverwijk
 Beverwyc
 Beverwyck dijck
+Bevoort
 Bewaerre
 Beye Versynghe
 Beyer
 Beyer Jansz
 Beyer Willem Talincxz
 Beyerbergen
+Beyeren
 Beyerland
 Beyers
 Beyers gld
+Beyersbergen van Henegouwen
+Beyerstorppe
+Beyling
 Beyn
 Beynheim
+Beynhem
 Bezegeld
 Bezooien
 Biatrice
@@ -11083,11 +11416,14 @@ Biatrijs
 Bichoiltsz
 Bicker
 Bickerseijlant
+Bie
 Biedes Jans
+Bien
 Bienez
 Biens
 Bienz
 Bier
+Bierbeek
 Biercamp mit der Venich
 Bierenbroodspot
 Bierenbroot
@@ -11096,43 +11432,69 @@ Bierman
 Bierne
 Biersac
 Biersteker
+Bierum
 Bierviet
 Biervliet
 Bierwisch
+Bies
 Biesche weyde
 Biese
+Biesen
+Biesheuvel
 Biestkamp
 Bievelant
 Biez
 Bigge
+Biggekerke
+Biggenkerke
 Biggo
 Biggo de Coudewerve
 Bije
 Bijenman
 Bijkerk
 Bijl
+Bijler
 Bijlewerff
 Bijman
 Bijndorp
 Bijsanten Dircsz
+Bijsel
+Bijter
 Bijwaert
 Bilandt
+Bilderdijk
 Bilenvelt
+Biler
 Bilinkerwech
 Billa
 Bille
+Billegouart
+Billewyk
 Billoquaert
 Bilre
 Bilrevelt abbas et prepositus
+Bilwyc
 Binchorst
+Binckem
+Binckhof
+Binderen
 Bindorp
+Bingelrade
+Bingerden
 Bingincourt
 Binneblijf
+Binnen
 Bints
+Birbach
 Bircke
+Bircmede
+Birgel
 Birnemede
+Birten
+Bischoffshausen
 Bislic
 Bislich domina de Galen de bonis
+Bislick
 Bisschop
 Bisschops
 Bisschopswald
@@ -11145,26 +11507,39 @@ Bitter
 Bitter de Raesfeldt
 Bittermond
 Bivesius
+Blaasveld
 Blaau
+Bladeghem
+Bladel
 Bladelijn
 Bladelin
 Blaecke
+Blaeuvelt
 Blaffaert
 Blair
 Blanc
 Blanchard de Cats
 Blanchard de Cuck
+Blanchouwen
+Blanchoven
 Blanck
 Blanckael
+Blanckeroort
 Blanckert
+Blanckevoort
 Blancocq
 Blandinus
 Blankaert
 Blankard
 Blankart
 Blanke Heynenz
+Blankenbijl
+Blankenburg
+Blankenheim
 Blankert
 Blankevoort
+Blaren
+Blasenborch
 Blasius
 Blasius Brouwer Arentsz
 Blasius Spinel
@@ -11181,18 +11556,31 @@ Bleeser
 Bleete
 Bleijs
 Bleijswijck
+Bleijswijk
+Bleiswijk
+Bleke
+Blenckshorst
 Blesekaert
 Blesen
 Bleskens
 Bleskijnsgraaf
+Bleu
 Bleys pro
+Bleyswijck
 Bleyswyk
 Blic
+Blickenburg
 Blickslager
 Bliec
+Blijdenstein
+Blijenburg
 Blijfhier
+Blinde
 Blitterswijc
+Blitterswijk
+Blitterswyk
 Bloc
+Blochoven
 Blochovens
 Block
 Blockelandt
@@ -11208,6 +11596,9 @@ Bloemart
 Bloeme
 Bloeme Gheyenz
 Bloemen
+Bloemendaal
+Bloemensteyn
+Bloemenvenne
 Bloemenvenne beleend
 Bloemenweerde
 Bloemersdijc
@@ -11215,25 +11606,38 @@ Bloemesteyn
 Bloete
 Bloijs
 Bloijs van Treslong
+Blois
 Blois van Ginderdeuren
 Blois van Treslong
 Blok
+Blokdijk
+Blokhuysen
 Blokker
+Blokland
 Blom
+Blomburch
 Blomensteyn
 Blommaert
+Blonde
 Blondeel
 Blont
 Bloot Odzier
 Bloot beleend
+Bloote
 Blote
+Bloxen
 Bloxen a Burgh
 Bloxen à Burgh
 Bloys
+Bloys van Ginderdeuren
+Bloys van Treslong
 Blydeken
+Blyenburch
+Blécourt
 Blöte
 Bobbert
 Boc
+Bocholt
 Bochoven
 Bochovens
 Bochter
@@ -11242,12 +11646,25 @@ Bockerman
 Bockevoet
 Bockholt
 Bockinc
+Boddaert
 Bode
 Bodeck
+Bodegem
+Bodeghem
+Bodegom
+Bodegraven
 Bodic
+Boechorst
+Boechout
 Boeckel
 Boeckelt
+Boecop
+Boedberg
+Boedbergen
+Boede
+Boederijc
 Boegel
+Boeicop
 Boeij
 Boeijden
 Boeije
@@ -11261,6 +11678,7 @@ Boekel van der Hare
 Boekel/Bokel
 Boekelaer
 Boekholt
+Boekhorst
 Boekijn
 Boel
 Boel Harckenz
@@ -11284,6 +11702,7 @@ Boene Geltetsz
 Boene Gerbrandsz
 Boene Jan
 Boenekyn van syn winterroc
+Boenem
 Boenen
 Boenghart
 Boeninc
@@ -11298,26 +11717,35 @@ Boerhave
 Boerman
 Boerop
 Boers
+Boert
 Boesdael
 Boeselingeliede
 Boeske
 Boesselinus
 Boest
+Boetbergen
 Boetbergh
+Boeter
+Boetselaar
 Boetzelaer
 Boeve
 Boey
+Boeycop
 Boeye
 Boeye~
 Boeys
 Bogaart
 Bogaarts
+Bogaerde
 Bogaert
 Bogaert (Uytten)
 Bogardt
+Bogem
 Bogge
 Bogghe Willem Hornekaertsz
+Boghe
 Boghemaker
+Boghemakere
 Boght
 Boicholt
 Boickholt
@@ -11329,6 +11757,8 @@ Boijenz
 Boijkens
 Boijmer
 Boikes van Schagen
+Bois
+Boisot
 Bok
 Bokel
 Bokel Janszoon
@@ -11346,9 +11776,11 @@ Boldewijn van Heerdt
 Boldewijn van Zweten
 Bolding
 Bole
+Bolgerij
 Bolie
 Bollaert
 Bollaert Pietersz
+Bolland
 Bollanthorp
 Bolle
 Bolle van Zaenden
@@ -11382,8 +11814,12 @@ Bonaventura van Grevenbroek
 Bonck
 Bondse Clauwertsz
 Bone
+Boneem
+Bonenburg van
 Bonendaal
 Bonenz
+Bongaart van Nyenrode
+Bongaert
 Bongard
 Bongard van Lugtenburg
 Bongart
@@ -11396,8 +11832,11 @@ Bonier
 Boniface Maurissenz
 Bonifacius
 Bonifacius IX
+Bonijnen
 Bonijs
 Boninc
+Boninchusen
+Bonnargia
 Bonne
 Bonne Pietersz
 Bonne de Baedercourt comme veuve
@@ -11414,6 +11853,7 @@ Bontis
 Bontje
 Bontje van der Heyligenharen
 Bonwert
+Booch
 Bood
 Boodschap
 Boof
@@ -11424,20 +11864,26 @@ Boogmaker
 Booij Volckartsz
 Booker
 Boom
+Boomen
 Boomgaard
+Boomgaarde
+Boomgaarden
 Boon
 Boon Govertsz Turckenburgh
 Boonem
+Boonen
 Boongaerd
 Boonmes
 Boonstoppel
 Boorsheim
+Boort
 Boos
 Boose
 Boot
 Booth
 Bootshaeck
 Bootsman
+Bor
 Bor Deenkijnsz
 Bor Deenkynsz
 Bor Deeukensz
@@ -11458,17 +11904,30 @@ Borchgrave van Leyden
 Borchmalsen ende die windmeul
 Borchman
 Borcholtz
+Borchoven
+Borcht
+Borchwijk
 Borckuwe
+Borcow
+Borculo
 Bordeys
+Borduerwerker
 Boreel
 Borel
+Borender
 Borge
 Borger Antonisz
 Borghardus
+Borgharen
+Borkel
+Borken
 Borkert
+Borlo
 Born
+Borne
 Borneken
 Bornisse
+Bornsted
 Borre
 Borre Jansdochter
 Borre van Amerongen
@@ -11479,20 +11938,31 @@ Borre van Heemstede
 Borre van Pelmate
 Borre van den Damme
 Borrencamp
+Borrendamme
 Borrit Cornelisz
 Bors van Waveren
 Borse
 Borselen
+Borsselaer
+Borssele
+Borssen
 Borst
 Borstkens
 Bort
+Borth
 Bortoen
 Borwoldi
 Bos
 Bosch
+Bosch [Weede
 Boschaert
 Boschman
 Boschmans
+Boschuysen
+Bose
+Bosenhagen
+Boshuizen
+Boshuysen
 Bosijn
 Boske
 Boskoop
@@ -11500,16 +11970,23 @@ Bosman
 Boso
 Bossaert
 Bosschaert
+Bossche
+Bossche of Bussche
 Bosscherhave
 Bossier
 Bossu
 Bossu aen
+Bossuyt
 Bostard
+Bosveld
 Bot
 Bot van der Eem
 Bot van der Eme
+Botbergen
 Boterman
+Boternisse
 Botersloetsterweg
+Botersloot
 Both
 Both/But
 Both~
@@ -11520,6 +11997,7 @@ Botnia
 Botte Feijenz
 Botte Feyenz
 Bottelier
+Bottendamme
 Botter
 Botterman
 Botter~
@@ -11527,7 +12005,10 @@ Botting
 Bottnia
 Bot~
 Boucamp
+Bouchain
+Bouchorst
 Bouchout
+Bouckelrewaert
 Boucle
 Boucquet
 Boude
@@ -11544,6 +12025,7 @@ Bouden Claesz van gelyke
 Bouden Dierixz
 Bouden Simonsz
 Bouden Willemsz
+Boudenberg
 Boudenberg~
 Bouderic van Arckel
 Boudewijn
@@ -11682,6 +12164,7 @@ Boudin van den Velde
 Boudins
 Boudinsz
 Boudinus de Skinga
+Boudt
 Bouduin IV
 Boudwiin die Wilde
 Boudwin
@@ -11773,13 +12256,16 @@ Boulhoec
 Boulin
 Boullin
 Bouman
+Bourgelle
 Bourgoingne
 Bourgondie an der stede
 Bourgondië
 Bourgonje
+Bournonville
 Boursjois
 Bouscarda
 Boussiot
+Bousyes
 Bout
 Bout Symensz
 Bout Willemsz
@@ -11787,6 +12273,7 @@ Bout van der Eme
 Bouten
 Bouter
 Bouter Evertsz
+Boutersem
 Bouts Ham
 Boutsdochter
 Boutsham
@@ -11814,7 +12301,9 @@ Boventerp
 Bovo
 Bowier
 Boxemaker
+Boxmeer
 Boxmher
+Boxtel
 Boy
 Boy Woutersz
 Boyckes
@@ -11832,9 +12321,11 @@ Brabantus
 Braber
 Bracanhem similiter
 Brad
+Braderix
 Braec
 Braeck
 Braedbeeke
+Braedbeke
 Braem
 Braem de Gellichem
 Braem den mergen
@@ -11844,16 +12335,22 @@ Braemsdochter
 Braer
 Braet
 Braeu van den zeevont
+Brais
+Brakel
 Brakeman
 Braller
 Bram de Westermonstere
 Bramer
 Brammer
 Brammes
+Brande
 Brandeler
 Brandelijn
 Brandeling
+Brandenburch
+Brandenburg
 Brander
+Brandligt
 Brands
 Brandt
 Brandt van de Watering
@@ -11870,6 +12367,7 @@ Brant van Billewijk
 Brant van Dele
 Brant van Middaghte
 Brant van der Schuyr
+Brantelget
 Brantin
 Brants uwe moeder in
 Bras
@@ -11879,10 +12377,14 @@ Brasio
 Brasker
 Brasman
 Brasser
+Bratbeke
 Brath van Raephorst
+Braunsberg
+Braunshorn
 Brauw
 Brawe
 Brawen
+Brawode
 Brazii Lovaniense
 Brecaes
 Brechge
@@ -11911,43 +12413,63 @@ Brechtenz
 Brechtis
 Brechtje van Berensteyn
 Brechtland Berewoutsdochter
+Breda
 Bredan
 Bredanus
 Brede
 Brede dijck
 Brede wech
+Bredenbempt
 Bredencamp
+Bredenhof
 Brederode
 Brederode van Heynrik van Brederode
 Brederode van der
 Brederodes
 Brederoede
 Brederoo
+Bree
 Breebaart
 Breed
 Breedveld
+Breen
 Breenborgh
 Breeuwe
 Breeuwer
 Breg
+Bregge
 Bregger
+Bregghe
 Bregje Muurling
 Bregje Spanjaert
 Bregt
+Breidenbent
 Breijdel
+Breitbach
 Brelofsberg
 Breman
+Bremeck
+Bremen
+Brempt
+Bremt
 Breroe
 Bresaep
 Bressi
+Bretten
+Breuckel
 Breucksecamp
+Breugel
+Breukelen
 Breus
 Breusten van Herwinen
 Brevis
 Brevis ex altera
 Breyde
+Bridorp
 Briedern
 Briefhove
+Brieg
+Briel
 Briel van den
 Brielis
 Briell
@@ -11961,24 +12483,34 @@ Brien van Crainhem
 Brien van Diest
 Brien van Honswijc
 Brien van Wyck
+Brienen
+Brienen/Brene
 Brienne
 Brienone
 Brienus de Feyter
 Brievonck
 Brievone
 Brievoric
+Brigdamme
 Brigitta Allerts
 Brigitta Margareta Theresa
 Brijc
+Brimen
 Brinck
 Brinckesteijn
 Brinckhof
 Brinckhoff
+Brink
+Brisenkerke
 Brixis
 Brochenlar
+Brocht
 Brock
+Broechagen
 Broechuse
 Broeck
+Broecke
+Broeckhoven
 Broeckstege
 Broecman
 Broecoert
@@ -12006,6 +12538,7 @@ Broeke
 Broeker
 Broekgrave
 Broekhoofland
+Broekhoven
 Broekhuis
 Broekhuizen
 Broekhuizen Jansdochter
@@ -12021,9 +12554,11 @@ Broke
 Brole
 Brom
 Broncper wateringe
+Brone
 Bronijs
 Bronis Gysbertsz
 Bronkhorst
+Bronkhorst van Batenburg
 Bronsgeest
 Bronus Jansz
 Bronys Jansz
@@ -12033,11 +12568,14 @@ Bronys de Wit Bronisz
 Bronys van Bloclant
 Brood
 Broseken
+Brouchoven
 Brouck
 Brouck op Langedyc
+Broucke
 Brouwer
 Brouwer Gysbertsz
 Brouwer Willemsz
+Bruchem
 Bruchgravenveen
 Bruchim
 Bruckinus
@@ -12049,6 +12587,8 @@ Bruen
 Bruenseels
 Brugele
 Brugensis
+Brugge
+Bruggen
 Brugghen
 Brugman
 Brugst
@@ -12130,16 +12670,21 @@ Bruno van Lang
 Bruno van Riede
 Bruno van Wesel
 Bruno van der Dussen
+Brunsele
 Brunstenus
 Brunsteyn
 Brunstijns
 Brunstinus
 Brunstyn
+Brunsvelt
+Brunswijk
+Brunswijk Lunenburg
 Brunt
 Brunus
 Brusscher
 Brussel
 Brusselaer
+Brustemio
 Brustene de Driele
 Brustenus
 Brustenus Faber
@@ -12157,6 +12702,7 @@ Bruxe
 Bruxella
 Bruxellensis
 Bruychuysen
+Bruycom/van
 Bruycom/van der Borgt
 Bruyn
 Bruyn Avenz
@@ -12190,13 +12736,16 @@ Bruynzeel
 Bruys
 Bruysten
 Bruystensdochter van Harwynen
+Bryaarde
 Brye van Roon
 Bryn van Crayenem
+Buchel
 Buchels
 Bucholt
 Buchorst
 Buchs
 Buck
+Buckel
 Buckell
 Buckhorsterweert
 Bucquoij
@@ -12223,6 +12772,7 @@ Buffel
 Buffel~
 Bugge
 Bughene
+Buhave
 Buijck
 Buijk
 Buijs
@@ -12230,18 +12780,30 @@ Buijser
 Buijskes
 Buijsman
 Buijsmans
+Buijten
 Buitendijk
 Bukel
 Bulart
 Bulch Alartsz
+Bulck
 Bule
+Bulgerstein
+Bulghersteyn
+Bulke
 Bulkertiendwech
 Bull de la Soc d'arte et d'hist du doc
 Bullicher
 Bulloe
 Bulwijk
+Bunassel
+Bunau
+Bunde
 Bune
+Bunlar
+Bunne
+Bunnic
 Bunte
+Burch
 Burch Heynricsdr
 Burch Jan Dircszdr
 Burch Jansdochter
@@ -12257,6 +12819,7 @@ Burchgrave van Zeeland
 Burchgravinnesteeg
 Burchland
 Burchtgen
+Burchvliet
 Burck
 Burderich et Dornich
 Buren
@@ -12265,6 +12828,8 @@ Burger
 Burger Schuurman
 Burggraaf
 Burggraef
+Burggrave
+Burgh
 Burghgraaf
 Burghoorn
 Burgman
@@ -12273,11 +12838,17 @@ Burgs
 Burgst
 Burker
 Burmaed
+Burmania
 Burmannus
+Bursdorf
 Burth
+Burtscheid
+Burtzit
 Bus
 Busch
+Buscher
 Buschman
+Busco
 Buscoducis
 Buse
 Buse Bertoutsz
@@ -12289,8 +12860,10 @@ Busero
 Busier
 Busingim
 Buslar
+Bussche
 Busser
 But
+Buten
 Butengeest
 Buter
 Butewech
@@ -12304,8 +12877,11 @@ Butte
 Buttenborch
 Butterman
 Butters
+Buttinge
 Butzile
 Buul
+Buur
+Buurkerk
 Buweel
 Buycholt
 Buyck
@@ -12317,21 +12893,29 @@ Buyse
 Buyse Bartoutsz
 Buyse Bertoutsz
 Buyser
+Buyten
 Buyten Veldert
 Buytenwech
 Buytewech
 Bye
+Byelingen
 Byeman
+Byginchoff
+Bylaer
+Byland
 Bylandt
 Bylenburch
 Byleveld
 Bylmerbroec
 Bylmerbroec bij Weesp
 Byrct
+Bysante
 Bysanten
 Bysoye
+Büchorn
 Büderich
 Bür
+Büren
 C. Bruijne
 C. Cardinaal
 C. Maris
@@ -12353,10 +12937,13 @@ Cabau bij Sevenhoven
 Cabau ende leghet
 Cabebe
 Cabeliau
+Cadsant
+Cadzand
 Caecilia van Ingen
 Caeck
 Cael
 Caelwaert
+Caenbroek
 Caerl van den Bronck
 Caesar Duyk
 Caesar van Everdingen
@@ -12371,35 +12958,55 @@ Caijmaije
 Cakebone
 Caland
 Calchoff
+Caldenhoven
+Calenberg
 Cales Pietersz
+Calewe
 Calf
+Calinchem
 Calis
 Calis Malis
 Calisz van Warmond
+Calkar
 Calkoen
 Calla Neve van Poppendamme
 Calle
 Callen
 Callenburg
+Callichem
+Calslagen
 Calslo
 Calthoff
 Calverdijck
 Calvus
 Calvus de Calewe
+Cambeke
+Cambic
+Cameler
+Camer
 Cameraar
 Camere
+Camerik
 Camerlinc
 Camerling
 Camerlingh
 Camerling~
+Camerouwer
+Cameryk
 Camkaert
 Cammaker
+Camme
+Cammen
 Cammer
+Camons
+Camp
 Campanarius
 Campe
 Campe Bomelscampe
 Campen
+Campfeld
 Camphuizen
+Camphusen
 Camphuys
 Camphuysen
 Campinia
@@ -12411,6 +13018,10 @@ Cancher
 Candelaer
 Canfechiere/Canchefier
 Canis
+Canisse
+Cannaart
+Canne
+Canneburg
 Cannegieter
 Cannemaker
 Canoije
@@ -12423,8 +13034,11 @@ Cant Pons Oelez
 Canter
 Cantert
 Canthart
+Cantilleve
 Capelaan
 Capella
+Capelle
+Capellen
 Capelman
 Capet
 Capijl
@@ -12438,18 +13052,22 @@ Cappel
 Cappelaken
 Cappella
 Cappelman
+Cappenberg
 Caprischoeten
 Capueel
 Caput
 Caput Schouwen
 Caput Zuid Beveland
 Caput Zuidholland
+Car
 Carbaat/Carbasius
 Carbasius
 Carbon
 Carbonier
 Carboniers
+Cardehusen
 Cardinaal
+Cardonne
 Carel
 Carel Alexander Thade
 Carel Brayne
@@ -12512,6 +13130,8 @@ Carel van den Woude
 Carel van der Straaten
 Carel x
 Carels
+Carency
+Carenhorst
 Carl
 Carl Vijgh
 Carl van Arkel
@@ -12522,6 +13142,7 @@ Carlier
 Carlis
 Carls
 Carlson
+Carne
 Carnesse
 Carnifex
 Carol
@@ -12529,6 +13150,7 @@ Carol gld
 Carol gld met de rente
 Carol gld sjaers
 Caroli Caput
+Carolingen
 Carolus
 Carolus Boers
 Carolus Bredero
@@ -12543,12 +13165,16 @@ Carré
 Carselis v.d. Gruythuys
 Carsilys van Palant
 Carstensz
+Cartils
 Carvin
 Cas
+Casa
+Casele
 Casembroodt
 Casembroot
 Casens
 Casijn
+Casneck
 Caspar
 Caspar Jacobsz
 Caspar Parduyn
@@ -12582,9 +13208,11 @@ Casper de Blois
 Casper van Vieracker
 Casper van den Broek
 Cassel
+Casselaer
 Cassiopijn
 Cassiopyn
 Castard
+Casteil
 Castel Rodrigo
 Castelein
 Casteleyn
@@ -12592,10 +13220,14 @@ Casteleynscroft
 Castelleyn Thomas utten
 Casterkem
 Casterkem van Claes
+Castilië
 Castre
+Castren
+Castres
 Castrichem
 Castrickem G
 Castrickem dedit
+Castricum
 Castris
 Castro
 Castro Bergis
@@ -13139,8 +13771,12 @@ Cats
 Cats Costensz
 Catsvel
 Cattenbroec
+Cattenbroek
+Cattendijk
+Cattendijke
 Catthrijn
 Catwic
+Catwijk
 Catwyc
 Catwyc, Rixtorp
 Cauff
@@ -13171,13 +13807,20 @@ Cent Claesz
 Cent Pietersz
 Cente
 Centen
+Ceps
 Ceratinus
+Cerc
+Cerda
 Cesar
 Cesar Everdingh
+Cethulle
 Ceula
+Ceulen
 Ceylon
 Ch. van Arkel
+Chalons
 Chalres
+Chanu
 Charel Charels
 Charles
 Charles Cassiopyn
@@ -13254,13 +13897,26 @@ Charlotte van Blyenburg
 Charlotte van Brederode
 Charlotte van Humière
 Charlotte van Malsem
+Chassepierre
+Chastelain
+Chasteler
 Chasteler de Gourcelles
+Chatillon
+Chaumont
+Chenu van Caldenbroek
 Cheres
 Chermonin
 Cheval
 Chevaliers
+Chicquy
+Chievres
+Chijs
 Childe
 Childebrandus
+Chimay
+Chinper
+Chiny
+Chourses
 Chr Strick
 Chretien van Horwinen
 Chretien van Rincbergh
@@ -13473,6 +14129,7 @@ Chrétien van Herwijnen
 Chrétien van Rincbergh
 Chrétien van Rinebergh
 Chrétien van den Abeele
+Chysamo
 Cicilia van Egmont
 Cijtgen
 Cilia
@@ -15203,6 +15860,8 @@ Clare van Ghelkem
 Clare van der Zijle
 Clareboldus
 Claren
+Clarenbeek
+Clarenburg
 Clarenz
 Claris
 Claris Crol
@@ -15326,6 +15985,7 @@ Clays van der Merwede
 Clayse
 Claysz
 Cleas Pietersz Brouwer
+Clee
 Cleef
 Cleeff
 Cleeff commanderende
@@ -15409,6 +16069,7 @@ Clemeynsenz
 Clemment
 Clemynsen van Wulven
 Clenck
+Clencke
 Clene Claes
 Clene Wibrand
 Clenen
@@ -15419,11 +16080,15 @@ Clerc van Hillegom
 Clerck
 Clercs
 Clerq
+Cleve
 Cleve hiet
 Clevens
 Clever hiet
 Cleverland
+Cleverskerk
 Clevert
+Cleyberghe
+Cleyburg
 Cleyman
 Cleymensje
 Cleyn
@@ -15458,6 +16123,7 @@ Clinckebel
 Clinckebijl
 Clinckebile
 Clincker
+Clingelenberg
 Clingen
 Clinkaert
 Clipper
@@ -15468,6 +16134,7 @@ Clock
 Clock(je)
 Clock/Cloeck
 Clocke
+Clocken
 Clockenluder
 Cloeck
 Cloeck~
@@ -15480,6 +16147,7 @@ Cloet~
 Clofhamer
 Clomp
 Clooster
+Clootwijk
 Cloppenburgh
 Clopper
 Cloppers
@@ -15494,6 +16162,7 @@ Cluijver
 Clunckart
 Clundert
 Cluver
+Clybier
 Clybier~
 Clyvertiende
 Clévois
@@ -15507,11 +16176,13 @@ Cnode
 Cnort
 Cobbaarts
 Cobbberaei
+Cobbenrade
 Cobberaei
 Cobbo
 Cobboet
 Cobbraei
 Coc
+Coch/Cooch
 Coch/Cooch~
 Cock
 Cock van Blokland
@@ -15551,8 +16222,13 @@ Coele en Sonnevelt
 Coele heer Didderixsz van Dinter
 Coele heer Didericsz van Dinter
 Coelen
+Coelenberg
+Coelenburch
+Coelgrove
 Coelken
+Coelkies
 Coelman
+Coelput
 Coelschen
 Coelyns
 Coeman
@@ -15734,7 +16410,12 @@ Coerver
 Coes
 Coetenblas
 Coetenburch
+Coetsvelt
+Coevenhoven
+Coeverden
+Coeveringen
 Coevoet
+Coevorden
 Coeymans
 Cogman
 Coijmans
@@ -15743,6 +16424,7 @@ Coijphaes
 Coijpmans
 Coirte Achthoeven
 Coite
+Cok
 Cok Wolfaertsz
 Cok van St Jan
 Cokart
@@ -15760,11 +16442,14 @@ Cole de Dintre
 Colebrant
 Coleken
 Colen
+Colenberch
+Colenberg
 Colener
 Colentijn
 Colentijn/Colentier
 Coleta Wytvliet
 Colfhoudt
+Colfschoten
 Colien Weghemansz
 Colien Willemsz van Stapele
 Colien ser Willemsz van Stapele
@@ -15795,7 +16480,9 @@ Coll Aanw
 Collaert
 Collaert~
 Collart
+Colleghem
 Colleheim
+Collen
 Collert
 Colles
 Colletiaen
@@ -15812,6 +16499,7 @@ Coloniam cum
 Coloniam procuratorium
 Coloniensis
 Coloniensis dyocesis
+Colster
 Colterman
 Colve
 Colyaer
@@ -15853,6 +16541,8 @@ Commerina van Groenevelt
 Commersteyn
 Compaen
 Comparé les armes Beyers!
+Compostella
+Compostelle
 Conceptio
 Condegin
 Condé
@@ -15866,6 +16556,7 @@ Conijn
 Coninc
 Coninck
 Coninck van Spanje
+Conincsbergen
 Conincx Tourn
 Coning
 Coningh
@@ -15957,6 +16648,7 @@ Coolebrant
 Coolman
 Coolmans
 Coolmont
+Coolput
 Cools
 Coolsaat
 Cooltuyn
@@ -15972,6 +16664,7 @@ Coorn
 Coornhert
 Coornhert~
 Coorssen
+Coot
 Cop
 Cop Claisz
 Cop Soete
@@ -16015,6 +16708,7 @@ Coppekyn den doirwaerder
 Coppel
 Coppenanne Claesz
 Coppendise
+Coppenol
 Coppens
 Copper Claisz
 Coppert Claesz
@@ -16041,6 +16735,7 @@ Copuit
 Copwit
 Cor
 Cor Bercks
+Corael
 Coraud
 Coraud van wintvalligen
 Cordenoort
@@ -17636,6 +18331,7 @@ Cornil
 Cornlis
 Cornu Hoorn
 Corper
+Corput
 Cors
 Cors Ariensz
 Cors Claasz
@@ -17682,6 +18378,7 @@ Corstiaen van Lockhorst
 Corstiaen van Waveren
 Corstine
 Corstyaen van der Meere
+Corswarem
 Cort
 Cort Aventure
 Cort Beemden
@@ -17728,10 +18425,14 @@ Cortelaen
 Cortelant
 Cortemarck
 Corten Dijck
+Cortenbach
 Cortenbosch
+Cortenhoef
+Cortenhoren
 Cortenover
 Cortgeen
 Cortgen
+Cortgene
 Cortgens
 Cortgis
 Corthals
@@ -17741,7 +18442,10 @@ Cortius
 Cortkin
 Cortland
 Cortleven
+Cortryk
 Cortvrient
+Corty
+Corvel
 Corver
 Corwaremia et
 Cos
@@ -17798,28 +18502,48 @@ Coteken
 Coters
 Cotgen
 Cothe
+Cotoen
 Cotoen~
+Cottereau
+Coucy
+Coude
 Coudehaver
+Coudekerke
+Coudenesse
+Coudenhove
+Coudevoorde
+Coudewerve
 Coudyser
 Coulster
 Coulster~
 Cousebant
+Couster
 Coutemont
 Coutrix
 Couwael
+Couwenburgh
+Couwenhove
 Couwenhoven
+Couwerve
 Cox
 Coxhoeve
 Coyfaes
 Coymans
 Craanhals
 Crab
+Crabbedam
 Crabbemorsch
+Crabbenburch
+Crabbenburg
 Crabbendijke
+Crabbenmorsch
 Crabel
 Cracht
 Cracht Smeder
+Crachwijc
 Cracwic
+Craecke
+Craecken
 Craeij
 Craeijesteijn
 Crael
@@ -17831,6 +18555,7 @@ Craft
 Craicht van Camphuysen
 Craij
 Craijenhorst
+Craken
 Craling
 Cralingen
 Cralingewech
@@ -17838,9 +18563,14 @@ Cramer
 Cramer van Wassenberg
 Cramme
 Crammer
+Cramp
 Crampoel
 Cranenbroec
+Cranenbroek
+Cranenburch
 Cranenburgensis
+Cranendonc
+Craneveld
 Crans
 Crans/Trant
 Cransenz
@@ -17857,21 +18587,34 @@ Crayenbroec
 Crayenburch
 Crayenburg
 Crayenest
+Crayenhem
+Crayenhorst
 Crayenhorstergraft
+Crayenhoven
+Crayenschoten
+Crayenstein
+Crayewerve
 Craynocke
 Crebbers
+Creeft
 Creinsken
+Creke
 Creken conductum
 Crel
 Crelsinge
 Cremer
+Crepel
 Crepelfliet
+Crequi
 Creslinge
 Creteer
 Crevelt
 Creyinck
 Crieke/Cricke
+Criekenbeek
 Criekenbeke
+Criep
+Crigheler
 Crijn
 Crijn Adriaensz
 Crijn Dircsz
@@ -17883,6 +18626,7 @@ Crijn Jansz Beer
 Crijn Willemsz van Persijn
 Crijn van Dyck
 Crikembeke
+Crimpen
 Crinde
 Crispijn
 Crispijn Jansz
@@ -17911,6 +18655,7 @@ Cristine van Gent
 Cristofels van Axele
 Crock
 Crock~
+Croe
 Croec
 Croeneken
 Croes
@@ -17920,20 +18665,26 @@ Croesinck
 Croesing
 Croesink
 Croeswyc
+Croft
 Crok
 Croke
 Crol
 Crollart
 Crom
+Cromenie
 Cromheijninc
 Cromhout
 Cromme
+Crommendijk
 Crommenhoeck
+Cromstrijen
+Cromvliet
 Cromwel
 Cromwyk
 Cronelis
 Cronenborch
 Cronenburch
+Cronenburg
 Cronenburgh
 Croner
 Crooc
@@ -17943,16 +18694,22 @@ Croon
 Croos
 Crooswijk
 Cropelsteghe
+Croy
+Cruce
 Crucis
 Crucq
 Crude
+Crudenaer
 Cruder
 Cruding
 Cruif
+Cruijce
 Cruijcker
 Cruijf
 Cruijff
 Cruijk
+Cruijningen
+Cruijs
 Cruijs Eecke
 Cruisbeek
 Crukaert
@@ -17960,22 +18717,29 @@ Crukartstiende
 Crul
 Crullinc
 Crume
+Crumendam
 Crummel
 Crummengrint
 Crunincghe
 Cruydenier
+Cruyningen
 Cruys
 Cruyscamp
 Cruysoutaer
+Cruysse
+Cruyssen
 Cruyswic
 Cryntie van Brederode
+Cuele
 Cuentien Teunis van Giessen
 Cuetz
 Cuijl
 Cuijlacker,-
+Cuijle
 Cuijper
 Cuijper Arisz
 Cuing
+Culemborg
 Culenborgerbroec
 Culenburch
 Cultel
@@ -17997,12 +18761,14 @@ Cunera de Heus
 Cunera van Drenckwaert
 Cunera van Meerdervoort
 Cunera van Nyenrode
+Cunic
 Cunic (van)
 Cuningham
 Cunre
 Cunulf
 Cuonrandus
 Cuper
+Cupere
 Cupijf
 Cupreus
 Curenge
@@ -18016,12 +18782,16 @@ Custos
 Cuusche
 Cuyck
 Cuycman
+Cuyk
+Cuyl
+Cuylen
 Cuynre
 Cuyper
 Cuyper Arisz
 Cuypers
 Cyprianus Crans
 Cyprien de Varick
+Cysoing
 Czolver
 D'après Gelre
 D. Davelaer
@@ -18031,8 +18801,11 @@ D. Spaniaart
 DAniel Spierinck
 Daam Roelofsz
 Daam van der Haar
+Daarle
+Dabben
 Dachverlies
 Daeij
+Daele
 Daelhem Roelofsz
 Daem
 Daem Aelbertsz Schaep
@@ -18092,12 +18865,18 @@ Daenkyn
 Daentiaen Oedenz
 Daer sel die knecht
 Daerop
+Daerrode
+Daesdonk
 Daessler
+Dageraet
 Dagobert
 Dale
+Dalem
 Dalen
+Dalenbroek
 Dalencamp
 Daler
+Dalhusen
 Dalleur
 Dalmerxe
 Dam
@@ -18122,6 +18901,7 @@ Damas van Slingeland
 Damas van Slingelandt
 Damas van der
 Damasambacht
+Damassche
 Damasus
 Damasz
 Dame
@@ -18137,6 +18917,7 @@ Dammaes Diedewaersz
 Dammaes Heynenz
 Dammaesz
 Dammaisz
+Damman
 Dammas
 Dammas Arnoutsz
 Dammas Claase
@@ -18183,6 +18964,7 @@ Dammisz
 Dammisz de Moor
 Dammus Pietersz
 Damoiseau Jean de Borgreef
+Dampierre
 Danburgh
 Danc
 Dancars
@@ -18516,13 +19298,19 @@ Darengeest
 Dargh
 Darion
 Darnebeke
+Darrode
+Darthuizen
+Dasbourg
+Dashorst
 Datur licentia
+Daun
 Daus
 Dauwe
 Davalterre
 Davantria
 Davantriena
 Davelaer
+Daveren
 David
 David Ariaens
 David Bronkhorst
@@ -18574,6 +19362,7 @@ Decollatione
 Dedde
 Deddo
 Dedel
+Dedem
 Dederic
 Dederic van Riede
 Dederick
@@ -18584,9 +19373,13 @@ Dedirch van Bratbeke
 Deed
 Deen
 Deenken
+Deest
+Deften
+Deijl
 Deijm
 Deijman
 Deijn
+Deijsen
 Deile
 Deimodus Corthals
 Deinodi Curthals
@@ -18596,6 +19389,7 @@ Dekema
 Deken
 Dekensoon
 Dekenz
+Delden
 Dele
 Delen
 Delf
@@ -18606,6 +19400,7 @@ Delfgawech
 Delfhoeve
 Delfport
 Delfsche
+Delft
 Delgawech
 Delia Aerts
 Delia Reinersdochter
@@ -18624,15 +19419,23 @@ Deliana van Sneek
 Deliana x
 Deliane
 Dell
+Delle
 Delle voir den Hoghe
 Delleman
+Delma
 Delricsz
 Delvendiep
+Delwynen
+Delzeloo
 Dementers herberge
+Demerijne
 Den Bosch
 Denderbelle-Zuijveke
+Denderen
+Dendermonde
 Dene
 Denekinus de Oye
+Denemarken
 Denijs Audebert
 Denijs Everaetsz
 Denijs Metres
@@ -18643,6 +19446,7 @@ Denis Pauw
 Denis de Maistres
 Denis del Porte
 Denise de Mosteris
+Denissen
 Denkinus Luwe
 Dennert
 Dennetiers
@@ -18753,6 +19557,7 @@ Dersker
 Deselve bruict van de Con
 Desiderius
 Desiderius episcopus Morinensis
+Detten
 Deu
 Deugd
 Deught
@@ -18760,11 +19565,13 @@ Deuijtman
 Deuken Lamphollenz
 Deum priorisse
 Deurn
+Deurne
 Deutz
 Deutz van Assendelft
 Deventer
 Dever
 Dever van Minnen
+Dever van Mynden
 Dever~
 Deyl
 Deyl op Boninchoe
@@ -18776,6 +19583,7 @@ Deynoot
 Deynze
 Deys
 Deysen
+Deze
 Diabbout Bennenz
 Diabbrand
 Dialof Abbenz
@@ -18975,7 +19783,9 @@ Die Coppel
 Diedaert Willemsz
 Diedaertsz
 Diedard
+Diede(re)n
 Diedemerbroec
+Dieden
 Diederic
 Diederic Aerntsz
 Diederic Baerniir
@@ -19129,6 +19939,7 @@ Diedwarenz
 Diedwer Witmers
 Diedwyn
 Diefdijck
+Diefdijk
 Dieke
 Diekekin Brechtenz
 Dielis
@@ -19138,16 +19949,26 @@ Dielof van Liesvelt
 Dieloff Jansz
 Dielofsz van Uytgeest
 Diemen
+Diemerbroek
 Diemerbruggetgen
 Diena Grada
 Diena Jansz Haver
 Dienaer des Woords
 Diens
 Diens valkenier
+Diepenbeek
 Diepenbeke
+Diepenborch
+Diepenbroek
 Diepenbruch
 Diepenbrug
 Diepenburch
+Diepenburg
+Diepenheim
+Diepenhorst
+Diepersen
+Diepholt
+Diepholz
 Dier
 Dierc
 Dierc Bokel
@@ -19200,6 +20021,7 @@ Dierckgen Claesdochter
 Diercksz Braeseman
 Diercx
 Diere van Havixwijf
+Dieren
 Dieric
 Dieric Aelras
 Dieric Alraes
@@ -19344,6 +20166,7 @@ Dierixdochter van den Wale
 Dierixsone
 Dierixz
 Dierman
+Dierme
 Dierout
 Dierscken
 Dierscken van Oestrum x
@@ -19362,7 +20185,9 @@ Dierx Boekels
 Dieryck van Hastenburgh
 Dier~
 Dies
+Diest
 Diestre et
+Dieteren
 Diethilt
 Dietich
 Dietmar
@@ -19507,6 +20332,7 @@ Dignum Thymes
 Dignum Ysbrandsz
 Dignum Ysbrantsz
 Dignus
+Digteren
 Diins
 Dijc
 Dijck
@@ -19514,22 +20340,28 @@ Dijck waarts
 Dijcke
 Dijderic van Wassenaer
 Dije
+Dijk
 Dijkgraaf
 Dijkshoorn
 Dijl
 Dijn
 Dijna
 Dijne
+Dijns
 Dijns~
 Dijre Bilreszoen
 Dijric van Swieten
+Dijstvelde
 Dijxhoorn
+Dike
 Dikerf
 Dil
+Dilbeek
 Dilhoff
 Diliaen Willem Dirksz
 Dilleboen
 Dilsem
+Dilsen
 Dimmer
 Dina Cornelia
 Dina Vis
@@ -19539,6 +20371,7 @@ Dina van Bockhoven
 Dina van Essen
 Dina van der Burch
 Dinen
+Dingede
 Dingeden
 Dingeman Claesz
 Dingeman Dingemans
@@ -19553,8 +20386,10 @@ Dingna
 Dingna Mossel
 Dingna Mossels
 Dingne
+Dinslaken
 Dinslo
 Dinten
+Dinter
 Dinther
 Dinxdages
 Diocesis
@@ -23055,11 +23890,13 @@ Dithart
 Ditmar
 Ditteck
 Divera
+Dixmuiden
 Dobbe
 Dobbelaer
 Dobbeller
 Dobbelsteyn
 Dobbelsteyn van Donrode
+Dobben
 Dobber
 Doblebalk
 Doc
@@ -23071,6 +23908,7 @@ Doctor Nicolaus
 Dod
 Dodden
 Dodenz
+Dodewaard
 Dodini
 Dodinus
 Dodo
@@ -23080,6 +23918,7 @@ Dodo advocatus
 Dodolinus
 Dodonis
 Dodo~ Gerbrantsz
+Doe
 Doe Claes Touwenz
 Doe Claesz
 Doe Gerijtsz
@@ -23119,6 +23958,7 @@ Doedekins
 Doedekinsz
 Doedekyns
 Doeden
+Doedenberg
 Doede~
 Doedijn
 Doedijns
@@ -23142,15 +23982,18 @@ Doenenz
 Doenoeys Jacob Doedyns
 Doenoeys Jacob Doedynsz
 Doenoys
+Doenrade
 Doens
 Doenscoten
 Doensz
 Doeremans
 Does
+Doesburg
 Doesen
 Doesen van de Goude
 Doesvenne
 Doeswatering
+Doetinchem
 Doeve
 Doeve Claesz
 Doeve Dirck Botsz
@@ -23176,6 +24019,7 @@ Dohna
 Doijer
 Doijs
 Doijs van der Eme
+Doingelberg
 Doirnick
 Dol
 Doldieff
@@ -23183,6 +24027,7 @@ Dole
 Dolle
 Dolleman
 Dollemans
+Dollendorf
 Dollendorp
 Dollenz
 Dolre
@@ -23203,7 +24048,9 @@ Domas Florensz
 Domas Ymmenz
 Domas Zibrantsz
 Domasz
+Dombroek
 Domburch
+Domburg
 Domenicus van Nieuwenhove
 Domesdach
 Domicellus dictus Bove
@@ -23252,48 +24099,66 @@ Dominus de Vorne
 Domis
 Domke
 Domlynsz
+Dommel
+Dommelen
 Dommer
+Dompelaer
 Domproost
 Domproost van Utrecht
+Dompselaer
 Domselaer
 Dona
+Donck
 Doncker
 Donckershoeve
 Donekijn
 Donevoet
 Dongaa
+Dongelberge
 Dongelbert
+Dongelen
 Dongen
 Dongen Franciscaner
 Dongen gecommitteert
 Dongen ridder
 Dongenz
+Dongerade
+Dongerode
 Dongha
 Donghen
 Donglebert van de hertog van Brabant
 Dongraij
+Donk
 Donker
 Donkershoeve
 Donselaer
 Donuncia
+Donze
 Dooey koppije
 Doom
 Doom van Sonsbeek
 Doorn
+Doornenburg
 Doornenburg~
+Doorninck
+Doornweerd
+Doortoge
 Doos
 Doppekijn Smerigenz
+Dops
 Dorcout
 Dordr
 Dordr gld
 Dordr gulden
 Dordracenus
 Dordraco Batavus
+Dordrecht
 Dordrechtsmonde uitwaarts
 Dordsmonde
 Doren oert
 Dorengheist van
 Dorenspijck
+Doreslaer
 Dorethe Oosterling
 Dorets wyf
 Dorf van Rijn
@@ -23324,14 +24189,22 @@ Dorothea van Zoelen
 Dorothea van der Does
 Dorothea x
 Dorothé
+Dorp
+Dorschen
 Dorscherveen
 Dorschy
 Dorsman
+Dorsschen
 Dorstadt
+Dorsten
 Dort
 Dortflith
+Dorth
+Dortmund
+Dorvelde
 Dou
 Doubleth
+Doucai
 Doude
 Doudin Deveringhe
 Douglas
@@ -23345,7 +24218,11 @@ Douwenz
 Douwer
 Douwing
 Dove
+Doveren
+Doyenburch
+Doyer
 Doyewaert
+Doyeweert
 Doys
 Doys Gerijtsz
 Doys Gerytsz
@@ -23369,38 +24246,56 @@ Draco
 Draeck
 Draggher
 Draij
+Drakenburg
 Dras
 Draxem
 Drebbel
+Drecht
 Dredaert
+Dreij
 Dreija
 Dreijer
 Dreischger Traj
+Dreischire
+Dreischor
+Drellinchusen
 Dremmel
 Drenckwaert
 Drencwaard
 Drencwaart
+Drenkwaard
 Drente
 Drentinus
+Dreux
+Dreven
+Drevenick
 Drever
 Dric van Tol
 Dric van Zwieten van Leyenberg
+Driebergen
+Driel
 Drielmaerwegje
 Driemilen
 Drienhusen
 Drienmilen
 Dries
 Drigemet tres mensuras
+Drij
 Drijel
 Drijfhout
 Drik
 Drik Canter
 Drik van Cuyk
+Drimmelen
+Drinhusen
+Drivorde
 Drodrecht
 Droemel
 Droesscher
 Droge
 Drogen
+Drogendijk
+Droghe
 Drogo
 Dromont
 Drongelen
@@ -23415,6 +24310,7 @@ Dros
 Drossaet
 Droste
 Droussen
+Drua
 Druard
 Drucker
 Druda
@@ -23424,13 +24320,18 @@ Druemter
 Druenen
 Druijf
 Druijf voor Claes
+Druijff
 Druijsick
+Druma
 Drumpt
+Drunen
 Drungele
 Druppe
+Drupt
 Drusing
 Drussaet
 Drutekijn
+Druten
 Druut
 Druyf
 Druyff
@@ -23442,6 +24343,7 @@ Ds
 Ds Cornelius van Arckel
 Ds Willem van Asperen
 Dubbeldam versterft
+Dubbelde
 Dubbelde Cop
 Dubbelmonde
 Dubbelmonde van de heer van Putten
@@ -23459,10 +24361,12 @@ Duercant
 Dueric
 Duerinc
 Duerinc van den hofland
+Duffelweerde
 Duifje van Gerwen
 Duijf
 Duijf Jansdochter
 Duijm
+Duijnen
 Duijrcant
 Duijst
 Duijst Heynricx
@@ -23472,12 +24376,17 @@ Duijvens
 Duin
 Duindam
 Duis doit, bi Veraerts
+Duiven
+Duivendrecht
+Duivenvoorde
+Duizel
 Duker
 Dukijnc
 Dukincs
 Dukinger
 Dul
 Dulemen
+Dulken
 Dull
 Dullaerd
 Dullaert
@@ -23486,13 +24395,20 @@ Dullaert van den
 Dullaerts
 Dullaert~
 Dullard
+Dullekom
 Dullenzonen
+Dulmen
+Dulsche
 Dumensteijn
 Dunand
 Duncga
+Dune
 Dunen
+Dungelen
 Dungelsguet
+Dunis
 Dunkering
+Duras
 Durbaen
 Durbaer
 Durbaern Heynekijnsz
@@ -23501,13 +24417,18 @@ Durbaern Nannenz
 Durbarn
 Durber
 Dure
+Duren
 Durenz
 Durff
 Durne
 Durscinreveen
 Durve Poppe Heymanszdr
+Durver
+Dus
 Dusburg
 Duss
+Dussen
+Dusseren
 Dutry
 Duunhoofde
 Duunmede
@@ -23517,7 +24438,9 @@ Duve Jacob Ymansdr
 Duve Jacobsdochter
 Duveken
 Duvel
+Duven
 Duvenborch
+Duvenburg
 Duvencamp
 Duvenee
 Duvensteijn
@@ -23525,6 +24448,7 @@ Duvenstert
 Duvensteyn
 Duvensz/Duyvis
 Duvenvoord
+Duvenvoorde
 Duvenvoorde tenet
 Duvestert
 Duwe Simons Hille
@@ -23546,13 +24470,16 @@ Duyker
 Duykinck
 Duyk~
 Duyn
+Duyne
 Duynen
 Duynrade
+Duysburg
 Duyst
 Duytman
 Duytsch
 Duytsland
 Duyve Dircsdochter
+Duyveland
 Duyvelant
 Duyvens
 Duyvensz
@@ -23576,11 +24503,13 @@ Dyederic van Huerne
 Dyederic van den Wale
 Dyedii
 Dyedu Symonsdr
+Dyenburg
 Dyeric Louwenz van Uitgeest
 Dyerick
 Dyerik Doys Gerytsz
 Dykshoorn
 Dykshorn
+Dylach
 Dymmingdael
 Dymphna van Dongen
 Dyna
@@ -23635,9 +24564,13 @@ Ecclesiae
 Eccrinus de Beesde
 Ecghebrecht
 Echbert de Gier
+Echt
+Echteld
+Echten
 Echterop
 Echtrop
 Eciam
+Eck
 Eck Lamphollenz
 Eckard
 Eckard Alydsz
@@ -23672,6 +24605,7 @@ Eddicke
 Eddicke Rebickenz
 Eddie
 Eddo van Offema
+Edeel
 Edeking Gherytsz
 Edel
 Edel Dircksdochter
@@ -23686,6 +24620,7 @@ Ederic Rentoncsz
 Edert
 Edert Lutghersz
 Edert Ollenz
+Edingen
 Edmond
 Edmond 4e
 Edmond Hellu
@@ -23724,6 +24659,9 @@ Edward van Bournonville
 Edward van Gelre
 Eebe Sjoerds
 Eechout
+Eecken
+Eeckeren
+Eeclo
 Eede Pietersz
 Eeerstenzone
 Eef
@@ -23737,10 +24675,13 @@ Eefje Mooij
 Eefje Wigers
 Eefje Willems Adel
 Eefje Wouters
+Eeghen
 Eegje Claes
 Eegje Garbrants
 Eegje Pieters
+Eeke
 Eelburch
+Eele
 Eelgis
 Eelke Abbenz
 Eelke Heijkes
@@ -23758,18 +24699,26 @@ Eelman Willemsz
 Eelmansz
 Eelmeer Gherytsz
 Eelmoet
+Eelt
 Eeltgen Symons
+Eem
+Eemden
 Eemlandt
 Eems
 Eemskerck
+Eemskerk
 Eemtet Kerstiaensz
 Eenhoorn
+Eerde
 Eernst Jansz
 Eernst Willemsz
 Eerstsz van der Hoefgrave
 Eerstwoude
+Eertrijke
 Eese
+Eesens
 Eesgen
+Eethen
 Eeuwout Ghysen
 Eeuwout Willemsz
 Eewout Arnoudsz
@@ -23888,8 +24837,10 @@ Egbertus van Staverden
 Egbrechsz
 Egbrecht van den Boske
 Egbrechts
+Egdom
 Egel
 Egelfret
+Eger
 Eggard
 Eggart
 Egge Hughenz
@@ -23901,7 +24852,9 @@ Eggelijn
 Eggelyn
 Eggemonda
 Eggemonde van meester
+Eggerhove
 Eggericx
+Eggerscheidt
 Eggert
 Egges
 Egghe
@@ -23972,6 +24925,7 @@ Egidius van Scoude
 Egidius van Voorschoten
 Egidius van den Wyngaerde
 Egidius van der Haer
+Egisheim
 Eglijn Berwoutsz
 Eglijn Claesz
 Eglijn Gherytsz
@@ -24001,25 +24955,32 @@ Egon
 Egon Jacobsz van Kessel
 Egon Jansz
 Ehefrau Jutta
+Ehze
 Eibekenz
+Eichelbergen
 Eichelberggen Hooftman
 Eijcholt
+Eijck
+Eijffel
 Eijke Petersz
 Eijke Willemsz
 Eijke Woutersz
 Eijl
 Eijmert Dircs
 Eijnde
+Eijne
 Eijsinga
 Eijt
 Eijve
 Eijve Ernst Hermansdochter
+Eikel
 Eilardus de Turri
 Eilbertus
 Eilbodus
 Eilboldus
 Eilger
 Eilgerus
+Eindhoven
 Einfridus
 Einhout
 Einoud
@@ -24084,6 +25045,9 @@ Elburch Ysbrantsdr
 Elburch van Asperen
 Elburch van Langerak
 Elburch van de Boetselaer
+Elburg
+Elderen
+Ele
 Ele Pietersdochter
 Ele Sancte Willemsz
 Ele Sante Willemsz
@@ -24093,6 +25057,7 @@ Eleke Walichsz
 Eleland
 Elelmi
 Eleman Maertsz
+Elen
 Elenora van Borssele
 Eleonora de Bossu
 Eleonora van Borssele
@@ -24103,6 +25068,8 @@ Eleonora van Humbliers
 Eleonora van Schoonbeke
 Eleonore de Borssele
 Elfftertienden
+Elft
+Elfter
 Elghaersee
 Elhout
 Eliaes Roelofsz
@@ -24149,8 +25116,10 @@ Elijaes Roelofsz
 Elijas
 Elijsabeth
 Elijsabeth van Bronckhorst
+Elike
 Elinand~
 Elinck
+Elingen
 Elisa Adrianus van Dongen van Zierikzee
 Elisa Gordon
 Elisabet
@@ -24567,6 +25536,7 @@ Elle Pietersz
 Elle Saskairts
 Elle Sywaert
 Ellekyns
+Ellemeet
 Ellert
 Ellert Cornelisz
 Ellert Ellertsz
@@ -24584,6 +25554,7 @@ Ellyse heer Jans Mouters
 Elmer
 Elmpt
 Elout
+Elrode
 Els
 Els hiet
 Elsa
@@ -24599,11 +25570,13 @@ Elsbeen van Dalem
 Elsbena
 Elsbene Jansdr
 Elsbene van Scouwe
+Elsberg
 Elsbien Vrederix
 Elsbien van Dalem
 Elsbien van Swindrecht
 Elsbien van den Houte
 Elsbren van Swindrecht
+Elsbroek
 Else
 Else 4 mal avene
 Else Floris Sproncs
@@ -24624,9 +25597,11 @@ Elsebien van den Houte
 Elselien van der Lecke
 Elsen van Darthuysen
 Elsevier
+Elsgeest
 Elsgen Cornelis
 Elsgen Jans bij
 Elsgen Sijmons van Heemskerk
+Elshout
 Elsie
 Elsie Lichtermoet
 Elsie Ligtermaets
@@ -24641,15 +25616,23 @@ Elsken Adriaens
 Elsken van Busschuysen
 Elsken van Dalem
 Elsken van den Houte
+Elsland
+Elslo
 Elso
+Elspeet
 Elssie Westerhoff
 Elssien Jans
+Elst
 Elstrudis
+Elsweert
+Elswijk
+Elten
 Eltet Heynricsz
 Eltet Jarixz
 Eltets
 Elti
 Eltjesz Resou
+Elverich
 Ely
 Elyaes Ghibenz
 Elyaes van Wee
@@ -24673,6 +25656,7 @@ Elysabet van der Does
 Elysabeth Croesinck
 Elyzabet
 Elza
+Elzas
 Elze
 Elzebe van Morse
 Elzebe veuve de Gerard van Brune
@@ -24690,6 +25674,8 @@ Emebertus
 Emece
 Emekencamp
 Emelaer à Haren
+Emelberga
+Emelisse
 Emerentia
 Emerentia Bammys
 Emerentia Bisschops
@@ -24731,6 +25717,9 @@ Emme van Roorda
 Emmelie Sol
 Emmeloort
 Emmerick van den Rijn
+Emmericourt
+Emmerik
+Emmichoven
 Emmichoven en Werckhoven
 Emond
 Emond Cudelstorp
@@ -24743,6 +25732,7 @@ Emond van Palant
 Emond van Zoelen
 Emons van Eminchoven
 Empe
+Empel
 Emundus
 Emundus Coleken
 Emundus Koleken
@@ -24754,10 +25744,16 @@ Enchuisen
 Enchuizen
 Enchuysen
 Enckevoort
+Ende
 Ende hierof
+Endegeest
+Endehusen
 Endelen
 Endelo
+Endelsdorp
+Endenberg
 Endoven
+Eng
 Engbert Butkens
 Engbert Butte
 Engbert Claesz
@@ -24847,6 +25843,7 @@ Engel van Alkemade
 Engel van Elsbroek
 Engel van Est Willamsdochter
 Engel van de Stadt
+Engeland
 Engelbert
 Engelbert Butken
 Engelbert Engelen
@@ -24950,6 +25947,7 @@ Engeltje van der Does
 Engeltruut Wijnricxdr
 Engeram
 Enghbrecht van Cranenborch
+Enghe
 Enghe Ellenz
 Enghebrecht
 Enghebrecht Aernt
@@ -25000,6 +25998,8 @@ Enghel Ysaudenz
 Engheland
 Enghelbertus Heynricus
 Enghelsz
+Enghien
+Enghuizen
 Enghusen van den scepenenbrief
 Enghusercogghe
 Engilbald
@@ -25013,13 +26013,19 @@ Englebert van der Mark
 Englebert van der Marke
 Engmonde
 Enigheborch
+Enkhuizen
 Enkhuysen fl
 Ennatte
 Enno
 Ens
 Enschedé
 Ensinck
+Enspijk
+Ensse
 Ente
+Entenich
+Entenig
+Enter
 Entet
 Entet Dircsz
 Entet Eckenz
@@ -25033,10 +26039,19 @@ Entet Ockenz
 Entet Outgersz
 Entet Symonsz
 Entet Walburchsz
+Enther
 Enthes
+Enthout
 Ents
+Entwick
+Epe
+Epie
 Episcopi
+Eppenart
+Eppinchoven
+Eppinghofen
 Eppo van Aelburg
+Epse
 Erard
 Erard de Gymnich
 Erasmus
@@ -25048,6 +26063,8 @@ Erasmus van Brederode
 Erasmus van Grevenbroeck
 Erasmus van Grevenbroek
 Erasmus van Houwelingen
+Erck
+Erckel
 Erckgen Henricsdochter
 Erembertus
 Eremboldus
@@ -25058,9 +26075,11 @@ Erenbout
 Erenzone
 Eric Gherijt
 Erich hertog van Brunswijk
+Erichem
 Ericks
 Ericus
 Erik Dimmer
+Erinc
 Eringard van Voorst
 Erkel alrehande
 Erkelens
@@ -25073,11 +26092,13 @@ Erlewijn
 Erlewino
 Erlewinus
 Erlewyns
+Erlin
 Erlindis
 Erlof
 Erm Dammasdr
 Ermegard
 Ermegardis
+Ermel
 Ermelindis
 Ermenfridus
 Ermengarda
@@ -25200,16 +26221,23 @@ Ernst van Wulven
 Ernst van Yzendoorn
 Ernst van der Horst
 Erp
+Erpecum
 Erpekeim
+Erpel
 Erpenbeeck
+Erpenrode
 Erpolfus
 Erpone
 Erulfus
 Ervergis
 Erwen
+Es
 Es his nobiles et probi
 Esacha
 Escamppolder
+Esch
+Eschede
+Eschensteyn
 Eschevins du deuxième bancq
 Esckemendelft
 Esdoorn
@@ -25221,10 +26249,17 @@ Esickenzoons
 Eskelof
 Eskmundelf
 Esknemendelf
+Esmer
+Espelbach
+Esroede
+Essche
 Esschesteyn
 Esselikerwout
 Esselinck
+Essen
+Essende
 Essmer
+Est
 Estelle weduwe van Godevart van den Berghe
 Ester Bulsinck
 Ester Butsinck
@@ -25232,8 +26267,10 @@ Ester de Corte
 Esther de Solemne
 Esther van den Bemde
 Estienne Doubleth
+Estveldt
 Etersem
 Etge
+Eth
 Ethelboldus
 Ethelgard
 Ethelmonde
@@ -25250,7 +26287,9 @@ Etsaert
 Ette
 Ette Gerbrand Gheynen
 Ette Reyners
+Etten
 Etting
+Etwaer
 Euboldi
 Eugenius III
 Eugenius IV
@@ -25277,6 +26316,7 @@ Eustatius van Brakel
 Eustatius van Bronckhorst
 Eustatius van Bronkhorst
 Eustatius van Quarebbe
+Euwijk
 Euwoutsz van der Dussen
 Eva
 Eva Banjart
@@ -25469,6 +26509,7 @@ Everart
 Everbacker
 Everboldus
 Everbout Boudekijnsz
+Everbroeck
 Everd van Nassouwen
 Everdeij
 Everdeij Colynsz
@@ -25481,6 +26522,7 @@ Everdey Hughenz
 Everdey van Genderen
 Everdeys van Genderen
 Everdina Rutgersdochter van der Haer
+Everdingen
 Evergrin
 Everhaerdt Goes
 Everhard
@@ -25503,6 +26545,8 @@ Everhardus de Lantdorp
 Everhardus van Bevervorde
 Everhardus van Till
 Everhart
+Everikesdorpe
+Everingen
 Everocke
 Everocke dijkgraaf
 Everocker
@@ -25511,6 +26555,8 @@ Everoldus
 Everond Everontsz
 Evers Brouwers
 Eversbeke
+Eversberg
+Eversdijk
 Everstert
 Evert
 Evert 's Greven
@@ -25798,6 +26844,8 @@ Ewart Clauwardsz
 Ewert Crebber
 Ewert van Hoen
 Ewert van den Hoen
+Ewijc
+Ewijk
 Ewoud Jacobsz Brant
 Ewout
 Ewout Adriaensz
@@ -25844,29 +26892,46 @@ Ewout van Vliet
 Ewout van der Dussen
 Ewout van der Wolf
 Ewoutsz
+Ewsum
 Ewun Robbertsz
 Exalto
 Exposicio
+Exter
 Eychtz
+Eyck
+Eycke
+Eycken
 Eyckholt
 Eyckman
+Eyk
+Eyke
+Eykel
 Eykendunen van den Cnoepstoc
 Eykenduynen
 Eykenhoorn
+Eyl
 Eylaert
 Eylaert Jacobsz
 Eylaert Voppenz
 Eylaert Walichsz
+Eylborch
 Eyle
 Eyle Heynenz
 Eyle Pietersz
 Eylger
 Eylwaert
 Eylwaert Claesz
+Eymeren
 Eymeric
+Eynatten
 Eynde
+Eyndhouts
+Eyndhoven
 Eyndt
+Eynenburg
 Eynspijck
+Eys
+Eysteren
 F. A. marquis
 F. Brandijn
 F. de Haemste
@@ -25899,6 +26964,7 @@ Falco filius Falconis
 Falco van Deyl
 Falco van Maren
 Falet
+Falkenstein
 Familie Abbema
 Fannius
 Fannius Scholten
@@ -25907,6 +26973,7 @@ Fastradus van Utwick
 Fastrardus de Ghiessen
 Faulcquenberge
 Fauquemont
+Fayenhoven
 Fayet
 Fayt
 Fazant
@@ -25990,6 +27057,7 @@ Ferdinandus Sedeniski
 Fermer
 Fermes
 Fermijn
+Ferny
 Ferreus
 Ferrier
 Ferry
@@ -26030,6 +27098,7 @@ Fie van Everdingen
 Fie van Zuylen van Blickenburg
 Fie weduwe van Gysbert Eghen
 Fiel
+Fielnes
 Fien
 Fiere Heyn Manaertsz
 Fiere Iboyenz
@@ -26068,10 +27137,12 @@ Filius
 Filius Vullyngi
 Filius domini de Septem
 Fineel
+Finteloe
 Fiool
 Firenbais
 Firenbras
 Fittekijn
+Flagence
 Flamigo
 Flance
 Flandre
@@ -26082,9 +27153,13 @@ Flanse
 Flansenz
 Flardinga
 Flatton
+Fledre
 Fleuyertthiende Cleijn
 Flexe
+Flexe….
+Flines
 Flines van Antwerpen
+Flingern
 Flint
 Flips
 Flitsart
@@ -26471,6 +27546,7 @@ Florijs van den Tol
 Florijs van den Vliete
 Florijs vercoft hevet
 Florijsz
+Florines
 Floris
 Floris Adderop
 Floris Aelbert Belgicus
@@ -27141,6 +28217,7 @@ Flours
 Fobis
 Foc
 Focke Eltjes
+Fockenbroek
 Fockert
 Fockses
 Foeck
@@ -27217,7 +28294,10 @@ Folsardeman
 Fonger
 Fons
 Fonseka
+Fontaine
+Fontein
 Fontein Verschuur
+Fontenies
 Fontigny
 Fookel
 Fop Dircsz
@@ -27233,8 +28313,10 @@ Foppens
 Foppensz
 Foppo
 Foreest
+Forettiere
 Forier
 Fornival
+Foro
 Forschate
 Fortuyn
 Fouter
@@ -27261,6 +28343,7 @@ Foysse
 Foyten
 Fr
 Fraen
+Fraij
 Fraij~
 Fran Jansz
 Fran de vrije eigendom
@@ -27475,7 +28558,9 @@ Franke Kerstans
 Franke van Adrichem
 Franke van den Dorpe
 Franke van der Horne
+Frankemolen
 Franken
+Frankenberg
 Frankenz
 Franla
 Franlo
@@ -27844,6 +28929,7 @@ Frau Jutta
 Frau Jutte
 Frau Mechteld van Lynden
 Frau des Henrik van Heymersoon
+Frayenhoven
 Fred
 Freda Maria gravin van Dohna
 Frede Marie gravin
@@ -28263,7 +29349,9 @@ Freeck Lambertsz
 Freeck Pietersz
 Freijs
 Freijs Lambertsz van Bochoven
+Fremery
 Frentsz
+Frentz
 Frerick Claesz
 Frerick Galeynsz
 Frerick Houtman
@@ -28287,8 +29375,11 @@ Friedrich Adolf graaf ter Lippe
 Friedrich herr von Moers
 Friedrich van Moers
 Friefurt
+Friemersheim
 Friesgart
+Friesheim
 Friesman
+Friessem
 Frigard
 Frisi
 Frisius
@@ -28297,6 +29388,7 @@ Friso Gron
 Frisonibus
 Frisselsteijn
 Frisvogel
+Friuli
 Frololfus
 Fronakre Vroonakker
 Froricus
@@ -28324,6 +29416,7 @@ Fuijen
 Fuijs
 Fulco van Berne
 Fulle
+Fumaal
 Furgelare
 Furstenberg
 Fy Aelberts
@@ -28344,6 +29437,8 @@ Fytie Symons
 Fytje
 Fytje Jacobs
 Fytje Jans
+Fèbre
+Fèvre
 G
 G Bayn
 G Hannenz
@@ -28387,6 +29482,7 @@ G. van Vlardinghen
 G.J. Hesis
 G.S. lantmeter
 Gaal
+Gaasbeek
 Gaasbeeke
 Gaasbeke
 Gabbenz
@@ -28427,7 +29523,10 @@ Gaertfridus van den Torne
 Gaesbeek
 Gaesbeeks
 Gaeuwen Jansz
+Gaffel
 Gaft
+Gageldonk
+Gagelenberch
 Gailly de Brais
 Galandus
 Gale
@@ -28448,19 +29547,24 @@ Galonis
 Galoppe
 Galo~
 Galterus de Stapele
+Gameren
 Gan
 Ganc
 Gandensi
+Ganekle
 Ganga
 Gans
 Gansberch
 Gansch
 Gansdood
 Gansekolcken gevryt
+Gansepoel
 Gansevoort
+Gansneb
 Gansneb Tengnagel
 Gansoerde
 Gaper
+Gapinge
 Garbrand
 Garbrand Assendelft
 Garbrand Barnewoutsz
@@ -28485,7 +29589,9 @@ Garbrant Pietersz
 Garbrant Symonsz
 Garbrant Vooght
 Garbrant van Kouster
+Garderen
 Gardijn
+Gardyn
 Garnard
 Garret
 Garret Kremer
@@ -28494,6 +29600,7 @@ Garsilius
 Garst
 Garvin Reijnersz
 Garwaert Meynertsz
+Gasel
 Gaspar
 Gaspar Levinus van Hogheland
 Gaspar Rover
@@ -28508,8 +29615,10 @@ Gaspard de Heusch
 Gaspard heer van Echteld
 Gaspard van Eyll
 Gaspard van Lijnden
+Gastel
 Gasthuijs
 Gasthuisvicarie
+Gasthuse
 Gastmolen
 Gaston Spinola
 Gauthier
@@ -28545,6 +29654,7 @@ Gautier de Haze
 Gautier van Overryn et Thierry
 Gavesz
 Gaving
+Gavre
 Gawijnsz
 Gawynsz
 Gazwijn unam
@@ -28559,11 +29669,13 @@ Gecommitt Raad van Holland
 Gedaagd
 Gedeon Falet
 Geel Willemsdr
+Geelmuijen
 Geelvinck
 Geelvink
 Geen
 Geen Allertsz
 Geenhuijsen
+Geenhuizen
 Geer
 Geeraard van Heemskerk
 Geeraerd Stuijling en
@@ -28571,6 +29683,7 @@ Geeraerd van Egmonde
 Geeraert
 Geerard de Heerlaer
 Geerart van Gerwen
+Geerde
 Geerijtshoeve
 Geerit
 Geerit Anthonissen
@@ -28608,6 +29721,8 @@ Geerlof van Cats
 Geerlof van Meaux
 Geerloff uyten Briele
 Geerman
+Geersbergen
+Geersdijk
 Geerstorp
 Geert
 Geert Adriaens
@@ -28961,6 +30076,7 @@ Geertruida van Wytvliet
 Geertruide Goeswijnsdochter van Br
 Geertruide Jacob Voornsdochter
 Geertruide van Goerle
+Geertruidenberg
 Geertruidis
 Geertruidra Crol
 Geertruids
@@ -29153,6 +30269,7 @@ Geertruyt van Wittendel
 Geertruyt van Wyffliet
 Geertruyt van Wyfflith
 Geertuud van Mierop
+Geervliet
 Geeryt Garbrantsz
 Geeryt Heij
 Geese Smullincx
@@ -29164,13 +30281,17 @@ Geesje Rijswijk
 Geesje van der Dussen
 Geesjen Arens
 Geeske
+Geest
+Geestdorp
 Geesteranus
 Geesterwaard
 Geesthuis
+Geesthusen
 Geestmeesters
 Geestmeesters van Noortich
 Geestmeesters van Strijen
 Geestpoort
+Geffen
 Geheryt van Damassche
 Geije Hoeijske
 Geijenz
@@ -29179,10 +30300,13 @@ Geijn
 Geijne
 Geile
 Geiltrud
+Gein
 Geir
 Geisbert Looyen
 Gelandi
 Gelbertus van Campenhout
+Gelde
+Geldenaken
 Gelder
 Geldolf
 Geldolff Jansz
@@ -29196,6 +30320,9 @@ Geldolph van Vladeracken
 Geldolph van Vladreacke
 Geldonia
 Geldredis
+Geldrop
+Gele
+Geleen
 Geleijn Gerbrandsz
 Gelekinus
 Gelekinus de Rijswijk
@@ -29225,8 +30352,11 @@ Gelkenesse
 Gelle Adriaens Wijnes
 Gellems
 Gellert
+Gellicum
+Gellinkhuysen
 Gelmarus Henrici
 Gelmarus Theoderici
+Gelmen
 Gelnodus
 Gelre
 Gelre donne ainsi
@@ -29261,11 +30391,16 @@ Gelys Jansz
 Gelys Willemsz
 Gelys van Hoeckelum
 Gemeer Kerstiaensz
+Gemen
+Gemert
+Gemont
 Genade van Brederode
 Genard
 Gend
+Genderen
 Genderingh
 Gendern
+Gendringen
 Gene
 Genealogie Hogendorp
 Genekini de Linden
@@ -29276,8 +30411,11 @@ Genemannus
 Genete Willemsdr
 Geneva
 Genifi
+Gennep
 Gens
+Gent
 Gentfloers
+Genève
 Geobalda van Bronckhorst
 Geoges van Lienden
 Georg Eberhard
@@ -30550,6 +31688,7 @@ Gerbrantsz.z erfnamen
 Gerbrecht
 Gerbrecht et Tetta
 Gerbrecht van Delen x
+Gerbrechtenesse
 Gerbrich
 Gerbrich Fransdochter
 Gerbrigh Evert Botsdochter
@@ -30795,6 +31934,7 @@ Gerloff Voetendochter
 German de Os
 Germano
 Germanus
+Gerner
 Gerntgen Claes
 Gerobulus
 Geroldi
@@ -30805,6 +31945,7 @@ Gerolf contra gezworenen
 Gerolf van Coudenhove
 Gerolf van Woerden
 Gerolff de Smale
+Gerolfsdijk
 Geron Geronsz
 Geronc
 Geronc Geroncsz
@@ -32221,6 +33362,7 @@ Gervijn Reynersdochter
 Gerwalech
 Gerward
 Gerwart Bongiers
+Gerwen
 Gerwert Beli zn
 Gerwert Meynertsz
 Gerwic
@@ -32524,13 +33666,16 @@ Gese
 Gese Jansdochter van Campen
 Gese Smullinx
 Gese de Beichusen
+Gesel
 Gesel confereerde aan jonker
 Gesen van Heidene
 Gesina Huberts
 Gesina ten Oever
 Gesina van der Does
 Gesta
+Gestel
 Gestele
+Gestelen
 Gestnipemutha
 Geurt Aertsz van Krieckebeeck
 Geurt Arnts
@@ -32539,6 +33684,7 @@ Geurt van Gelkom
 Geurt van Gellicum
 Geurtje Louris
 Geurtje van Santen
+Geus
 Geuwelot
 Geva
 Gevaert Heynekenz
@@ -32550,8 +33696,10 @@ Gever
 Gevers
 Gevert
 Geyle
+Geylenkirchen
 Geyn
 Geynric
+Geysteren
 Geza
 Geza Schenkel
 Gh Hugens
@@ -32559,6 +33707,7 @@ Ghaech
 Ghaemstede
 Ghantsyn Block
 Ghave
+Gheel
 Gheelink
 Gheen Luyten
 Gheenencamp
@@ -32632,6 +33781,8 @@ Gheijle
 Gheijn
 Gheijnciaen Husemansz
 Gheijne
+Gheijns
+Gheijster
 Gheijtiaen Husemansz
 Gheila
 Gheine
@@ -32651,6 +33802,7 @@ Ghendt
 Ghene Gerritsz
 Ghene Heynenz
 Ghene Pietersz
+Ghenehusen
 Gheneken
 Gheneken van den Werve
 Ghenekyn de leidecker
@@ -32660,6 +33812,7 @@ Ghenemansz
 Ghenen
 Ghenencamp
 Ghenewort
+Ghent
 Gheraed van Harlaer
 Gheraed van Polsbroec
 Gheraedt
@@ -33147,6 +34300,8 @@ Gheyle Wissendr
 Gheyle des Sueters
 Gheylewijck
 Gheylinc
+Gheyloven
+Gheylwijk
 Gheyman
 Gheyn
 Gheynekijn
@@ -33452,6 +34607,7 @@ Ghislaine d'Estourmel
 Ghislebertus
 Ghislebertus de Caets
 Ghiso
+Ghistelle
 Ghize
 Ghizebrechts
 Ghizekijn van Ammers
@@ -33661,6 +34817,7 @@ Gielys Delianenz
 Gielys Delianenz van de visserij
 Gier
 Gier spreeckt
+Giersebeke
 Giertjen Harmans
 Giesbeke
 Giesbert
@@ -33668,8 +34825,10 @@ Giesbert van Broickhusen
 Giesbert van Wencum Paenekoeck
 Giesbert van Wijnberge
 Giesberth van Bruickhusen zu Heinorth
+Giessen
 Giezelbrecht graaf van Looz
 Giezelbrecht van Bronkhorst
+Giffen
 Giisbertsz
 Gijbelant
 Gijbken Voppen
@@ -33891,6 +35050,7 @@ Gilbert signeur d'Ysselsteine
 Gilbert van Heukelom
 Gilbertus de Goye
 Gilcoinus de Masene
+Gilde
 Gilebertus de Hamestelle
 Giles de Rodemacre
 Gilette de Halewin
@@ -34154,6 +35314,8 @@ Giltis
 Gilys Hughenz
 Gilyse ver
 Gilysz
+Ginckel
+Ginderich
 Ginneken
 Ginnekens
 Ginnele
@@ -34279,17 +35441,22 @@ Gislebertus de Tilborch
 Gislebertus de Welle
 Gisnense
 Gisnensis
+Gisp
 Gisuli
 Giverdehemkin tres libras
+Glabbeek
+Gladbach
 Gladbeke
 Gladinc
 Glaesmaker
+Glarges
 Glas
 Glaser
 Glaude
 Glaudi
 Glavermans
 Glayser
+Gleen
 Glimes
 Glimmer
 Glismodus
@@ -34297,6 +35464,7 @@ Gloria
 Glorie Burchaert
 Glory
 Glouwe
+Gnepwich
 Gobel
 Gobel Eyfeler
 Gobel Frijheit van Scheven
@@ -34315,6 +35483,7 @@ Gobelinus dictus
 Gobelinus van Bemel
 Goben
 Goborch Jacob Heermansdochter
+Goch
 God
 God genadich
 God genadich sij
@@ -34745,9 +35914,12 @@ Goeijsz
 Goel Trudenz
 Goele
 Goens
+Goer
+Goer(le)
 Goerdt van Malboirch
 Goerdt van Malborch
 Goerijsz den morgen
+Goerl
 Goerle
 Goerout
 Goert
@@ -34857,6 +36029,7 @@ Goijert
 Goijert Banne
 Goijert Heinricksz
 Goijert Jacobsz
+Goirle
 Goirt
 Goirt Arntsz
 Goissen Sepede
@@ -34867,9 +36040,14 @@ Goiswijn van Rossem
 Goiswinus
 Goitignes
 Goivaert
+Gokesforde
+Gokesvorth
+Golberdingen
 Golenz
 Golette
+Goltstein
 Gombert van Alpen
+Gommengys
 Gommer
 Gommer van Busschuysen
 Gommert van Asperen
@@ -34882,6 +36060,8 @@ Goodschalc Boeckelaer
 Gool
 Goolken Adriaensdr
 Gooltgen Jansdochter
+Goor
+Goorle
 Goorn
 Goort van Reede
 Goos van Wyck
@@ -34942,10 +36122,12 @@ Gore
 Gorentijn
 Gorijs
 Gorincehm
+Gorinchem
 Goris Jansz
 Goris Morrinck
 Goris Volpertsz
 Gornighem gegaen
+Gorp
 Gort
 Gorteman
 Gorter
@@ -35032,18 +36214,24 @@ Gottschalk van Raide fait
 Gottschalk van Royde
 Goud
 Goud Hage
+Gouda
 Goudappel
 Goude
 Gouderaken
 Goudersluys
 Goudhoeve
+Goudhoeven
 Goudine
 Goudnagel
+Goudriaan
 Goudriaen
 Goudsmit
+Goudswaart
 Goudt
 Gouech
 Goued
+Gouer
+Gouffier
 Gouffier de Carravas
 Gout
 Gouter/Gunter
@@ -35051,8 +36239,10 @@ Gouthoeven
 Goutput
 Goutsz
 Gouvri
+Gouwe
 Gouwen
 Gouwenaer
+Gouwenberch
 Gouwer
 Gouwer Gouer
 Gouwer et
@@ -35198,17 +36388,23 @@ Graaf Willem
 Graaf Willem I
 Graaf van Holland
 Graaf van het
+Graaff
 Graafland
+Gracht
 Gradus
 Graef
 Graeff
 Graefken
+Graes
+Graesdorp
+Graessen
 Graet
 Graf
 Graf Diedrich
 Graf Rek II
 Graf voor Middelburch
 Grafscep waarts
+Grafschaft
 Grafschrift Oude Kerk Delft
 Graft
 Graft bewaert
@@ -35218,21 +36414,25 @@ Graman
 Grammaij
 Gramman
 Gramsbergen
+Gransoije
 Grapheus
 Gras
 Graswinckel
 Gratiana Gillis
 Grauwert
+Grave
 Gravecoep
 Gravecoip
 Gravelant
 Gravelo
 Gravencoper
 Gravensan
+Gravensloot
 Gravenveen
 Gravesande
 Gravin Gertrudis van Bentheim
 Grawert
+Graze
 Grebbenz
 Grebber
 Grebber Claes
@@ -35259,6 +36459,7 @@ Gregorius van Moerssele
 Gregorius van Teylingen
 Gregrorius Ignatius
 Grenu
+Greppe
 Greta
 Greta Dorinc
 Greta Dorincs
@@ -35287,13 +36488,19 @@ Grete predicte et Belkini
 Grete van Blochoven
 Grete van Hulhuizen
 Greve
+Grevebroek
 Grevenbroeck
 Grevenbroek
 Greveninc
+Greverode
+Grevinchoven
 Greving
 Gribbas
+Griboual
 Griecken
 Grieke
+Grieken
+Griemer
 Griet
 Griet Aecht
 Griet Aecht Jacobsdr
@@ -35485,6 +36692,7 @@ Grietgen Wouters
 Grietgen ter Hobert
 Grietgen van Teylingen
 Grietgie Jans
+Griethuijse
 Grietie
 Grietie Adriaens
 Grietie Bosman
@@ -35605,44 +36813,66 @@ Grietken Werners
 Grietkens
 Griffioen
 Grije
+Grijen
 Grijp
 Grijp van Valckesteijn
 Grijpensteijn
 Grijph
+Grijpskerke
 Grijp~
 Grijsoort
+Grijsper
+Grille
+Grillet
 Grim
 Grimaldi
+Grimbergen
 Grimbert
 Grimoaldus
+Grinsven
 Grint
 Gripeskirca
+Grippe
+Grise
 Grisoort
 Gritje Godschalk
 Gro(n)duvel
 Grobbe
+Groef
 Groef van Erkelens
 Groen
+Groene
+Groenenberch
+Groenendijk
+Groeneveld
+Groenevelt
 Groenewege
 Groenewegen
+Groenewoud
 Groenhout
 Groenhout beleend
 Groeninck
 Groeningen
 Groenlandt
+Groenouwen
 Groes
 Groesbeek
 Groesbeke
 Groesbeke relevavit
+Groesdonk
 Groet Oesthusen
 Groetbroec van Claes
 Groete Weyden
 Groetmans
 Grofhooft
 Groijs
+Groll
+Grombach
 Grone
+Groningen
 Gronlo
 Gronsfelt
+Gronsveld
 Gronsvelt
 Gronswaard
 Gront
@@ -35657,11 +36887,13 @@ Groote Sloet
 Grootebroec
 Grootebroeck
 Grooten Weerd
+Grootenhuijs
 Grootenhuyse
 Grootensteijn
 Grootes
 Grootesteyn
 Grootmans
+Grootveld
 Grootvelt
 Grotart
 Grote Acker
@@ -35680,19 +36912,24 @@ Grotebroec
 Grotebroeck
 Groteghene
 Groten
+Grotendale
 Grotenhuis
 Grotenvelt
 Grotewal
 Grotinc
 Grotmeda ex parte Benedicti
 Groufweere
+Grouwe
 Grove
 Grubbe
 Gruemelaersdochter
+Gruerie
 Gruihuizen
 Gruijel
 Gruijs
 Gruijter
+Gruijthuijse
+Gruisons
 Gruithuise
 Grunsfort
 Gruntenvenger
@@ -35707,8 +36944,10 @@ Gruwel
 Gruysbeek
 Gruysbeke
 Gruyter
+Gruythuys
 Gruytwater
 Gryet Jansdochter
+Grypensteyn
 Grypskerke
 Grypsperrre
 Grysoord
@@ -35726,6 +36965,7 @@ Gueldre
 Gueldre envers
 Guepin
 Guerke Claes
+Guernouval
 Guert
 Guert Arnts
 Guert Claes Reyersz
@@ -36048,14 +37288,18 @@ Gulicker
 Gulielmus Estius
 Gulielmus van Blocklandt
 Gulielmus van Gils
+Gulik
 Gulik van Gelre
+Gulpen
 Guls
 Gummarus
 Gundrada
+Gunnen
 Gunninck
 Gunselo
 Gunter
 Gunter 6sol, prope domum
+Gunterslaer
 Gursenbrul
 Gurt
 Gurt Henricsz
@@ -36067,6 +37311,7 @@ Gustavus graaf Carlson
 Gusterwic
 Gutha
 Gutter
+Gutterswyc
 Guurt Adriaens
 Guurtge
 Guurtie Pieters
@@ -36119,6 +37364,7 @@ Gye van Asperen
 Gyginck
 Gylis
 Gylys
+Gymnich
 Gysbercht Boel
 Gysbert
 Gysbert 's Goijersz
@@ -36793,6 +38039,7 @@ Gysebertus
 Gysebrecht Buts
 Gysebrecht van Vyanen
 Gysekyn Janszdochter
+Gyselaer
 Gyselbert
 Gyselbert Lyscap
 Gyselberti de Cats
@@ -36825,6 +38072,7 @@ Gérard van Rode
 Gérard van Rossem
 Gérard voué
 Göbel
+Güsten
 H Peters
 H. Amerongen
 H. Antonius van Bailleul
@@ -36864,8 +38112,12 @@ Haag
 Haak
 Haaks
 Haan
+Haarhusen
+Haarlem
 Haarlemmerliede
 Haarlemmerveen
+Haarst
+Haarwick
 Haarzuilens
 Haas
 Haase van Alkemade
@@ -36878,6 +38130,7 @@ Hacco
 Hacco van Tuyl
 Hacconis
 Hacfoort
+Hacfort
 Hachtingius
 Hack
 Hackaert
@@ -36895,6 +38148,7 @@ Hackfort~
 Hacko
 Hacko de Malsen
 Hacko de Tuul
+Hadaspick
 Hadde
 Hadde Yelynsz
 Haddeman Joostenz
@@ -36936,42 +38190,61 @@ Haec Wou
 Haeck
 Haedewygo
 Haeff
+Haefskerke
+Haefswade
 Haeften
 Haeften en Hellu
 Haeften van Renoy
 Haegen
+Haegh
 Haeghen
 Haeghen Willemsz
 Haegoort
 Hael Almersz
 Haels
+Haelt
+Haemstede
 Haen
 Haeps
+Haept
+Haer
+Haerhusen
 Haerime Dircse van Grevenbroeck
+Haerlem
 Haerlemmerlie
 Haerseweg
 Haersma de With
+Haersolte
+Haerst
+Haert
 Haertschene
+Haerwijk
 Haes
 Haes Claes Blocx
 Haes Heynendochter
 Haes Jacobsdr
 Haes Jansdochter
 Haes Jansdr
+Haesbroec
 Haescamp
 Haesien
 Haesje
 Haesje Govertsdochter
+Haeskerke
 Haeskinez
 Haeskins Willemsdochter
 Haesschien
+Haestenberch
+Haestenburg
 Haestgen
 Haestgen Lubbrecht Jansdr
 Haestgen Michiels
 Haestgen Willems
 Haestgen van der Duyn
 Haestiens
+Haestrecht
 Haestriaen
+Haeswike
 Haeuwe Bertoutsz
 Haeuwen Bertoutsz
 Hag
@@ -36990,26 +38263,36 @@ Hage
 Hage Willemsz
 Hage aldair
 Hagedoorn
+Hagehuis
 Hagelaer
 Hageman
 Hagen
 Hagen Willemsz
+Hagenbeeck
+Hagenbeek
+Hagendijk
+Hagenouwen
 Hagens
 Hagenscamp
 Hagenshoeve
 Hagensteijne
 Hagensteyn van de Leck
 Hagese
+Hagestein
+Hagesteyn
 Hagewetering
 Hagha
 Haghe
 Haghebroec
 Haghen
+Haghenouwen
 Haghens
 Haghensteijn
 Haghesteyn
+Haije
 Haijke Pieters
 Haijkenz
+Haijma
 Haike Aechtenz
 Haike van den Dike
 Haine
@@ -37019,17 +38302,26 @@ Hairlemensibus
 Hajo van den Honert
 Hake
 Hake van Malsen
+Hakendenre
 Hakkensz
 Haksteen
+Halderen
 Haldey
 Hale
+Halebeke
+Halen
+Halewijn
 Halewina
+Halewyn
 Halewyn Alewynsz
+Half
 Half Roxvliet
 Half Wassenaar
 Halfhoorn
 Halfleeck
 Halfvasten
+Hall
+Halle
 Hallinc
 Hallinck
 Hallinck Symonsz
@@ -37037,26 +38329,38 @@ Hallincs Niels
 Halling
 Hallink t'Scutensone
 Hallinkschor
+Halmale
 Halo
 Halrevoert
 Hals
+Halst
 Halstwick
 Ham
 Hamaker
+Hamale
 Hamard
 Hamard Jansz
 Hamborger
+Hambroek
 Hambroick
 Hamburg
 Hamburgher herescap
+Hamel
 Hamelberghe
 Hamelenberch
+Hamelenberge
 Hamer
 Hamerode
 Hameroodt
+Hamerstede
+Hamersteijn
+Hamersveld
 Hamert
+Hameyde
 Hamirte
 Hammaerd
+Hamme
+Hammeele
 Hammert
 Hamout
 Han
@@ -37084,11 +38388,16 @@ Han van Zaenden
 Hanart Willemsz
 Hanau
 Hand
+Handschoenmaker
 Handschoenmaker~
+Hane
 Haneberghe
 Hanekin Meinolfz
+Hanenberg
 Hanenz
+Hangher
 Hangil
+Hanhorst
 Haniel
 Hanke Ysebrantsz
 Hannaert
@@ -37313,7 +38622,10 @@ Hansel
 Hansel van Moesel
 Hansing
 Hanske van Roswijk
+Hanswijk
+Hant
 Hanxlar
+Haps
 Haralem
 Harbar van Liesveld
 Harbaren
@@ -37330,6 +38642,7 @@ Harbernus de Bucstelle
 Harbertus de Riede
 Harbort
 Harbort van Oudegein
+Harchies
 Harck
 Harck Jansz
 Harck Outgersz
@@ -37350,6 +38663,7 @@ HardberenFlorekensz
 Hardbernus
 Hardbertus
 Hardbraht
+Harde
 Hardebil
 Hardebol
 Hardenberg
@@ -37357,8 +38671,12 @@ Hardenbernus de Foreest
 Hardenbernus de Lede
 Hardenbernus van der Merwede
 Hardenbroec
+Hardenbroek
 Hardenbunus de Lede
+Harderwijk
+Hardevelt
 Hardevuyst
+Hardinxveld
 Hardinxvelt
 Hardnat
 Hardwinus
@@ -37368,8 +38686,12 @@ Hare Jan van Crabbenborch
 Hare en Lantacker
 Hare ex
 Hare?
+Haren
 Harencarspel
 Harenstus de Wulven
+Harff
+Harft
+Hargen
 Harick
 Harinc
 Harinc Rippenz
@@ -37497,6 +38819,7 @@ Harmanus van Arkel
 Harmanus van Voorst
 Harmanus van der Putte
 Harme Boll
+Harmelen
 Harmen
 Harmen AErtsz
 Harmen Aertsz
@@ -37535,6 +38858,8 @@ Harmtje Roebers
 Harnardus Jacobsz
 Harnas
 Harne Jansz
+Harnes
+Harnesberge
 Harpaer van den Binchorst
 Harpaern van Ercle
 Harpar Swrighers
@@ -37555,7 +38880,10 @@ Harper van Liesvelt
 Harper van Raephorst
 Harry
 Hars
+Harscamp
+Harscheidt
 Harst
+Harstlo
 Hart
 Hartbert
 Hartbertus de Lede
@@ -37598,25 +38926,39 @@ Hasekynsz
 Hasenbosch
 Haserswoude
 Hases
+Hasewinckel
 Haskynsz
+Haslo
 Hasse
 Hasse Jacobsz
 Hasselaer
+Hasselt
 Hassen
+Hatert
+Hattem
 Hatto
 Hattum
+Hatzfeldt
 Haucourt
+Haultain
+Haulterive
+Haun
+Hausen
+Hautart
 Hauwert
 Have
+Havekesbeke
 Havelaer
 Haveler
 Haveloes
+Haven
 Haven van der
 Haver
 Havercamp
 Havereth
 Haverman
 Havesene
+Haveskerke
 Havic
 Havic Gherytsz
 Havic Havicsz
@@ -37624,6 +38966,7 @@ Havic Jansz~
 Havic Willemsz
 Havic Willemsz~
 Havick Ghysbertsz
+Havickwijc
 Havickwijs
 Havicsz
 Havicx
@@ -37652,6 +38995,7 @@ Hayke van Obdam
 Hayke van Vlieland
 Hayken van Hairlem
 Hayman
+Haymanne
 Haymonde
 Hayo Unico
 Hayse
@@ -37683,14 +39027,17 @@ Hector van Hoexvier
 Hed Dircsz
 Hed Ighenz
 Hed Olghersz
+Heda
 Hedde
 Hedde Hercsz
 Heddinc
 Hedding
+Hedel
 Hedeman Henricsz
 Hedensee
 Hedenus
 Hedichusen
+Hedichuysen
 Hedikhuizen
 Hedrik I
 Hedrik van Breda
@@ -37702,12 +39049,20 @@ Hedwig van Merveen
 Hedwige veuve
 Hedwige veuve du chevalier
 Heeck
+Heeckeren
+Heede
+Heek
+Heelt
 Heemraden van Capelle
 Heemskerck
 Heemskerk
+Heemskerk van Beest
+Heemskerk van Bekestein
 Heemskerk van Bekesteyn
 Heemskerke van den
 Heemskerkerduijn
+Heemstede
+Heenvliet
 Heer
 Heer Aartsberge
 Heer Adriaenshoef
@@ -37755,6 +39110,9 @@ Heer van Borssele
 Heer van Brurkom
 Heer van Burchare
 Heer van Gaesbeek
+Heerd
+Heerde
+Heerdt
 Heere
 Heere Claes
 Heere Zandvaart
@@ -37763,9 +39121,11 @@ Heere van Arkel
 Heereman
 Heereman~ Dircsz
 Heeren hoghe
+Heerenhoef
 Heerenlaan van den Hofdijke
 Heerenmarct
 Heerewech
+Heerjansdam
 Heerkens
 Heerkenz
 Heerkijn
@@ -37773,9 +39133,13 @@ Heerkyn Gerrit Meynsenz
 Heerkyn Heynenz
 Heerlicheijt
 Heerlicheyt
+Heermale
 Heerman
 Heerman van Oegstgeest
 Heermans
+Heers
+Heerstrate
+Heersvelt
 Heert Kerstinenz
 Heert Roelofsz
 Heert de Verwer
@@ -37784,16 +39148,25 @@ Heertgen Pietersz
 Heertgen Symonsz
 Heertgen Wyertsz
 Heertje
+Hees
 Hees Edicsz
 Hees Engelsz
+Heesacker
+Heesbeen
 Heesch
 Heeskamp
+Heessel
 Heestinc
+Heesvrane
 Heeswickskamp
 Heeswijck
+Heeswijk
 Heeswyc
 Heeswyckscamp
 Heeswycxcamp
+Heetveld
+Heeze
+Hegenscheid
 Heghe Olghersz
 Heidelin
 Heiden
@@ -37868,8 +39241,10 @@ Heijns Heynricsdochter
 Heijntiaen de bode
 Heijntjeman
 Heijse 6d
+Heijvelt
 Heike
 Heike et Luva
+Heikop
 Heiland
 Heilewijf
 Heilig Geestmeesters
@@ -37939,6 +39314,7 @@ Hein Willem van der Woerde
 Hein Zwaenkens
 Hein van der Poorten
 Heindric
+Heine
 Heine Buse
 Heine Diddericsz
 Heine Willesz
@@ -38186,14 +39562,24 @@ Heinrik
 Heinrik Gevaerts
 Heinrixz
 Heins
+Heinsberg
+Heinsbergen
 Heinsius
 Heinsz
 Heirde
+Heise
+Heist
+Heitveld
 Hekelaer
+Hekelingen
 Heker
+Hekeren
 Hektor
+Hel
+Helbergen
 Heldecop
 Heldecop Hoebuicsz
+Helderlo
 Helelmus
 Helena
 Helena Adriaens
@@ -38239,14 +39625,18 @@ Helias
 Helias Herinck
 Helie
 Helikanbeli
+Hell
 Hella
 Helle
 Helle de Holthusen
 Hellebreker
 Hellebrekere
 Hellemans
+Hellemes
+Hellemorcke
 Hellen
 Hellenius
+Hellensberg
 Heller
 Heller Zandvaart
 Hellewig
@@ -38275,10 +39665,16 @@ Helmich van Slingeland
 Helmich van den Damme
 Helmig Spitlof
 Helminck
+Helmond
 Helmsuint
 Helmteken
 Helmut Dobbe
+Helpesteyn
 Helreweert
+Helsdingen
+Helsecamp
+Helsinchem
+Helst
 Helt
 Helvoet
 Helwig
@@ -38289,15 +39685,18 @@ Helyas de Lens
 Helye
 Helène Montmorency
 Hem
+Hemberg
 Hemecekiercke
 Hemelrijck
 Hemeric van den Rijne
 Hemericourt
 Hemert
 Hemert tbv Gysbert
+Hemerten
 Hemme Paping
 Hemmel
 Hemmer
+Hemmersbach
 Hemrich van Bruheze
 Hemrick Gysbrechtsz
 Hemricourt
@@ -38313,6 +39712,7 @@ Henderick van der Voorst
 Henderijne Ruyters
 Henderina Wolfswinkel
 Henderina van Wolfswinkel
+Hendersem
 Henderson
 Hendri kvan
 Hendri kvan Borssele
@@ -39399,12 +40799,17 @@ Hendryntje Jacobs
 Hene
 Heneghouwen
 Henegouen
+Henegouwen
+Hengelbrecht
+Hengevelde
 Henghe
 Henicht
 Henk
 Henkijn
 Henkinus Boisken
 Henne Liirmens
+Hennekelaer
+Hennekeler
 Henneken Lubbrechtsz
 Henneken Sanders
 Henneken de Eijl
@@ -39412,8 +40817,10 @@ Henneken van Denissen
 Henneken van Rode
 Henneken van der Hair
 Hennenberch
+Hennenberg
 Hennep
 Hennequin
+Hennin
 Henr de Hessen
 Henr van Goirle
 Henri
@@ -41689,14 +43096,20 @@ Henry van de Sande
 Henryck
 Henrycke
 Henrys de Kats
+Hensbeek
+Hensberg
 Hensbroec
 Hensbroec bi dode
 Hensbroec den
 Hensbroek
+Henscamp
 Hensebroec
+Henten
+Henwenninghe
 Hera filia Habonis
 Heraert Nannekenz
 Heramnnus de Lon
+Herbais
 Herbard van Aelsmeer
 Herbaren
 Herbaren Aerntsz
@@ -41820,6 +43233,7 @@ Herdberens
 Herdberensz
 Herdherssens
 Herdhessens
+Herdinchusen
 Herdinck
 Herdingfelde
 Herdrard
@@ -41837,17 +43251,23 @@ Here van Utrecht
 Herebrandus
 Heregaudus
 Heremanni
+Herenhave
+Herenhem
 Herenthals
 Herenz
 Heres
+Herethem
+Herff
 Heribaldus
 Heribert
 Heribert van Westervelt
 Hericksacker
+Herifort
 Herimannus
 Herincx
 Heringa
 Heringen
+Herk
 Herke Crooc
 Herke Heertiaenz
 Herke Heykenz
@@ -41856,10 +43276,13 @@ Herke Verduiersz
 Herke Walichsz
 Herlaar
 Herlaer
+Herlaer van Meerwijk
 Herlar
+Herlens
 Herleus
 Herlulfus
 Herm Bruyns
+Hermale
 Herman
 Herman Acrynsz
 Herman Adriaen
@@ -42570,10 +43993,13 @@ Hermina Stellingwerff
 Hermina van Grieken
 Herminia Janse Peters
 Herminia Steenhuysen
+Hernen
 Hernic van Huekelem
 Heroldus
 Heronimus Tseraerts
 Heronimus van Serooskerke
+Herp
+Herpen
 Herper
 Herper Claesz
 Herper Herper Willemsz
@@ -42591,15 +44017,22 @@ Herr von Ahrental
 Herr von Durburch
 Herr von Sulen
 Herr von Voerst
+Herradeswerde
 Herrasward
 Herreman Wolfaertsz
 Herrent Anthonisz
 Herry Waecker
+Herstal
 Hert
+Hertaing
 Hertbertus
 Hertebroeck
 Hertefelt donne un acte
 Hertel
+Herten
+Hertenbroeck
+Herteveld
+Hertevelt
 Hertgensz
 Hertger
 Hertger Ivenz
@@ -42616,18 +44049,29 @@ Hertog Reynald
 Hertog Willem
 Hertog van Limburg
 Hertoge
+Hertoge van Osmale
+Hertoghe
 Hertoghe Aelbrecht
 Hertsbach
+Hertselaer
+Hertzbeke
+Herwaerden
+Herwen
+Herwerden
 Herwich
 Herwich Andriesz
 Herwich Jansz
 Herwijer
 Herwijne
+Herwijnen
 Herwine
 Herwyck Andriesz
+Herzeele
+Hesa
 Hesben
 Hese
 Hesen
+Hesevelt
 Hesewijc cs
 Hesiac
 Hesis
@@ -42662,6 +44106,7 @@ Hessele van Dronghelen
 Hesselinus
 Hessels
 Hesselt ende plechte v. one/once
+Hessen
 Hessene
 Hest Schenck
 Hester
@@ -42700,25 +44145,44 @@ Hester van den Leemput
 Hester van der Cruysse
 Hester van der Graaf
 Het Hert
+Heteren
 Hetsler
 Hetter
 Hetterscheidt
+Hetterscheydt
 Hetterscheyt
 Hetwich
 Hetwich van Brederode
+Hetzerath
 Heuckelum Jansdochter
+Heuckesloot
 Heuft
+Heuijckesloot
 Heuke
+Heukelom
 Heuklum
+Heul
+Heule
+Heulestein
+Heumen
+Heus
+Heusch
 Heusde beeck
+Heusden
 Heusdennensi
 Heusdens leen
 Heussen
 Heust
 Heutius
 Heutius Tatings
+Heuvel
+Heuyter
+Heve
+Hevekesdrecht
+Hevern
 Hey
 Heycop
+Heyde
 Heyden
 Heydermanguet
 Heye
@@ -42727,6 +44191,7 @@ Heyenland
 Heyenlande
 Heye~
 Heyfele bedijkt
+Heyger
 Heyke Dircsz
 Heyke Jansz
 Heyke Mertensz
@@ -42736,6 +44201,7 @@ Heyke Sytsenz
 Heyke Syvertsz
 Heykez
 Heykins van der Boghe
+Heykop
 Heylands
 Heyle Boudynsdr
 Heyle Jan Willem Hemmenzdr
@@ -42762,6 +44228,7 @@ Heylken van Pruissen
 Heylkijn
 Heylman Tadekenz
 Heylman Wilbrantsz
+Heylo
 Heyloe
 Heyloo
 Heyloo en Oesdom
@@ -42812,6 +44279,7 @@ Heymerick Baers
 Heymericus de Reno
 Heymerik
 Heymerik Koevoet
+Heymersom
 Heyn
 Heyn Adaemsz
 Heyn Aelbrechtsz
@@ -43010,6 +44478,7 @@ Heynesz
 Heynesz van Berkhout
 Heynetiaen Oedenz
 Heynevert
+Heyningen
 Heynkens
 Heynkijn
 Heynman Boudynsz
@@ -43261,6 +44730,7 @@ Heynrixz
 Heynrixzn
 Heyns
 Heyns van Hokercken
+Heynsbeek
 Heynsberg
 Heynse Grieten
 Heynsonis
@@ -43276,10 +44746,14 @@ Heyricus obiit
 Heys
 Heys de Flemalle
 Heyse
+Heyssen
 Heyst
 Heyster
+Heysterbach
 Heythem
 Heytngen Coppenz
+Hezeacker
+Hezehusen
 Hezei
 Hezelo
 Hezemans
@@ -43291,8 +44765,12 @@ Hic Lubbertus abbas
 Hidde van der Does
 Hielard
 Hieleken
+Hien
 Hienlande
+Hier
 Hieraf gedenckt
+Hierde
+Hierge
 Hierof
 Hieronimus
 Hieronimus Jacobsdochter
@@ -43305,6 +44783,8 @@ Hiesfeld
 Hijbert Roelefsz
 Hijmans
 Hijnric Willamsz
+Hijstenbroek
+Hijstfeld
 Hil van Strowick
 Hil van Strowijc
 Hilbout
@@ -43321,6 +44801,7 @@ Hilbrant Naenkenz
 Hilbrant Reynersz
 Hilbrant Willemsz
 Hilbrant Zivertsz
+Hilchebroek
 Hildebertus
 Hildeboetes Zijl
 Hildebrand
@@ -43380,6 +44861,7 @@ Hilla Verdriets
 Hilla Willemsdochter
 Hilla de Kyrsel
 Hilla van Birten
+Hillare
 Hille
 Hille Claes
 Hille Gerbrandsz
@@ -43396,7 +44878,9 @@ Hillebrand Pronck
 Hillebrand van Egmond
 Hillebrandt Jacobsz Schuytemaker
 Hillebrants van der Sman
+Hillegersberg
 Hilleghim
+Hillegom
 Hillegond Aerntsdochter
 Hillegond Aerntsdr
 Hillegond Claes Walendr
@@ -43461,15 +44945,21 @@ Hillegont van Sonnevelt
 Hillegont van der Horst
 Hillegont van der Zevender
 Hillen kelner
+Hillenvlie
 Hilletie Lamberts
 Hilletje Anthonisdochter
+Hillighenberghe
 Hilligje Claas van Loon
 Hillinc
 Hilling
 Hillinus
 Hillum
 Hilnaer
+Hilnare
 Hilsbroech
+Hilsbroek
+Hilsebroek
+Hilten
 Hiltetesbroec
 Hiltje Huyberts
 Hiltje Jans Root
@@ -43480,9 +44970,12 @@ Hinckaert
 Hincke
 Hinckenoert
 Hinckert
+Hinde
 Hindenberg
 Hinderduijn
+Hinderstein
 Hinerik Rumelsvik
+Hiniossa
 Hinkelenoord
 Hinkelenoort
 Hinlopen
@@ -43497,6 +44990,8 @@ Hintes
 Hinxtcamp
 Hiolen
 Hippolitus Persyn
+Hirne
+Hirse
 Hirte
 Hisbodus de Bisde
 Hisboldi
@@ -43517,10 +45012,12 @@ Hobbe Jansz
 Hobbenz
 Hobbesack
 Hobijn
+Hoboken
 Hobuic
 Hobuyc Henricsz
 Hocamp
 Hochepied
+Hocstoten
 Hodde
 Hoddemont
 Hodenpijl
@@ -43535,12 +45032,15 @@ Hoeckelem
 Hoeckelem van Beesde
 Hoeckelem van den Hoemborch
 Hoeckelum
+Hoeckgeest
 Hoecklem
 Hoeckmaker
 Hoeclem
 Hoecman
+Hoedekenskerke
 Hoedelaert
 Hoef
+Hoeff
 Hoefsche
 Hoefseke
 Hoefstaart
@@ -43558,51 +45058,77 @@ Hoen van Cartyls
 Hoen van Hoensbroek
 Hoen van Voerendaal
 Hoenberg
+Hoencoop
+Hoendorff
 Hoenen
+Hoenhorst
+Hoenhus
 Hoeni
 Hoenrevenne
+Hoensbroek
 Hoen~
 Hoep
 Hoeper
+Hoeps
 Hoepzomer
 Hoequelem
+Hoerde
 Hoernemont
 Hoernmolen
 Hoernsloot
 Hoesche
 Hoeschot
 Hoescht Jans Wittenz van Maes
+Hoescot
 Hoessen
+Hoest
 Hoet
+Hoeter
 Hoeve
+Hoevelaken
+Hoevelwick
+Hoeven
+Hoexvier
 Hof
 Hofdijck
+Hofdijk
 Hofecke
 Hoffman
 Hoffstatt neben der mansio des dominum
+Hofkens
 Hofkens de Courcelles
 Hofland
 Hoflant
 Hofleen
 Hofmans
+Hofstaden
 Hogeland
+Hogelande
+Hogen
 Hogen Raet
 Hogen Wech
 Hogendans
 Hogendorp
 Hogerbeets
 Hogerberk
+Hogesteyn
+Hogesvort
+Hogeveen
 Hogevelt
 Hogewerf
 Hoghelande
 Hoghen Weert
 Hoghen Wert
+Hoghenlande
 Hoghenz
 Hoghenz de goudsmit
+Hogherduere
 Hoghesanck
 Hohensax
+Hohensaxen
 Hohowart
 Hoighg
+Hoij
 Hoijer
 Hoijnck
 Hoildenart
@@ -43621,7 +45147,10 @@ Hokolum
 Hokowart
 Hol
 Hol Gelisz
+Holdingen
+Holech
 Holecop
+Holen
 Holesloot
 Holinc
 Holing
@@ -43670,23 +45199,43 @@ Hollenz
 Holler
 Hollesloot
 Holle~
+Hollick
 Holliken
 Holmunsweerd
+Holset
+Holst
 Holt
+Holte
+Holten
+Holtesende
+Holthe
 Holthuis
+Holthusen
 Holthuys
+Holthuysen
+Holthuyzen
 Holtrom
+Holtwich
+Holtzmolen
 Holvoet
 Holy
 Holysloot
+Holzbüttgen
+Homberg
 Hombout
 Hommel
+Homoet
+Hompesch
+Homrick
 Honcheranges
+Honcoop
 Hond
+Hondecoutre
 Hondius
 Hondt
 Hone
 Honen
+Honert
 Honert Thomasz
 Hone~
 Honger
@@ -43699,6 +45248,7 @@ Honin
 Honing
 Honne
 Honnenz
+Honnepel
 Honning
 Honnoureitz Brugghe
 Honorine de Wittem
@@ -43707,64 +45257,92 @@ Honorius IV
 Honorius Iv
 Hons
 Honsbeeck
+Honschoten
+Honselaer
 Honselaersdijk
+Honswijk
+Honswik
 Hont
 Hont Heinrixz
 Hont van Claes
 Hont van der Lane
 Hontenesse
 Honterland
+Honthorst
 Hontscoop
 Hont~
 Honulfus
+Honvorst
 Hooch
 Hoochmoet
 Hoochwoude
+Hoof
 Hoof van Holland
+Hooff
 Hooflincx
 Hoofs
 Hooft
 Hooftman
 Hoog
 Hoogcamer
+Hooge
+Hoogeland
+Hoogelande
 Hoogenhouck
+Hoogenhuis
 Hoogerbeets
+Hoogerdeure
+Hoogerwoert
 Hoogeveen
 Hoogheemraad van Delfland
+Hoogherduere
+Hoogkarspel
 Hoogland
 Hoogstraat
 Hoogstraten
+Hoogvliet
 Hoogwaarsman
 Hoogwoud
+Hoogwoude
 Hooijwagen
 Hoolbin
+Hoolck
 Hoolewerff
 Hoons
 Hooorn
 Hoop
 Hooren
+Hoorenbeke
 Hoorn
 Hoornaer
 Hoornaer~
 Hoornart
+Hoorne
 Hoornekaert
+Hoornick
 Hoors
 Hoos
 Hoowert
 Hooy
 Hop
+Hopengen
 Hoper
 Hopman
 Hoppaert
 Hoppe
 Hoppe Vredericsz
+Hoppen
 Hoppers
 Hoppesteyn
 Horace
 Horatio
 Horatius
+Hord
+Horde
 Horden
+Horenbeek
 Horenkens
+Horion
 Horn
 Hornaer
 Hornanus
@@ -43781,10 +45359,17 @@ Hornes et d'Altena
 Hornes heer van Gaasbeek
 Hornes van Hernen
 Horning
+Horpale
 Horreo
+Horrum
+Horsen
 Horst
 Horstgen Jacobsz
 Horstman
+Horstmar
+Hort
+Horter
+Horwick
 Horwijck
 Hosdune
 Hose
@@ -43793,16 +45378,26 @@ Hosen hofstede
 Hosensteeg
 Hotman
 Hottinga
+Houbraken
 Houck
+Houckgeest
+Houdingen
 Houdrenge
+Houff
+Hougaerden
+Houk
 Houmes
 Houscilt
 Hout
 Houtappel
 Houtcamp
 Houtcoper
+Houte
+Houten
 Houtenaechen wech
+Houthem
 Houthum
+Houthusen
 Houthuysen
 Houtkooper
 Houtmaet
@@ -43817,8 +45412,10 @@ Houttuyn
 Houtvester
 Houtweech
 Houtzagerslande van Echt
+Houve
 Houwe
 Houweling
+Houwelingen
 Houweningen
 Houweningen den dyck
 Houweninghen
@@ -43828,7 +45425,10 @@ Houwitz
 Hov
 Hovaeus
 Hove
+Hovel
 Hoveling
+Hovelwijk
+Hoven
 Hovenne
 Hovijn
 Hovius
@@ -43836,6 +45436,7 @@ Hoygraft
 Hoykenz
 Hoylede
 Hoylederhoeke
+Hoynk
 Hoynk van Papendrecht
 Hoyt
 Hoyte appelata
@@ -44169,13 +45770,16 @@ Hubrechtsz van Gorp
 Hubrechtszn
 Hubrechtz van Voorne
 Huchtenbroek
+Huckelbach
 Huculum
 Hudde
+Huddenrode
 Hudepol
 Huecelum
 Hueckelem Dircsz
 Hueckelen
 Hueckelom
+Hueckesloot
 Hueft
 Hueijter
 Huekelom
@@ -44185,7 +45789,10 @@ Huele beleend
 Huern den leghen ban van der noortzide van der Dussen
 Huerne
 Huesdin
+Huessen
 Huessensvaert
+Hueste
+Huet
 Hufsloot an Spaerwoudermeer
 Huge
 Huge Albout
@@ -44713,45 +46320,70 @@ Huijs
 Huijser
 Huijsingh
 Huijsman
+Huijssen
 Huijsstuc
 Huijts
+Huisduinen
 Huisje
 Huisman
+Huisseling
+Huissen
 Huiswaert
 Hukelem
 Huker
 Hul
 Hulde
 Hulft
+Hulhuizen
+Hulken
+Hulle
+Hullen
 Hullen van der
+Hulpen
 Hulsberch a reçu du duc Antoine
+Hulsberg
+Hulsdonck
+Hulsen
+Hulshorst
 Hulshout
+Hulst
 Hulsteyn
 Hulswijk
+Hulze
 Human
 Human Vinkenz
 Humans
 Humansz
 Humbertus
+Humblieres
+Humières
+Hummelo
 Hunbertus
+Huncherange
 Hundeshol
 Hunergewe
 Hunfridus
 Hungeracker
 Hungese
+Hunijngen
 Hunradus
 Hunthamme
 Hunxe
 Hunxe de Scumppennellesberghe
 Hupertum
 Huppuy
+Hurden
 Hurle
+Hurler
 Huse
+Husen
 Husmatencamp
+Husten
 Hutrecht sceppere
 Hutschart
 Hutter
 Huuck Willemsz
+Huule
 Huusman Grebbersz
 Huwart
 Huwet van de Valle
@@ -44846,16 +46478,25 @@ Huysman
 Huysman Sillenz
 Huysser
 Huyswaert
+Hybaerle
 Hyele
 Hyl
 Hyldegaris
 Hyldegundt van Wilp
+Hyle
+Hynen
 Hyntamensens
 Hypolitus Persyn
+Hyrans
 Hysman
 Hystenbrueck
 Hystvelt et Bertradis
 Häusern
+Héraugière
+Hüchelhoven
+Hückeswagen
+Hülhoven
+Hüsten
 I
 I a
 I quem
@@ -44937,6 +46578,9 @@ Ideslof
 Iduwe Olfertsz
 Ief
 Ief Jansz
+Iendric
+Iepma
+Ierseke
 Ierseke Aloudsz
 Igger
 Igmarus
@@ -44945,17 +46589,20 @@ Ignatius van der Stegen
 Igolt
 Ildse
 Ilen
+Ilpendam
 Ils
 Ilse
 Ilse Heynenz
 Ilse Rebekenz
 Ilse Romenz
+Ilte
 Iman Pieter Neesenz
 Iman van Zuytland
 Imbert Jaspersz
 Imbrecht de Roe
 Imbrecht graaf van Nassauwen
 Ime Bouwensz
+Imecek
 Imhoff
 Imma
 Imme Boudyn
@@ -44967,18 +46614,24 @@ Imme Hughes
 Imme Pieters
 Imme Pouwelsdochter
 Immenz
+Immerzeel
 Immetien Cornelis
 Immetje Maertensdr
+Impla
 Imstenraedt
 In Lierambacht
 Inbrante
 Inckevoort
+Indyck
 Ingelant
 Ingelbertus
 Ingelbertus van Breda
+Ingelsheim
 Ingelswindis
 Ingelwara
+Ingen
 Ingen Nulant
+Ingenes
 Ingenhave
 Ingersmitten
 Ingetje Reyersdochter
@@ -44987,11 +46640,15 @@ Inghelbertus dictus Bere
 Inghen Haeff
 Inghen have in den dorpe
 Inghien Have
+Inhausen
+Inn und Kniphausen
 Inne
 Innocentius III
 Innocentius IV
 Innocentius VI
+Inpijnen
 Insgelijcx
+Insula
 Inwanus Werneri
 Ippe Geerlofsz
 Irmegarde vrouwe van Blankenheim
@@ -45101,14 +46758,20 @@ Isbrandus Guntwachar
 Isbrandus filius
 Isebella van Fonteynis
 Isebrandus
+Iseghem
 Isele waert
 Iselsteyn
 Iselsteyn jvr van Montforde
+Isenach
+Isenburg
 Isicker
 Islief
+Isselt
+Issen
 Isseth
 Item Claes
 Item Copkijn
+Ittersum
 Ive
 Ive Coster
 Ive Iding
@@ -58079,6 +59742,7 @@ Jesus
 Jesus ghilde
 Jesyntje
 Jetro Johannem
+Jeude
 Jeurian
 Jevolt spapen zwager
 Jevont Jevontsz
@@ -58358,7 +60022,9 @@ Jode
 Jodocus Corvink
 Jodocus Fredericus Rappardus
 Jodocus Nobeler
+Jodogne
 Joefiro
+Joelemont
 Joerdan
 Joes
 Joes Adriaan Berwoutsz
@@ -61706,6 +63372,7 @@ John Bax
 John James
 John donatson
 Joist
+Jokeren
 Jolante Dennetiers van Doornik
 Jolenta
 Jolente
@@ -61724,6 +63391,7 @@ Jonathan van Luchtenburg
 Joncfr
 Joncfrou Katherijnen
 Joncheer
+Joncheyt
 Joncker
 Joncker Andryes van den Hoeve
 Jonckheer Jasper Poelgeest
@@ -61733,6 +63401,9 @@ Jong
 Jongdidden
 Jonge
 Jonge Adriaensz
+Jonge van Baardwijk
+Jonge van Oosterland
+Jonge van Valkevoort
 Jongelinc
 Jongeling
 Jongelings
@@ -61765,6 +63436,7 @@ Jonghenzoon
 Jonker
 Jonker Farns
 Jonkershooft
+Jonkheyn
 Jonkvrouw Elisabeth
 Jonys Katelinenz
 Jonys Lemsz
@@ -62507,7 +64179,10 @@ Julius
 Julius II
 Julius van der Moere
 Julémont
+Jumelles
+Juncis
 Junius
+Junne
 Jurdanus
 Juriaan Faber
 Juriaen
@@ -62695,6 +64370,7 @@ Jvr Mabelie
 K. Majesteit
 K. gld
 KAtharina
+Kaag
 Kaaze
 Kaclwert
 Kaeijmaij
@@ -62715,14 +64391,17 @@ Kaij
 Kaitstede
 Kalckman
 Kalis
+Kalker
 Kalkerenses
 Kalkesteyn
 Kallens
 Kalthoff
 Kalthoffs
+Kamen
 Kamerik
 Kandt
 Kanunnik
+Kapelle
 Kapelsteeg
 Kapittel
 Kapittels Hoff
@@ -62738,6 +64417,7 @@ Kar gld van custing
 Kar gld voor
 Kar gulden
 Kar van t Groote Gild
+Karck
 Karel
 Karel Aemilius
 Karel Bentinck
@@ -62789,6 +64469,7 @@ Karell van Bentinck
 Karels
 Karl van Arckell
 Karl von Monrean
+Karne
 Karol gl
 Karol gld
 Karol gld tuschen
@@ -62808,6 +64489,8 @@ Karstrate
 Kartijls
 Karts
 Kasper Zullijn
+Kassel
+Kasteele
 Kasyne
 Katarina
 Kate
@@ -63130,10 +64813,13 @@ Kayll
 Kaymay
 Kaytenz
 Ked
+Kedichem
 Kedken
 Keedkens
+Keelborch
 Keeldonc
 Keelman
+Keent
 Keermans
 Keersmaker
 Kees
@@ -63143,13 +64829,18 @@ Kees Kijser
 Kees Kuijt
 Kees Winckel
 Kees van Asperen
+Keessel
+Keeten
 Keetman
 Kegelaar
 Kegelaer
+Kegelsberg
+Keggenrode
 Kegheling
 Keij
 Keije
 Keijl
+Keijler
 Keijmp
 Keijmpe
 Keijns
@@ -63158,21 +64849,30 @@ Keil
 Keiser
 Keizer Ferdinand II
 Keizerin
+Keken
 Kelbergen
+Kelder
 Kelderman
+Keldonck
+Keldonk
 Kele mit der halver stat
 Keleman
+Kelen
+Kell
 Keller
 Kellere
 Kelman
 Kelnar
 Kelnerei
+Kelre
 Kelremans
+Kemeleer
 Kemenade
 Kemener
 Kemerer
 Kemerer Kemeleer
 Kemerer de Eynspijk
+Kemnade
 Kemp
 Kemp Jansz
 Kemp Moenings
@@ -63180,6 +64880,7 @@ Kemp Uloutsz
 Kempe
 Kempe Pieter Belardsz
 Kempen
+Kempenaer
 Kempenz
 Kempinck
 Kempinnia
@@ -63198,7 +64899,10 @@ Kenoutje Westwoudts
 Kenre
 Kenterken
 Keperick
+Keppel
+Keppelhof
 Keppelsvroue
+Kerchof
 Kerchorsthoeve
 Kerck
 Kerckerinck
@@ -63211,17 +64915,23 @@ Kercstraet
 Kerel van Gelre
 Keremare
 Kerk-
+Kerke
 Kerkgheest
+Kerkhof
 Kerkhoff
 Kerkman
 Kerkmeesters
+Kerkwerve
+Kerkwijk
 Kermisse
 Kernisse
+Kerpen
 Kerrebake
 Kerremans
 Kerret
 Kersavonde
 Kersberck ontvuert
+Kersbergen
 Kerselis van Palant
 Kersgen
 Kerskyn
@@ -63299,6 +65009,8 @@ Kerstyne Jansdochter van Beesde
 Kerstyne van Gent
 Kerstynsz
 Kertyne's
+Kervenem
+Kervenheim
 Kervinc
 Kervinc Boudensz
 Kervinc van Reimerswaal
@@ -63306,10 +65018,13 @@ Kervincsz
 Kervincsz van Reymerswale
 Kervink
 Kervink~
+Kerwillen
 Kerwillen~
 Kessel
 Kessel ventum
+Kessenich
 Kesseningen
+Kesteren
 Ket
 Ketel
 Ketelaer
@@ -63317,15 +65032,20 @@ Ketelbant
 Ketelboeter
 Ketelers
 Ketelwade
+Keten
 Ketmansdochter
 Kets
 Kette
+Kettelaar
 Ketterswaard
 Kettersweert
 Kettervliet
 Kettler
+Keuken
+Keulen
 Keulens
 Keuterfeld
+Kevelaer
 Kevelaert
 Kevelantsweer
 Kever
@@ -63357,10 +65077,12 @@ Kijfweert
 Kijnckus
 Kijver
 Kille
+Killesteyn
 Kimpen
 Kin Rem
 Kinbac
 Kincker
+Kinderbroder
 Kinderen
 Kindermaker
 Kineken
@@ -63372,11 +65094,14 @@ Kinnemans
 Kinnenz
 Kinnetje Lamberts
 Kinne~
+Kinschot
 Kint
 Kippine
 Kirbergh
 Kircwijc
 Kircwiker buerscap
+Kirse
+Kirsel
 Kirsilis
 Kirskorff
 Kist
@@ -63431,6 +65156,7 @@ Klaes van Caets
 Klaesz
 Klare van Hogendorp
 Klaver
+Kleef
 Kleijn Wyken
 Kleine Weert
 Klemens Melsen
@@ -63438,6 +65164,7 @@ Klencker
 Klerq
 Kleyn
 Klick
+Klinkenberg
 Klock
 Kloeckgen
 Klokkemaker
@@ -63472,6 +65199,7 @@ Knotterus
 Knuet
 Knuijse
 Knuijster
+Knuijt
 Knuit
 Knuyt
 Koc
@@ -63537,6 +65265,9 @@ Konraijt Schimmelpenninck
 Kooker
 Kool
 Koorn
+Koper
+Koppel
+Korenhorst
 Korff
 Kornelia
 Kornelia Brandwijk van Blokland
@@ -63593,6 +65324,8 @@ Kostijn van der Does
 Kottighe
 Koudaver
 Koudehorn
+Koudekerke
+Kouden
 Kovelwade
 Kovier Claes
 Kovoet van Bonendael
@@ -63615,11 +65348,13 @@ Kriecsz
 Kriek
 Krieken
 Kriekenbeeck son
+Kriekenbeek
 Krien
 Kriex
 Kriexcamp
 Kriexkamp
 Krijc
+Krijenkamp
 Krijn Aelberts
 Krijn Cornelisz
 Krijn Dierixdochter
@@ -63655,8 +65390,10 @@ Kryntgen van Paenderen
 Krystina
 Kueijters
 Kueninc
+Kueringen
 Kuesman
 Kueyt
+Kuijsterman
 Kuijsterman~
 Kuijt
 Kuijtert
@@ -63670,6 +65407,7 @@ Kulenborg
 Kulenborg ter Lecke
 Kulenkamp
 Kunegont
+Kunic
 Kunigonda van Asperen
 Kurstiaen van der Moelen
 Kusers
@@ -63677,6 +65415,7 @@ Kuucq
 Kuust
 Kuyc
 Kuyk
+Kuynre
 Kuyser
 Kuyst
 Kuysten
@@ -63688,6 +65427,7 @@ Kyfhoec van een gevangene
 Kyfhoeck Florijsdochter
 Kyfhoeck Florisz
 Kyfhoecks
+Kyfhoek
 Kyfkampen
 Kyfland
 Kymme
@@ -63696,6 +65436,7 @@ Kynchus
 Kynne Claes
 Kyrstiaen van Keken
 Kytsdorp
+Küdinghofen
 L. Rukebiersz
 L. de Berger
 L.L. baronesse van Bemmel
@@ -63704,10 +65445,12 @@ Laak
 Laan
 Laatst
 Labeij
+Laca
 Lachaert
 Lacher
 Lachert
 Lachgher
+Lachurst
 Lacuvilla
 Laec
 Laechburg
@@ -63717,18 +65460,26 @@ Laecke
 Laeckeman
 Laen
 Laens
+Laer
+Laerhoven
 Laerre broeck
 Laersunder
 Laervelt ghebernt
+Laeter
+Lage
 Lagenbochem
 Lagher
+Lake
 Lakeman
+Laken
 Lakencoper
 Lakenman
+Lakerveld
 Lakervelt
 Lakervelt ter Sidewinenaert
 Lakervelt van hem
 Lakeveld
+Lalaing
 Lam
 Lam Barnier
 Lambert
@@ -64057,6 +65808,7 @@ Lambrechts Kox
 Lambrechtsz
 Lambroek
 Lame
+Lameyten
 Lamme
 Lammers
 Lammerscoge
@@ -64073,11 +65825,13 @@ Lamp
 Lamp Hollenz
 Lampe
 Lamphollenz
+Lamsweerde
 Lamszoons
 Lamtiaen Swaneldez
 Lana
 Lana van Os
 Lancdonc
+Lancdorp
 Lancelot
 Lancelot D'Ysegheem
 Lancelot Fransz
@@ -64088,6 +65842,9 @@ Lanceloth
 Lanceloth van Brederode
 Lanchaer
 Lanchekin duas
+Lancvelt
+Landas
+Landen
 Landesloots
 Landgrim
 Landman
@@ -64102,23 +65859,37 @@ Landsheer
 Landsman
 Landsmeer
 Landtman
+Lane
+Laner
 Laner de Breitbach
+Lang
+Langdries
+Lange
 Lange Allert
 Lange Scedelwijck
 Lange Scheijwijck
 Lange Scheydelwijck
 Lange dyk
 Lange-
+Langebamet
 Langedijk
 Langedyk
+Langel
 Langelaar
 Langelaer
+Langen
+Langendijc
 Langeneel
+Langenhorst
+Langenhoven
 Langer Aer
+Langerak
 Langerlaen
 Langesteijn
 Langesteyn
+Langeveld
 Langeveld van veenhure
+Langevelt
 Langevelt van der camphuur:
 Langevelt van veenhuur
 Langevevelt
@@ -64129,21 +65900,36 @@ Langhevelt van beesten
 Langhevelt van camphuur
 Langhevelt van der camphure
 Langhevelt van veenhuur
+Lannoet
+Lannoy
+Lansbergen
+Lanschot
+Lanscroon
 Lantbertus
+Lantdorp
 Lanterus
 Lantfridus
 Lantgerus
 Lanting
+Lantscroon
 Lantsman
+Lantzbergh
 Lanwaard
+Lanxmeer
 Lap
+Lapper
+Lardier
 Larke
 Lastman Bardinz
 Lastman Willemsz
 Latenstein
 Latensteyn
 Latensteyn Lambrechtsz
+Later
+Latesteyn
+Lathem
 Lathim
+Latseur
 Lau Evertsz
 Lauerens van den Putte
 Lauereyns van Dinther
@@ -64278,15 +66064,19 @@ Lauwereyns van Neck
 Lauwereys
 Lauwerin
 Lava
+Lavella
 Lavia
 Laward
+Lawick
 Layken
 Layse
 Laysloot
 Lazarinus de Flisco
 Lazarus
+Le
 Le Vers
 Leandre
+Lebestein
 Lec
 Leck
 Leck beneden Schoonhoven
@@ -64294,6 +66084,9 @@ Lecka
 Lecke
 Leckeman
 Lecker
+Lede
+Leden
+Ledenberg
 Leder
 Lederbroekse
 Lederbroekse Vliet
@@ -64301,10 +66094,17 @@ Lederdam
 Ledige
 Ledighe
 Leding
+Lee
+Leec
 Leech Blockelant
+Leeck
 Leed
+Leede
+Leefdael
 Leeflang
 Leegwater
+Leek
+Leemputte
 Leen
 Leen Adriaens
 Leen Caput
@@ -64358,25 +66158,34 @@ Leendertsen van Griecken
 Leenen
 Leenheer
 Leenkis
+Leent
 Leentge
 Leentje
 Leentje Adriaens
 Leentje Jans van Grieken
+Leeraart
 Leerbroec
+Leersum
 Leest
+Leesten
 Leetfelt
 Leeuw
 Leeuw-Saint-Pierre
 Leeuwart
 Leeuwe
+Leeuwen
+Leeuwenberg
 Leeuwenburch
 Leeuwerik
 Lefevre
 Lefthand
+Legmeer
 Legnier
 Leibpacht
 Leida
 Leidecker
+Leiden
+Leiderdorp
 Leifard van Harderwijk
 Leij
 Leijaert
@@ -64384,11 +66193,16 @@ Leijde Maes
 Leijden
 Leijenberch
 Leijenborch
+Leijenhuijs
 Leijsenants campe
+Leimuiden
+Leiningen
+Leksmond
 Lekwaarts
 Lelienlaan
 Lely
 Lely Graft
+Lelyvelt
 Lem
 Lem Barnier
 Lem Gielisz
@@ -64398,6 +66212,7 @@ Lem Scolp
 Lem Simonsz
 Lem van Wadenoye
 Lem van Zeeland
+Lembeek
 Lembeeke
 Lembert Scolp
 Lemken Scolp
@@ -64453,6 +66268,8 @@ Lenneke
 Lennep
 Lennoot
 Lens
+Lent
+Lent van Uijtenbroek
 Lentius
 Leo
 Leo Erasmi
@@ -64531,6 +66348,9 @@ Leopold Willem aartshertog van Oostenrijk
 Lepelaer
 Lerik
 Lerinck
+Lestevenon
+Lete
+Lethwick
 Lette
 Leuijt
 Leukinus de Deyl
@@ -64539,14 +66359,20 @@ Leuntgen Willemsz
 Leuntje Dimmens
 Leupenius
 Leur
+Leuse
+Leuter
+Leutesdorf
+Leuth
 Leuv den
 Leuveling
+Leuven
 Leuwe
 Leuwe Sente Peeters
 Levendale
 Leverman
 Levert
 Levijne Luebens
+Levin
 Levin van Cats
 Levina
 Levina Clays van Berendrecht
@@ -64555,10 +66381,13 @@ Levina van Persijn
 Levina van Persyn
 Levina van Welle van Cats
 Levine de Bryaarde
+Lewe
 Lewensteyn
 Lewinc
+Lexa
 Lexmond
 Lexmondt
+Leyden
 Leyden ende den oorlog
 Leyden gecampeert
 Leyden van Leuwen
@@ -64567,12 +66396,14 @@ Leyder mersche
 Leyderdorp an erve
 Leydermerske
 Leyenberch Arntsz
+Leyenburg
 Leynampt
 Leynken Adriaens
 Leys
 Leysebeth Meesen
 Leystiaen
 Leytberghen
+Lezanen
 Liber V
 Libero
 Libero V
@@ -64581,7 +66412,11 @@ Libertus de Rikle
 Libro IV
 Libro V
 Liburgischer Uradel
+Lichte
 Lichtenaer
+Lichtenberg
+Lichtenburg
+Lichter
 Lichtvoet
 Lickebier
 Liclaes Aechtenz
@@ -64603,6 +66438,7 @@ Lie
 Lieboert
 Liebrecht
 Liede
+Liedekerke
 Liedewij Sasbout
 Liedrada
 Liefbroer
@@ -64613,6 +66449,7 @@ Lielaer
 Lielaer Lambertsz
 Lieman
 Lienaer
+Lienlaer
 Lier
 Liere
 Lierwech
@@ -64629,6 +66466,7 @@ Liesbeth heer Bonsaerdsdochter
 Liesbeth heer Niclaesdochter
 Liesbeth van Vlueten
 Liescamp
+Lieshout
 Liesveld
 Liesveld~
 Liesvelt
@@ -64675,10 +66513,13 @@ Lieven van Hogelande
 Lieven van Hoogelande
 Lieven van Welle
 Lieven van der Asselt
+Lievenburch
+Lievendaal
 Lievens
 Lievensteyn
 Lievenz
 Lievers
+Lieversteyn
 Lieves
 Lievin Cappe
 Lievin Mule
@@ -64696,9 +66537,13 @@ Lijbbertus
 Lijcochthon
 Lijele
 Lijeman
+Lijet
 Lijevelinc
 Lijevelinc Aelbrechtsz
 Lijffcamp
+Lijn
+Lijnen
+Lijnhoven
 Lijnken
 Lijs Hughez
 Lijsbet
@@ -64787,11 +66632,24 @@ Likele~ Aechtenz
 Lilie
 Lille
 Lillers
+Limbeek
+Limburg
+Limmen
 Limmo
+Limpt
+Lind
+Linde
+Linden
 Lindina
+Lingen
 Linghen
 Linghensteijn
+Linne
+Linningen
+Linschoten
 Lintbrant
+Lintelo
+Lion
 Lipius
 Lipp
 Lippe
@@ -64826,9 +66684,12 @@ Lisebette van der Lake
 Lisebette vrouwe van Zanthurst
 Lisebetten
 Lisebettenz
+Lisenkerke
 Lisenz
 Lisse
 Listrije
+Lith
+Lith de Jeude
 Litlongest
 Littic
 Littike Uythorn
@@ -64842,6 +66703,7 @@ Livina van Coudenhoven
 Livinus
 Livinus Loese
 Livinus Nicolai
+Livius
 Livius (Lieves?)
 Liza Mols
 Liza Potkens
@@ -64864,8 +66726,11 @@ Lob Wissenz
 Lobberand Jansz
 Lobed
 Lobede an onsen genedigen
+Lobith
 Lobs
 Loc
+Lochorst
+Lochte
 Lockaerde van de Poorte
 Locke
 Locke Wybrantsz
@@ -64974,6 +66839,7 @@ Lodewyk Willemaer
 Lodewyk de Borchgrave
 Lodewyk de Waal
 Lodewyk van Treslong
+Lodichem
 Lodichem van den
 Lodick
 Lodik
@@ -65036,10 +66902,15 @@ Loefssoens
 Loefsz
 Loeftet
 Loeguet
+Loel
 Loen
+Loen d'Enschedé
 Loene
+Loenen
+Loenersloot
 Loenman
 Loenresloet
+Loereward
 Loerik
 Loet
 Loeten
@@ -65048,7 +66919,9 @@ Loevensteyn
 Loevesteijn
 Loevesteyn
 Loff van Herler
+Loges
 Logies
+Logijen
 Loiaerd
 Loijen
 Loijinck
@@ -65056,20 +66929,24 @@ Loijs
 Loijs Bruneel
 Loijs van der Heyde
 Loijthe colit
+Loil
 Lois
 Loise van Maulde
 Loiuse Catharina van Brederode
 Lokeman
+Lokerville
 Lokhorst
 Lombaerts van Enckevoirt
 Lombard
 Lombarts
+Lomelini
 Lomsen
 Lonaert
 Lonaralaca
 Londersloot en moeder
 Longespee
 Longijn
+Longnes
 Lonijs
 Lonissen
 Lonys Pouwelsz
@@ -65077,24 +66954,35 @@ Lonysz
 Loo
 Loockemans
 Loof
+Loon
 Loon Gerritsdochter
 Loor
+Loosduinen
+Loose
 Loosen
 Loot
 Loots
+Looz
 Loper
+Lopes
 Lopes de Surano
 Lopick
+Lopik
 Lopje Roelofs
 Lorette von Ulmen
 Lorre
 Los
+Lose
+Losecoot
+Losen
 Losschaert
 Lossensis
 Losser
+Lost
 Loth
 Lothariiae
 Lotharij
+Lotharingen
 Lotharius
 Lotharus
 Lotin
@@ -65124,6 +67012,7 @@ Lou Pouwelsz
 Lou Powelsz
 Lou Ziecmansz
 Lou van der Goude
+Louches
 Louf
 Louf Gerytsz
 Louf van Kettervliet
@@ -65280,6 +67169,7 @@ Louris Ysbrandsz
 Louris Ysbransz
 Lourys Jansz
 Lous
+Loutsenrode
 Louvensteijn
 Louw
 Louw Bittersteechje
@@ -65347,6 +67237,7 @@ Louwys van Diest
 Louys Jansz
 Louyse van Stienevelt
 Lovaniensis
+Loven
 Loverdey
 Lovetuijt
 Lovinbergh
@@ -65462,6 +67353,7 @@ Lubbertus de Wedene
 Lubbertus de Wisschel
 Lubbertus dictus
 Lubbertus van Egmond
+Lubbesteijn
 Lubbetgen Elbertsdochter
 Lubbickenz
 Lubbotien Spierincsz
@@ -65558,7 +67450,9 @@ Lucas van Valkenburgh
 Lucas van Vliet
 Lucas van der Dussen
 Luce
+Lucht
 Luchtenberch
+Luchtenburg
 Lucia
 Lucia Abbes
 Lucia Catharina Dingemans
@@ -65577,6 +67471,7 @@ Lucienz
 Lucije
 Lucius
 Lucius III
+Luck
 Lucke
 Lucretia
 Lucretia Grebber
@@ -65648,8 +67543,10 @@ Ludetiaen swarte
 Ludetiaenz
 Ludewina Teengs
 Ludicke
+Ludinchausen
 Ludinck
 Luding
+Ludinghausen
 Ludolf
 Ludolf Baerntsz
 Ludolf Barendsz
@@ -65721,6 +67618,7 @@ Luduwina Kock
 Ludwig heer van Randerath
 Ludwina Kock
 Luenen
+Luesdonck
 Lueven
 Lugduno Batavus
 Luidgeri totum
@@ -65751,13 +67649,19 @@ Lumensz
 Lumensz.z
 Lumey
 Lummele
+Lummen
 Luneburgensis
+Lunen
+Lunenburg
 Lunencoech
 Lunijcholt
 Luning
+Lunkerke
 Lupertus Faber
 Luppe
 Lupus de Mere
+Lurcke
+Lureke
 Lus
 Luscus
 Lutehart
@@ -65798,11 +67702,14 @@ Lutgart van Linden
 Luther
 Luthgina van Galen
 Luting
+Lutingen
+Lutjewinkel
 Lutke
 Lutke Oudorp
 Lutkebroec
 Lutkin Claesz
 Lutteke
+Luttelkerpt
 Luttelman
 Lutter Quade
 Lutticbroec
@@ -65811,10 +67718,14 @@ Luttik Oudorp
 Luttike
 Luttike Weede
 Luttike haselbeke
+Luttikhuizen
 Lutze van Honpel
+Lutzelenvorst
 Luuthuse
 Luutkin van Scerpenburch
 Luwe
+Luxemburg
+Luyck
 Luyde Rentitsz
 Luydewina Kock
 Luydken Gerytsz
@@ -65822,6 +67733,7 @@ Luydken Ottenz
 Luydolf Aerntsz
 Luyert Manninga
 Luysse van der Empel
+Luyt
 Luyt Dircsz
 Luyt Jacobsz
 Luyt Jansz
@@ -65851,14 +67763,17 @@ Luzo
 Lyclaes
 Lyclaes Heres
 Lyclaes Lambertsz
+Lycte
 Lydia Hooft
 Lyedewy van Nispen
 Lyeffman
+Lyenen
 Lyentgen Henricsdochter
 Lyeutgen Henricsdochter
 Lyffaert van Bremt
 Lymbourch haen
 Lyn
+Lynden
 Lynen
 Lynslager
 Lyntie
@@ -66397,10 +68312,12 @@ Lyske Gysbrechtsz
 Lysken
 Lysken Adriaens
 Lysken Jans
+Lyst
 Léon
 Léon chatelain de Bruxelles
 Léonard de Hocstoten
 Léonard van Hocstoten
+Löwenburg
 M---woldi dicti Mueter
 M.
 M. Herman Rutgersz van Elisabeth Rutgers
@@ -66430,8 +68347,12 @@ Maaike Hendriks Verweij
 Maaike Henriks Verwey
 Maaike Hermansdochter
 Maaike Hermansz Verwey
+Maar
 Maarleveld
+Maarn
 Maarschalk
+Maarsenbroek
+Maarsman
 Maarssen
 Maarten
 Maarten Bentinck
@@ -66511,7 +68432,10 @@ Maartje van Krommoorde
 Maas
 Maas Hosenz
 Maas waarts
+Maasland
 Maaslant
+Maastricht
+Maat
 Maatsuijcker
 Maaycke Hasaert
 Mabelia
@@ -66530,10 +68454,12 @@ Mabelyen van Bosenchem
 Mabilia
 Mabute et quondam
 Macella
+Macharen
 Macharii
 Macharijs
 Macharius
 Machelmi
+Macheren
 Machgarius
 Machgarius van Enspijc
 Machiel Remmen
@@ -66821,6 +68747,7 @@ Maeijken Jans
 Maeiken Maes Jansdochter
 Mael van der Goude
 Maelpaert
+Maelre
 Maelsom
 Maelson
 Maelstede
@@ -66828,6 +68755,7 @@ Maen
 Maeritgen
 Maeritje Jans ten lijve
 Maerland
+Maerle
 Maers
 Maerssen Claesz
 Maerten
@@ -66983,6 +68911,7 @@ Maesen
 Maeslandt
 Maessen
 Maessluys
+Maet
 Maets
 Magdaleen Goossens
 Magdaleentgen
@@ -67058,6 +68987,7 @@ Magelaen van der Stripe
 Mager Heyne
 Maghe
 Magher Heyne
+Magistris
 Magni
 Magnus
 Magnus Jacobus de Nuwel
@@ -67085,14 +69015,20 @@ Mainfroit
 Maira Borchgrave
 Maissereil
 Maj
+Majonques
 Makedoer
 Makike
 Makop
 Makout
+Malberg
 Malburg
 Malcontent
+Maldeghem
+Malden
+Malderee
 Malderic
 Maldighen van Ackoye
+Male
 Maleghijs
 Maleghys
 Malenz de Aelsdorp
@@ -67100,10 +69036,12 @@ Malepart
 Malerbe
 Malestede
 Malgherappe
+Malland
 Mallant
 Mallegum
 Malpas
 Malscep
+Malsem
 Malsen
 Malsen aen
 Malsen contra
@@ -67113,13 +69051,18 @@ Malsen waert
 Malsens
 Malsens van Kessenich
 Mambatar
+Mameren
 Mamuchet
 Man
+Mande
 Mande Mantsz
+Mandere
 Mandern
 Manderscheidt
 Manekijn
 Manekin Jacobsz
+Manen
+Manen Stuurman
 Manfraet
 Mangelier
 Mangewiel
@@ -67128,11 +69071,14 @@ Manmaker
 Mannaerd Willemsz
 Manne
 Manne Barthoudsz
+Mannee
 Mannee van Wilhelmus
 Manner Jansz
 Manninga
 Manno
 Manriques
+Mansdale
+Mansfelt
 Manshant
 Manshoudts
 Manslus
@@ -67146,6 +69092,7 @@ Manuel Funel
 Manuel de Moura Cortereal
 Mar
 Maraia van Lockhorst
+Marbais
 Marc
 Marc Fugate
 Marc Warboutsz
@@ -67225,8 +69172,10 @@ Marcus van Wese
 Marcus voor Elisabeth Melisdochter
 Marcward Culen
 Mardunga
+Mare
 Mareken
 Marelis Tulleken
+Maren
 Maren tres
 Marendorpe
 Marendyc
@@ -67994,6 +69943,7 @@ Marguerite van Wickerode
 Marguerite van den Kerckhoff
 Marguerite van der Marghe
 Margueritte Soenens
+Mari
 Maria
 Maria Aalbout
 Maria Absolons van Leuven
@@ -69202,12 +71152,17 @@ Markgraaf van Antwerpen
 Markgraaf van Brandenburg
 Marks
 Markus
+Marlar
 Marle
 Marlijn
 Marlo tussen Montfoort
+Marmouf
 Marnaise
+Marne
+Marnix
 Marnix heer van St Aldegonde
 Marquaart
+Marque
 Marquette
 Marquette beleend
 Marquis
@@ -69257,14 +71212,18 @@ Marry Fransdochter van Amsterdam
 Marry van Mathenesse
 Mars
 Marsant
+Marsch
 Marschi
 Marselien van Ackoy
 Marselis
 Marseman
+Marsenburg
 Marsenburg~
 Marseni
 Marserbroec
 Marsilis
+Marsman
+Marsselaar
 Mart Bernard van Bochoven
 Marta Catharina Kemp
 Marta Maria van Campe
@@ -69349,6 +71308,7 @@ Marten van Zell
 Marten van de Waarde
 Marten ver Kizenzs
 Martena
+Martenach
 Martens
 Martensz
 Martgen Cornelisdochter
@@ -69609,6 +71569,7 @@ Martyns Scote van der herfstbede
 Martynshorn
 Martyntje
 Martyntje Anthonisdochter
+Marxem
 Mary
 Mary 10 st
 Mary Borchgreve
@@ -69741,9 +71702,11 @@ Mase
 Mase van Heemstede
 Mase x
 Masekijn heer Willemsz
+Masen
 Maseric
 Maseyn Agniesenz
 Masius
+Masmines
 Massa
 Masschereel
 Massekeels
@@ -69752,6 +71715,7 @@ Massigiod
 Massijn
 Mast
 Masthucce
+Mate
 Matelanck
 Matelang
 Matelief
@@ -69760,11 +71724,13 @@ Matenesse
 Matenesse van Wibisma
 Mateus Gerytsz
 Mathaeus de Drybergen
+Mathe
 Matheeus
 Matheeus Geryt
 Matheeus Gheryt
 Mathei van der Stegen
 Mathenes
+Mathenesse
 Matheus
 Matheus Adriaensz van Herlaer
 Matheus Andries
@@ -70091,6 +72057,7 @@ Mathysz
 Mathyszdochter
 Matijs de Vas
 Matise
+Matlar
 Mats
 Matte
 Matte Colyn
@@ -70173,6 +72140,8 @@ Maude Symonsz van Coudekerke
 Mauderich
 Mauderick
 Maudric
+Maulde
+Mauregnault
 Maurice de Viri
 Maurice de Viry
 Mauricio de Leydemuda
@@ -70254,6 +72223,8 @@ Mayken van Wilmsteyn
 Mayne
 Mayne van Montfoort
 Mayo
+Meaux
+Mechelen
 Mechenz
 Mechteld
 Mechteld Agnes Schaep
@@ -70389,6 +72360,8 @@ Mecteldis Maes
 Med. Studiosus
 Medard van Marle
 Medart van Marle
+Medela
+Medem
 Medembleker Noerdercoech
 Medemblick
 Medemblick bewaert
@@ -70403,19 +72376,38 @@ Meebael
 Meelhuse
 Meeman
 Meenken
+Meer
+Meerbeek
+Meerburg
+Meerdervoort
+Meeren
+Meerenburg
+Meerendonck
+Meerendonk
 Meeresteyn
+Meerhem
+Meerhout
 Meerhuizen
 Meerkerc
 Meerkercke
+Meerkerk
 Meerlaen
 Meerlaer
 Meerman
 Meerman x
 Meermans
 Meerman~
+Meern
+Meerne
 Meers
+Meersch
+Meerssen
+Meerten
 Meerten Heij
+Meerten van Esschesteyn
+Meervenne
 Meerwic
+Meerwijk
 Meerwyc
 Mees
 Mees Claesz
@@ -70434,6 +72426,7 @@ Meesdochter van Heijningen
 Meese
 Meester
 Mees~
+Meetkerke
 Meeus
 Meeus Allerdsz
 Meeus Allertsz
@@ -70471,13 +72464,17 @@ Meeusz
 Meeusz van Leeuwen
 Meeuw
 Meeuwe
+Meeuwen
 Meeuws Noydenz van Amerongen
+Megen
 Meggelini sitam
 Megtelt
 Megtelt Willemsdochter
 Mehe
+Meholt
 Mehr
 Meidag
+Meier
 Meij
 Meije
 Meijer
@@ -70539,6 +72536,7 @@ Meis Fransdochter
 Meisman
 Meister peter
 Meitpri
+Mekeren
 Melant
 Melcher van Wolfswinckel
 Melchior
@@ -70556,9 +72554,11 @@ Melchior van Slingerland
 Melchior van Wolfswinkel
 Melchiorsdochter
 Melcknap
+Melcwert
 Meldrike
 Meliis Mienen
 Melijs
+Melin
 Melis
 Melis Adriaen Symonsz
 Melis Adriaensz
@@ -70608,7 +72608,9 @@ Melis van Saenden
 Melis van Teylingen
 Melis van Yserlo
 Melis van der Wierse
+Melisdijck
 Meliskerke
+Melissant
 Melk
 Melkpot
 Mella
@@ -70618,6 +72620,7 @@ Melre
 Mels
 Mels Jans van der Holst
 Melstre
+Melun
 Melys Andriesz
 Melys Claes
 Melys Claesz
@@ -70645,6 +72648,7 @@ Mens Willemsz
 Mense Allardsz
 Mense Jonghen
 Mensel conquerentes
+Mensen
 Mensenz
 Mensing
 Menso
@@ -70665,6 +72669,7 @@ Menzo
 Menzo van Wesepe
 Menzone de Thrile
 Meppelen
+Mepsche
 Mera Pietersz
 Merc
 Mercelis
@@ -70678,10 +72683,15 @@ Merceman
 Merch
 Merchishem
 Mercijn Willemsz
+Mercken
 Merckgou
 Mercus van Arckel
+Merden
+Merenburg
 Merens
+Merensteyn
 Merens~
+Merenvoirt
 Meresteyn
 Meresteyn van enige
 Mergriet
@@ -70697,12 +72707,18 @@ Merlinus de Vlaca
 Merlo
 Merloe
 Merode
+Meroe
 Meroede
+Merout
 Merovingers
 Merputte
 Merrij
+Merrijn
+Mersch
 Merschtiende van Groede
+Mersen
 Merske
+Merssel
 Mert
 Merte van Montfoort
 Merten
@@ -70726,13 +72742,21 @@ Merten van Rossum
 Mertens Pietersz
 Mertijnsz
 Mertin Jans en Florys
+Merveen
+Mervelt
+Merven
+Merwede
 Mes
+Meschede
 Mesdach
+Meseke
 Meseke~
 Mesjan
 Messagier
 Messire Adriaen de Herlaer
 Metaerd Arndsz
+Metelen
+Meteren
 Metgen Henrix van Vechel
 Metje
 Metje Gerrits
@@ -70757,6 +72781,7 @@ Mette Wulverinctorp
 Mette des Wysen
 Mette des Wysen sitis
 Metten de Wolvelinctorpe
+Metternich
 Metterwelle
 Metza
 Metza de Reifferscheid
@@ -70766,6 +72791,8 @@ Metze
 Metze van Kulenburgh
 Metze van Merode
 Meuit
+Meulen
+Meulich
 Meuller
 Meuns
 Meurlings
@@ -70785,15 +72812,20 @@ Meus Woutersz
 Meus van Scaflaer
 Meus van Westrenen
 Meusken Willems
+Meussen
+Meusyenbroek
 Meusz
 Meuwe Everdeysz
 Meverden
 Mevrouw Helena van Drueten
 Mewe
+Mewel
 Mex
 Mey
 Mey LV
 Meycamp
+Meyde
+Meyden
 Meye vercoft
 Meyer
 Meykaart
@@ -70928,6 +72960,7 @@ Michel van der Heyde
 Michelle
 Michels van Donghen
 Michelsz
+Michely
 Michiel
 Michiel 14d
 Michiel 32 roke hoys
@@ -71121,17 +73154,26 @@ Michielsz
 Michielsz Vermolen
 Micholt
 Mickart
+Middachten
 Middel Harnis
+Middelaar
 Middelbloc
 Middelcoep
 Middeldam
+Middelgael
+Middelhoven
+Middelsteyn
 Middelvelt
+Middelwijk
+Mide
 Midrecht
 Mie
 Mie Mije
 Mie gekocht
+Mieden
 Mien Garbrant
 Mierlaer
+Mierlo
 Mierop
 Miers
 Mies
@@ -71141,6 +73183,9 @@ Mies Gerbrandsz
 Mies Gerritsz
 Miessen
 Mieus Garbrantsz
+Mij
+Mijdrecht
+Mije
 Mije Arisdochter
 Mijen
 Mijheer
@@ -71156,10 +73201,12 @@ Mijs Petri
 Mijs ad dominum
 Mijsenburch
 Mijssz
+Mijst
 Miken
 Mikenz naturalis
 Mil
 Milander
+Milburg
 Milde
 Mildenhoeve
 Mildman
@@ -71167,26 +73214,41 @@ Milen
 Milendonc
 Miles
 Miles de Hurden
+Milheeze
+Mill
 Milla
 Mille
+Millen
+Millendonk
 Millinc
+Millingen
 Millink
 Millyngen
 Milomer
 Mina van Mathenesse
 Minceklose
 Mingel
+Mingoual
 Minne
+Minnebeke
 Minnebode
 Minneke
 Minnes
 Minnic
 Minsgis van Schermerhorn
 Mira Jansdochter Caga
+Mirabel
 Miraeus
 Miraeus Opera
+Miranda
+Mirica
+Misen
+Misie
+Mist
+Mitveld
 Mobach
 Mobachius
+Mocherte
 Mocih
 Modde
 Modder
@@ -71196,6 +73258,7 @@ Moederkijn
 Moedermaghe
 Moeijt
 Moel
+Moelken
 Moelnaer
 Moelnaer Henricz
 Moelnaer van Strijen
@@ -71216,28 +73279,39 @@ Moensz
 Moenyn Jansz
 Moen~
 Moer
+Moerder
+Moere
+Moerendaal
+Moerkerken
 Moerkijn
 Moerman
 Moermans
 Moermont
 Moers misso Xantis
 Moerseil
+Moerter
 Moertynsz
 Moes
 Moes Jan
 Moesbruder son
+Moesel
+Moesijenbroek
 Moey Allart
 Moeyaerts
 Moeyt
+Mogontia
 Moguntiae
 Moij
 Moijalen
 Moijte
 Moilives
 Moir
+Moirtere
+Moiste
 Mol
 Molckman
 Molderic
+Moldyc
 Moleman
 Molembisoul
 Molen
@@ -71246,8 +73320,12 @@ Molenaarsgraaf
 Molenaer
 Molenaer Jansz
 Molenaersgrave
+Molenare
 Molenbrucke
 Molendien impignorata
+Molendine
+Molenkamp
+Molenvliet
 Molenwerf
 Molewerff fl
 Moliart
@@ -71262,9 +73340,11 @@ Mols
 Mom
 Mom van Kell
 Momber
+Momplier
 Mon
 Monbare
 Monceau
+Monchy
 Monckelbaansburghwal
 Mondekijn
 Mondetien
@@ -71275,6 +73355,7 @@ Monec
 Monekensz
 Monekenz
 Monel
+Monemento
 Mongy
 Monic
 Monic Claesz
@@ -71285,6 +73366,8 @@ Monick
 Monicsz
 Monicx
 Monier
+Monigherze
+Monijck
 Monikedamme scoudich
 Monin Stiveric
 Moninssone
@@ -71308,51 +73391,87 @@ Monnikenbroeck
 Monnikendam
 Monnix van Vucht
 Monoculo
+Monreal
 Monsfort
 Monsieur
+Monster
 Mont
+Montaigne
+Montaigu
 Montanus
+Montbeliard
+Monte
 Montegijs
 Monteignie donne deux
 Montenake
+Montenaken
 Montengijs
 Montens
+Monter
+Monterdic
+Montevaldono
 Montfoird
 Montfoord
+Montfoort
 Montfort sitam
+Montigny
+Montjoie
 Montjoie et de Vorne
 Montjoye
+Montmorency
 Montmorency graaf van Hornes
 Montrover
+Monumento
 Monych
 Mook
 Moons
 Moor
+Moorbuijck
+Moordrecht
+Mooreghe
 Moraal
 Morgang
+Moriaen
 Moriaenshoofd
 Morinck
 Morits graaf te Solms
 Morlodenesse
+Mornem
 Morre
 Morsch
 Morsch~
+Morsdorf
+Morssele
+Mortagne
+Mortaigne
+Mortel
+Morter
 Mortiere
 Mortkule
+Mosa
 Mosch
 Moscovien
+Mosel
 Moskers
 Mossel
 Mosselman
 Mosselmans
 Mossel~
+Mosson
+Most
 Mostaert
 Mostart
 Mostarus
 Mostels
 Mostert
 Mostert et Hilla t
+Mota
+Mote
+Moten
 Mots
+Mouchablons
+Mouderic
+Moudwijk
 Moult
 Mourijn
 Mourijn Pieters
@@ -71367,6 +73486,7 @@ Mouryn Sapiëns
 Mouryn Sapiëns man
 Mouryn van der Does
 Mout
+Mouter
 Mouter~
 Moutmaker
 Mouwe
@@ -71392,6 +73512,7 @@ Mouweryn Jansz
 Mouweryn Staessenz
 Mouwerys Jansz
 Moxettus filius Imme
+Moy
 Moy Jansz
 Moy Oeijcke
 Moy Pelser
@@ -71419,9 +73540,13 @@ Mr Zeger
 Mr. Arnt Steeskinsz
 Mr. Pieter Jean Baptiste Charles van der Aa
 Mrytgen
+Mucole
+Muden
 Muderkin
 Mudt
+Muelen
 Muelstroe
+Muerder
 Muerkyn
 Muerse
 Mues Jansz van Rossen
@@ -71431,14 +73556,17 @@ Mueten
 Muffred filius dominae
 Mughe
 Muiden
+Muijen
 Muijkerck
 Muijl
 Muijlewijk
 Muijlman
+Muijlwijck
 Muijl~
 Muijs
 Muijs Jacobsz
 Muijswinckel
+Muijswinkel
 Muijtinck
 Muilkerc
 Mul
@@ -71447,16 +73575,25 @@ Mulart
 Mule
 Mulen x
 Mulenz de Aelsdorp
+Mulerpesch
 Mulert
+Mulich
+Mulken
 Muller
 Muloc
 Mulrepas
 Mulrepesch
 Mummenz
+Mundelh
 Mundin
 Munfort sitam
+Munic
 Munjauwe
+Munnic
+Munnichem
 Munnick
+Munster
+Munter
 Muntfort bij Muntfort
 Muntken
 Murre
@@ -71468,8 +73605,10 @@ Musch
 Muscher
 Musengat
 Musschart
+Musschenbroek
 Musschet
 Mussijs
+Mute
 Mutsen
 Muul
 Muus
@@ -71478,20 +73617,30 @@ Muus Mars
 Muus van Rosse
 Muus van Rossen
 Muyden
+Muyenhem
 Muylken
+Muylwijk
 Muys
 Muys van Holy
+Muysen
+Muyssenburg
 Muyt
 Myddelstam
+Mydert
 Mye
 Myeus Claesz
 Myeus Symonsz
+Myle
 Myle van der
+Mynden
 Myndis
 Myns
 Mynta
 Mörmter
 Mörs
+Müdersheim
+Mülcken
+Müllenark
 Mün
 N. Aelbouts
 N. Beerwouts
@@ -71522,8 +73671,10 @@ N. van Zaenen
 NB
 NB gecancelleerd,
 NH Nootdorp
+Naaldwijk
 Naaldwyc
 Naantje Mossels
+Naarden
 Nachtegael
 Naeijer
 Naeldewyckerbroec
@@ -71534,6 +73685,7 @@ Naem
 Naemsloot
 Naen Jacobsz
 Naenkenz
+Naerssen
 Naes
 Naes van der Hulst
 Naetpuel
@@ -71541,14 +73693,17 @@ Nagel
 Naget
 Naghel
 Nahuijs
+Nahus
 Naildwijc
 Naldwic
 Naleken
+Namen
 Namman
 Namman Jansz
 Namme
 Namme Olboutsz
 Nammen Jansz
+Namsloo
 Namuriensis
 Nan
 Nan Bartoutsz van Cranenbroek
@@ -71682,6 +73837,7 @@ Natalie bastaard van Holland
 Natalis
 Natalye
 Natanael Arnouts
+Nath
 Nathalia
 Nathalie
 Nathalie Aernt Gerytszdochter
@@ -71694,10 +73850,12 @@ Nathaniel Aarnoult
 Nathaniel Aernouts
 Nathardus
 Nativitatem
+Natscoe
 Navorscher
 Neck
 Necke
 Neckenz
+Neckertingen
 Neck~
 Necsvaer
 Neder
@@ -71895,7 +74053,11 @@ Neeltje van Vliet
 Neeltje van de Vyvere
 Neeltje van der Endt
 Neelve
+Neep
+Neer
 Neerbroick
+Neercassel
+Neerijnen
 Neesenz
 Neesken Jans
 Neesken de Gier
@@ -71903,6 +74065,7 @@ Neesken van Vlierden
 Neever
 Neffen
 Neggebr
+Neijn
 Neijse
 Neijsse
 Nel
@@ -71940,6 +74103,8 @@ Nellen camp
 Nellen's
 Nellenland
 Nellenneve
+Nellesteijn
+Nellesteyn
 Nelletgin
 Nelletie
 Nelletie Jacobs
@@ -71956,30 +74121,40 @@ Neng
 Nenne
 Nenne Gruters
 Nennekina
+Nergennae
 Nering
 Nersen
+Nes
 Nese
 Nese Wolters
 Nesenz
 Nesse
+Nesselrode
 Nessez
 Nestgens
 Nestkyns
 Net
+Nethen
+Netherlo
+Nettelhorst
 Nettes
 Nettie
+Neuburg
 Neude
 Neude Post
 Neudekinus
 Neudencamp van der Steghe
 Neudenz
 Neudo Feyen
+Neukirchen
+Neuss
 Neve
 Nevekin
 Neveling
 Nevelingh
 Neves misso
 Ney Florys
+Neynsel
 Ni
 Nic
 Nic Jacobs
@@ -72491,15 +74666,22 @@ Nicolaus van der
 Nicolaus van der Colster, abbas monasterii
 Nicolle van Herlaer
 Niculaes Cocqus
+Nideck
+Nideggen
 Niding Hannekyns
 Nie Strene
 Niedorp
 Niedorpercogen
+Niel
 Niel Willem Jacobsz
+Nieland
 Niels
+Niemandsvriend
 Niemansvriend
 Niemants
+Nienhoven
 Nienoirt
+Niepoort
 Nierdikervelt
 Nierendorf
 Nierop
@@ -72508,6 +74690,7 @@ Nies Claes
 Nies Jans Vos
 Nies Jansdochter
 Nies Jansdr
+Niesch
 Niese
 Niesenz
 Niesgen
@@ -72530,31 +74713,47 @@ Niesje van Duijts
 Nieske
 Niessenz
 Niessie
+Nieuburg
 Nieuburgh
 Nieudorp
 Nieukerk
 Nieupoort
+Nieustadt
 Nieuw Kuik
 Nieuwborch v.d. Nieuwburg
 Nieuwe Nierop
 Nieuwe Nydorp
 Nieuwe Nyedorp
 Nieuwe Striene
+Nieuwenaar
+Nieuwenburg
+Nieuwendam
 Nieuwendijck
+Nieuwenhove
+Nieuwenhoven
 Nieuwenhuijs
 Nieuwenhuis
+Nieuwenrode
+Nieuwenveen
 Nieuwer Amstel
 Nieuwer Niedorp
 Nieuweramstel
 Nieuwercuijck
 Nieuwerkerk
+Nieuwerve
+Nieuwkoop
 Nieuwkuik
+Nieuwland
+Nieuwsteen
 Nieveld
+Nieven
+Nifterick
 Niger
 Nighel
 Nijebeek
 Nijgenkirchen
 Nijtael
+Nijwel
 Nijx
 Nikolaas
 Nikolaas van Aderhem
@@ -72562,15 +74761,22 @@ Nikolaas van Rollant
 Nikolaas van Scagen
 Nikolaas van Waterland
 Nimègue
+Ninove
 Nisabeth
 Niskens
+Nispen
 Nispens
+Nisse
+Nistel
+Nistelrode
 Nitard
 Nithuzen
 Nits
 Nittaert Evertsz
+Nittersum
 Nittert
 Nivelle
+Nivelles
 Niwenkuyc
 Nobel
 Nobel en Waijn
@@ -72606,21 +74812,29 @@ Nolleken
 Nollen
 Nomen
 Nonnenmate
+Nooij
 Noom
 Noomen
 Nooms
 Noor d
 Noord
+Noorddijk
+Noorde
 Noordeloos
 Noordercoech
 Noordgang
 Noording
+Noordingen
 Noordingh
 Noordland
 Noordtlandt
 Noordtlandt de Vries
+Noordveld
+Noordwelland
 Noordwijck
+Noordwijk
 Noordwoude
+Noordyk
 Noordzyde van der laen, ende die
 Noorman
 Noort
@@ -72628,22 +74842,29 @@ Noort Scerwoude
 Noort Schermer
 Noort Willemsz
 Noortic
+Noortich
 Noortigh
+Noorting
 Noortwijck
 Noortwyck
 Noot
 Nootdorp
 Nooth
 Noots
+Noppe
 Noppen
 Nopper
 Nor
 Norbert Adriaen de Cocq
 Norbert Philippe
 Norbert van Assche
+Norbog
+Norch
 Norderart
+Nordholt
 Nordhuse
 Nordigerhout wart
+Nordingen
 Norinc
 Noris
 Nort Scerwoude
@@ -72660,9 +74881,12 @@ Nortich van der vrouwencampe van Theylinghe
 Nortwaldo
 Norwich
 Nose
+Noszam
+Not
 Notaris Thomas Laurentiusz
 Note
 Nothaft
+Notten
 Nouken
 Nout
 Nout Henricsz
@@ -72678,16 +74902,23 @@ Noyde Meeusz
 Noyden
 Noydenz
 Noydenz van Amerongen
+Noyelles
 Noyen
 Nubeck
 Nude
 Nuelens
+Nuenum
+Nuenveld
 Nuenven
 Nuenvene Gerard van der Dobbe
 Nues
 Nuijs
+Nuijssenburch
+Nuland
+Nulde
 Numan
 Numansdorp
+Nusia
 Nutges
 Nuwe
 Nuwe Boxwoude
@@ -72704,11 +74935,14 @@ Nuwe-
 Nuwekerc
 Nuwenbroeke bi den gheerweghe
 Nuwendoern
+Nuwenhove
 Nuwes
 Nuweveen
+Nuyssenburch
 Nuyst
 Nycholaes van der Dussen
 Nycholaum Wilhelmi de Adrichem
+Nychusen
 Nyclaes
 Nyclays Colve
 Nycolaes van Putten
@@ -72726,39 +74960,60 @@ Nycolaus de Putte
 Nycolaus de Slijngelant
 Nycolaus de Stapple
 Nycolaus van der
+Nydeck
 Nydorp van Gheryt
 Nye Nydorp
 Nyeburch
 Nyeke van Campen
 Nyelant
 Nyell
+Nyenbeek
+Nyenburch
+Nyenburg
 Nyencamp
+Nyendaal
+Nyenhof
 Nyenhuis
 Nyenpoert
 Nyenrode
 Nyensteyn
+Nyenvliet
+Nyenwerve
+Nyepelaer
 Nyerkerke
 Nyerop
 Nyes Pietersdochter
 Nyesensz
 Nyesenz
+Nyesteyn
 Nyeuvelt en Suijlen
 Nyeuwerkerck
 Nyeuwerkercke
+Nyeveld
 Nyevelt
 Nyevelt Stevensz
 Nyevelt Stevensz tbv
 Nyevelt Willemsz
 Nyevelt heer van Geeresteyn
+Nyewaal
 Nyewael
 Nyewe Camp
+Nyeweerd
 Nyewerkerc
+Nyewerve
 Nyffterick
 Nyhoff
+Nykerke
 Nyland
 Nylant
+Nymegen
+Nymeghen
 Nyrip Niedorp
 Nyrsam
+Nyvel
+Nyvelt
+Nyvenheim
+Nyversele
 Nywe Ryn
 Nywel
 O.
@@ -72793,8 +75048,10 @@ Obreen
 Oburch
 Oburch Aelbertsdochter
 Occo
+Ochten
 Ochtens
 Ockenberch
+Ockenburg
 Ocker
 Ocker Anthonisz
 Ocker Arndsz
@@ -72851,6 +75108,9 @@ Odelricus
 Odelt
 Odelt van Houthusen
 Odelye
+Odenhoef
+Odenhoven
+Odenkirchen
 Odenkirgin
 Odewijn
 Odewijn Claesz
@@ -72861,6 +75121,7 @@ Odgier
 Odgildis
 Odgodus
 Odijck
+Odijk
 Odile
 Odile de Salm
 Odile van Wytman
@@ -72889,6 +75150,7 @@ Odilia van Scherpenzeel
 Odilia van Wassenaer
 Odilia van de Merwede
 Odilia van der Merwede
+Odilienberg
 Odo
 Odo Botnia
 Odo Splenter
@@ -72933,6 +75195,7 @@ Oegh
 Oeghe
 Oeghe Claesz
 Oegsgeest
+Oegstgeest
 Oeij
 Oeke
 Oekele
@@ -72946,6 +75209,7 @@ Oelantscamp
 Oelbout Ette
 Oele
 Oelout Gheijlenz
+Oelt
 Oem
 Oem Claes
 Oem Cleysz
@@ -72974,10 +75238,15 @@ Oems
 Oemtgen
 Oem~
 Oen
+Oene
 Oenema
 Oenema van Wibisma
 Oer
+Oerde
 Oerdel
+Oerden
+Oerepont
+Oerle
 Oerlemans
 Oert
 Oerveen
@@ -73020,11 +75289,15 @@ Oetger Doedenz
 Oetger Florisdr
 Oetger Voerloep
 Oetjens van Waveren
+Oeusen
 Oeve Harckenz
 Oeve Reynersz
 Oeve Zwitekenz
 Oeveke Ricsenz
+Oever
 Oevinc
+Offarel
+Offema
 Offenhaus
 Offraen Lambertsz
 Ofhuysen
@@ -73049,16 +75322,21 @@ Ogier van Voorschoten
 Ogier van Vorscoeten
 Ogiersambacht
 Ogive
+Oignies
 Oij
 Oijdala
 Oijeke
 Oijtic
+Oirschot
+Oiselay
 Oistende
 Oisterhout loept
 Oisterleke
 Oistvriesland
 Oiswailt
+Oisy
 Oitgher Englis
+Okhuizen
 Okker Brandwijk
 Olaert
 Olaert Henricsz
@@ -73082,9 +75360,12 @@ Oldemeule
 Oldemeule x
 Oldenaller
 Oldenbarnevelt
+Oldenburg
 Oldengaard
 Oldenriede
+Oldenzaal
 Oldric Doedenz
+Ole
 Ole Pier Wisse
 Olende
 Olenta
@@ -73125,6 +75406,7 @@ Olij van Velsen
 Oliman
 Oliphant
 Oliver Roelandsz
+Olivera
 Olivier
 Olivier Buyck
 Olivier Cromwel
@@ -73158,6 +75440,7 @@ Oliviers
 Oliweruschenz
 Ollenz
 Olman
+Olmen
 Olof Baerntsz
 Olof Francken
 Olout
@@ -73179,7 +75462,10 @@ Olyslager
 Omer
 Omer ten Broickhuys
 Ommeloop
+Ommen
+Ommeren
 Onbesceyden
+Onbeschaamde
 Onderteekend
 Onderwater
 Ongheleerde
@@ -73195,6 +75481,7 @@ Onser Vrouwengasthuis
 Onser Vrouwensteghe
 Onulfi
 Onulfus
+Onvervaerde
 Oof
 Ooltgensplaad
 Ooltgensplaat
@@ -73204,60 +75491,100 @@ Oom Pietersz
 Oom van Wijngaarden
 Oom van Wyngaarden
 Ooms
+Ooosterwijk
 Oord
 Oorschot
 Oort
+Oost
+Oostburg
+Oostcapelle
 Oostdijk
+Oostende
+Oostenwolde
 Oostenwoude
 Ooster Blokker
 Oosterbeek
+Oosterbroek
 Oosterduin
 Oosterhalve
+Oosterhout
 Oosterlake verkohct
+Oosterlande
 Oosterling
+Oostervant
 Oosterwede
+Oosterwijk
+Oosterzeel
+Oosthoorn
 Oosthoorn van Sonnevelt
+Oosthuizen
 Oosthuysen
+Oostkerke
 Oostmolger
 Oostrop
+Oostrum
 Oostvriesland
 Oostvriesland aflivich
 Oostvriesland starf
 Oostwoud
 Oostwoudt
 Opalme
+Opburen
 Opburgen
 Opdam
 Opdam en Hensbroek
 Opdam ende Hensbroec
+Opheim
 Ophemert
+Ophena
+Ophoven
+Ophuizen
+Oplo
+Opmeer
+Opoteren
+Oppendorp
 Opper Gelder
 Opperdoes
 Opperdoes Avenhorn
+Opsinnich
+Opstal
 Opstreckende van der Eem
 Opwaert
+Opynen
 Orange
 Oranje
 Oranjepolder
+Orc
+Orde
 Ordinaer van Ned.
 Ordonnantien van Holland
 Organist
 Oriana de Liesveld
+Ormete
 Orschate
 Orschot
+Orsoy
 Orsoye
+Orsoyen
 Orsoyen Hermans
 Orten
 Orth
+Orthen
 Ortt
 Os
 Ose
 Osebrante Clant
+Osel
+Osen
 Osenbroich
 Osicke Sappenz
+Oss
 Ossekien
 Ossenberg
+Ossenbroek
+Ossendrecht
 Ossgen
+Ostade
 Ostadyen
 Ostcapella
 Oste
@@ -73282,6 +75609,7 @@ Oswald heer van den Berghe
 Oswald seigneur de Berge
 Oswalt graaf van Berghe
 Oswalt graaf van den Bergh
+Oswilre
 Ot
 Ot Adriaensz
 Ot Cloeck
@@ -73322,6 +75650,7 @@ Othelboldus
 Othelda
 Othelhilde
 Othenz
+Othey
 Otho
 Otho Proeis
 Otho van Arckel
@@ -73512,6 +75841,7 @@ Ottenhoeve
 Ottenlandt
 Ottenlandt beleend
 Ottensz
+Ottenvelde
 Ottenz
 Ottenz van Huekelem
 Ottenz van Rijswyck
@@ -73943,15 +76273,20 @@ Oud
 Oud Ammers
 Oud Arkel
 Oud-Haarlem
+OudValkenburg
 Oudaen
 Oudaert
 Oudburchlane
+Ouddorp
 Ouddorperdyc
 Oude
 Oude Goudriaan
 Oude Nierop
 Oude Nydorp
 Oude Vosmaer
+Oudegeerst
+Oudegein
+Oudekerke
 Oudekin
 Oudeland
 Oudelandsambacht
@@ -73961,9 +76296,15 @@ Oudelantsz
 Oudelantz
 Ouden
 Ouden Hoorn
+Oudenaarde
 Oudenaer
+Oudenburch
 Oudendijck
+Oudendijk
 Oudendorp
+Oudengein
+Oudenhoven
+Oudensteyn
 Ouder Amstel
 Ouderidder
 Ouderkerc
@@ -73972,6 +76313,7 @@ Ouderscye
 Oudescuijt
 Oudestein
 Oudewagen
+Oudewater
 Oudezijdtsdwersstraet gecoft
 Oudhaas
 Oudheusden
@@ -73992,11 +76334,13 @@ Oudric Doedenz
 Oudric Ivenz
 Oudric Sackenz
 Oudric Valkenz
+Oudshoorn
 Oudsier Machteldenz
 Oudt Arkel
 Oudtvader
 Oudvader
 Oudwijck
+Oudwijk
 Oudziere
 Oue
 Oulin dedit
@@ -74057,6 +76401,7 @@ Ouwinc
 Ouyen
 Ove
 Oveken
+Over
 Over Dije
 Over Slydrecht
 Over de Vecht
@@ -74065,8 +76410,12 @@ Overaetvelsch
 Overbeke
 Overberg
 Overblocklandt
+Overbordene
+Overbunde
+Overcroft
 Overeng
 Overlander
+Overnesse
 Overrijn
 Overrijn Hackenz
 Overrijn oeden hofstat
@@ -74076,21 +76425,28 @@ Overscout
 Oversloet van alsolken
 Oversloot
 Oversluse
+Overstege
 Overstegen Batavus
 Oversteghe
 Oversteghe Jacobsz
+Oversteyn
+Overveld
 Overvest
+Overvort
 Overvort~
 Overwael
 Ovo
 Ovo~
 Ovrdach
+Oy
 Oye
 Oyen
 Oyen en Dieden
 Oyen ter ener
+Oyenbrug
 Oyteke van Ouddorp
 Oytet Jansz
+Oytge
 Oytgier
 Oytic Sasschersz
 Oytvort
@@ -74109,10 +76465,14 @@ P.C.
 P.C. Hooft
 P.C. Kincker
 Paalvoet
+Paap
 Paape
 Paard
 Paardecoper
+Pabeke
 Pacxs
+Padberg
+Padbroek
 Pade Ivenz
 Paedze
 Pael
@@ -74125,11 +76485,13 @@ Paep Heijn
 Paep de heer van Asperen
 Paepken
 Paes
+Paeschen
 Paesdag
 Paesschen
 Paets
 Paeuwenz
 Paewenz
+Paffenrode
 Paget
 Paget de Wulve
 Pagge
@@ -74140,6 +76502,7 @@ Paije Ricsenz
 Paije Yevinghe
 Paijs
 Pailke Matelang
+Palais
 Palamedes
 Palano
 Palatinne
@@ -74164,6 +76527,7 @@ Palick~
 Paling
 Palink
 Palix
+Pallaes
 Pallandt
 Pallavicino
 Pallemdach
@@ -74171,10 +76535,12 @@ Palm
 Palmdag
 Palster
 Paltrode
+Paltz
 Paludanus
 Palude
 Palude Supercori
 Palus van Haestrecht
+Paluyde
 Pan
 Pancras
 Pancras Dircsz
@@ -74187,10 +76553,15 @@ Pancras Smeets
 Pancras Vos
 Pancras de Boer
 Pancras van Castricum
+Pander
+Panhuys
 Panijckx
+Pankoec
 Pankoec~
 Panne
 Pannekoek
+Pannen
+Pannerden
 Pannevoet
 Pannicida
 Panpat
@@ -74203,8 +76574,13 @@ Pape Otte van Borne
 Pape Rembrand
 Pape Zijl
 Papenbroek
+Papendonk
+Papendrecht
+Papenhoven
+Papeweg
 Paping
 Parasis
+Pardieu
 Pardon
 Parduyn
 Paridaen
@@ -74215,12 +76591,14 @@ Parijservelt
 Paris
 Parise
 Parizervelt
+Park
 Parnele
 Parnyele
 Parry
 Parsijn
 Partout
 Pas
+Pasch
 Pascha
 Paschen
 Paschen an den
@@ -74378,12 +76756,15 @@ Pauwels van Vianen
 Pauwels van der Leec
 Pauwen
 Pauwenz
+Pauwestein
 Pauweter
 Pauws
 Pauw~
+Paveke
 Paveye
 Paveye oestwaart
 Pavone
+Pavordt
 Pavort
 Payen Sidewende
 Payen Sidewinde
@@ -74393,6 +76774,7 @@ Payesz
 Payman
 Pe
 Pebel
+Peddenberg
 Pedro Anthonio Ursini
 Pedro de Haye
 Pedro de Sijstelles
@@ -74401,6 +76783,7 @@ Peek
 Peek~
 Peel
 Peelken van Veessen
+Peellant
 Peereboom
 Peereboom Voller
 Peerken
@@ -74422,7 +76805,9 @@ Peilgrim van Horne van den enen scaerlaken
 Pekelharing
 Pekelingen
 Pel
+Pelanen
 Pelant
+Pelden
 Pelegrim
 Pelegrinus
 Pelegrinus de Putten
@@ -74477,6 +76862,7 @@ Pelser
 Pelssz
 Pelt
 Pen
+Pendrecht
 Penelope van Brederode
 Penn
 Penneman
@@ -74490,6 +76876,7 @@ Pennix
 Pensaert
 Peperkoorn
 Pepert
+Pepingen
 Pepinus
 Percellis
 Perceval
@@ -74501,10 +76888,13 @@ Peregrinus de Goych
 Peregrinus de Hoghendorp
 Pereneys
 Perina Marcelis
+Pernis
+Perponcher
 Perre
 Perrenot
 Perrenot van Grandvelle
 Perreynen Jacobsz
+Persel
 Persel sita
 Persijn
 Persijn de Haerlem
@@ -74525,9 +76915,11 @@ Perweijs
 Perweys
 Perzijn
 Peschine
+Pesse
 Pesser
 Pessier
 Pet
+Peteghem
 Peter
 Peter Abbe
 Peter Adriaan de Jongebode
@@ -74971,6 +77363,7 @@ Peternella Jan van Hovendochter
 Peternella van Dongen
 Peters
 Petersem
+Petershem
 Petersum
 Petersz
 Petersz beleend
@@ -75235,9 +77628,12 @@ Petrus van den Dam
 Petrus van den Hoest
 Pette
 Petten
+Peurson
+Peursum
 Peute
 Pevelingen
 Peyndrec
+Peze
 Pfarrei Haffen
 Pfarrei Mehr
 Pfarrpfründe von Bymmen
@@ -75578,6 +77974,7 @@ Pierre van der Hoevelick
 Pierre van der Hulst
 Pierre van der Tommen
 Pierrepont
+Pierrevive
 Piest
 Piet
 Piet Born
@@ -77978,6 +80375,7 @@ Ping
 Pinghe
 Pipenpoy
 Piper
+Piperscheyt
 Piscariam
 Piscatio
 Pisla
@@ -77986,18 +80384,30 @@ Pitten
 Plaats
 Plaatsman
 Placidus van Westfalen
+Plad
 Plaestrier
 Plaets
+Planke
 Plante
+Plasse
 Plasse Puel
+Plat
 Platea Maris
 Platevoet
+Plavier
 Plavier~
+Plees
 Pleijne
+Pleijnes
+Pleise
 Plellinc
 Plellingi
 Plemp
+Plettenberg
+Plettenburch
+Plijs
 Ploech
+Ploeck
 Ploeck~
 Ploeg
 Ploegh
@@ -78015,7 +80425,9 @@ Pocker
 Podrico
 Poedeken Poele
 Poedelwijc
+Poedelwijk
 Poederoien
+Poederoyen
 Poeijt
 Poel
 Poeldijc
@@ -78031,8 +80443,10 @@ Poelis
 Poell
 Poelman
 Poelsloet
+Poelvoerde
 Poelvoet
 Poelwic
+Poelwijk
 Poen
 Poes
 Poet
@@ -78040,12 +80454,16 @@ Poetgen
 Poettgensz
 Poet~
 Poideroyen
+Poirten
+Poitiers
 Pokenpoel
 Pol
 Pol Hermansz
+Polanen
 Polenburch
 Polghest
 Polites
+Poll
 Pollard
 Polle
 Polle de Heusedem
@@ -78053,12 +80471,15 @@ Polle de manso
 Polle pro
 Pollegeest
 Pollenberch
+Pollenburch
 Pollim
 Pollinc
 Polmaet
+Polre
 Pols
 Polsbroec
 Polsbroeck
+Polsbroek
 Polsebroec
 Polstersdorf
 Polyander
@@ -78074,6 +80495,7 @@ Poncyaen Dijdertsz
 Poncyaensz
 Poncyaensz.z
 Poncynen
+Ponlandwijk
 Pons
 Pons Dammasz
 Pons Oelez
@@ -78108,21 +80530,26 @@ Pontianus
 Pontus Heuterus
 Poock
 Poort
+Poorte
 Poortegyser
+Poorten
 Poorter
 Poortersweduwe
 Poortugael
 Poortvliet
+Popkensburg
 Popman
 Poppe
 Poppe Heijmansz
 Poppe Heymansz
 Poppe Wittenz
 Poppedamme
+Poppel
 Poppelille
 Poppelille~
 Poppelman
 Poppenberg
+Poppendamme
 Poppo
 Poppo Wilhelmusz
 Popponis
@@ -78149,6 +80576,8 @@ Poter
 Potgen
 Potges
 Pothout
+Pothuzen
+Potis
 Potje
 Pots
 Potskyn
@@ -78158,6 +80587,7 @@ Potte
 Pottebacker
 Potten
 Potter
+Potter van der Loo
 Potter van der Loo~
 Pottere
 Pottes van Hoet
@@ -78306,8 +80736,12 @@ Pouwlus
 Poytmer
 Praest
 Praet
+Praet van Moerkerke
+Praijstingen
+Praistinck
 Pranger
 Prat
+Prater
 Prebende
 Preeckstoel
 Preis/Proeys
@@ -78315,6 +80749,7 @@ Preits
 Preng
 Prent
 Prenthagen
+Presichave
 Prevoost
 Prick
 Priem
@@ -78332,7 +80767,9 @@ Prins
 Prins Cornelisz
 Prins Jansz
 Prins van Oranje
+Prinsenhage
 Print
+Printhagen
 Prisbier
 Probus
 Proeijs
@@ -78357,11 +80794,15 @@ Provence
 Proyet
 Proys
 Proytz
+Prudeel
 Pruese
 Pruijs
 Pruijt
+Pruister
 Pruys
+Pruyssen
 Pter Artsz
+Puedersem
 Puederssem Bertelmeusz
 Pueijn
 Puel
@@ -78371,24 +80812,29 @@ Puijtman
 Puiman
 Pul
 Pulgien
+Pullem
 Pulleman
 Puls
 Puppius
 Purificatis
 Purmer
+Purmerend
 Purmerende
 Purmereynde
 Put
 Putam
 Putenijp
 Putoc
+Putte
 Putten
 Putten~
 Puttershoeck
+Puttestein
 Putthe
 Puttlitz
 Putze
 Puusche
+Puyfflick
 Puyloghe
 Puyst
 Pvan der Does
@@ -78399,16 +80845,22 @@ Pynappel
 Pynss
 Pynssen
 Pyper
+Quabeke
 Quadaert
 Quade
 Quade Leck
 Quade Wouter
 Quadeporte
+Quaderbruggen
+Quaderebbe
 Quaeck
 Quaere litteras
+Quaet
 Quaet Vogel
+Qualburch
 Quanto
 Quantus
+Quarebbe
 Quarre
 Quarré
 Quattel
@@ -78417,6 +80869,9 @@ Queeck
 Quekel
 Quekels
 Quellende
+Quesnoy
+Questenborch
+Quickelberch
 Quidam Ghiselbertus
 Quidam Walterus
 Quilinus Suffridi
@@ -78483,6 +80938,7 @@ Raadslieden van Rotterdam
 Raam
 Raamsdoncq
 Raamsdonk
+Raanbergen
 Raaphorst
 Raas
 Raas van Borselen
@@ -78491,6 +80947,7 @@ Raas van Haamstede
 Raas van Haemstede
 Raas van Liedekerke
 Raas van Treslong
+Raashoorn
 Raatsheer
 Rabath
 Rabbert
@@ -78502,6 +80959,7 @@ Rachel de Vooght
 Radbodus
 Radbodus ex
 Radboud
+Rade
 Raden- of Vroedschap
 Radenburgarebroeke 16 uncias
 Radinc
@@ -78541,12 +80999,14 @@ Raesse
 Raessen
 Raessenz
 Raesso van Haemstede
+Raesveld
 Raet
 Raet soude comen
 Raet van Hollant
 Raet van Leyden
 Raet van Staten
 Raet van hem hebben
+Raethem
 Raet~
 Ragaerd
 Rage
@@ -78562,6 +81022,7 @@ Raistfelt
 Ralle
 Ram
 Ramaus
+Ramelo
 Rameyde
 Ramhusen
 Rammelman
@@ -78569,14 +81030,23 @@ Ramolt
 Ramp
 Rampenz van der
 Ramsdonc
+Ramslo
 Ranck
+Randebroek
+Randeghem
+Randerath
+Randerode
 Randolff Schaep
 Randolph
 Randolph Schaep
 Randolph Veer
 Randolph van Hoekelem
+Randwijk
 Ranneken
+Ranst
 Rant
+Rantdorp
+Ranzow
 Raoul de Gand
 Rapeken
 Raphael van Bruheze
@@ -78608,6 +81078,7 @@ Rasse van Borssele
 Rasse van der Borch
 Rasse van der Printhagen
 Rasseghem
+Rassengien
 Rasterop
 Rat
 Rataller
@@ -78615,13 +81086,23 @@ Ratburc
 Ratel
 Ratelband
 Ratgard
+Rath
+Ratingen
 Ratther
 Rauwaert
 Rave
 Raven
+Ravenberg
+Ravenelles
 Raveninc
+Ravensberg
 Ravensberge
+Ravenswaaij
+Ravenswade
 Ravensway
+Raveschot
+Ravesteyn
+Raveswaij
 Ravin
 Rawlijn
 Raysfelt ad dominum
@@ -78638,19 +81119,32 @@ Rebicke
 Rebicke Doude
 Reboldus Carnifex
 Receveur des domaines
+Rechede
+Rechoven
 Recht
 Rechte
+Rechtere
+Rechteren
+Rechteslote
 Recke
+Recklinghausen
 Reclo
 Rector Erasmus
 Reddeger Reijlofsz
 Reddeger Rendsenz
 Reddegher
+Rede
 Redelafi
+Redelgem
+Reden
+Redichem
+Redinchaven
 Redinchemervelt
 Redinchemmervelt
 Reding
+Redingen
 Redinghen van Lovene
+Ree
 Reede
 Reede habet
 Reedwyck
@@ -78659,6 +81153,7 @@ Rees
 Rees et Halderen
 Rees et Haldern
 Rees ex
+Reewijk
 Reg
 Reg Alpha
 Reg II
@@ -78666,6 +81161,7 @@ Reg IX
 Reg Phil
 Reg Philippus
 Reg Rotterdam
+Regelsberge
 Regenboldi
 Reghenbout
 Regina Denijs
@@ -78678,9 +81174,11 @@ Reginhart
 Reginhart de Fresia
 Regnerus de Rikle
 Regnier Heussen
+Regniers
 Regtdoorzee
 Regulierkijn
 Regulierkyn
+Rehagen
 Reiger
 Reijer
 Reijer Aelbertsz
@@ -78717,6 +81215,7 @@ Reijer van Lodensteyn
 Reijer van Vanevelt
 Reijer van der Does
 Reijer van der Horst
+Reijgersberge
 Reijgher
 Reijleke Sackenz
 Reijmber
@@ -78796,6 +81295,9 @@ Reilafus
 Reimar
 Reimbert
 Reimboldus
+Reimersdaal
+Reimerstock
+Reimerswaal
 Rein
 Rein Arn gld
 Rein Hubenz
@@ -78867,6 +81369,7 @@ Reinerus de Ryswyk
 Reinerus de octo mensuris
 Reinerus filius Wilhelmi
 Reinerus solvit
+Reinfeld
 Reinfridus
 Reingard
 Reingardus
@@ -78999,8 +81502,10 @@ Reinwardi
 Reis
 Reiske
 Rek Rentmeester
+Reke
 Rekelman
 Relichoff
+Relighem
 Rem
 Rem Aeriaensz
 Rem Danielsz
@@ -79065,6 +81570,7 @@ Rembrant Pietersz
 Rembrant Rembrantsz
 Rembrant Smit
 Remen
+Remiaucourt
 Remigii
 Remigii persolvendam
 Remigius van Grevenbroeck
@@ -79081,6 +81587,7 @@ Remmits
 Remonstr
 Rempen
 Remplers
+Remunde
 Remvard
 Renaer Dever
 Renald van Gelre
@@ -79103,6 +81610,7 @@ Renaud van Schoinauwe
 Renaud van Valkenburg
 Renaud van Vyanen
 Renaut
+Rencvelt
 Rendorp
 Rendse
 Rendse Claesz
@@ -79117,10 +81625,12 @@ Rendsenz
 Rene
 Rene van Renesse
 Reneke Lohman
+Renen
 Renerius Friso
 Renerus
 Renesee
 Renesse
+Rengberg
 Renger
 Renger Florysz
 Renger Jansz
@@ -79173,6 +81683,9 @@ Renier van Westerholt
 Renier van der Buttinge
 Renier van der Duyn
 Renier van der Heyden
+Renneghem
+Renouwen
+Renoy
 Rens Barrytsz
 Rens Berwoutsz
 Rens Emkes
@@ -79186,9 +81699,11 @@ Rense Mennenz
 Rense Mentsz
 Rense Sappenz
 Rense Wybrantsz
+Renselar
 Rensje Jans
 Renson
 Renssen
+Renswoude
 Rensz
 Rentenaer
 Rentic Nannincsz
@@ -79196,6 +81711,7 @@ Rentinc
 Rentinc~
 Rentmeester
 Rentmeester van Zuid Holland
+Renty
 Renum"(duwarie
 Renze
 Renze c.s
@@ -79203,21 +81719,29 @@ René de Chalon
 René de Vicq
 Rep
 Repelaer
+Repelwick
 Request
+Resant
 Reseke
 Resolutien van Holland
 Reson
+Retersbeek
 Retgera van Loen
 Rethbroeke
 Retourné à Mons
 Reunaldus
 Reus
+Reux
+Reve
 Revelinc
 Revelinck
 Reveling
+Reven
 Reverende Otto van Dalem
 Revert Lubbertsz
+Rewijk
 Reybrant
+Reyde
 Reyer
 Reyer Aelbertsz
 Reyer Ariaensz
@@ -79255,6 +81779,7 @@ Reyer van Wynberge
 Reyer van der Horst
 Reyersdochter
 Reyertsz Swart
+Reyfferscheidt
 Reygerstijn
 Reyinc
 Reyleersdam
@@ -79559,6 +82084,7 @@ Reynouw
 Reynouw Aeriansdr
 Reynouw Claes
 Reynouw Pouwels
+Reynouwen
 Reynouwtje Houtuyn
 Reynoy
 Reynoye
@@ -79577,8 +82103,14 @@ Reysenaalden
 Reyssenses
 Reystaert
 Rezen
+Rheden
+Rheede
 Rhees
 Rhees~
+Rheijdt
+Rheinberg
+Rhemen
+Rhenen
 Rheni
 Rheni ex
 Rhenum
@@ -79586,6 +82118,7 @@ Rheydt lui
 Rhodes
 Rhyede
 Ribbe Allardsz
+Ribemont
 Ricarde
 Ricart Walini
 Ricbald
@@ -79646,16 +82179,29 @@ Ridderslach
 Ridwert Reynersz
 Rie
 Riebeeck
+Riebeek
 Riebeke
+Rieck
+Riede
+Rieder
 Riederkercke
+Riederkerk
 Riederwaert
 Riedewaert Entetz
 Riedwijc
 Riedwyc
+Riedyk
 Rieghe
 Rieghe~
+Riel
+Riele
 Rieminc
+Riempst
+Riemsdijk
 Riemsnijder
+Riepen
+Ries
+Rietberg
 Rietveld
 Rietvelt
 Rietvelt et Wonmersscamp
@@ -79667,11 +82213,14 @@ Rietwert Nannekenz
 Rietwert Paijenz
 Rietwert Pietersz
 Rietwert Reymboutsz
+Rietwijk
+Rieu
 Rieuwert Claesz
 Rieuwert Jansz
 Rieuwert Symonsz
 Riewaert
 Riewairt
+Rijc
 Rijck
 Rijck Evertsz
 Rijck Gysbertsz
@@ -79688,18 +82237,32 @@ Rijk Voogd
 Rijke
 Rijke Woutersz
 Rijkerts
+Rijle
+Rijmeren
 Rijmpeler
+Rijn
 Rijnbout Minnebode
+Rijne
+Rijneren
+Rijnesteijn
+Rijneveld
+Rijng
+Rijningen
 Rijnken van Alkmaar
 Rijnoye
+Rijnsburg
 Rijnsche
 Rijnvisch
 Rijp
 Rijpen
 Rijquin van Camphuysen
+Rijs
 Rijsberge
+Rijsbergen
+Rijsenburg
 Rijsenz
 Rijser
+Rijsoord
 Rijsperbant
 Rijswijck
 Rijswijk
@@ -79708,6 +82271,8 @@ Rijswiker
 Rijswiker Duvenstert
 Rijswiker Weert
 Rijswikerweert
+Rijt
+Rijt de Brochum
 Rijtover
 Rikals
 Rikarde
@@ -79720,23 +82285,33 @@ Rikert
 Rikizo
 Rikout
 Rikout Dirksz
+Rilland
 Rimbrahti
+Rimburg
 Rimersbach
 Rimmegum
 Rimniegom
 Rinasburg
 Rindern
+Rine
+Ring
 Ringberg
+Ringenberg
 Ringer
+Ringers
 Rinnegom
 Rinoldus de Oste
+Rinsch
 Rinsche
 Rinsge
 Rinsje Hessels de Haan
 Rinske Baringa
 Rintdorp
+Rio
 Rioet
+Ripa
 Ripckerwaert
+Ripe
 Rippaert Immenz
 Rippe
 Rippe Bouenz
@@ -79770,6 +82345,7 @@ Riquinus de Wische
 Ris
 Risewaard
 Risewic
+Risingen
 Rispikerwaard
 Risselt Dirc
 Risselt Dirc Goutsdochter
@@ -79780,6 +82356,7 @@ Rissent Nannendr
 Riswidis
 Riswidis Russent
 Ritsevoort
+Riviere
 Rixa
 Rixen van Lochusen
 Rixtel
@@ -80019,6 +82596,7 @@ Rochus Holleman
 Rochus Jansz
 Rochus Walichsz
 Rochusz
+Rockanje
 Rockengim
 Rodbertus
 Rodbertus de Bruggis
@@ -80033,12 +82611,18 @@ Rode Tymanssoens
 Rode de Stessene
 Rodeheller
 Rodekeijn
+Rodemack
 Rodemul
+Roden
+Rodenburg
 Rodengoye
+Rodenrijs
+Roderen
 Roderic
 Roderik
 Roderik van Voerst
 Roderik van Voorst
+Roderlo
 Rode~
 Rodircx
 Rodolf
@@ -80073,6 +82657,7 @@ Roeder
 Roederyse
 Roedinc Gherytsz
 Roef
+Roeij
 Roel
 Roel Bemersweer
 Roel Pietersz
@@ -80425,12 +83010,17 @@ Roemer Willemsz
 Roemer Ymmensz
 Roemert
 Roemt
+Roen
+Roene
 Roeper
+Roermond
 Roerom
 Roesken
 Roesken Roesman
+Roesman
 Roesmont
 Roest
+Roester
 Roest~
 Roet
 Roetaert
@@ -80441,6 +83031,7 @@ Roeters
 Roetier
 Roetmule
 Roetsaert
+Roetselaer
 Roffart
 Roger
 Roger de Leefdael
@@ -80488,6 +83079,8 @@ Rogier van Voorhout
 Rogland
 Rohan x
 Roiever
+Roij
+Roijen
 Roijer
 Roilman
 Rokensteyn
@@ -80508,6 +83101,7 @@ Rolleboen
 Rollinx
 Rollinxland
 Rollis
+Rollé
 Rolof
 Rolof Ermgard
 Rolof Ermgard Sandersz
@@ -80560,18 +83154,23 @@ Rombout van Vlierden
 Rombouts
 Rombouts van Asperen
 Romboutsz
+Rome
 Romen
 Romen begheren aen
 Romer
 Romer Hermansz
 Romke Hermansz
 Rommer Hettesz
+Romswinkel
+Romu
 Roncks
 Rondeel
 Rondenburch
+Rondenrade
 Rondiel
 Rong Pietersz
 Rongart
+Ronkel
 Ronse
 Roo Claes
 Roobaert
@@ -80586,11 +83185,17 @@ Rooleeuw l'Epie
 Roompot
 Rooms-Koning
 Rooms-koning Sigismund
+Roon
+Roop
+Roorda
 Roos
+Roosbeeck
 Roose
 Roosencamp
 Roosendaell
 Roosevelt
+Roost
+Rooster
 Roosterman
 Rooswijck
 Rooswyck
@@ -80612,21 +83217,30 @@ Rosekrans
 Rosel Lambertsdochter
 Rosemond
 Rosemont
+Rosen
 Rosenberger
 Rosenburch
+Rosenburg
 Rosenburgh
 Rosencamp
+Rosendael
 Rosenmoelen
 Rosetta van Harmelen
 Rosijane
+Rosin
 Roskam
+Rosmale
+Rosselen
 Rossem
+Rossen
+Rossenstein
 Rossum
 Rost
 Roste
 Rostinck
 Rostocke
 Rost~
+Roswijk
 Roswinckel
 Rotardus Wermboldi
 Rotemuyl
@@ -80637,14 +83251,20 @@ Rothingus
 Rothungus
 Rothusen
 Rotlendam
+Rotselaer
+Rotte
 Rottegat
 Rotterdam
 Rottermond
+Rouchem
 Rouchhuysen
 Rouck
 Roufer van Harve amis et parents
 Rouken
+Roupij
 Rousel
+Rouselle
+Rouwe
 Rove
 Rovelinc
 Rover
@@ -80659,6 +83279,10 @@ Rovetasch
 Rowe
 Roy
 Roy x
+Roye
+Royen
+Royenburg
+Roys/Roos
 Roys/Roos~
 Rozenberger
 Ruardus Allen
@@ -80737,6 +83361,7 @@ Rufus Rode
 Ruger van Dongen ter Klencke
 Ruger van der Haer
 Rugers caetstat
+Rughe
 Ruijch
 Ruijchrock
 Ruijchrock van de Werve
@@ -80747,22 +83372,41 @@ Ruijmstal
 Ruijsch
 Ruijsch Claesz
 Ruijske
+Ruijsterman
 Ruijsterman~
 Ruijter
 Ruijven
+Ruinen
 Ruiter
 Ruiven Nicolaasz
+Ruke
 Ruke pipe
 Rukebier
 Rukempre
 Rulekinus
 Rulf de Hese
+Rulin
 Rullinc rothe
+Rumde
 Rumden
+Rumelaer
+Rumele
+Rumer
 Rumer (de)
+Rumesberghe
+Rumigny
 Rummel
+Rummen
+Rumpen
+Rumpst
+Rumpst van Werestein
+Rumpt
 Rumscotele
+Rumst
 Runghe
+Runssenrade
+Rupelmonde
+Rurich
 Rusius
 Ruske
 Russe van Alkemade
@@ -80772,6 +83416,7 @@ Rust
 Rustenburg
 Rut Pietersz
 Rutegerus Paludanus
+Rutenberg
 Ruter
 Rutger
 Rutger Adelisenz
@@ -80997,10 +83642,13 @@ Rutte
 Rutten
 Ruudt
 Ruusschenz
+Ruusvort
+Ruve
 Ruven
 Ruvens
 Ruwaert
 Ruwenoort
+Ruwiel
 Ruych
 Ruychaver
 Ruyge Ven
@@ -81019,13 +83667,16 @@ Ruyssche
 Ruyssche van Lyntscoten
 Ruysschen boomgaert
 Ruytenborch
+Ruytenburch
 Ruyter
+Ruyven
 Ruzelinus
 Rycartsdochter
 Ryccen
 Rychaerde van Colen
 Rychardus van Bochoven
 Rychelt
+Ryck
 Ryck Adriaensz
 Ryck Woutersz
 Ryck van Bockhoven
@@ -81033,6 +83684,7 @@ Ryckaerts
 Ryckardi
 Ryckardus Strick
 Rycke Herman
+Ryckel
 Rycklant Jansdr
 Ryckout Gerytsz
 Rycoldus Reymboldi
@@ -81046,13 +83698,16 @@ Rycout resignavit
 Rycquinus
 Rycwick
 Rycwyn
+Ryk
 Rykert Rykertsz
 Ryle Riehl
 Rym
 Rymbeke
 Rymer
+Ryneghem
 Rynenburg
 Rynensteyn
+Rynesse van Reynouwen
 Rynesteyn
 Rynkijn Doevenzoon
 Rynkyn
@@ -81062,6 +83717,7 @@ Rynreaert
 Rynsken
 Ryquin van Beverrrade
 Rysacke
+Rysinghen
 Ryswic van kind
 Ryswickermaelscap
 Ryswijck
@@ -81089,14 +83745,18 @@ S.C. Bosschaert
 ST
 STeenhuijs
 STeynbergh
+Saandenhooren
+Saarbrucken
 Saartie Michiels
 Saartie van Vreede
 Saartje
 Saartje Hoogendorp
 Saartje Jans Biere
 Saasvelt
+Sabbinge
 Sabel
 Sabina van Hoorn
+Sabornes
 Sac
 Sacharias Woutersz
 Sacke
@@ -81118,8 +83778,11 @@ Saendam
 Saenden
 Saerdam
 Saers
+Saert
 Saertie Michiels
+Saffenberg
 Saffenburch
+Saffenburg
 Saffentijn
 Saffentyn Ude
 Saffius
@@ -81128,21 +83791,29 @@ Sagarus
 Sager
 Saij
 Saijne
+Sainghin
 Saive
 Sakel
 Sakele Gabenz
 Sakele Pietersz
 Sakema
+Saksen
 Sal Meeus
 Saladius
 Salakonis
 Salbout Sasbout
+Salcedo
+Salchen
+Sale
 Salee
+Salency
 Salentyn
 Salenz
 Salines
+Salland
 Sallen
 Sallinghs
+Salm
 Salmen
 Salmons
 Saloen
@@ -81156,6 +83827,7 @@ Salomon Lenerts
 Salomon Roelofs van Goch
 Salomon de Aleym
 Salomon van Lier
+Saltesberg
 Samencoep
 Samenkoper
 Sammel
@@ -81203,6 +83875,7 @@ Sandelina van Nassau
 Sandelinck
 Sandeling
 Sandelyn
+Sandenburg
 Sander
 Sander Aerntsz
 Sander Aertsz van Grevenbroek
@@ -81283,6 +83956,7 @@ Sanderus Pyeck
 Sanderus Tengnagel
 Sanderus de Stralen
 Sanderus dictus Wolf
+Sandheuvel
 Sandhorst
 Sandick
 Sandman
@@ -81295,6 +83969,8 @@ Sandrine vanBrederode
 Sandron
 Sandthiende van Castricum
 Sandvorst
+Sandwijc
+Sandyc
 Sanen
 Sanne Meijntges
 Sanppert van Niekerck
@@ -81302,6 +83978,7 @@ Santbomel
 Santbomel Theodericus de Hecel
 Santbomel verkoopt Hadewigis
 Sante Crucis
+Santen
 Santfoort
 Santfort
 Santi Nicholai
@@ -81366,10 +84043,12 @@ Sara van Breederode
 Sara van Breederoede
 Sara van Egmont
 Sara van der Straten
+Sargen
 Sarijs
 Saris van Slingeland
 Saris van Slingeland Sarisz
 Sarp Haijkesz
+Sart
 Sarys Clauwardsz
 Sarys Martynsz
 Sarys Reynoudz
@@ -81382,6 +84061,7 @@ Sasbout Bugge
 Sasbout Cornelisz
 Sasbout Dirksz
 Sasbout Sasboutsz
+Sasburg
 Sascher Arbersz
 Sascher Nannenz
 Sascher Wybrantsz
@@ -81396,10 +84076,15 @@ Sasschersz
 Sasselof Boudricsz
 Sasselof Boudrixz
 Sassen
+Sassenburch
 Sassenem
 Sassenem fundata
+Sassenheim
 Sassenom
+Sasssenbroec
 Saterdach
+Satersbeek
+Saterslo
 Satis
 Saul
 Saxamerus
@@ -81408,6 +84093,7 @@ Saxbrath
 Saxburg
 Saxen
 Saxis
+Sayn
 Sayt
 Saywinsz
 Scaaerslo
@@ -81418,6 +84104,7 @@ Scader
 Scaderuveen
 Scaderwoude
 Scadewout
+Scadijc
 Scaeck
 Scaefgen
 Scael
@@ -81428,6 +84115,7 @@ Scaerwoude
 Scaflaer
 Scaftrecht
 Scaij
+Scalc
 Scalckwijc
 Scalckwijck
 Scalcwic
@@ -81447,6 +84135,7 @@ Scaper
 Scarport
 Scascher Ymmenz
 Scat
+Scautbruc
 Scawijck
 Scedder
 Sceel Vranckenz
@@ -81462,6 +84151,7 @@ Scele den Kukacker
 Scelenz
 Scelgrave
 Scelhout
+Scellacht
 Scellen
 Scelling
 Scellinghoute
@@ -81474,18 +84164,25 @@ Scenck
 Scenk van Cuylenborch
 Scenkel
 Scenwekinsz
+Scerfhem
 Scerpenseel
 Scerpinc
 Scerpsweert
+Scerre
+Scerrei
 Scetler
 Sceullincs
 Scevel
 Scewick
 Sceyfken van den Driessche
+Schaak
 Schaal
 Schaap
 Schaart
 Schade
+Schadenbroec
+Schadewijck
+Schaedbroeck
 Schaef
 Schaell
 Schaep
@@ -81493,7 +84190,9 @@ Schaep~
 Schaerdenberch
 Schaers
 Schaerwoude
+Schaesberg
 Schaetwijck
+Schaffelaer
 Schaffer
 Schagen
 Schager
@@ -81505,6 +84204,8 @@ Schalckwijck
 Schalckwijk
 Schalcwijc
 Schalcwyckervelt
+Schalk
+Schalkwijk
 Schalkwyc dd
 Schalla
 Schalluynresloot
@@ -81512,50 +84213,72 @@ Schaloen
 Schamer
 Schardinel
 Scharlaken
+Scharrenberg
 Schataloch
 Schats
 Schatter
 Schatters
 Schavendries
 Schaverdack
+Schawijk
+Schayk
 Schecker
+Schedelic
 Scheefard van den Drijssche
+Scheel
 Scheel van Welevelt
 Scheer
 Scheer van Amerongen
 Scheerre
 Scheffart vamme Rade
 Scheffer
+Scheiden
 Scheijdwijck
 Scheijnart
 Schelcamp
+Schelde
 Scheldinus
+Scheldwijk
 Schelige
+Schellach
+Schellacht
 Schellaert
+Schelle
 Schellinchout
+Schellinck
 Schellinckhoudt
+Schelling
 Schellinger
 Schellinghout
+Schellinkhout
 Schelluinen
 Scheltes
+Scheltinga
 Scheltis
 Schelven
 Schenaert
 Schenck
 Schenck de Nydeecken
 Schenck van Toutenburg
+Schendel
+Schengen
 Schenk
 Schenkel
 Schenkeldijck
 Schenker
 Schep
 Schepel
+Schepelaar
 Scheppers
 Scherenbeke
+Scherf
 Schermbeck
 Schermbeek
 Schermer
+Scherpenberch
+Scherpenburg
 Scherpenisse
+Scherpenzeel
 Scherpinc
 Scherpwinkel
 Scherres
@@ -81565,6 +84288,7 @@ Scheure
 Scheven
 Scheveningen
 Scheven~
+Schevick
 Schevola
 Schey
 Scheyf
@@ -81573,6 +84297,8 @@ Scheyffart van Merode
 Scheynart
 Scheyvart
 Scheyvel
+Schie
+Schiedam
 Schiekamp
 Schiffelart
 Schije
@@ -81590,12 +84316,16 @@ Schilken
 Schilmannus
 Schilperoort
 Schilpoord
+Schilpoort
 Schils
 Schilt
 Schilt Tielmanszsdochter
 Schimmelpenninck
 Schimmelpenning
+Schimper
 Schinkel
+Schinne
+Schipluiden
 Schipper
 Schipsholl
 Schmelink
@@ -81615,34 +84345,55 @@ Schollart
 Scholten
 Scholven
 Schomekersslach
+Schonauwen
+Schonebrinck
+Schonenberg
+Schonenveld
+Schoneveld
+Schonewolde
 Schoock
 Schoof
 Schooff
 Schoofs
 Schoon
+Schoonderlo
 Schoone
+Schoonenboom
+Schoonewale
+Schoonhout
+Schoonhoven
 Schoonrelo
 Schoonreloe
+Schoonrewoerd
+Schoonvorst
 Schoor
 Schoordijck
+Schoordijk
 Schoorl
 Schooten
 Schoppen
+Schorel
+Schorlemmer
 Schorre
+Schorrenberg
 Schot
 Schot Raad
 Schotekin
 Schoten
 Schoter
 Schoterbosch
+Schotland
 Schotten
 Schoubroec
+Schouden
 Schoudt
 Schout
+Schoute
 Schouten
 Schoutis
 Schoutsweer
 Schout~
+Schouwen
 Schram
 Schrama
 Schrassert
@@ -81661,19 +84412,24 @@ Schrobben
 Schrobop
 Schroijestein
 Schroots
+Schroyestein
 Schroyesteyn
 Schroyesteyn x
 Schuddemouwe
 Schuer
 Schuijmer
 Schuijmspaen
+Schuijr
 Schuijt
 Schuijtman
+Schuilenburg
 Schulenburg
 Schulerus
 Schulinck
 Schultinck
 Schulting
+Schure
+Schuren
 Schurmans
 Schut
 Schuthwick
@@ -81684,11 +84440,17 @@ Schuurman
 Schuweloc
 Schuyr
 Schuyt
+Schuyte
 Schuytemaker
+Schwaben
+Schwartsenberg
+Schwartsenburg
 Schye
 Schyeban
 Schyevene
+Schönau
 Schürman
+Schüttwick
 Scieambacht
 Sciedamme
 Sciedamme van
@@ -81714,6 +84476,7 @@ Sclacwijck
 Scobbeland van Swindrecht
 Scobbelant
 Scobbelant van Swindrecht
+Scobben
 Scoblan
 Scobland
 Scoblantsambacht
@@ -81723,6 +84486,7 @@ Scoelinne
 Scoenenberch
 Scoenkers
 Scoerl
+Scoif
 Scoif~
 Scolastica Gysbrechtsdochter
 Scolp
@@ -81731,6 +84495,7 @@ Scolvliet
 Sconaert
 Sconck
 Scone Heinen
+Sconenberg
 Sconerlo
 Sconouwe
 Scoof
@@ -81746,6 +84511,7 @@ Scoten
 Scoter
 Scoterus
 Scotter
+Scoude
 Scoudeman
 Scout
 Scoutate
@@ -81762,13 +84528,16 @@ Scoutken van Arkel
 Scouwene van Blomartsdike
 Scoyer
 Scoytick
+Scragen
 Scraper
 Scrappelinc
+Scravele
 Screij
 Screvel
 Screvelant
 Screvelius
 Screvelsz
+Scrijvere
 Scriver
 Scryvers van Leyden
 Sculenborch
@@ -81826,6 +84595,7 @@ Sebastiaen van Hoendorff
 Sebastiaen van Ypelaer
 Sebastian Cornelisz
 Sebastien d'Hane
+Sebelinge
 Seberts
 Sebilla van Vondel
 Sebrecht
@@ -81881,19 +84651,25 @@ Segher Persijn
 Seghers
 Segherus Jacobi
 Segherus van den Poll
+Segwaart
 Segwaert
 Segwaert Bartholomeusz
 Segwairder
 Seij
+Seijst
 Seinke
 Seino van Wynberge
+Sel
 Selden
 Selenz
 Selijckien Hendricks
+Selke
 Selke Winter
 Selkinus van der Aijen
+Seller
 Sellingh
 Selver
+Selwert
 Sem Versland
 Sem Willam
 Sem Willem Garbrantsz
@@ -81906,6 +84682,8 @@ Senne
 Sent Aelbrechtsdienst
 Sente Pieters
 Sente Symonis
+Seps
+Septem fontis
 Sequane
 Ser Abbenkerke
 Ser Rengaerskerke
@@ -81914,6 +84692,7 @@ Sergent
 Seridoz
 Sernut/Seruut
 Seron
+Serooskerke
 Servaas
 Servaas van Panhuys
 Servacii
@@ -81931,17 +84710,20 @@ Servaes van Steelandt
 Servais Schaers
 Servasii
 Servatius Adriaeni Johannis
+Setten
 Seuderzs weduwe
 Seuijlers
 Seuijlers~
 Sevender
 Sevenerbroye
+Sevenhoven
 Sevenhuijsen
 Sevenhuizen
 Sevenhuse
 Sevenhuyse
 Sevenhuysen Cornelisz
 Sevenpond
+Seventer
 Sevenvanc
 Sevenvoet
 Severie van Hambroeck
@@ -81996,22 +84778,28 @@ Sibylla
 Sic ke
 Sicco
 Sicco preses
+Sichem
 Sichen
 Sicke Ivenz
+Sickele
 Sickenz
 Sickinghe
+Sidde
 Sidendervelt
 Siderveld
 Sidewindervelt
 Siebrecht Semeijns
+Siegenbeek
 Siegfried Luf
 Siegfried van Luxembourg
+Sielehem
 Siemarum bij Franeecker
 Siemen Melisz
 Sierick Siersma
 Sieuwert Westerman
 Sieuwert van Wynbergen
 Sigardus
+Sigecenrothe
 Sigerop Elenz
 Sigerop Voppenz
 Sigerus
@@ -82025,6 +84813,7 @@ Sij Heertjes
 Sijaer Sackenzone
 Sijbers
 Sijbrich
+Sijdenburch
 Sije Speck
 Sijel
 Sijger Dircsz
@@ -82054,6 +84843,10 @@ Sijmon van Saenden
 Sijmon van Zaenden
 Sijmons
 Sijnkes
+Sijp
+Sijpesteijn
+Sijpesteyn
+Sijrek
 Sijtien Willemsdr
 Sijtje Timmer
 Sijtje Willems
@@ -82066,9 +84859,11 @@ Sikko van Meekeren
 Sil Matys
 Silec
 Silk
+Silla
 Silla Janse
 Sillinc
 Sillinx
+Silly
 Silver
 Simen
 Simon
@@ -82452,9 +85247,12 @@ Simonsz van Heemskerk
 Simonsz van den Abeele
 Simontje
 Sinder
+Sinderen
 Singenaets
+Singendonc
 Sinte Pieter
 Siongen
+Sipe
 Sipke Abbema
 Sipke Claesse Vis
 Sir Edward Carpentier
@@ -82464,6 +85262,7 @@ Sivaert Pietersz
 Sivaert Rissendez
 Sivaert Voppenz
 Sivardo
+Sivelinga
 Sivert
 Siwa
 Siwaardsz
@@ -82480,19 +85279,26 @@ Slabbekijn
 Slach
 Slacht
 Slaterbeec
+Slavata
 Slecht
+Sleeswijk
+Sleewijck
 Slencker
 Sleutel
 Sleutelsteeg
 Slewic
 Slewijck
 Slicker
+Sligtenhorst
+Slijck
 Slijckwell
+Slijk
 Slijm
 Slijp
 Slijper
 Slim
 Sliner
+Slingeland
 Slingelandshoeve
 Slingelandt
 Slinger
@@ -82502,6 +85308,7 @@ Slinghlandt
 Slinglandt
 Slink
 Slipport
+Sliterhoven
 Slob
 Slodder
 Sloet
@@ -82514,9 +85321,11 @@ Sloot
 Slooten
 Slootmans
 Slorde
+Slot
 Slotemaker
 Sloten
 Sloterdijck
+Sloterdijk
 Sloyer
 Sloyken
 Sluijms
@@ -82531,12 +85340,15 @@ Slupwyc
 Sluter van Telinghen
 Sluys
 Sluysbuert
+Sluyse
 Smacht
 Smael
 Smal
 Smalbeen
 Smalbien 15d
+Smale
 Smale Venne
+Smalenburch
 Smalengeest
 Smalewere
 Smaling
@@ -82548,8 +85360,12 @@ Smederscamp
 Smeding
 Smeeds
 Smeekschrift der Edelen
+Smeijder
+Smeker
 Smerige
 Smerigen
+Smet
+Smeth
 Smid
 Smidt
 Smier
@@ -82558,12 +85374,15 @@ Smijt
 Smijter
 Smijthals
 Smit
+Smiter
 Smithan
+Smithuizen
 Smithusen
 Smitmans
 Smits
 Smitsz
 Smitteletha
+Smitten
 Smit~
 Smolenaers
 Smout
@@ -82575,11 +85394,14 @@ Snackart
 Snap
 Snapper
 Sneeck
+Sneek
 Snel
 Snel Claesz
 Snellaert
 Snellaert Duuc
 Snelle
+Snellenberg
+Snellenburg
 Snellenz
 Snellert
 Snellius
@@ -82593,6 +85415,7 @@ Snodelreweert
 Snoec
 Snoeck
 Snoedelrewaert
+Snoeper
 Snoij
 Snorck
 Snottolf
@@ -82605,12 +85428,14 @@ Snuyter
 Snyckars
 Sobbe
 Sobbo von Altena
+Sochel
 Soe
 Soelen van Gheryt Bartouts
 Soellen Othenz
 Soenens
 Soenet
 Soenkes
+Soerendonck
 Soes
 Soest
 Soet
@@ -82620,12 +85445,14 @@ Soete de Brouwer
 Soete van Borssele
 Soete van Emelisse
 Soetelief
+Soetelingskerke
 Soeteman
 Soeteman van Blyenburg
 Soeten
 Soetens
 Soeters
 Soetert
+Soeterwoude
 Soetje
 Soetje Pieters
 Soetje Pieters Evenblij
@@ -82653,12 +85480,15 @@ Soijer Soyersz
 Soke
 Soldermans
 Soleminderbroec
+Solms
 Solvit
 Sombeek
 Somer
+Someren
 Somerslant
 Somerweyt
 Somme Heynricsz
+Son
 Sonc
 Sonck
 Sonck~
@@ -82667,6 +85497,7 @@ Sonderdanck
 Sonderland
 Sonderlands
 Sonne
+Sonneberch
 Sonneman
 Sonnevelt
 Sonoy
@@ -82674,6 +85505,7 @@ Sonsbeek
 Sonsbeke
 Sonsbeke de manso
 Sonsele
+Sonst
 Soop
 Sopfia
 Sophia
@@ -82800,10 +85632,16 @@ Sophye
 Sophye van Zalmen
 Sorg
 Sosso
+Sot
+Soten
 Sottegemii
+Sotteghem
 Sotter
+Souastre
+Souburg
 Soudenbalch
 Soudenz
+Souhay
 Soutelande
 Soutelande Gillisdochter
 Soutenvene
@@ -82815,13 +85653,16 @@ Soutman
 Soyer
 Soyer Soyersz
 Spaans
+Spaarne
 Spaarneman
 Spaen
 Spaen Claes
 Spaen Claesz
 Spaen Woestz
 Spaengert
+Spaenhem
 Spaerenwouderstraat
+Spaerne
 Spaerneman
 Spaerwoud
 Spaerwoudengraf
@@ -82829,32 +85670,42 @@ Spairnewoude
 Spanbroec c.s
 Spanbroech
 Spanbroeker
+Spangen
 Spangert
+Spanheim
 Spaniaert
 Spanjaard
 Spanjaerts
 Spanjerberg
+Spankeren
+Sparendam
 Sparenlant
 Sparenwoude
 Sparenwoudepoort
 Sparewoude
 Spauwe
+Spauwen
 Spayart
 Spechuve
 Speck
+Specken
 Speckien
 Speckwijck
 Specman
 Spede
 Spee
 Speelman
+Speet
 Speldenaer
+Speleveld
+Spellen
 Spernagel
 Sperneland
 Sperneman
 Spernemansz
 Spernwoude
 Sperwerdrager
+Speulde
 Speyaert
 Speyaert van der Maern
 Spick
@@ -82866,11 +85717,14 @@ Spiering
 Spieringshoek
 Spieringshoorn
 Spiering~
+Spiers
 Spies
 Spijcman
 Spijcmans Goedevaertsz
+Spijk
 Spijke
 Spijkenesse
+Spijkenisse
 Spijker
 Spijskens
 Spikeman
@@ -82878,11 +85732,14 @@ Spiker
 Spiker Gerardsz
 Spillaert
 Spilman
+Spina
+Spinde
 Spinder
 Spinel
 Spinnemanscamp
 Spinola
 Spiritus
+Spithoven
 Spitlof
 Spits
 Splinter
@@ -82896,6 +85753,8 @@ Spoor
 Spoornagel
 Spoorwater
 Sporenburg
+Spout
+Spoyde
 Spoye
 Sprang
 Sprangen
@@ -82923,6 +85782,7 @@ Sprunck
 Spruutsz
 Spruyt
 Spruyt van Kriekenbeek
+Spuelde
 Spuij
 Spychorst
 Spynhoeven
@@ -83089,7 +85949,13 @@ Staal
 Staasken van Brakel
 Staats
 Stachijn
+Stad
+Stade
+Stadeacker
+Staden
+Stadinc
 Stadinc Maes
+Stadt
 Staec
 Stael
 Staem
@@ -83109,10 +85975,14 @@ Staeskyn van Brakel
 Staessins
 Staesz
 Staet
+Stakelweg
 Stakenbroek
+Stakenburg
 Staker
+Stal
 Stalkeerssen up
 Stalknecht
+Stalle
 Stalpaert
 Stalpaert v.d. Wyele
 Stalpaert van der Wyele
@@ -83132,6 +86002,8 @@ Stans Claesz
 Stant
 Stanthasen
 Stapel
+Stapelaar
+Stapelen
 Stappaert
 Starc
 Starck
@@ -83139,6 +86011,7 @@ Starcke
 Stark
 Starke
 Starrenburch
+Starrenburg
 Starresteyn
 Stasekijn van Brakel
 Stasekyn van Brakel
@@ -83147,31 +86020,52 @@ Stasiin Heynrixz
 Stassaert
 Stassinus de Hamele
 State Chr. Huijgens
+Staten
 Staten van Brabant
 Staten van Holland
 Statins
 Statze
+Stavele
 Stavenees et Drieskirc
 Stavenis
+Stavenisse
+Staverden
+Stavere
 Staverlinc
+Stavoren
 Stecke
+Steec
+Steeckel
 Steedele
 Steel
+Steeland
+Steen
 Steenbacker
+Steenber
+Steenberg
 Steenbergen
 Steenberghen
 Steenbusken
+Steene
 Steenhout
 Steenhuijs
 Steenhuijsen Fransz
+Steenhuis
 Steenhuys
 Steenhuysen
 Steenkijn
+Steenland
+Steenlant
 Steenord
+Steenre
 Steenrots
+Steensel
 Steenvelt
+Steenvoorde
+Steenwaart
 Steenweg
 Steenwic
+Steenwijk
 Stees
 Stees Jansz
 Stees van Brakel
@@ -83207,22 +86101,30 @@ Steffen van Heussen
 Steffen van Rossem
 Steffenije van der Does
 Steffensz
+Stege
 Stegeman
+Stegen
+Stegewic
 Stegha ex
 Stegheman
+Stehoven
 Steijl
 Steijlin(g)
 Steijling
 Steijloor
 Steijn
+Steijnemolen
+Steinfurt
 Stekebier
 Stekel
 Stekelcamp
 Steker
 Stella
+Stelle
 Stellingwerf
 Steltman
 Stelwart
+Stembor
 Stempel
 Stenen
 Steneric
@@ -83301,15 +86203,18 @@ Stephen en Sweder
 Stephen van Sulen
 Stephen van der Sevendair
 Stephen van der Zevendair
+Stepraed
 Stepraedt
 Sterck
 Sterf
 Sterk
 Sterke
+Sterkenburg
 Sterkenz
 Sterre
 Stertbreke
 Steskens
+Stessen
 Steve nvan Rumelaer
 Steven
 Steven Adriaensz
@@ -83544,6 +86449,7 @@ Stevensdochter van Bymmen
 Stevensz
 Stevensz van den Gheer
 Steventje de Gruyter
+Stevic
 Stevin van Haarlem
 Stevin van Haerlem
 Stevin van Raephorst
@@ -83564,6 +86470,7 @@ Sticker
 Stiek
 Stien
 Stien Heynen
+Stieneveld
 Stiengen
 Stienroetsz
 Stier
@@ -83603,6 +86510,7 @@ Stijntje Floo
 Stijntje Linglé
 Stijntje Onrust
 Stijntje Pieters Onrust
+Stijpen van Duyveland
 Stille
 Stina
 Stina Monikes
@@ -83625,6 +86533,7 @@ Stock
 Stocke
 Stockemsguet
 Stockman
+Stockum
 Stocmaet
 Stoel
 Stoeldrager
@@ -83641,19 +86550,24 @@ Stoffel van Dongen
 Stoffels van Donghenz
 Stoke
 Stokenz
+Stokkum
+Stolk
 Stolkenaar
 Stollaertdijck
 Stollaertsdijck
 Stolwijck
+Stolwijk
 Stolwyk
 Stomp
 Stompertsdijkse
 Stompwijc
 Stompwijck
+Stompwijk
 Stooc
 Stooff
 Stoop
 Stopje
+Stoppelaar
 Stoppelcamp
 Stopper
 Stork
@@ -83664,27 +86578,41 @@ Stormsz
 Storm~
 Stoter
 Stout
+Stoute
 Stoutenborch
+Stoutenburg
 Strabans
+Stradio
 Straesman/Straetsman
 Stralen
+Strange
+Strate
+Straten
 Straver
+Strazburg
 Streefland
 Streeflands
 Streenen
 Strengart
 Strengh
+Strenit
 Streveland
 Strevelantscampe
 Strevelduin
 Strick
 Strien
 Strien en Wede
+Striene
+Strijen
 Strijensland
 Strijker
+Strijment
 Strijn
+Strijp
 Strijthoeve
+Strimen
 Stringe
+Stripe
 Stroden
 Stroede
 Stroede van der brugge
@@ -83693,11 +86621,14 @@ Stromberg
 Stroowijc
 Strothe de Dufelwerde
 Strowick
+Strowijc
+Strucht
 Struick
 Struijck
 Struijk
 Struijs
 Strukesz
+Strunkede
 Strurinck
 Strusinc
 Struuc
@@ -83705,6 +86636,8 @@ Struve
 Struys
 Strünkede
 Stuart
+Stucghen
+Studler
 Studler van Zurck
 Stuelinck
 Stuer
@@ -83734,6 +86667,7 @@ Styna uxor
 Styndelt Merten
 Stynen van Hardevuyst
 Styngen van Belle
+Stynhage
 Stynhage~
 Stynke Jansdochter
 Stynken Staes
@@ -83746,16 +86680,22 @@ Styntken Peters de Gier
 Subburch
 Subburgh
 Subrandsz
+Suchtelen
 Sude
+Suden
 Suderman
 Suderweert
 Suderwoert
 Sueder van Beverweerde
 Suedhero
 Suem
+Sueren
 Suermond
+Suet
+Sueter
 Suetlon
 Suet~
+Suffenheim
 Suhtrem
 Suijck
 Suijcker
@@ -83769,6 +86709,7 @@ Suker
 Sumbeke
 Suna
 Sunkesz
+Surck
 Surmont
 Surop
 Sus
@@ -83858,6 +86799,7 @@ Sussen
 Suster
 Suster Agniese van Diemen
 Suster Cornelisdochter
+Susteren
 Sutende de Waddinxvene
 Sutende van Scermer
 Suthmet dimidiam
@@ -83893,17 +86835,23 @@ Swaenida Pieck
 Swaenshals
 Swaerooch
 Swaerwech
+Swalingen
+Swalmen
 Swalue
 Swana van Ledenberch
 Swane
 Swane Lose
 Swanenburch
+Swanenburg
 Swanes
 Swansbel
 Swanus
 Swart
+Swarte
 Swarte Hondt
 Swarte Hont
+Swartsenberg
+Swartsenburch
 Swartsenburgh
 Swayr
 Sweder
@@ -83990,6 +86938,8 @@ Sweder van der Weteringe
 Sweder van hem
 Sweders
 Swedersz
+Sweechove
+Sweeclo
 Sweer
 Sweer van Voorst
 Sweer van Wynberge
@@ -84008,11 +86958,16 @@ Swelver
 Swemmer
 Sweneldis Bentem
 Swerte
+Swesen
 Sweym
 Swieten
 Swijnen
+Swinhem
 Switser
 Swol
+Swolmis
+Swychem
+Sybekarspel
 Sybele Rietwertsz
 Sybert
 Syberti
@@ -84083,6 +87038,7 @@ Syburch Wilofsz
 Syburg Kruyf
 Sydon
 Sydse Rembrandsz
+Syflick
 Syfridus Loef
 Syger
 Sygerus de Maldeghem
@@ -84833,6 +87789,7 @@ Symonszsz van Velsen
 Syms
 Syntgen Pieters
 Syoler
+Sypesteyn
 Syric
 Syric Mattenz
 Syric Rembrandsz
@@ -84902,6 +87859,7 @@ Taets~
 Taij
 Taije
 Taij~
+Taillefer
 Taillefer de Moriaq
 Tak
 Take
@@ -84941,6 +87899,7 @@ Tannekin
 Tanthoift
 Taphoern
 Tarant
+Tarelinck
 Taschmaker
 Tasman
 Tassche
@@ -84957,6 +87916,7 @@ Tatuk Dircsz
 Taxandria
 Tebbentote
 Tecken Coppell
+Tecklenburg
 Tede
 Tedeman
 Tedeman Herenz
@@ -84974,15 +87934,21 @@ Teetgen
 Teetje Hens
 Teetje Jans
 Teeus
+Tegelen
 Tegularius
 Tehylingen
+Teije
 Teijlingen
 Teijt
 Teilingen
+Teisterbant
 Teixeira de Mattos
+Tekencoep
+Telcht
 Telder
 Telkini
 Telmannus de Asburgh
+Telshout
 Teltje
 Tempel
 Ten Bosch
@@ -84992,15 +87958,18 @@ Ten Herenhave
 Ten Hout
 Ten Veld
 Ten Zijl
+Tenesse
 Tengh
 Tengnagel
 Teodora van Opmeer
 Tepesar
 Ter Brugghen
+Teresteyn
 Terlinc
 Termonde
 Terninc
 Terninc~
+Ternois
 Ternync
 Terre Aquose
 Terse
@@ -85009,10 +87978,12 @@ Teruggegeven
 Tesamen
 Tesche
 Tesla
+Tessel
 Tesselaar
 Tesselaer
 Tessele
 Tesselsche Kaaij
+Test
 Testarbanto
 Testes
 Testis Pater
@@ -85028,6 +87999,7 @@ Tetilo
 Tetla
 Tetrode
 Tetrode van beesten
+Tets
 Tetta
 Tetterodertienden
 Tettla
@@ -85068,6 +88040,7 @@ Teyling
 Teylingen
 Teylinghe
 Teylinxcamp
+Teynden
 Tgeddenz
 Th
 Th Aelrasch
@@ -85131,6 +88104,7 @@ Theewis
 Thelemannus de Eyle
 Themard
 Then Block
+Thenesse
 Theobaldus
 Theobaldus I
 Theobaldus comes de Mosson
@@ -85695,6 +88669,7 @@ Theus Jansz Zel
 Theus Jordensz
 Theus van Cabau
 Theuss Backer
+Thezamonda
 Thiatric
 Thibaud
 Thibault Barradot
@@ -85888,6 +88863,7 @@ Thiery de Brederode
 Thies van Loe heer te Wissen
 Thietbaldus
 Thietbertus
+Thiezelinchem
 Thijmen Cornelisz Pont
 Thijs Aerntsz
 Thijs Aertsz
@@ -85937,6 +88913,7 @@ Thoenis Pietersz
 Thoenken
 Thoilover
 Thoilover Toeloever
+Thollen
 Thomacinus van Noortwijk
 Thomae
 Thomaes
@@ -86176,7 +89153,9 @@ Thrile
 Thrudboldus
 Thrudgaudus
 Thrusing
+Thuenen
 Thuensbroucq
+Thulden
 Thule de Thoren
 Thule dimidia
 Thumfurte
@@ -86217,6 +89196,7 @@ Thys Simonsz van Assendelft
 Thys Sybetsz
 Thys Willemsz
 Thyssen
+Thyverdic
 Théodore Baron de Botzeler
 Théophile van Cats
 Tiaebbe
@@ -86241,6 +89221,7 @@ Tideman de Cruve
 Tideman van der Ha
 Tidemannus Zael
 Tiedenz
+Tiel
 Tieleman
 Tieleman Fierenblais
 Tieleman Jansz
@@ -86267,6 +89248,8 @@ Tieman
 Tieman Avenz
 Tieman Gheraerdsz
 Tiemans
+Tienen
+Tienhoven
 Tierens
 Tierkijn
 Tierloets
@@ -86277,6 +89260,7 @@ Tieslynswaard
 Tiesselenwaard
 Tiesselijnswaard
 Tiet Willemsdochter
+Tiezelskerke
 Tighelt
 Tijken
 Tijman Ghijsbertsz
@@ -86288,9 +89272,12 @@ Tijs
 Tijs Volpertsz
 Tijs Willemsz
 Tilborch
+Tilburg
 Tileman Fierenblaise
 Tileman de Molenaer
+Tilia
 Tilkino de Breembt
+Till
 Tilman
 Tilman Frise
 Tilman Oem
@@ -86321,6 +89308,7 @@ Tirlemont
 Titia Johanna
 Tjebbe
 Tjeenk
+Tjepma
 Tobias
 Tobias Henricsz
 Tobias Hermansz
@@ -86345,6 +89333,7 @@ Tolkenbos
 Tolkendijk
 Toll
 Tolle
+Tollen
 Tollenaer
 Tolletgin
 Tolletginsz
@@ -86353,6 +89342,7 @@ Tolling
 Tollot
 Tolloysen
 Tolloyserambacht
+Tolnaer
 Toloijsen
 Tolreph
 Tolver
@@ -86361,6 +89351,8 @@ Tomas van Hemert
 Tomas van Houten
 Ton Sande
 Tonard
+Tongere
+Tongeren
 Tonglaer
 Tonie Jansdochter
 Tonis
@@ -86380,30 +89372,40 @@ Tonisz
 Tonsen
 Tonya
 Tonyntje Hoeke
+Tooren
 Toorenburch
 Toorenburg
+Toorn
 Toornburgh
+Toorne
 Toornenburg
+Toralva
 Torck
 Torck van het vruchtgebruik
 Tordesillas
+Toren
 Toren van den
 Toren van der
+Torenburch
+Torenvliet
 Torfwech
 Torfwech an der graften
 Tornacensis
 Torner
 Tornier
 Tornout
+Torre
 Torrekijn
 Torrijn
 Torus
 Tot
 Totic
 Totkenz
+Tour
 Tourn
 Tourn ten eersten daghe
 Tourneur
+Toutenburg
 Touw
 Touw~
 Toverdam
@@ -86417,11 +89419,13 @@ Tranquillius
 Transsone
 Trant
 Trappeneil
+Trasignies
 Traudenius
 Traveys Pietersz
 Traveyse Screvelosz
 Trebijn
 Trechtwech
+Treckendorp
 Treckvaert
 Tresia Bor
 Treslong
@@ -86430,9 +89434,11 @@ Treslonge
 Treveys
 Treveys Janse
 Treyntje Reijerze
+Tricht
 Trichtersluse
 Trichtervelt
 Triclant
+Triest
 Trijevelt
 Trijn
 Trijn Adriaansdochter
@@ -86586,6 +89592,8 @@ Trijntje van Harlaer
 Trijntje van Harler
 Trijntje van Rietwijk
 Trijntje van Sanen
+Trillo
+Trimouille
 Trintgeest
 Trintgen Beresteijn
 Trintvelt
@@ -86593,8 +89601,10 @@ Trip
 Trips van den Bergh
 Trise
 Tristram van den Rade
+Tritsum
 Troe
 Trogmorton
+Troisdorf
 Trom
 Trommeland
 Tromp
@@ -86651,6 +89661,7 @@ Trudensone van den Damme
 Truijken Jansdochter
 Truijtgen
 Truijtgen Thymes
+Truselaer
 Truyken
 Truytgen
 Tryn Claesdr
@@ -86705,6 +89716,7 @@ Tuijnman
 Tuijt
 Tula
 Tule de Thore
+Tull
 Tulla
 Tulle
 Tulleken
@@ -86721,14 +89733,17 @@ Turck
 Turfwech
 Turk
 Turner
+Turnhout
 Turnose
 Turonenses
 Turonensibus
 Turquet
 Turrekin
 Turxman
+Tusschenbroeck
 Tuyl
 Tuyl Walraven van Benthem
+Tuyl van Bulkesteyn
 Tuyl van Serooskerke
 Tuyll
 Twaalfhoeven
@@ -86736,8 +89751,13 @@ Twaalf~ van Dordrecht
 Twaleffaert
 Twebroec
 Tween beeken
+Tweenbergen
+Twickel
+Twickelo
 Twijscijlt
 Twisch
+Twisk
+Twisteden
 Tyamme Dircsz
 Tyannoud
 Tyasen
@@ -86747,6 +89767,7 @@ Tybaut Hughe
 Tybaut Hughe Gawynsz
 Tybbe
 Tybe Sasschersz
+Tybingen
 Tybout
 Tybout Claesz
 Tybout Gherytsz
@@ -86818,6 +89839,7 @@ Tys Pietersz
 Tys ouwe Jans
 Uba
 Ubbena
+Ubbergen
 Ubbing
 Ubburgen
 Ubic
@@ -86825,12 +89847,14 @@ Ubicke Almersz
 Ubicke Gerbrandsz
 Ubicke Reymboutsz
 Ubicke Reynoudsz
+Ude
 Ude Hermansz
 Ude Jansz
 Udel
 Udele
 Udelint van Demerijne
 Udem
+Uden
 Udengeyst
 Udenkirghen
 Udo
@@ -86839,19 +89863,28 @@ Udo de Mekeren
 Udo de Sutfene
 Udo van Loen
 Udo van Meeckeren
+Uffelen
 Uftet
 Uftet Nannincsz
 Uijl
+Uitermeer
 Uiterveer
 Uiterwaard
 Uiterweer
+Uitgeest
 Uitjeshorn
 Uitwijck
+Uitwijk
 Uiwuarflet
 Ulboldus
+Ulekaten
+Ulenbroek
+Ulenbusch
 Ulendt
 Ulenpas
 Ulent
+Ulfkotte
+Ulft
 Ulius
 Ulmannus
 Ulpoorte
@@ -86864,8 +89897,10 @@ Ulricus
 Ulricus pellifex
 Ulsen
 Ultrajectinus
+Ulvenhout
 Ummen
 Unarch Jansz
+Unrath
 Unroch
 Unrock
 Upkijn
@@ -86876,7 +89911,9 @@ Urbani
 Urbanus
 Urbanus II
 Urbanus IV
+Urbe
 Urck
+Urdingen
 Ursela
 Ursele
 Urselina Philippina
@@ -86910,13 +89947,17 @@ Uterdic
 Uterdijck
 Utergans
 Uteromeri
+Uterwijk
 Uthelbertus
 Uthrech
 Utrech
 Utrecht
 Utrechtx
+Utshoren
+Utwech
 Uuthorn
 Uwe
+Uwynhem
 Uylenborgh
 Uylenburch
 Uyt
@@ -86925,6 +89966,8 @@ Uytenbroek
 Uytenengh
 Uytenhaech
 Uytenham
+Uythoven
+Uytkerke
 Uyttenbongaart
 Uyttengoye
 Uyttenham
@@ -86934,12 +89977,14 @@ Vaak
 Vaal
 Vaals
 Vader
+Vaeck
 Vaencken Jacobsdochter
 Vaentgen
 Vaerdam
 Vaert
 Vaertgis
 Vaessen
+Vager
 Vager x
 Vak
 Vakenshoeve
@@ -86962,6 +90007,8 @@ Valckesteijn
 Valckesteyn
 Valderacken
 Valderacken en Alfert
+Vale
+Valenciennes
 Valentijn
 Valentijn Bavelaers
 Valentijn de Pardieu
@@ -86976,6 +90023,7 @@ Valerius Mulick
 Valerius van Meulich
 Valerius van Mulich
 Valet
+Valgaris
 Valighe
 Valingen
 Valk
@@ -86984,16 +90032,24 @@ Valkenberch heer
 Valkenborch
 Valkenburch Aechten sinen wive
 Valkenburch Gheret
+Valkenburg
 Valkenburgensis
 Valkencoge
 Valkencoog
+Valkendaal
+Valkenhaan
 Valkenier
+Valkenisse
 Valkenvoert
 Valkenvoort
 Valkesteijn
 Valkhuize
+Valladolid
+Valle
+Vallee
 Vallensis
 Valobre
+Valois
 Van Aagje
 Van Adrichem
 Van Aersen
@@ -87046,6 +90102,7 @@ Van der Cruijce
 Van der Delft
 Van der Haar
 Van der Meer
+Vanevelt
 Vaniaux
 Vanin
 Vanin filius Deinodi
@@ -87056,9 +90113,13 @@ Vannion
 Varbout Hughez
 Varentrijk
 Varick
+Varik
+Varken
 Varler
 Varnem
+Varnhem
 Varseveld
+Vasseur
 Vastaert
 Vastaert van Giessen
 Vastard
@@ -87082,6 +90143,10 @@ Vastraet Willemsz
 Vastrait van der Ailsfort
 Vastrard
 Vauderic
+Vauderick
+Vaudrenart
+Vechel
+Vecht
 Vechtel
 Vechten
 Vechter
@@ -87097,18 +90162,27 @@ Veelt
 Veemarct
 Veen
 Veenhaver
+Veenland
 Veenman
 Veenscoten
 Veenzijde
 Veer
+Veersel
 Veerstrate
+Vega
 Veghelen
 Vegher
 Veijken venne
 Veijnenz
 Veijte
 Velaer
+Velde
+Veldeke
+Velden
+Veldt
 Veldwick
+Veldwijk
+Velen
 Velesan
 Veling
 Velingius
@@ -87116,10 +90190,12 @@ Velius
 Velle Heynkinsz
 Velle Heynkinz
 Velleman
+Velsen
 Velsen c.s
 Velsen van Pieters
 Velserman
 Velsius
+Velt
 Velthuijs
 Velthuijsen
 Velthusen
@@ -87128,6 +90204,7 @@ Veltmans
 Veltmansweduwe
 Veltrup
 Veltwich
+Ven
 Venant
 Vendick
 Vene
@@ -87135,9 +90212,12 @@ Venedau
 Venemansz
 Venhuijsen
 Venijn
+Venlo
 Venna Aleydis de Waterland
 Venna Aleydis de Waterlant
+Venne
 Venninc
+Vennip
 Venraij
 Vent
 Verarmd
@@ -87152,6 +90232,7 @@ Verbout Hughen
 Verbout Hughenz
 Verbrugge
 Verburch
+Verburg
 Vercamere
 Vercoft an coman
 Verdebout
@@ -87160,8 +90241,10 @@ Verdric Reynekenz
 Verdugo
 Verduijn
 Verduin
+Verdun
 Verduwe Pieter Walichsz
 Verduwe Wilofsz
+Vere
 Vergeer Geer
 Verhaer
 Verhagen
@@ -87183,6 +90266,7 @@ Verlaen
 Vermaat
 Vermaes
 Vermaet
+Vermandois
 Vermandois heer van Warmenhuizen
 Vermast
 Vermeer
@@ -87192,7 +90276,10 @@ Vermeren
 Vermeulen
 Vermey
 Vermote
+Vernauwen
 Verneholte
+Vernewijk
+Vernhorst
 Verniers
 Verniskens
 Verniskensweert
@@ -87208,6 +90295,8 @@ Versle
 Versteynen
 Verstolck
 Verstraten
+Vertain
+Vertaing
 Verthemar
 Vertijn
 Vertmer Geltsz
@@ -87222,6 +90311,7 @@ Verwart
 Verweer
 Verweij
 Verwel
+Verwen
 Verwer
 Verwers
 Verwersz
@@ -87235,14 +90325,20 @@ Vest
 Vesterman
 Vet
 Vete
+Vetellenvoorde
 Veterwurdhi
+Vette
 Vettgen
 Vetus Castrum
+Veur
 Veyrwegh
+Vianden
 Vianen
 Vianen van Rysenburg
 Vicaris
 Vicman
+Vico
+Vicq
 Victor
 Victor Hectorsz
 Victor IV
@@ -87262,6 +90358,7 @@ Vidimus
 Vidimus van
 Vieger Jacobsz
 Viennensis
+Vieracker
 Viercante Willem
 Vierdach
 Vierges
@@ -87269,24 +90366,30 @@ Vierkante Willem
 Vierling
 Vierpont
 Vierschare
+Vierssen
 Vighe
 Viglia
 Viglius
 Viglius van Swijchen
 Viglius van Swychem
+Vigny
 Vijge
 Vijgh
 Vijgh~
 Vijn
+Vijver
 Vilain
 Vilarius
 Vilishem
 Villain
 Villari
+Villattes
 Villico
 Villiers
 Vilroc
 Vilrock
+Vilsteren
+Vinceler
 Vincen Jacobs
 Vincent
 Vincent Adolph van Baer
@@ -87344,23 +90447,31 @@ Vincheet
 Vinck Jacobsz
 Vinckje Agges
 Vincx Wytfliet
+Vinen
 Vink
 Vinkbooms
 Vinke Andriesz
 Vinken des clerx
+Vinkenberg
+Vinkwijk
 Vink~
 Vinsente Zyvertsdochter
 Virdehalfgemet unam
 Virdel
+Viri
+Virnenburg
 Virnich
 Viron
 Viruly
+Viry
 Vis
+Visan
 Visbeen
 Visbeke
 Visch
 Viscoper
 Viscroon
+Visen
 Visenase
 Visitatione
 Visker
@@ -87373,10 +90484,13 @@ Visser
 Vis~
 Vitelle Lievens
 Vitelle Lievensz
+Viten
 Vivenus
 Vivien
 Viviensz
 Vivinus
+Vlaanderen
+Vlaardingen
 Vladeracken
 Vlairdinghen
 Vlaminc
@@ -87385,33 +90499,49 @@ Vlaming
 Vlaschman
 Vlasman
 Vlassenbaert
+Vlat
 Vlathe
 Vlecker
 Vleeschouwer
 Vleeshouwer
+Vleeten
 Vleijshouder
+Vleuten
 Vleyshouder
 Vliederbeke
+Vlieger
 Vlieger voor
+Vlieland
 Vlielands
 Vlielant
 Vliemen
+Vlierden
+Vliet
 Vliet Gerritsdochter
 Vliet doergaens
 Vlietx
+Vlijmen
 Vlim
 Vlirden
 Vlisman
+Vlissingen
+Vlockhoven
+Vlodorp
+Vloet
 Vloetdijk
 Vloeten
+Vloewick
 Vloit
 Vlonder
 Vlooswijck
 Vlooswijck~
+Vlote
 Vloten
+Vlowijc
 Vlucht
 Vlueten
 Vlug
+Vluren
 Vlyeger
 Vocke
 Vockestaert
@@ -87419,14 +90549,20 @@ Vodalwik
 Voech
 Voede
 Voege
+Voer
+Voerde
 Voerdyc
 Voere
 Voerenbroec
 Voerenz
+Voerlaer
 Voerloep
 Voern
 Voernswijf van Vyanen
 Voerscoter Vliet
+Voerst
+Voerstbach
+Voert
 Voerthusun
 Voet
 Voethoeck
@@ -87439,6 +90575,8 @@ Vogelensang van Guert
 Vogelius
 Vogelsanc
 Vogelsancks
+Vogelsem
+Vogelvliet
 Voghel
 Voghelaer
 Voirburch
@@ -87515,11 +90653,13 @@ Volkier Holken
 Volkjes
 Volkwijn
 Volkwijn Hackert
+Vollenho
 Vollenhoven
 Voller
 Volles
 Volmaar
 Volmaer Jansz
+Volmerich
 Volmeslach
 Volomesteyne jeghens
 Volpaert Gerijtsz
@@ -87555,28 +90695,41 @@ Volquin van Assche
 Volquinus
 Volqwijn van Assche
 Volqwijn van Baern Aelbertsz
+Volre
 Voltent
 Von Asperen
 Vonck
 Vonck Heynenz
 Voncken
 Vondel
+Vonderen
+Vondre
 Voocht Gerrit Bartholomeusz
 Voocht van Tuyl
 Voogd
 Voogt de jonge
+Vool
+Voorbossche
+Voorbroek
 Voorburch
 Voorburchwal
+Voorburg
 Voorde
 Voorenbroek
+Voorhout
 Voorhouterbroec
 Voorkoop/Voorcoper
 Voorn
 Voorn Huberts
 Voorn Koevoet
 Voorn van Vianen
+Voorne
 Voornsz
+Voorschoten
+Voorst
+Voort
 Voort waert
+Voorthuyzen
 Vop
 Voppe
 Voppe Berwoutsz
@@ -87609,14 +90762,19 @@ Voppekijn Dirxz
 Voppen
 Voppenz
 Vorck
+Vorden
 Voreder Wilofsz
+Voren
+Vorenbroek
 Vorensaterward
 Vorenzaterwaard
 Vorguden
 Vorhoute
 Vormaer
+Vorselaer
 Vorseler
 Vorst
+Vorsteler
 Vorster
 Vorstman
 Vort
@@ -87624,6 +90782,7 @@ Vos
 Vos Boudynsz
 Vos van Avesaet
 Vos van Delft
+Vosbergen
 Vosch
 Voscule
 Voscule 6 mal
@@ -87631,15 +90790,18 @@ Voscuyl
 Voshol
 Voshole
 Voslant
+Vosmaer
 Vosmaer~
 Vosran Houthem
 Voss
 Vossaert
+Vossem
 Vossen
 Vossenburch
 Vossenburgh
 Vossenz
 Vossius
+Vossum
 Vosterman
 Voxi
 Vracke
@@ -87760,6 +90922,7 @@ Vranken Jansz
 Vranken van Coudenhoven
 Vranken van Coudenoven
 Vrankensone
+Vrankrijk
 Vreden
 Vredenburg
 Vrederic
@@ -87893,10 +91056,12 @@ Vredevorst van Dalem
 Vredric Bertelmeesz
 Vredrick Nagel
 Vreeck Willemsz
+Vreeden
 Vreen
 Vrees
 Vreeswijck
 Vreholt
+Vremmer
 Vrenkin
 Vrerick Claesz
 Vrerick Dircxz
@@ -87940,6 +91105,7 @@ Vrieswijc
 Vrieswijck
 Vrieswyc
 Vriezenz
+Vrij
 Vrijambacht van Paelaenne
 Vrijburg
 Vrijburg~
@@ -87950,9 +91116,11 @@ Vrijer
 Vrijhals
 Vrijman
 Vrijmoet
+Vrijthove
 Vrise
 Vrode van der stede
 Vrode van der stede weghen
+Vroechdenburg
 Vroede
 Vroede Gheyn
 Vroede submitteert
@@ -87964,7 +91132,10 @@ Vroenre
 Vroenrecleijlant
 Vroenrecleland
 Vroenscout
+Vrollehorst
 Vrone
+Vronen
+Vronestein
 Vronting
 Vroom
 Vroon
@@ -87979,25 +91150,30 @@ Vroutgen Frederiks
 Vroutgen Zybrants
 Vroutje Jans
 Vroutje Mens
+Vrouweling
 Vrouwijn Ditteck
 Vrouwtie Jans
 Vrowin
 Vruechte
+Vryaldenhoven
 Vrydaghsguet
 Vryesen Venne
 Vryesenvenne
 Vryesland Alef
+Vucht
 Vuchterpoort
 Vuerde
 Vuern
 Vuijeren van Spyck Walravensz
 Vuijtschot
+Vuilkoop
 Vulbodo
 Vulbrandus
 Vullijngi
 Vullinc
 Vullinc~
 Vulvernus
+Vuren
 Vurigher
 Vurstenbergh
 Vuyk
@@ -88005,6 +91181,7 @@ Vuyst
 Vuyter
 Vyanen van Beverweerde
 Vyfhoeven
+Vynen
 Vyver
 W. Clawart
 W. De Rickle
@@ -88032,24 +91209,38 @@ W.F. den behoorlycken
 W.F. van Santen
 Wa a
 Waal
+Waalre
+Waalwijk
+Waard
+Waarde
 Waarden
+Waardenburg
+Waardhuizen
 Waarmede
+Waart
+Wachendorff
 Wachszinsigen
+Wachtendonc
+Wackene
 Wadard
 Waddijn Pieter Sotsz
 Waddincxveen
 Wadding
+Waddinge
 Waddinsveen
 Waddinxvene
 Waddinxvliet
 Waddyn
+Waddyne
 Wade
 Wadeke
 Wadenburg
 Wadenoy
 Wadenoyen
+Waderle
 Wadweg
 Waecker
+Waeijer
 Wael
 Wael Gherytsz
 Wael Jacobsz
@@ -88059,16 +91250,22 @@ Wael van Vronensteyn
 Wael van Vronestein
 Wael van Vronesteyn
 Wael van Vroonesteyn
+Waelcourt
 Waele
 Waelich Willemszsteech
 Waelland
 Waelnisse
 Waelredijck
+Waerde
+Waerden
 Waerdendel
 Waerewyck
 Waernaersz
 Waert
+Waes
+Waesdonc
 Waesten
+Waetselaer
 Wagemaker
 Wagenaar
 Wagenaer
@@ -88077,17 +91274,24 @@ Waijer
 Waijntgen Cloecken
 Waijop
 Wairderbroeck
+Waka
 Wal
 Walaeria
+Walbeek
 Walbeke
 Walbertus
 Walbrith
 Walburch Surmont
 Walburg
+Walde
+Waldeck
 Waldeck Piermont
 Waldegke
+Wale
 Walef
+Walegge
 Walehim
+Walem
 Walen
 Walenburch
 Walenz
@@ -88097,6 +91301,7 @@ Walgaert Loddenz
 Walger
 Walgerus
 Walgher
+Walhorn
 Walich
 Walich Bouden zwager
 Walich Boudenz
@@ -88128,12 +91333,16 @@ Walich Willemsz
 Walich van Dunen
 Walich van Duyn
 Walich van Duynen
+Walichdorp
 Waligen
 Waligh
+Walincourt
 Walkero
 Walkerus
+Wall
 Walle
 Walmaer
+Walnis
 Walraaf
 Walraaf van Kessel
 Walradus
@@ -88233,6 +91442,8 @@ Walraven van Zuelen
 Walraven's
 Walravens
 Walravius van Bentheim
+Walre
+Walscharloo
 Walsland
 Walter
 Walter Bac
@@ -88346,31 +91557,46 @@ Waltherus Spierinck
 Waltherus dictus
 Waltherus filius Bettonis
 Walthrabham
+Walwyck
+Wame
+Wamel
+Wamelen
+Wamelingen
 Wamell
 Wamels
 Wandel
+Wandman
 Wandsbeck
+Wangewije
 Wanghe
 Waninkijn
 Waninus Popponis Ruphi
+Wanroy
 Wantsnyder
+Wapevelt
 Wappen
 War
 Ward
 Ward genaamd
+Warda
 Warde
 Warder
 Wardingmade
 Wardt
 Warembouts
 Waremunde
+Warfusé
 Warin
 Waringhen
 Warkots
+Warlaing
 Warmbout Colynsz
+Warmelo
 Warmenhuijsen
 Warmenhuyse
 Warmoestrate
+Warmond
+Warnaan
 Warnaer
 Warnaer Aelbarenz
 Warnaers
@@ -88383,42 +91609,69 @@ Wasgaert
 Wasmodus
 Wasnaer Dirric van Zweten
 Wassenaar
+Wassenaar van Duvenvoorde
+Wassenaer
 Wassenaer nonne
 Wassenaer's
+Wassenberg
 Wassener
+Wassenhove
+Wassenhoven
 Wasteel
+Water
 Watering gecoft
+Wateringe
 Wateringe Dirxz
 Wateringen ten vrijen
+Waterland
 Waterlander
 Waterlose
 Waterpoort
 Watervis
+Watervliet
 Watier de Cruninghe
 Wautaert
 Waute
 Wautert
+Waveren
 Wayer
 Wazelinus
+Webbinchem
 Wecwic
+Weda
 Wede
 Wedenae
+Wederden
+Wederich
 Wedericus
+Wedinchem
+Weede
 Weel
 Weeldekyn
 Weent
 Weent~
+Weer
 Weerd
 Weerde
 Weerde Gerytsz
 Weerde Ottenz
 Weerde Roelofsz
 Weerde Rolofsz
+Weerdenburg
+Weerdensteijn
 Weerderbroec
+Weerdt
 Weerliederven
 Weerliedervenne
 Weerreys
+Weerse
+Weert
 Weerts
+Wees
+Weesp
+Weeze
+Wegesate
+Wegewaard
 Weghe
 Wegheman
 Weij
@@ -88431,22 +91684,30 @@ Weijnina
 Weijnina van Thorenvliet
 Weijntgen
 Weijntje Grebbers
+Weilhusen
+Weinde
 Weitsen
 Wel
 Welboren
+Weldam
+Welderen
 Weldige
+Welevelde
 Welfen
 Welfo I comes
 Welgeboren
 Welhouk
 Welhout
+Welighe
 Welis
 Wella
 Welland
 Welland Scenwekinsz
+Wellant
 Welle
 Wellenkreke
 Wellin
+Wellincwijc
 Welmoed Pont
 Welmoet
 Welmoet Bouwens
@@ -88456,6 +91717,10 @@ Welmoet Geryt van Petten
 Welmoet Jans van Loosen
 Welmoet Maertens Edam
 Welmoet Pieter Teengs
+Wels
+Wely
+Wemeldinge
+Wemeldingen
 Wemner
 Wen
 Wen Jansdochter
@@ -88464,6 +91729,7 @@ Wenaard
 Wencelas
 Wenceslas
 Wenceslaus
+Wencum
 Wendekinslot
 Wendel
 Wendel Boelen van Wormer
@@ -88482,9 +91748,12 @@ Wendelmoed van Rumpst
 Wendelmoet
 Wendelmoet Heynen
 Wendelmoet Symonsdr
+Wendelnesse
+Wendenburch
 Wenemarus
 Wenemer
 Wenethingus
+Wengen
 Wengher
 Wenijff
 Wenke
@@ -88499,8 +91768,15 @@ Wennes
 Wenselic
 Wenssen
 Wenzone de Lesten
+Wepel
+Werchin
+Werchter
+Wercke
 Werckendet
+Wercunden
 Werdenberch
+Werdingen
+Werdingh
 Were
 Weremberht
 Weremboldus
@@ -88511,12 +91787,16 @@ Werenboldus uten Hage
 Werenbout Vurigher
 Werenbouts
 Werenbrecht et Thiedard
+Werendike
 Werenten
+Werf
 Werff
 Werfke
 Wericus de Jonghe
 Werine
 Werinus
+Werken
+Werkhoven
 Wermbout
 Wermbout Claesz
 Wermbout Heynenz
@@ -88583,15 +91863,25 @@ Werner van der Does
 Werner van der Haar
 Wernerus
 Wernher de Bongardt
+Werthe
+Werthem
 Werther
+Werthusen
+Werve
+Werweer
 Wesaliensi
 Wescelonis
 Wescelum
+Wese
 Wesel
 Wesele
 Wesele vas tritici et
 Weselinus cellificem
 Weselinus cellifix
+Wesemale
+Wesenbeke
+Wesendonc
+Wesenthorst
 Wesep
 Wespelaer
 Wessaenen
@@ -88633,36 +91923,55 @@ Wessel van me
 Wessele van den Boetselaer
 Wesseli
 Wesselo
+Wessem
+West
 Westbroke
+Westcappelle
 Westenryk
 Wester Blocker
 Wester Tichel
 Westerbeek
+Westerholt
 Westeringhen
 Westerman
 Westerom
+Westersouburg
+Westerveld
 Westeynde
 Westfälischer Uradel
+Westhoven
+Westkerke
 Westmolgher
 Westphalen
 Westphalinc
 Westrenen
+Westrum
 Westsanen
+Westvriesland
 Westwoud
 Westwoude
+Westzaenden
 Westzaenen
 Weteling
+Weteringe
 Weteringhen
 Wetsman
+Wetten
 Wettene
 Wetter
+Wetteren
 Wetzel
 Weurd
+Wevelinchoven
 Wever
 Wevering
+Wevesele
+Wevorden
 Weyberch Roetaert
 Weyborch
+Weyburch
 Weyde
+Weylhusen
 Weyn
 Weyn Boudtsdochter
 Weyn Bouts
@@ -88678,6 +91987,7 @@ Weyntgen Reijers
 Weyntje
 Weyntje Jans
 Weytsen
+Wezepe
 Wibald
 Wibbe Oebelenz
 Wibberich Lamberts
@@ -88699,24 +92009,37 @@ Wichmannnus
 Wichmannus
 Wichohus
 Wicke
+Wickede
+Wickelo
 Wickenbroet
 Wicker
 Wickermate
+Wickerode
+Wickevoort
 Widde
+Widdestee
 Widenesse
 Wido
 Widuco
+Wied
 Wiederholt
 Wieger Berens Cousebant
 Wieker
 Wiel
 Wieland
+Wieldrecht
+Wiele
 Wielensteyn Huge
+Wielesteyn
 Wielfaert
+Wielink
 Wielmaker
+Wielnesse
 Wieric
+Wieringen
 Wieringerland
 Wieringerland voir
+Wiers
 Wierts
 Wiese
 Wietse Soert
@@ -88763,21 +92086,27 @@ Wiggher
 Wigle
 Wigmannus comes
 Wigmond
+Wignicourt
 Wihelmus
 Wiic
 Wij
 Wijbe Cornelisz
+Wijc
 Wijc plach
 Wijck
 Wijck Bartholomeusz
 Wijckrae
 Wijckraedt
 Wijdenesse
+Wijer
 Wijers
 Wijfdijc
+Wijhe
 Wijk
+Wijk van Onsenoord
 Wijl
 Wijlen
+Wijlich
 Wijlof
 Wijmes
 Wijmet
@@ -88787,23 +92116,32 @@ Wijnand Pannekoek
 Wijnand graaf van Glimes
 Wijnant Rutgers
 Wijnberg
+Wijnberge
 Wijnbergen
 Wijnbout
+Wijngaard
+Wijngaarde
+Wijngaarden
+Wijnhorst
 Wijnhuijs
 Wijnhuijsen
 Wijnkenz
 Wijntje Leenderts
 Wijntje van Wingen
 Wijntjes
+Wijse
 Wijsenende
 Wijsken Schaep
 Wijsloot
+Wijtmen
 Wijts
+Wijze
 Wikbert
 Wike leghet
 Wike vorseit starf
 Wikenz
 Wikermaet
+Wil
 Wilbem van Stavele
 Wilbert Willemsz
 Wilbrant
@@ -89291,6 +92629,7 @@ Wilhem van der Empell
 Wilhem von Haeren
 Wilijard
 Wilk
+Wilke
 Willaem
 Willaem Aerndz
 Willaem Dikinc
@@ -93077,11 +96416,16 @@ Wilof Gheylenz
 Wilof Reynkenz
 Wilof Tadenz
 Wilof Teedsz
+Wilp
+Wilre
 Wilt
+Wilten
+Wiltenburg
 Wiltje Jans
 Wilts
 Wiltschut
 Wilyard
+Wimmenum
 Win
 Winanda van Westrenen
 Winandus
@@ -93092,6 +96436,9 @@ Winckensz
 Wincredea
 Windelmarus
 Winder
+Windt
+Winendale
+Wingle
 Winine
 Winkel
 Winkelman
@@ -93104,6 +96451,7 @@ Winolt
 Winric Hobbenz
 Wins
 Winsemius
+Winssen
 Wint
 Winter
 Wintervelt
@@ -93114,6 +96462,7 @@ Wipald
 Wireon
 Wiricus
 Wis
+Wisch
 Wischelen
 Wischelensibus
 Wisenthorst
@@ -93122,6 +96471,8 @@ Wispe
 Wisscaert
 Wisschaert
 Wissche
+Wisschel
+Wisschem
 Wisse
 Wisse Claes
 Wisse Claesz
@@ -93140,11 +96491,15 @@ Wisse van Borrendamme
 Wisse van Coudekerke
 Wisse van Lopere
 Wisse van der Haven
+Wissekerke
 Wissemaers
+Wissenkerke
 Wissenz
 Wissonis
 Wit
 Wit Cornelisz
+Witenhorst
+Witgenstein
 With
 Withars
 Withe
@@ -93198,13 +96553,17 @@ Wittebol
 Wittekijn Bennenz
 Wittele
 Wittele Yemansz
+Wittelnoort
 Wittelo
+Wittem
 Witteman
 Witteman Claesz
 Witteman Godeldenz
 Witteman Godeldenzoon
 Witten
 Witten Willaemsz
+Wittendel
+Wittenhorst
 Wittens
 Wittenz
 Wittepaard
@@ -93225,7 +96584,11 @@ Wlfardus
 Wlfardus filius Wissonis
 Wodelbeke
 Wodo
+Woensel
 Woerdeman
+Woerden
+Woerden van Vliet
+Woeringen
 Woert
 Woesic
 Woest
@@ -93247,6 +96610,7 @@ Wolbrant Goijkinsz
 Wolbrant Jacob Berwoutsz
 Wolbrantsz
 Wolckensteyn
+Woldenborgh
 Wolf
 Wolf Jansz
 Wolf Sanders
@@ -93258,6 +96622,7 @@ Wolf van Hamertveld
 Wolf van Roemde
 Wolfaard van Brederode
 Wolfaard van der Maalstede
+Wolfaartsdijk
 Wolfaerd
 Wolfaerd Bertoensz
 Wolfaerd van Borsselen
@@ -93274,6 +96639,8 @@ Wolfard van Borssele
 Wolfart
 Wolfart Gillisz
 Wolferam
+Wolferen
+Wolfershem
 Wolfert
 Wolfert Aalbout
 Wolfert Bartholomeusz
@@ -93326,7 +96693,9 @@ Wolfram
 Wolfram van Barneveld
 Wolfroetse Hoeve
 Wolfs
+Wolfskulen
 Wolfslant
+Wolfswinkel
 Wolhuus
 Wolphaert
 Wolphard
@@ -93408,9 +96777,12 @@ Woltero
 Wolters van Emskerck
 Wolterus
 Wolterus Lodewijksz
+Wolvelinctorp
 Wolwijn Claesz
 Wolwinus
+Woman
 Womarus
+Wondegghen
 Wonder
 Wonne
 Wonne Ghijsbert Weijnkendochter
@@ -93420,17 +96792,23 @@ Wonnendael
 Woordt
 Woppe
 Wor
+Worenbroke
 Worm
 Wormboutsz
+Wormer
 Wornichem
 Worst
 Wortel
 Wostrhe
 Woubertus
 Wouda
+Woude
 Woudeman
 Woudemansz
+Woudenberg
+Wouderic
 Woudman
+Woudrichem
 Woudrichemerwaard
 Wouman
 Wouricsz
@@ -94198,11 +97576,14 @@ Woutersz van Heemskerk
 Woutersz van Hemskerc
 Wouterus
 Woutman
+Wouw
 Wouwerick Cornelisz
 Wouwericsz
 Wouwerman
 Wrecht van Everdingen
+Wrede
 Wreys
+Wrigher
 Wrsem
 Wt Alme
 Wtenham
@@ -94220,12 +97601,16 @@ Wulfart van Cattendic
 Wulfert
 Wulfheim
 Wulfrannus
+Wulkenits zu Crucheren
 Wulpolt
+Wulven
+Wulverhorst
 Wulvikens
 Wuuc
 Wuwe
 Wuytiers
 Wuytiers Barchman
+Wybestein
 Wybo
 Wybolt
 Wyborchs
@@ -94267,13 +97652,18 @@ Wybrant Widmairsz
 Wybrant Wybrandsz
 Wybrant Ymisz
 Wybrant Yvenz
+Wyc
 Wychen
+Wyckel
+Wyckersloot
 Wyckerus de Monemento
 Wyckerverwede
 Wydekamp
 Wydele
+Wydenes
 Wye
 Wyele
+Wyenhorst
 Wyericken
 Wyert Heerkenz
 Wyert Jansz
@@ -94287,10 +97677,15 @@ Wyflijt
 Wyfve
 Wyfve Cornelisdochter
 Wyghmans
+Wyhe
 Wykeri
+Wykersloot
 Wyleneer
+Wylich
 Wyllam
 Wylof Tadenz
+Wylre
+Wymare
 Wymet
 Wymmaer van Gymnich
 Wymoet
@@ -94323,9 +97718,11 @@ Wynant van Bylaer
 Wynant van Doerninck
 Wynant van Doornijnck
 Wynant van Masschereel
+Wynants
 Wynants van Resant
 Wynberge
 Wynberge Tydes
+Wyneghem
 Wynes
 Wynia
 Wynnem
@@ -94336,6 +97733,8 @@ Wyntgen
 Wyntgen Jansz
 Wyntgen Oudelandt
 Wyntgever
+Wyrte
+Wyschelich
 Wysschebards
 Wytekyn
 Wyveke
@@ -94400,6 +97799,7 @@ Yedam up
 Yede Broedersz
 Yedenz
 Yefsz
+Yeghem
 Yelden
 Yelis
 Yelis Jansz
@@ -94410,10 +97810,12 @@ Yeman Botterman
 Yeman Danez
 Yeman Willemsz
 Yemansz
+Yenen
 Yenzoon van Moordrecht
 Yerephaes
 Yerephaes van Holland
 Yerephaes van Hollant
+Yerte
 Yevencamp
 Yewensz
 Yewijn Heye
@@ -94428,6 +97830,10 @@ Ygrom
 Yke Nannenz
 Yke van Campen
 Yken Hermansz
+Ylem
+Ylp
+Ylt
+Ylte
 Ym
 Ymagina
 Ymansgors
@@ -94437,7 +97843,9 @@ Ymme Dirck van den Woude
 Ymme Henric Harmansz
 Ymme Pieter Costers
 Ymme Willemsdochter
+Ymmerzele
 Ymmitgen Jansdochter
+Ynen
 Yngelbertus van Nassau
 Ynken Veen
 Ynmani de Vauderic
@@ -94452,6 +97860,7 @@ Ype Arys (Ams)
 Ypelaar
 Ypelaer
 Ypenberg
+Yperen
 Ypke Oukes
 Yponshove die Nortmeer
 Yponthove
@@ -94619,28 +98028,41 @@ Ysebrandz van der Lane
 Ysebrant
 Ysebrant Allijnsz
 Ysebrantszzn van Egmond
+Ysela
+Yselberge
 Ysele afterwaerts
 Yselendoorn
+Yselhusen
 Yselmonde
+Ysen
 Ysenbeel
 Ysenbeel van Brigdamme
 Ysenbella
 Ysenbourch dominus
+Ysendaal
 Ysendoorn van Huelensteyn
 Ysentrudis
+Yser
 Ysereel
 Yseren
 Yseren den eed
 Ysingermade
 Yslant Bartholomeusdr
 Ysoudt
+Yspen
+Yssche
 Ysselingen
+Ysselmonde
 Ysselmonden
+Ysselmude
+Ysselmuiden
 Ysselsteijn
 Ysselsteijne
 Ysselsteyn
 Ysselsteyn an t
+Ysselt
 Ysselveld
+Yssem
 Ytgen
 Ytgen Claes
 Ytje Claes
@@ -94719,7 +98141,12 @@ Ywin
 Ywin Heye
 Ywyn van Varik
 Ywyn van der Cule
+Yzendoorn
+Yzendyk
+Yzendyke
+Yzerlo
 Z. ab H. en van der Meer
+Zaan
 Zac van Wijc
 Zacharia Runghe
 Zacharias
@@ -94730,7 +98157,9 @@ Zadelboghe
 Zael
 Zaelen
 Zael~
+Zaemslach
 Zaende
+Zaenden
 Zalantinus
 Zale
 Zale Jacobsz
@@ -94742,6 +98171,7 @@ Zalic
 Zalm
 Zalmon Jansz
 Zand
+Zande
 Zandekijn
 Zandenburgh
 Zander van Loon
@@ -94751,6 +98181,7 @@ Zandick
 Zandman
 Zandvaert
 Zandvoort
+Zandwijk
 Zanen
 Zanerdam
 Zanne
@@ -94759,6 +98190,7 @@ Zannenz
 Zannetje Hendricxdochter
 Zant
 Zantbomel
+Zanten
 Zanthorsterland
 Zantvaert
 Zantvoertz
@@ -94783,9 +98215,12 @@ Zebertus de Ulvenhout
 Zebout
 Zebrechtssoens
 Zebrechtsz
+Zee
 Zeebaers
+Zeeland
 Zeelander
 Zeelandt
+Zeelen
 Zeelum
 Zeeman
 Zeepsieder
@@ -94858,6 +98293,7 @@ Zeger van Wyck
 Zeger van den Heetvelde
 Zeger van der
 Zegeraert
+Zegers
 Zegers van Wassenhove
 Zegeworpe
 Zeggelyc
@@ -94877,21 +98313,34 @@ Zegher van Broechuse
 Zegher van Broechusen
 Zegher van Bruechusen
 Zegher van den Riede
+Zeist
+Zekelinge
 Zeker Evert
 Zel
+Zeldenaker
 Zeldert
+Zelem
+Zelic
 Zelis
 Zelis Raghe et
+Zellen
+Zeller
 Zelm
+Zelnaten
 Zeman
 Zemel
 Zemme Sybrantsz
+Zemondt
+Zenickveld
 Zennewijnen
 Zericzee bi Gherit
 Zerixee
 Zesevaer van den Wilghenover den dijck bi der Kirchen
+Zevenaar
 Zevenaer
 Zevenar
+Zevenbergen
+Zevender
 Zevendern
 Zevengetijdemeesters
 Zevenhuijsen
@@ -94906,6 +98355,8 @@ Zibrant Hermansz
 Zibrechtsz
 Ziecman
 Ziegher Bauwens
+Zieric
+Zierikzee
 Zieuwertje Jacobsz
 Zigrip
 Ziil
@@ -94921,6 +98372,7 @@ Zile
 Zindelberch
 Zindert Rissenz
 Zindewech
+Zinnichvelt
 Zinoutskerke
 Zirick Jansz Schermeer
 Zirick Willems
@@ -94928,7 +98380,9 @@ Ziricsze
 Ziriczee
 Zittert
 Zoees
+Zoelen
 Zoelen Joostenz
+Zoelmond
 Zoenekyns koye
 Zoes
 Zoeseynge
@@ -94941,15 +98395,19 @@ Zoete Claes van Bylants
 Zoete Heynen
 Zoete Lambrechtsdochter
 Zoete Willem Gysbrechtsdochter
+Zoete van Lake
 Zoeteman
+Zoeten
 Zoeterbeke
 Zoetert
 Zoetge Aelbrecht van Hogendorpsweduwe
 Zomer
 Zomeren Dircsz
+Zomerghem
 Zomerland
 Zomerlant
 Zomerwech
+Zomerzee
 Zonderland
 Zonne
 Zonneveld
@@ -94962,6 +98420,7 @@ Zoudensz van den Rijn
 Zoudenz
 Zoutenvene
 Zoutman
+Zouwen
 Zouwenz
 Zoys
 Zubburch
@@ -94970,18 +98429,30 @@ Zudenna
 Zudercoich
 Zuderhoec
 Zuedherus
+Zueren
 Zuermonts
 Zues
 Zuetersluse
+Zuichem
 Zuichem van Aitta
 Zuidbroec
+Zuidland
 Zuidscherwoude
 Zuidvoet
 Zuidvord
 Zuidwech
+Zuidwinde
 Zuijck
+Zuijden
+Zuijdwijk
 Zuijlen
+Zuijlen van Nievelt
 Zuijtbroeke
+Zuilen
+Zuilen van Amerongen
+Zuilen van Coelenberch
+Zuilen van Nyevelt
+Zuilichem
 Zuitwyc
 Zulen
 Zulen Arntsz
@@ -94992,11 +98463,16 @@ Zulen van Nievelt
 Zulen van Nyevelt
 Zulen van Nyevelt hem
 Zulen van der Zevender
+Zundert
 Zuntfelt que habet Henricus de Witenhorst
+Zuren
+Zurk
 Zurmont Petersz
 Zutfaniensis
 Zutfen van Hendrik van de Mars
 Zutfen vrijheid en schepenen
+Zutphas
+Zutphen
 Zutphens
 Zutphens leen
 Zutphensche
@@ -95009,12 +98485,17 @@ Zuurmond van der Cule
 Zuutende van Schermer
 Zuutvoetsz
 Zuutwyk
+Zuyddyk
+Zuydewyn
+Zuydkerke
 Zuylen
 Zuylen van Anholt
+Zuylen van Drakenborch
 Zuylen van Nyevelt
 Zuylen van der Haer
 Zuylestein
 Zuytland
+Zuytvoort
 Zuytwaert
 Zwaan
 Zwaanke
@@ -95022,12 +98503,14 @@ Zwaech
 Zwaeff
 Zwaelwe
 Zwaen
+Zwaerde
 Zwager
 Zwaluw
 Zwaluwe
 Zwaneke
 Zwanekenz
 Zwanekert
+Zwanenburg
 Zwanick
 Zwart
 Zwarte Hond
@@ -95093,7 +98576,9 @@ Zwien
 Zwieten
 Zwieten's
 Zwieter boemgaert
+Zwijndrecht
 Zwindrechtwert
+Zwolle
 Zwyndrecht
 Zwyndrecht an die
 Zybben Peters
@@ -95108,6 +98593,8 @@ Zybrant Fransz
 Zybrant Meynaertsz
 Zybrant Symonsz
 Zybrants
+Zydenburch
+Zydewinde
 Zydwijn
 Zydwin
 Zyl
