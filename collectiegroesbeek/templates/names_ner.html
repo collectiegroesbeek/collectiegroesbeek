@@ -29,7 +29,9 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="search-addon">Zoek</span>
         </div>
-        <input type="text" class="form-control" id="searchInput" aria-label="Search" aria-describedby="search-addon">
+        <input type="text" class="form-control" id="searchInput"
+               aria-label="Search" aria-describedby="search-addon"
+               value="{{ query }}">
       </div>
       <nav>
         <ul id="pagination" class="pagination mt-3 justify-content-center">
@@ -53,7 +55,7 @@
 {% block js %}
   <script>
       let debounceTimeout;
-      let currentPage = 1;
+      let currentPage = {{ page }};
       document.getElementById('searchInput').addEventListener('input', function() {
           clearTimeout(debounceTimeout);
           debounceTimeout = setTimeout(function() {
@@ -67,6 +69,8 @@
           let query = input.value;
           let response = await fetch(`/namen-ner/search?q=${query}&page=${currentPage}&per_page=1000`);
           let data = await response.json();
+
+          history.replaceState({} , '', createUrl(query, currentPage));
 
           let list = document.getElementById('myList');
           list.innerHTML = ''; // Clear the list
@@ -83,20 +87,32 @@
           let endPage = Math.min(currentPage + 4, data.total_pages);
 
           // Add first page button
-          addPageButton(pagination, 1);
+          addPageButton(pagination, 1, query);
           if (startPage > 3) addPageEllipsis(pagination);
 
           // Add intermediate page buttons
           for (let i = startPage; i <= endPage; i++) {
-              if (i !== 1 & i !== endPage) addPageButton(pagination, i);
+              if (i !== 1 && i !== endPage) addPageButton(pagination, i, query);
           }
 
           if (endPage < data.total_pages - 1) addPageEllipsis(pagination);
-          // Add last page button
-          addPageButton(pagination, data.total_pages);
+          if (data.total_pages > 1) {
+              addPageButton(pagination, data.total_pages, query);
+          }
       }
 
-      function addPageButton(pagination, pageNumber) {
+      function createUrl(query, page) {
+          let query_params = {};
+          if (query.length > 0) query_params["q"] = query;
+          if (page > 1) query_params["page"] = page;
+          let url = '/namen-ner/';
+          if (Object.keys(query_params).length > 0) {
+              url += '?' + new URLSearchParams(query_params).toString();
+          }
+          return(url)
+      }
+
+      function addPageButton(pagination, pageNumber, query) {
           let li = document.createElement('li');
           li.className = 'page-item';
           if (pageNumber === currentPage) li.classList.add('active');
@@ -104,7 +120,7 @@
           let a = document.createElement('a');
           a.className = 'page-link';
           a.textContent = pageNumber;
-          a.href = '#';
+          a.href = createUrl(query, pageNumber);
           a.addEventListener('click', function(e) {
               e.preventDefault();
               currentPage = pageNumber;

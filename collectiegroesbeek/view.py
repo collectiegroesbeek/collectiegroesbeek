@@ -142,8 +142,12 @@ with open("names.txt", encoding="utf-8") as f:
 
 @app.route('/namen-ner/')
 def names_ner():
+    query = flask.request.args.get('q', '').lower().strip()
+    page = int(flask.request.args.get('page', 1))
     return flask.render_template(
-        "names_ner.html"
+        "names_ner.html",
+        query=query,
+        page=page
     )
 
 
