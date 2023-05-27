@@ -83,16 +83,16 @@
           let pagination = document.getElementById('pagination');
           pagination.innerHTML = ''; // Clear pagination
 
-          let startPage = Math.max(currentPage - 3, 1);
-          let endPage = Math.min(currentPage + 4, data.total_pages);
+          let startPage = Math.max(currentPage - 2, 1);
+          let endPage = Math.min(currentPage + 2, data.total_pages);
 
           // Add first page button
           addPageButton(pagination, 1, query);
-          if (startPage > 3) addPageEllipsis(pagination);
+          if (startPage > 2) addPageEllipsis(pagination);
 
           // Add intermediate page buttons
           for (let i = startPage; i <= endPage; i++) {
-              if (i !== 1 && i !== endPage) addPageButton(pagination, i, query);
+              if (i !== 1 && i !== data.total_pages) addPageButton(pagination, i, query);
           }
 
           if (endPage < data.total_pages - 1) addPageEllipsis(pagination);
