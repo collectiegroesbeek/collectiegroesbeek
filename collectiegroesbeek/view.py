@@ -28,7 +28,7 @@ def home():
     )
 
 
-@app.route('/zoek')
+@app.route('/zoek/')
 def search():
     q: str = flask.request.args.get('q')
     doctypes_selection: List[Type[BaseDocument]] = [

@@ -37,7 +37,9 @@
             <a class="navbar-brand text-dark" href="/">Collectie <span>Groesbeek</span></a>
             <nav>
                 <a class="p-2 text-dark" href="/">Home</a>
-                <a class="p-2 text-dark" href="/zoek">Zoeken</a>
+                <a class="p-2 text-dark" href="{{ url_for('search') }}">Zoek</a>
+                <a class="p-2 text-dark" href="{{ url_for('browse') }}">Verken</a>
+                <a class="p-2 text-dark" href="{{ url_for('names_ner') }}">Namenlijst</a>
             </nav>
         </div>
     </div>
