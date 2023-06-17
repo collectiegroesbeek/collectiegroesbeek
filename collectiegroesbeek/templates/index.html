@@ -43,7 +43,7 @@
             sommmigen hebben een korte inhoud, maar de meesten bevatten volledige aktes.
         </p>
         <p>
-            Er zitten naar schatting 150&thinsp;000 kaartjes in de collectie. Hiervan zijn er op dit moment
+            Er zitten naar schatting 150.000 kaartjes in de collectie. Hiervan zijn er op dit moment
             {{ n_total_docs|safe }}
             gedigitaliseerd en in deze website opgenomen. Er wordt ondertussen verder gewerkt aan het
             digitaliseren. Ook wordt er gewerkt aan de digitalisering van het deel van de Collectie
@@ -59,10 +59,14 @@
     <div class="col">
       <h1>Indexen</h1>
       <div class="list-group list-indexes">
+      {{ indices_and_doc_counts }}
         {% for doctype in doctypes %}
           <a href="/zoek?index={{ doctype.Index.name }}"
              class="list-group-item list-group-item-action">
-            <h5>{{ doctype.get_index_name_pretty() }}</h5>
+            <h5>
+              {{ doctype.get_index_name_pretty() }}
+              <small class="text-muted">({{ index_to_doc_count[doctype.Index.name]|safe }} documenten)</small>
+            </h5>
             {{ doctype.get_description() }}
           </a>
         {% endfor %}

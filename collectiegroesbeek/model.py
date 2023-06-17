@@ -999,6 +999,10 @@ index_name_to_doctype = {
 }
 
 
+def list_index_names() -> List[str]:
+    return list(index_name_to_doctype.keys())
+
+
 def list_doctypes() -> List[Type[BaseDocument]]:
     return list(index_number_to_doctype.values())
 

@@ -2,12 +2,13 @@ import re
 from typing import Dict, List, Tuple, Iterable, Optional, Set, Type
 
 import elasticsearch_dsl
+from elasticsearch import Elasticsearch
 from elasticsearch_dsl import connections, Q, Search
 from elasticsearch_dsl.query import MultiMatch, Query
 from elasticsearch_dsl.response import Hit
 
 from . import app
-from .model import CardNameDoc, BaseDocument, list_doctypes, index_name_to_doctype
+from .model import CardNameDoc, BaseDocument, list_doctypes, index_name_to_doctype, list_index_names
 
 connections.create_connection('default', hosts=[app.config['elasticsearch_host']])
 
@@ -193,3 +194,20 @@ def get_number_of_total_docs() -> int:
     s = s.index(*index_name_to_doctype.keys())
     n_total_docs = s.count()
     return n_total_docs
+
+
+def get_indices_and_doc_counts() -> Dict[str, int]:
+    es = Elasticsearch()
+    indices = es.cat.indices(index=list_index_names(), format="json")
+    index_to_alias = get_index_to_alias()
+    return {index_to_alias[index["index"]]: int(index["docs.count"]) for index in indices}
+
+
+def get_index_to_alias() -> Dict[str, str]:
+    es = Elasticsearch()
+    aliases = es.cat.aliases(name=list_index_names(), format="json")
+    return {item['index']: item['alias'] for item in aliases}
+
+
+def format_int(num: int) -> str:
+    return f'{num:,d}'.replace(',', '.')

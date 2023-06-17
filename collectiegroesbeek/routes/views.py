@@ -6,18 +6,20 @@ import flask
 
 from .. import app
 from .. import controller
-from ..controller import get_doc, get_number_of_total_docs
+from ..controller import get_doc, get_number_of_total_docs, get_indices_and_doc_counts, format_int
 from ..model import BaseDocument, list_doctypes, index_name_to_doctype
 
 
 @app.route('/')
 def home():
     n_total_docs = get_number_of_total_docs()
-    n_total_docs_str = f'{n_total_docs:,d}'.replace(',', '&nbsp;')
+    n_total_docs_str = format_int(n_total_docs)
+    index_to_doc_count = {index: format_int(count) for index, count in get_indices_and_doc_counts().items()}
     return flask.render_template(
         'index.html',
         n_total_docs=n_total_docs_str,
         doctypes=list_doctypes(),
+        index_to_doc_count=index_to_doc_count,
     )
 
 
