@@ -1,20 +1,13 @@
 import re
-import subprocess
-import threading
-import time
-from datetime import datetime
 from urllib.parse import quote
 from typing import List, Tuple, Type
 
 import flask
 
-from . import app
-from . import controller
-from .controller import get_doc, get_number_of_total_docs
-from .model import BaseDocument, list_doctypes, index_name_to_doctype
-
-
-DROPBOX_TIMESTAMP_LOCK = threading.Lock()
+from .. import app
+from .. import controller
+from ..controller import get_doc, get_number_of_total_docs
+from ..model import BaseDocument, list_doctypes, index_name_to_doctype
 
 
 @app.route('/')
@@ -157,72 +150,6 @@ def search_names_ner():
     })
 
 
-@app.route('/api/columns/')
-def datatables_api_columns():
-    index_name = flask.request.args.get('index')
-    doctype = index_name_to_doctype[index_name]
-    columns = doctype.get_columns()
-    return [
-        {'data': column, 'title': column}
-        for column in columns
-    ]
 
 
-@app.route('/api/rows/', methods=["POST"])
-def datatables_api():
-    req = flask.request.json
-    index_name = req['index']
-    doctype = index_name_to_doctype[index_name]
-    s = doctype.search()
-    columns = doctype.get_columns()
-    s = s.source(columns)
-    s = s.extra(from_=req['start'], size=req['length'])
-    s = s.sort(
-        *[
-            {doctype.get_sort_field(req['columns'][item['column']]['data']): {'order': item['dir']}}
-            for item in req['order']
-        ]
-    )
-    res = s.execute()
-    docs = []
-    for hit in res:
-        hit_dict = hit.to_dict()
-        doc = {field: hit_dict.get(field, None) for field in columns}
-        doc['id'] = hit.meta.id
-        docs.append(doc)
-    resp = {
-        "draw": int(req["draw"]),
-        "recordsTotal": res['hits']['total']['value'],
-        "recordsFiltered": res['hits']['total']['value'],
-        "data": docs,
-    }
-    return resp
 
-
-@app.route('/api/dropbox-webhook/', methods=['GET'])
-def dropbox_webhook_verification():
-    resp = flask.Response(flask.request.args.get('challenge'))
-    resp.headers['Content-Type'] = 'text/plain'
-    resp.headers['X-Content-Type-Options'] = 'nosniff'
-    return resp
-
-
-@app.route('/api/dropbox-webhook/', methods=['POST'])
-def dropbox_webhook():
-    timestamp = int(time.time())
-    with DROPBOX_TIMESTAMP_LOCK:
-        with open("webhook_timestamp.txt") as f:
-            timestamp_last_incoming_webhook = int(f.read())
-        with open("webhook_timestamp.txt", "w") as f:
-            f.write(str(timestamp))
-    if (timestamp - timestamp_last_incoming_webhook) > 300:
-        with open("/var/log/dropbox.log", "a") as f_log:
-            f_log.write(f'\n{datetime.now()} incoming webhook\n')
-            subprocess.Popen(
-                ['./run_import.sh'],
-                stdout=f_log,
-                stderr=f_log,
-                stdin=subprocess.DEVNULL,
-                close_fds=True,
-            )
-    return flask.make_response("", 200)
