@@ -7,6 +7,7 @@ import flask
 from .. import app
 from .. import controller
 from ..controller import get_doc, get_number_of_total_docs, get_indices_and_doc_counts, format_int
+from ..folium.opacity_control import OpacityControl
 from ..model import BaseDocument, list_doctypes, index_name_to_doctype
 
 
@@ -151,6 +152,32 @@ def search_names_ner():
         'names': filtered_names[start:end]
     })
 
+
+@app.route('/kaart-egmond/')
+def kaart_egmond():
+    import folium
+    import folium.plugins
+
+    m = folium.Map((52.632, 4.6974), zoom_start=15)
+    url = "https://geoserver.memorix.nl/geoserver/raa/wms?service=WMS&request=GetMap"
+    layer = folium.WmsTileLayer(
+        url,
+        layers="raa:6c572a8b-d93e-7ebd-8eeb-ac27c85bd8e6",
+        styles="",
+        fmt="image/png",
+        transparent=True,
+        version="1.3.0",
+        attr="<a href='https://www.regionaalarchiefalkmaar.nl/collecties/beelden/beelden-2/detail/"
+             "6b28de21-e376-4595-877d-bb69818a3e65/media/1af7c4bf-fe5e-4461-91e5-0e3d94d4afd8'>"
+             "Archief Alkmaar</a>",
+        opacity=0.8,
+        name="Egmonder-meer 1661 (RAA PR 1004154)",
+    ).add_to(m)
+    folium.plugins.Draw().add_to(m)
+    folium.LayerControl(collapsed=False).add_to(m)
+    OpacityControl(layer).add_to(m)
+
+    return flask.render_template_string(m.get_root().render())
 
 
 
