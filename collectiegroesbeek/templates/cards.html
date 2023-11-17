@@ -21,7 +21,7 @@
       <div class="col">
         Bedoelde u soms?<br />
         {% for suggestion, url in suggestions.items() %}
-          {{ suggestion }}
+          <a href="{{ url }}">{{ suggestion }}</a>
           {% if not loop.last %} | {% endif %}
         {% endfor %}
       </div>

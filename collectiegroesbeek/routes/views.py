@@ -61,7 +61,7 @@ def search():
     for token, _suggs in suggestions.items():
         for suggestion in _suggs:
             q_new = re.sub(r'\b{}\b'.format(token), f'{token} {suggestion}', q)
-            url = f'/?q={quote(q_new)}'
+            url = f'?q={quote(q_new)}'
             url = add_selected_doctypes_to_query_string(url, doctypes_selection)
             suggestion_urls[suggestion] = url
 
