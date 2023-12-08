@@ -1,3 +1,4 @@
+import os
 import re
 from urllib.parse import quote
 from typing import List, Tuple, Type
@@ -151,6 +152,20 @@ def search_names_ner():
         'names': filtered_names[start:end]
     })
 
+
+@app.route('/publicaties/', methods=['GET'])
+def publicaties():
+    filenames = [
+        filename.replace(".html", "")
+        for filename in sorted(os.listdir("collectiegroesbeek/templates/publicaties"))
+    ]
+    return flask.render_template("publicaties.html", publicaties=filenames)
+
+
+@app.route('/publicaties/<publicatie>', methods=['GET'])
+def publicatie_(publicatie: str):
+    template_path = "publicaties/" + publicatie + ".html"
+    return flask.render_template("publicatie.html", publicatie=publicatie, template_path=template_path)
 
 
 

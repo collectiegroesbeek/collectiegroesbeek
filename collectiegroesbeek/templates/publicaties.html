@@ -1,0 +1,25 @@
+
+{% extends "layout.html" %}
+
+{% block title %}Publicaties{% endblock %}
+
+
+{% block content %}
+
+<div class="index-item border-bottom">
+  <div class="row">
+      <div class="col-md-12 section-heading">
+          <h1>Publicaties</h1>
+          <p>
+          <ul>
+          {% for publicatie in publicaties %}
+            <li><a href="/publicaties/{{ publicatie }}">{{ publicatie }}</a></li>
+          {% endfor %}
+          </ul>
+          </p>
+      </div>
+  </div>
+</div>
+
+
+{% endblock %}
