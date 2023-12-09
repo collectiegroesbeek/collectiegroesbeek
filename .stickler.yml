@@ -1,9 +1,0 @@
-linters:
-    flake8:
-        python: 3
-        config: 'tox.ini'
-        fixer: true
-    csslint:
-
-fixers:
-    enable: true
