@@ -84,12 +84,12 @@ class CardNameDoc(BaseDocument):
         if len(line[0]) == 0:
             return None
         doc.meta.id = int(line[0])
-        doc.datum = parse_entry(line[1])
-        doc.naam = parse_entry(line[2])
-        doc.inhoud = parse_entry(line[3])
-        doc.bron = parse_entry(line[4])
-        doc.getuigen = parse_entry(line[5])
-        doc.bijzonderheden = parse_entry(line[6])
+        doc.datum = parse_entry_optional(line[1])
+        doc.naam = parse_entry_optional(line[2])
+        doc.inhoud = parse_entry_optional(line[3])
+        doc.bron = parse_entry_optional(line[4])
+        doc.getuigen = parse_entry_optional(line[5])
+        doc.bijzonderheden = parse_entry_optional(line[6])
         if not doc.is_valid():
             return None
         if doc.naam is not None:
@@ -176,13 +176,13 @@ class VoornamenDoc(BaseDocument):
         if len(line[0]) == 0:
             return None
         doc.meta.id = int(line[0])
-        doc.datum = parse_entry(line[1])
-        doc.voornaam = parse_entry(line[2])
-        doc.patroniem = parse_entry(line[3])
-        doc.inhoud = parse_entry(line[4])
-        doc.bron = parse_entry(line[5])
-        doc.getuigen = parse_entry(line[6])
-        doc.bijzonderheden = parse_entry(line[7])
+        doc.datum = parse_entry_optional(line[1])
+        doc.voornaam = parse_entry_optional(line[2])
+        doc.patroniem = parse_entry_optional(line[3])
+        doc.inhoud = parse_entry_optional(line[4])
+        doc.bron = parse_entry_optional(line[5])
+        doc.getuigen = parse_entry_optional(line[6])
+        doc.bijzonderheden = parse_entry_optional(line[7])
         if not doc.is_valid():
             return None
         if doc.datum is not None:
@@ -246,12 +246,12 @@ class JaartallenDoc(BaseDocument):
         if len(line[0]) == 0:
             return None
         doc.meta.id = int(line[0])
-        doc.datum = parse_entry(line[1])
-        doc.locatie = parse_entry(line[2])
-        doc.inhoud = parse_entry(line[3])
-        doc.bron = parse_entry(line[4])
-        doc.getuigen = parse_entry(line[5])
-        doc.bijzonderheden = parse_entry(line[6])
+        doc.datum = parse_entry_optional(line[1])
+        doc.locatie = parse_entry_optional(line[2])
+        doc.inhoud = parse_entry_optional(line[3])
+        doc.bron = parse_entry_optional(line[4])
+        doc.getuigen = parse_entry_optional(line[5])
+        doc.bijzonderheden = parse_entry_optional(line[6])
         if not doc.is_valid():
             return None
         if doc.datum is not None:
@@ -319,19 +319,19 @@ class MaatboekHeemskerkDoc(BaseDocument):
     @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional["MaatboekHeemskerkDoc"]:
         # Return early, we'll discard it later using `is_valid`.
-        if not parse_entry(line[0]) or not any(parse_entry(value) for value in line[1:]):
+        if not parse_entry_optional(line[0]) or not any(parse_entry_optional(value) for value in line[1:]):
             return None
         doc = cls()
         doc.meta.id = line[0]
-        doc.locatie = parse_entry(line[1])
-        doc.sector = parse_entry(line[2])
-        doc.oppervlakte = parse_entry(line[3])
-        doc.eigenaar = parse_entry(line[4])
-        doc.huurder = parse_entry(line[5])
-        doc.prijs = parse_entry(line[6])
-        doc.datum = parse_entry(line[7])
-        doc.bron = parse_entry(line[8])
-        doc.opmerkingen = parse_entry(line[9])
+        doc.locatie = parse_entry_optional(line[1])
+        doc.sector = parse_entry_optional(line[2])
+        doc.oppervlakte = parse_entry_optional(line[3])
+        doc.eigenaar = parse_entry_optional(line[4])
+        doc.huurder = parse_entry_optional(line[5])
+        doc.prijs = parse_entry_optional(line[6])
+        doc.datum = parse_entry_optional(line[7])
+        doc.bron = parse_entry_optional(line[8])
+        doc.opmerkingen = parse_entry_optional(line[9])
         doc.jaar = cls.parse_year(doc.datum)
         return doc
 
@@ -404,17 +404,17 @@ class MaatboekHeemstedeDoc(BaseDocument):
     @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional["MaatboekHeemstedeDoc"]:
         # Return early, we'll discard it later using `is_valid`.
-        if not any(parse_entry(value) for value in line[1:]):
+        if not any(parse_entry_optional(value) for value in line[1:]):
             return None
         doc = cls()
         doc.meta.id = line[0]
-        doc.ligging = parse_entry(line[1])
-        doc.eigenaar = parse_entry(line[2])
-        doc.huurder = parse_entry(line[3])
-        doc.prijs = parse_entry(line[4])
-        doc.datum = parse_entry(line[5])
-        doc.bron = parse_entry(line[6])
-        doc.opmerkingen = parse_entry(line[7])
+        doc.ligging = parse_entry_optional(line[1])
+        doc.eigenaar = parse_entry_optional(line[2])
+        doc.huurder = parse_entry_optional(line[3])
+        doc.prijs = parse_entry_optional(line[4])
+        doc.datum = parse_entry_optional(line[5])
+        doc.bron = parse_entry_optional(line[6])
+        doc.opmerkingen = parse_entry_optional(line[7])
         doc.jaar = cls.parse_year(doc.datum)
         return doc
 
@@ -476,17 +476,17 @@ class MaatboekBroekInWaterlandDoc(BaseDocument):
     @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional["MaatboekBroekInWaterlandDoc"]:
         # Return early, we'll discard it later using `is_valid`.
-        if not any(parse_entry(value) for value in line[1:]):
+        if not any(parse_entry_optional(value) for value in line[1:]):
             return None
         doc = cls()
         doc.meta.id = line[0]
-        doc.sector = parse_entry(line[1])
-        doc.ligging = parse_entry(line[2])
-        doc.oppervlakte = parse_entry(line[3])
-        doc.eigenaar = parse_entry(line[4])
-        doc.datum = parse_entry(line[5])
-        doc.bron = parse_entry(line[6])
-        doc.opmerkingen = parse_entry(line[7])
+        doc.sector = parse_entry_optional(line[1])
+        doc.ligging = parse_entry_optional(line[2])
+        doc.oppervlakte = parse_entry_optional(line[3])
+        doc.eigenaar = parse_entry_optional(line[4])
+        doc.datum = parse_entry_optional(line[5])
+        doc.bron = parse_entry_optional(line[6])
+        doc.opmerkingen = parse_entry_optional(line[7])
         doc.jaar = cls.parse_year(doc.datum)
         return doc
 
@@ -546,17 +546,17 @@ class MaatboekSuderwoude(BaseDocument):
     @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional["MaatboekSuderwoude"]:
         # Return early, we'll discard it later using `is_valid`.
-        if not any(parse_entry(value) for value in line[1:]):
+        if not any(parse_entry_optional(value) for value in line[1:]):
             return None
         doc = cls()
         doc.meta.id = line[0]
-        doc.sector = parse_entry(line[1])
-        doc.ligging = parse_entry(line[2])
-        doc.oppervlakte = parse_entry(line[3])
-        doc.eigenaar = parse_entry(line[4])
-        doc.datum = parse_entry(line[5])
-        doc.bron = parse_entry(line[6])
-        doc.opmerkingen = parse_entry(line[7])
+        doc.sector = parse_entry_optional(line[1])
+        doc.ligging = parse_entry_optional(line[2])
+        doc.oppervlakte = parse_entry_optional(line[3])
+        doc.eigenaar = parse_entry_optional(line[4])
+        doc.datum = parse_entry_optional(line[5])
+        doc.bron = parse_entry_optional(line[6])
+        doc.opmerkingen = parse_entry_optional(line[7])
         doc.jaar = cls.parse_year(doc.datum)
         return doc
 
@@ -618,18 +618,18 @@ class EigendomsaktenHeemskerk(BaseDocument):
     @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional["EigendomsaktenHeemskerk"]:
         # Return early, we'll discard it later using `is_valid`.
-        if not any(parse_entry(value) for value in line[1:]):
+        if not any(parse_entry_optional(value) for value in line[1:]):
             return None
         doc = cls()
         doc.meta.id = line[0]
-        doc.datum = parse_entry(line[1])
-        doc.plaats = parse_entry(line[2])
-        doc.verkoper = parse_entry(line[3])
-        doc.koper = parse_entry(line[4])
-        doc.omschrijving = parse_entry(line[5])
-        doc.belending = parse_entry(line[6])
-        doc.bron = parse_entry(line[7])
-        doc.opmerkingen = parse_entry(line[7])
+        doc.datum = parse_entry_optional(line[1])
+        doc.plaats = parse_entry_optional(line[2])
+        doc.verkoper = parse_entry_optional(line[3])
+        doc.koper = parse_entry_optional(line[4])
+        doc.omschrijving = parse_entry_optional(line[5])
+        doc.belending = parse_entry_optional(line[6])
+        doc.bron = parse_entry_optional(line[7])
+        doc.opmerkingen = parse_entry_optional(line[7])
         doc.jaar = cls.parse_year(doc.datum)
         return doc
 
@@ -690,16 +690,16 @@ class TiendeEnHonderdstePenning(BaseDocument):
     @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional["TiendeEnHonderdstePenning"]:
         # Return early, we'll discard it later using `is_valid`.
-        if not any(parse_entry(value) for value in line[1:]):
+        if not any(parse_entry_optional(value) for value in line[1:]):
             return None
         doc = cls()
         doc.meta.id = line[0]
         doc.datum = parse_entry(line[1])
         doc.inhoud = parse_entry(line[2])
         doc.folio_nr = parse_entry(line[3])
-        doc.vervolg_nr = parse_entry(line[4])
+        doc.vervolg_nr = parse_entry_optional(line[4])
         doc.bron = parse_entry(line[5])
-        doc.bijzonderheden = parse_entry(line[6])
+        doc.bijzonderheden = parse_entry_optional(line[6])
         doc.jaar = cls.parse_year(doc.datum)
         return doc
 
@@ -755,11 +755,11 @@ class BaseTransportregisterDoc(BaseDocument):
         if len(line[0]) == 0:
             return None
         doc.meta.id = int(line[0])
-        doc.datum = parse_entry(line[1])
-        doc.inhoud = parse_entry(line[2])
-        doc.bron = parse_entry(line[3])
-        doc.getuigen = parse_entry(line[4])
-        doc.bijzonderheden = parse_entry(line[5])
+        doc.datum = parse_entry_optional(line[1])
+        doc.inhoud = parse_entry_optional(line[2])
+        doc.bron = parse_entry_optional(line[3])
+        doc.getuigen = parse_entry_optional(line[4])
+        doc.bijzonderheden = parse_entry_optional(line[5])
         if not doc.is_valid():
             return None
         if doc.datum is not None:
@@ -863,7 +863,7 @@ class TransportRegisterHaarlemDoc(BaseDocument):
     @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional["TransportRegisterHaarlemDoc"]:
         # Return early, we'll discard it later using `is_valid`.
-        if not any(parse_entry(value) for value in line[1:]):
+        if not any(parse_entry_optional(value) for value in line[1:]):
             return None
         doc = cls()
         doc.meta.id = line[0]
@@ -873,7 +873,7 @@ class TransportRegisterHaarlemDoc(BaseDocument):
         doc.register_nr = parse_entry(line[4])
         doc.vervolg_nr = parse_entry(line[5])
         # Skip 'bron' column
-        doc.bijzonderheden = parse_entry(line[7])
+        doc.bijzonderheden = parse_entry_optional(line[7])
         doc.jaar = cls.parse_year(doc.datum)
         return doc
 
@@ -933,15 +933,15 @@ class HaarlemAlgemeenDoc(BaseDocument):
         doc = cls()
         if len(line[0]) == 0:
             return None
-        if not any(parse_entry(value) for value in line[1:]):
+        if not any(parse_entry_optional(value) for value in line[1:]):
             return None
         doc.meta.id = int(line[0])
-        doc.datum = parse_entry(line[1])
-        doc.locatie = parse_entry(line[2])
-        doc.inhoud = parse_entry(line[3])
-        doc.bron = parse_entry(line[4])
-        doc.getuigen = parse_entry(line[5])
-        doc.bijzonderheden = parse_entry(line[6])
+        doc.datum = parse_entry_optional(line[1])
+        doc.locatie = parse_entry_optional(line[2])
+        doc.inhoud = parse_entry_optional(line[3])
+        doc.bron = parse_entry_optional(line[4])
+        doc.getuigen = parse_entry_optional(line[5])
+        doc.bijzonderheden = parse_entry_optional(line[6])
         if doc.datum is not None:
             doc.jaar = create_year(str(doc.datum))
         return doc
@@ -973,7 +973,11 @@ class HaarlemAlgemeenDoc(BaseDocument):
         )
 
 
-def parse_entry(entry: str) -> Optional[str]:
+def parse_entry(entry: str) -> str:
+    return entry.strip()
+
+
+def parse_entry_optional(entry: str) -> Optional[str]:
     return entry.strip() or None
 
 
