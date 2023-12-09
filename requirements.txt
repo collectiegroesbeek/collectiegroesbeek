@@ -5,3 +5,4 @@ tqdm
 dropbox==11.36.*
 python-dotenv==1.0.*
 xlsx2csv==0.8.*
+ruff
