@@ -204,14 +204,14 @@ def get_number_of_total_docs() -> int:
 
 def get_indices_and_doc_counts() -> Dict[str, int]:
     es = Elasticsearch()
-    indices = es.cat.indices(index=list_index_names(), format="json")
+    indices: list[dict[str, str]] = es.cat.indices(index=list_index_names(), format="json")  # type: ignore
     index_to_alias = get_index_to_alias()
     return {index_to_alias[index["index"]]: int(index["docs.count"]) for index in indices}
 
 
 def get_index_to_alias() -> Dict[str, str]:
     es = Elasticsearch()
-    aliases = es.cat.aliases(name=list_index_names(), format="json")
+    aliases: list[dict[str, str]] = es.cat.aliases(name=list_index_names(), format="json")  # type: ignore
     return {item["index"]: item["alias"] for item in aliases}
 
 

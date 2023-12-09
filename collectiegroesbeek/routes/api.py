@@ -1,3 +1,5 @@
+from typing import Any
+
 import flask
 
 from .. import app
@@ -7,6 +9,8 @@ from ..model import index_name_to_doctype
 @app.route("/api/columns/")
 def datatables_api_columns():
     index_name = flask.request.args.get("index")
+    if index_name is None:
+        return flask.abort(400)
     doctype = index_name_to_doctype[index_name]
     columns = doctype.get_columns()
     return [{"data": column, "title": column} for column in columns]
@@ -14,8 +18,8 @@ def datatables_api_columns():
 
 @app.route("/api/rows/", methods=["POST"])
 def datatables_api():
-    req = flask.request.json
-    index_name = req["index"]
+    req: dict[str, Any] = flask.request.json  # type: ignore
+    index_name: str = req["index"]
     doctype = index_name_to_doctype[index_name]
     s = doctype.search()
     columns = doctype.get_columns()

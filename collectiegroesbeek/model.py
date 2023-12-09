@@ -319,7 +319,9 @@ class MaatboekHeemskerkDoc(BaseDocument):
     @classmethod
     def from_csv_line(cls, line: List[str]) -> Optional["MaatboekHeemskerkDoc"]:
         # Return early, we'll discard it later using `is_valid`.
-        if not parse_entry_optional(line[0]) or not any(parse_entry_optional(value) for value in line[1:]):
+        if not parse_entry_optional(line[0]) or not any(
+            parse_entry_optional(value) for value in line[1:]
+        ):
             return None
         doc = cls()
         doc.meta.id = line[0]

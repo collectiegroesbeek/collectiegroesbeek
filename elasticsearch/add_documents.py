@@ -31,7 +31,7 @@ class CardProcessor:
         self.dryrun = dryrun
         self.client = connections.get_connection()
         self._movers: Dict[str, IndexMover] = {}
-        self._items = []
+        self._items: list[dict] = []
 
     def register_index(self, doctype):
         """Mark an index as being updated, creating an IndexMover instance."""
@@ -84,7 +84,9 @@ class IndexMover:
 
 def filename_to_doctype(filename):
     filename = filename.lower()
-    index_number = int(re.match(r"coll gr (\d+) .*", filename).group(1))
+    match = re.match(r"coll gr (\d+) .*", filename)
+    assert match is not None
+    index_number = int(match.group(1))
     return index_number_to_doctype[index_number]
 
 

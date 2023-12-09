@@ -29,7 +29,7 @@ def home():
 
 @app.route("/zoek/")
 def search():
-    q: str = flask.request.args.get("q")
+    q: str = flask.request.args.get("q", default="", type=str)
     doctypes_selection: List[Type[BaseDocument]] = [
         index_name_to_doctype[index_name] for index_name in flask.request.args.getlist("index")
     ]
