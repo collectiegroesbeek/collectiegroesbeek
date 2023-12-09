@@ -121,8 +121,15 @@ def browse():
     )
 
 
-with open("names.txt", encoding="utf-8") as f:
-    NAMES = f.readlines()
+def _load_names() -> list[str]:
+    filepath = os.path.abspath(
+        os.path.join(os.path.abspath(__file__), "..", "..", "..", "names.txt")
+    )
+    with open(filepath, encoding="utf-8") as f:
+        return f.readlines()
+
+
+NAMES = _load_names()
 
 
 @app.route("/namen/")
