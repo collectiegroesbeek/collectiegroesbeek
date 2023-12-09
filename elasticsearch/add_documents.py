@@ -26,8 +26,9 @@ def logging_setup():
 
 
 class CardProcessor:
-    def __init__(self, batch_size=500):
+    def __init__(self, batch_size=500, dryrun: bool = False):
         self.batch_size = batch_size
+        self.dryrun = dryrun
         self.client = connections.get_connection()
         self._movers: Dict[str, IndexMover] = {}
         self._items = []
@@ -37,17 +38,19 @@ class CardProcessor:
         key = doctype.Index.name
         if key in self._movers:
             return
-        self._movers[key] = IndexMover(doctype)
+        if not self.dryrun:
+            self._movers[key] = IndexMover(doctype)
 
     def add(self, card: BaseDocument):
         d = card.to_dict(include_meta=True)
-        d["_index"] = self._movers[d["_index"]].new_name
+        if not self.dryrun:
+            d["_index"] = self._movers[d["_index"]].new_name
         self._items.append(d)
         if len(self._items) > self.batch_size:
             self.flush()
 
     def flush(self):
-        if len(self._items) > 0:
+        if len(self._items) > 0 and not self.dryrun:
             bulk(self.client, self._items)
         self._items = []
 
@@ -85,8 +88,8 @@ def filename_to_doctype(filename):
     return index_number_to_doctype[index_number]
 
 
-def run(path, doctype_name: Optional[str]):
-    processor = CardProcessor()
+def run(path, doctype_name: Optional[str], dryrun: bool):
+    processor = CardProcessor(dryrun=dryrun)
     filenames = sorted(filename for filename in os.listdir(path) if filename.endswith(".csv"))
     pbar = tqdm.tqdm(filenames)
     for filename in pbar:
@@ -117,5 +120,6 @@ if __name__ == "__main__":
         "--path", default="../collectiegroesbeek-data", help="Folder with the CSV data files."
     )
     parser.add_argument("--doctype", required=False, help="Limit ingestion to this index only")
+    parser.add_argument("--dryrun", action="store_true", help="Don't actually ingest")
     options = parser.parse_args()
-    run(path=options.path, doctype_name=options.doctype)
+    run(path=options.path, doctype_name=options.doctype, dryrun=options.dryrun)
