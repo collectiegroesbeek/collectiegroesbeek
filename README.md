@@ -1,4 +1,8 @@
-# collectiegroesbeek
+[![Mypy](https://github.com/collectiegroesbeek/collectiegroesbeek/actions/workflows/mypy.yml/badge.svg)](https://github.com/collectiegroesbeek/collectiegroesbeek/actions/workflows/mypy.yml)
+[![Ruff](https://github.com/collectiegroesbeek/collectiegroesbeek/actions/workflows/ruff.yml/badge.svg)](https://github.com/collectiegroesbeek/collectiegroesbeek/actions/workflows/ruff.yml)
+[![Tests](https://github.com/collectiegroesbeek/collectiegroesbeek/actions/workflows/pytest.yml/badge.svg)](https://github.com/collectiegroesbeek/collectiegroesbeek/actions/workflows/pytest.yml)
+
+# Collectie Groesbeek
 Flask and Elasticsearch webapp for the Collectie Groesbeek historical index.
 
 
