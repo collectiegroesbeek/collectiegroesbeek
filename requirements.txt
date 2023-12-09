@@ -1,8 +1,10 @@
-flask==2.2.*
+dropbox==11.36.*
 elasticsearch==7.17.*
 elasticsearch-dsl==7.4.*
-tqdm
-dropbox==11.36.*
+flask==2.2.*
+mypy
+pre-commit
 python-dotenv==1.0.*
-xlsx2csv==0.8.*
 ruff
+tqdm
+xlsx2csv==0.8.*
