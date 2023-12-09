@@ -5,7 +5,6 @@ import elasticsearch_dsl
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import connections, Q, Search
 from elasticsearch_dsl.query import MultiMatch, Query
-from elasticsearch_dsl.response import Hit
 
 from . import app
 from .model import CardNameDoc, BaseDocument, list_doctypes, index_name_to_doctype, list_index_names
