@@ -5,38 +5,38 @@ from elasticsearch_dsl import Document, Index, Text, Keyword, Short
 
 
 class BaseDocument(Document):
-
     class Index:
-        name: str = ''
+        name: str = ""
 
     @classmethod
     def _matches(cls, hit):
         # override _matches to match indices in a pattern instead of just ALIAS
         # hit is the raw dict as returned by elasticsearch
-        return bool(re.match(cls.Index.name + r'_\d{10}', hit['_index']))
+        return bool(re.match(cls.Index.name + r"_\d{10}", hit["_index"]))
 
     @classmethod
     def _get_mapping(cls) -> dict:
-        return cls._doc_type.mapping.to_dict()['properties']
+        return cls._doc_type.mapping.to_dict()["properties"]
 
     @classmethod
     def get_columns(cls) -> List[str]:
         """Return the field names to display."""
-        return [field for field in cls._get_mapping().keys()
-                if field not in ('naam_keyword', 'jaar')]
+        return [
+            field for field in cls._get_mapping().keys() if field not in ("naam_keyword", "jaar")
+        ]
 
     @classmethod
     def get_sort_field(cls, field: str) -> str:
         """Return the correct ES field to sort on."""
         mapping = cls._get_mapping()
         field_definition = mapping[field]
-        if field_definition['type'] == 'text':
-            return f'{field}.keyword'
+        if field_definition["type"] == "text":
+            return f"{field}.keyword"
         else:
             return field
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['BaseDocument']:
+    def from_csv_line(cls, line: List[str]) -> Optional["BaseDocument"]:
         raise NotImplementedError()
 
     @staticmethod
@@ -62,24 +62,24 @@ class BaseDocument(Document):
 
 
 class CardNameDoc(BaseDocument):
-    datum: Optional[str] = Text(fields={'keyword': Keyword()})
-    naam: Optional[str] = Text(fields={'keyword': Keyword()})
-    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
-    bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
-    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
+    datum: Optional[str] = Text(fields={"keyword": Keyword()})
+    naam: Optional[str] = Text(fields={"keyword": Keyword()})
+    inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
+    bron: Optional[str] = Text(fields={"keyword": Keyword()})
+    getuigen: Optional[str] = Text(fields={"keyword": Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
     naam_keyword: Optional[str] = Keyword()
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'achternamen'
+        name: str = "achternamen"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['CardNameDoc']:
+    def from_csv_line(cls, line: List[str]) -> Optional["CardNameDoc"]:
         doc = cls()
         if len(line[0]) == 0:
             return None
@@ -100,7 +100,7 @@ class CardNameDoc(BaseDocument):
 
     def is_valid(self):
         # At the end of a file there may be empty lines, skip them.
-        if getattr(self.meta, 'id', None) is None:
+        if getattr(self.meta, "id", None) is None:
             return False
         # Skip row if there is no data except an id. This happens a lot at the end of a file.
         if self.naam is None and self.datum is None:
@@ -109,17 +109,17 @@ class CardNameDoc(BaseDocument):
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['naam^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron']
+        return ["naam^3", "datum^3", "inhoud^2", "getuigen", "bron"]
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Achternamenindex'
+        return "Achternamenindex"
 
     def get_title(self) -> str:
-        return '{} | {}'.format(self.naam or '', self.datum or '')
+        return "{} | {}".format(self.naam or "", self.datum or "")
 
     def get_subtitle(self) -> str:
-        return self.bron or ''
+        return self.bron or ""
 
     def get_body_lines(self) -> List[str]:
         out = [self.inhoud, self.getuigen, self.bijzonderheden]
@@ -133,12 +133,12 @@ class CardNameDoc(BaseDocument):
 def create_name_keyword(naam: str) -> str:
     """Get a single keyword from the name field."""
     # todo: fix this one: Albrecht (St), van
-    if len(naam.split(',')) >= 2:
-        return naam.split(',')[0]
-    elif len(naam.split('~')) >= 2:
-        return naam.split('~')[0]
-    elif len(naam.split(' ')) >= 2:
-        return naam.split(' ')[0]
+    if len(naam.split(",")) >= 2:
+        return naam.split(",")[0]
+    elif len(naam.split("~")) >= 2:
+        return naam.split("~")[0]
+    elif len(naam.split(" ")) >= 2:
+        return naam.split(" ")[0]
     else:
         return naam
 
@@ -154,24 +154,24 @@ def create_year(datum: str) -> Optional[int]:
 
 
 class VoornamenDoc(BaseDocument):
-    datum: Optional[str] = Text(fields={'keyword': Keyword()})
-    voornaam: Optional[str] = Text(fields={'keyword': Keyword()})
-    patroniem: Optional[str] = Text(fields={'keyword': Keyword()})
-    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
-    bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
-    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
+    datum: Optional[str] = Text(fields={"keyword": Keyword()})
+    voornaam: Optional[str] = Text(fields={"keyword": Keyword()})
+    patroniem: Optional[str] = Text(fields={"keyword": Keyword()})
+    inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
+    bron: Optional[str] = Text(fields={"keyword": Keyword()})
+    getuigen: Optional[str] = Text(fields={"keyword": Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'voornamen'
+        name: str = "voornamen"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['VoornamenDoc']:
+    def from_csv_line(cls, line: List[str]) -> Optional["VoornamenDoc"]:
         doc = cls()
         if len(line[0]) == 0:
             return None
@@ -191,7 +191,7 @@ class VoornamenDoc(BaseDocument):
 
     def is_valid(self):
         # At the end of a file there may be empty lines, skip them.
-        if getattr(self.meta, 'id', None) is None:
+        if getattr(self.meta, "id", None) is None:
             return False
         # Skip row if there is no data except an id. This happens a lot at the end of a file.
         if self.voornaam is None and self.datum is None:
@@ -200,17 +200,17 @@ class VoornamenDoc(BaseDocument):
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['voornaam^3', 'patroniem^3', 'datum^3', 'inhoud^2', 'getuigen', 'bron']
+        return ["voornaam^3", "patroniem^3", "datum^3", "inhoud^2", "getuigen", "bron"]
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Voornamenindex'
+        return "Voornamenindex"
 
     def get_title(self) -> str:
-        return '{} {} | {}'.format(self.voornaam or '', self.patroniem or '', self.datum or '')
+        return "{} {} | {}".format(self.voornaam or "", self.patroniem or "", self.datum or "")
 
     def get_subtitle(self) -> str:
-        return self.bron or ''
+        return self.bron or ""
 
     def get_body_lines(self) -> List[str]:
         out = [self.inhoud, self.getuigen, self.bijzonderheden]
@@ -224,25 +224,24 @@ class VoornamenDoc(BaseDocument):
         )
 
 
-
 class JaartallenDoc(BaseDocument):
-    datum: Optional[str] = Text(fields={'keyword': Keyword()})
-    locatie: Optional[str] = Text(fields={'keyword': Keyword()})
-    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
-    bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
-    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
+    datum: Optional[str] = Text(fields={"keyword": Keyword()})
+    locatie: Optional[str] = Text(fields={"keyword": Keyword()})
+    inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
+    bron: Optional[str] = Text(fields={"keyword": Keyword()})
+    getuigen: Optional[str] = Text(fields={"keyword": Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'jaartallen'
+        name: str = "jaartallen"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['JaartallenDoc']:
+    def from_csv_line(cls, line: List[str]) -> Optional["JaartallenDoc"]:
         doc = cls()
         if len(line[0]) == 0:
             return None
@@ -261,7 +260,7 @@ class JaartallenDoc(BaseDocument):
 
     def is_valid(self):
         # At the end of a file there may be empty lines, skip them.
-        if getattr(self.meta, 'id', None) is None:
+        if getattr(self.meta, "id", None) is None:
             return False
         # Skip row if there is no data except an id. This happens a lot at the end of a file.
         if self.datum is None:
@@ -270,17 +269,17 @@ class JaartallenDoc(BaseDocument):
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['datum^3', 'locatie^3', 'inhoud^2', 'getuigen', 'bron']
+        return ["datum^3", "locatie^3", "inhoud^2", "getuigen", "bron"]
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Jaartallenindex'
+        return "Jaartallenindex"
 
     def get_title(self) -> str:
-        return '{} | {}'.format(self.datum or '', self.locatie or '')
+        return "{} | {}".format(self.datum or "", self.locatie or "")
 
     def get_subtitle(self) -> str:
-        return self.bron or ''
+        return self.bron or ""
 
     def get_body_lines(self) -> List[str]:
         out = [self.inhoud, self.getuigen, self.bijzonderheden]
@@ -295,31 +294,30 @@ class JaartallenDoc(BaseDocument):
         )
 
 
-
 class MaatboekHeemskerkDoc(BaseDocument):
-    locatie: Optional[str] = Text(fields={'keyword': Keyword()})
-    sector: Optional[str] = Text(fields={'keyword': Keyword()})
+    locatie: Optional[str] = Text(fields={"keyword": Keyword()})
+    sector: Optional[str] = Text(fields={"keyword": Keyword()})
 
-    eigenaar: Optional[str] = Text(fields={'keyword': Keyword()})
-    huurder: Optional[str] = Text(fields={'keyword': Keyword()})
+    eigenaar: Optional[str] = Text(fields={"keyword": Keyword()})
+    huurder: Optional[str] = Text(fields={"keyword": Keyword()})
 
-    oppervlakte: Optional[str] = Text(fields={'keyword': Keyword()})
-    prijs: Optional[str] = Text(fields={'keyword': Keyword()})
+    oppervlakte: Optional[str] = Text(fields={"keyword": Keyword()})
+    prijs: Optional[str] = Text(fields={"keyword": Keyword()})
 
-    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    datum: Optional[str] = Text(fields={"keyword": Keyword()})
     jaar: Optional[int] = Short()
 
-    bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bron: Optional[str] = Text(fields={"keyword": Keyword()})
+    opmerkingen: Optional[str] = Text(fields={"keyword": Keyword()})
 
     class Index:
-        name: str = 'maatboek-heemskerk'
+        name: str = "maatboek-heemskerk"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['MaatboekHeemskerkDoc']:
+    def from_csv_line(cls, line: List[str]) -> Optional["MaatboekHeemskerkDoc"]:
         # Return early, we'll discard it later using `is_valid`.
         if not parse_entry(line[0]) or not any(parse_entry(value) for value in line[1:]):
             return None
@@ -339,32 +337,40 @@ class MaatboekHeemskerkDoc(BaseDocument):
 
     @staticmethod
     def parse_year(datum: Optional[str]) -> Optional[int]:
-        res = re.search(r'\d{4}', datum or '')
+        res = re.search(r"\d{4}", datum or "")
         return int(res[0]) if res else None
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['locatie^3', 'sector^3', 'datum^3', 'eigenaar^2', 'huurder^2', 'oppervlakte', 'bron']
+        return [
+            "locatie^3",
+            "sector^3",
+            "datum^3",
+            "eigenaar^2",
+            "huurder^2",
+            "oppervlakte",
+            "bron",
+        ]
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Maatboek Heemskerk'
+        return "Maatboek Heemskerk"
 
     def get_title(self) -> str:
-        title = self.sector or self.locatie or self.eigenaar or self.huurder or ''
+        title = self.sector or self.locatie or self.eigenaar or self.huurder or ""
         if self.datum:
-            title += ' | ' + self.datum
+            title += " | " + self.datum
         return title
 
     def get_subtitle(self) -> str:
-        return self.bron or ''
+        return self.bron or ""
 
     def get_body_lines(self) -> List[str]:
         out = [
             self.locatie,
             self.sector,
-            'eigenaar: ' + self.eigenaar if self.eigenaar else None,
-            'huurder: ' + self.huurder if self.huurder else None,
+            "eigenaar: " + self.eigenaar if self.eigenaar else None,
+            "huurder: " + self.huurder if self.huurder else None,
             self.oppervlakte,
             self.prijs,
             self.opmerkingen,
@@ -380,23 +386,23 @@ class MaatboekHeemskerkDoc(BaseDocument):
 
 
 class MaatboekHeemstedeDoc(BaseDocument):
-    ligging: Optional[str] = Text(fields={'keyword': Keyword()})
-    eigenaar: Optional[str] = Text(fields={'keyword': Keyword()})
-    huurder: Optional[str] = Text(fields={'keyword': Keyword()})
-    prijs: Optional[str] = Text(fields={'keyword': Keyword()})
-    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    ligging: Optional[str] = Text(fields={"keyword": Keyword()})
+    eigenaar: Optional[str] = Text(fields={"keyword": Keyword()})
+    huurder: Optional[str] = Text(fields={"keyword": Keyword()})
+    prijs: Optional[str] = Text(fields={"keyword": Keyword()})
+    datum: Optional[str] = Text(fields={"keyword": Keyword()})
     jaar: Optional[int] = Short()
-    bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bron: Optional[str] = Text(fields={"keyword": Keyword()})
+    opmerkingen: Optional[str] = Text(fields={"keyword": Keyword()})
 
     class Index:
-        name: str = 'maatboek-heemstede'
+        name: str = "maatboek-heemstede"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['MaatboekHeemstedeDoc']:
+    def from_csv_line(cls, line: List[str]) -> Optional["MaatboekHeemstedeDoc"]:
         # Return early, we'll discard it later using `is_valid`.
         if not any(parse_entry(value) for value in line[1:]):
             return None
@@ -414,31 +420,31 @@ class MaatboekHeemstedeDoc(BaseDocument):
 
     @staticmethod
     def parse_year(datum: Optional[str]) -> Optional[int]:
-        res = re.search(r'\d{4}', datum or '')
+        res = re.search(r"\d{4}", datum or "")
         return int(res[0]) if res else None
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['liggng^3', 'datum^3', 'eigenaar^2', 'huurder^2', 'bron']
+        return ["liggng^3", "datum^3", "eigenaar^2", "huurder^2", "bron"]
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Maatboek Heemstede'
+        return "Maatboek Heemstede"
 
     def get_title(self) -> str:
-        title = self.ligging or self.eigenaar or self.huurder or ''
+        title = self.ligging or self.eigenaar or self.huurder or ""
         if self.datum:
-            title += ' | ' + self.datum
+            title += " | " + self.datum
         return title
 
     def get_subtitle(self) -> str:
-        return self.bron or ''
+        return self.bron or ""
 
     def get_body_lines(self) -> List[str]:
         out = [
             self.ligging,
-            'eigenaar: ' + self.eigenaar if self.eigenaar else None,
-            'huurder: ' + self.huurder if self.huurder else None,
+            "eigenaar: " + self.eigenaar if self.eigenaar else None,
+            "huurder: " + self.huurder if self.huurder else None,
             self.prijs,
             self.opmerkingen,
         ]
@@ -452,23 +458,23 @@ class MaatboekHeemstedeDoc(BaseDocument):
 
 
 class MaatboekBroekInWaterlandDoc(BaseDocument):
-    sector: Optional[str] = Text(fields={'keyword': Keyword()})
-    ligging: Optional[str] = Text(fields={'keyword': Keyword()})
-    oppervlakte: Optional[str] = Text(fields={'keyword': Keyword()})
-    eigenaar: Optional[str] = Text(fields={'keyword': Keyword()})
-    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    sector: Optional[str] = Text(fields={"keyword": Keyword()})
+    ligging: Optional[str] = Text(fields={"keyword": Keyword()})
+    oppervlakte: Optional[str] = Text(fields={"keyword": Keyword()})
+    eigenaar: Optional[str] = Text(fields={"keyword": Keyword()})
+    datum: Optional[str] = Text(fields={"keyword": Keyword()})
     jaar: Optional[int] = Short()
-    bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bron: Optional[str] = Text(fields={"keyword": Keyword()})
+    opmerkingen: Optional[str] = Text(fields={"keyword": Keyword()})
 
     class Index:
-        name: str = 'maatboek-broek-in-waterland'
+        name: str = "maatboek-broek-in-waterland"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['MaatboekBroekInWaterlandDoc']:
+    def from_csv_line(cls, line: List[str]) -> Optional["MaatboekBroekInWaterlandDoc"]:
         # Return early, we'll discard it later using `is_valid`.
         if not any(parse_entry(value) for value in line[1:]):
             return None
@@ -486,32 +492,32 @@ class MaatboekBroekInWaterlandDoc(BaseDocument):
 
     @staticmethod
     def parse_year(datum: Optional[str]) -> Optional[int]:
-        res = re.search(r'\d{4}', datum or '')
+        res = re.search(r"\d{4}", datum or "")
         return int(res[0]) if res else None
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['sector^3', 'ligging^3', 'datum^3', 'eigenaar^2', 'oppervlakte', 'bron']
+        return ["sector^3", "ligging^3", "datum^3", "eigenaar^2", "oppervlakte", "bron"]
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Maatboek Broek in Waterland'
+        return "Maatboek Broek in Waterland"
 
     def get_title(self) -> str:
-        title = self.sector or self.ligging or self.eigenaar or ''
+        title = self.sector or self.ligging or self.eigenaar or ""
         if self.datum:
-            title += ' | ' + self.datum
+            title += " | " + self.datum
         return title
 
     def get_subtitle(self) -> str:
-        return self.bron or ''
+        return self.bron or ""
 
     def get_body_lines(self) -> List[str]:
         out = [
             self.sector,
             self.ligging,
             self.oppervlakte,
-            'eigenaar: ' + self.eigenaar if self.eigenaar else None,
+            "eigenaar: " + self.eigenaar if self.eigenaar else None,
             self.opmerkingen,
         ]
         return [value for value in out if value]
@@ -522,23 +528,23 @@ class MaatboekBroekInWaterlandDoc(BaseDocument):
 
 
 class MaatboekSuderwoude(BaseDocument):
-    sector: Optional[str] = Text(fields={'keyword': Keyword()})
-    ligging: Optional[str] = Text(fields={'keyword': Keyword()})
-    oppervlakte: Optional[str] = Text(fields={'keyword': Keyword()})
-    eigenaar: Optional[str] = Text(fields={'keyword': Keyword()})
-    datum: Optional[str] = Text(fields={'keyword': Keyword()})
+    sector: Optional[str] = Text(fields={"keyword": Keyword()})
+    ligging: Optional[str] = Text(fields={"keyword": Keyword()})
+    oppervlakte: Optional[str] = Text(fields={"keyword": Keyword()})
+    eigenaar: Optional[str] = Text(fields={"keyword": Keyword()})
+    datum: Optional[str] = Text(fields={"keyword": Keyword()})
     jaar: Optional[int] = Short()
-    bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
+    bron: Optional[str] = Text(fields={"keyword": Keyword()})
+    opmerkingen: Optional[str] = Text(fields={"keyword": Keyword()})
 
     class Index:
-        name: str = 'maatboek-suderwoude'
+        name: str = "maatboek-suderwoude"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['MaatboekSuderwoude']:
+    def from_csv_line(cls, line: List[str]) -> Optional["MaatboekSuderwoude"]:
         # Return early, we'll discard it later using `is_valid`.
         if not any(parse_entry(value) for value in line[1:]):
             return None
@@ -556,32 +562,32 @@ class MaatboekSuderwoude(BaseDocument):
 
     @staticmethod
     def parse_year(datum: Optional[str]) -> Optional[int]:
-        res = re.search(r'\d{4}', datum or '')
+        res = re.search(r"\d{4}", datum or "")
         return int(res[0]) if res else None
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['sector^3', 'ligging^3', 'datum^3', 'eigenaar^2', 'oppervlakte', 'bron']
+        return ["sector^3", "ligging^3", "datum^3", "eigenaar^2", "oppervlakte", "bron"]
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Maatboek Suderwoude'
+        return "Maatboek Suderwoude"
 
     def get_title(self) -> str:
-        title = self.sector or self.ligging or self.eigenaar or ''
+        title = self.sector or self.ligging or self.eigenaar or ""
         if self.datum:
-            title += ' | ' + self.datum
+            title += " | " + self.datum
         return title
 
     def get_subtitle(self) -> str:
-        return self.bron or ''
+        return self.bron or ""
 
     def get_body_lines(self) -> List[str]:
         out = [
             self.sector,
             self.ligging,
             self.oppervlakte,
-            'eigenaar: ' + self.eigenaar if self.eigenaar else None,
+            "eigenaar: " + self.eigenaar if self.eigenaar else None,
             self.opmerkingen,
         ]
         return [value for value in out if value]
@@ -591,27 +597,26 @@ class MaatboekSuderwoude(BaseDocument):
         return "Inventaris Hoogheemraadschap Waterland no 63, 1589, in sectoren"
 
 
-
 class EigendomsaktenHeemskerk(BaseDocument):
-    datum: Optional[str] = Text(fields={'keyword': Keyword()})
-    plaats: Optional[str] = Text(fields={'keyword': Keyword()})
-    verkoper: Optional[str] = Text(fields={'keyword': Keyword()})
-    koper: Optional[str] = Text(fields={'keyword': Keyword()})
-    omschrijving: Optional[str] = Text(fields={'keyword': Keyword()})
-    belending: Optional[str] = Text(fields={'keyword': Keyword()})
-    bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    opmerkingen: Optional[str] = Text(fields={'keyword': Keyword()})
+    datum: Optional[str] = Text(fields={"keyword": Keyword()})
+    plaats: Optional[str] = Text(fields={"keyword": Keyword()})
+    verkoper: Optional[str] = Text(fields={"keyword": Keyword()})
+    koper: Optional[str] = Text(fields={"keyword": Keyword()})
+    omschrijving: Optional[str] = Text(fields={"keyword": Keyword()})
+    belending: Optional[str] = Text(fields={"keyword": Keyword()})
+    bron: Optional[str] = Text(fields={"keyword": Keyword()})
+    opmerkingen: Optional[str] = Text(fields={"keyword": Keyword()})
 
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'eigendomsakten-heemskerk'
+        name: str = "eigendomsakten-heemskerk"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['EigendomsaktenHeemskerk']:
+    def from_csv_line(cls, line: List[str]) -> Optional["EigendomsaktenHeemskerk"]:
         # Return early, we'll discard it later using `is_valid`.
         if not any(parse_entry(value) for value in line[1:]):
             return None
@@ -630,30 +635,30 @@ class EigendomsaktenHeemskerk(BaseDocument):
 
     @staticmethod
     def parse_year(datum: Optional[str]) -> Optional[int]:
-        res = re.search(r'\d{4}', datum or '')
+        res = re.search(r"\d{4}", datum or "")
         return int(res[0]) if res else None
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['datum^3', 'plaats^3', 'verkoper', 'koper', 'omschrijving', 'belending', 'bron']
+        return ["datum^3", "plaats^3", "verkoper", "koper", "omschrijving", "belending", "bron"]
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Eigendomsakten Heemskerk'
+        return "Eigendomsakten Heemskerk"
 
     def get_title(self) -> str:
-        title = self.datum or ''
+        title = self.datum or ""
         return title
 
     def get_subtitle(self) -> str:
-        return self.bron or ''
+        return self.bron or ""
 
     def get_body_lines(self) -> List[str]:
         out = [
-            'verkoper: ' + self.verkoper if self.verkoper else None,
-            'koper: ' + self.koper if self.koper else None,
+            "verkoper: " + self.verkoper if self.verkoper else None,
+            "koper: " + self.koper if self.koper else None,
             self.omschrijving,
-            'belending: ' + self.belending if self.belending else None,
+            "belending: " + self.belending if self.belending else None,
             self.opmerkingen,
         ]
         return [value for value in out if value]
@@ -667,23 +672,23 @@ class EigendomsaktenHeemskerk(BaseDocument):
 
 
 class TiendeEnHonderdstePenning(BaseDocument):
-    datum: str = Text(fields={'keyword': Keyword()})
-    inhoud: str = Text(fields={'keyword': Keyword()})
-    folio_nr: str = Text(fields={'keyword': Keyword()})
-    vervolg_nr: Optional[str] = Text(fields={'keyword': Keyword()})
-    bron: str = Text(fields={'keyword': Keyword()})
-    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
+    datum: str = Text(fields={"keyword": Keyword()})
+    inhoud: str = Text(fields={"keyword": Keyword()})
+    folio_nr: str = Text(fields={"keyword": Keyword()})
+    vervolg_nr: Optional[str] = Text(fields={"keyword": Keyword()})
+    bron: str = Text(fields={"keyword": Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'tiende-en-honderdste-penning-bloemendaal'
+        name: str = "tiende-en-honderdste-penning-bloemendaal"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['TiendeEnHonderdstePenning']:
+    def from_csv_line(cls, line: List[str]) -> Optional["TiendeEnHonderdstePenning"]:
         # Return early, we'll discard it later using `is_valid`.
         if not any(parse_entry(value) for value in line[1:]):
             return None
@@ -700,29 +705,29 @@ class TiendeEnHonderdstePenning(BaseDocument):
 
     @staticmethod
     def parse_year(datum: Optional[str]) -> Optional[int]:
-        res = re.search(r'\d{4}', datum or '')
+        res = re.search(r"\d{4}", datum or "")
         return int(res[0]) if res else None
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['datum^3', 'inhoud', 'folio_nr', 'vervolg_nr', 'bron']
+        return ["datum^3", "inhoud", "folio_nr", "vervolg_nr", "bron"]
 
     @staticmethod
     def get_index_name_pretty():
-        return '10e en 100e Penning Bloemendaal'
+        return "10e en 100e Penning Bloemendaal"
 
     def get_title(self) -> str:
-        title = self.datum or ''
+        title = self.datum or ""
         return title
 
     def get_subtitle(self) -> str:
-        return self.bron or ''
+        return self.bron or ""
 
     def get_body_lines(self) -> List[str]:
         out = [
             self.inhoud,
-            'folio nummer: ' + self.folio_nr,
-            'vervolg nummer: ' + self.vervolg_nr if self.vervolg_nr else None,
+            "folio nummer: " + self.folio_nr,
+            "vervolg nummer: " + self.vervolg_nr if self.vervolg_nr else None,
             self.bijzonderheden,
         ]
         return [value for value in out if value]
@@ -736,16 +741,16 @@ class TiendeEnHonderdstePenning(BaseDocument):
 
 
 class BaseTransportregisterDoc(BaseDocument):
-    datum: Optional[str] = Text(fields={'keyword': Keyword()})
-    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
-    bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
-    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
+    datum: Optional[str] = Text(fields={"keyword": Keyword()})
+    inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
+    bron: Optional[str] = Text(fields={"keyword": Keyword()})
+    getuigen: Optional[str] = Text(fields={"keyword": Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
     jaar: Optional[int] = Short()
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['BaseTransportregisterDoc']:
+    def from_csv_line(cls, line: List[str]) -> Optional["BaseTransportregisterDoc"]:
         doc = cls()
         if len(line[0]) == 0:
             return None
@@ -763,7 +768,7 @@ class BaseTransportregisterDoc(BaseDocument):
 
     def is_valid(self):
         # At the end of a file there may be empty lines, skip them.
-        if getattr(self.meta, 'id', None) is None:
+        if getattr(self.meta, "id", None) is None:
             return False
         # Skip row if there is no data except an id. This happens a lot at the end of a file.
         if self.datum is None:
@@ -772,13 +777,13 @@ class BaseTransportregisterDoc(BaseDocument):
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['datum^3', 'inhoud^2', 'getuigen', 'bron']
+        return ["datum^3", "inhoud^2", "getuigen", "bron"]
 
     def get_title(self) -> str:
-        return '{}'.format(self.datum or '')
+        return "{}".format(self.datum or "")
 
     def get_subtitle(self) -> str:
-        return self.bron or ''
+        return self.bron or ""
 
     def get_body_lines(self) -> List[str]:
         out = [self.inhoud, self.getuigen, self.bijzonderheden]
@@ -786,16 +791,15 @@ class BaseTransportregisterDoc(BaseDocument):
 
 
 class TransportRegisterEgmondDoc(BaseTransportregisterDoc):
-
     class Index:
-        name: str = 'transportregister-egmond'
+        name: str = "transportregister-egmond"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Transportregister Egmond'
+        return "Transportregister Egmond"
 
     @staticmethod
     def get_description() -> str:
@@ -806,16 +810,15 @@ class TransportRegisterEgmondDoc(BaseTransportregisterDoc):
 
 
 class TransportRegisterBloemendaalDoc(BaseTransportregisterDoc):
-
     class Index:
-        name: str = 'transportregister-bloemendaal'
+        name: str = "transportregister-bloemendaal"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Transportregister Bloemendaal'
+        return "Transportregister Bloemendaal"
 
     @staticmethod
     def get_description() -> str:
@@ -826,16 +829,15 @@ class TransportRegisterBloemendaalDoc(BaseTransportregisterDoc):
 
 
 class TransportRegisterZijpeDoc(BaseTransportregisterDoc):
-
     class Index:
-        name: str = 'transportregister-zijpe'
+        name: str = "transportregister-zijpe"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Transportregister Zijpe'
+        return "Transportregister Zijpe"
 
     @staticmethod
     def get_description() -> str:
@@ -843,23 +845,23 @@ class TransportRegisterZijpeDoc(BaseTransportregisterDoc):
 
 
 class TransportRegisterHaarlemDoc(BaseDocument):
-    datum: str = Text(fields={'keyword': Keyword()})
-    inhoud: str = Text(fields={'keyword': Keyword()})
-    folio_nr: str = Text(fields={'keyword': Keyword()})
-    register_nr: str = Text(fields={'keyword': Keyword()})
-    vervolg_nr: str = Text(fields={'keyword': Keyword()})
-    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
+    datum: str = Text(fields={"keyword": Keyword()})
+    inhoud: str = Text(fields={"keyword": Keyword()})
+    folio_nr: str = Text(fields={"keyword": Keyword()})
+    register_nr: str = Text(fields={"keyword": Keyword()})
+    vervolg_nr: str = Text(fields={"keyword": Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'transportregister-haarlem'
+        name: str = "transportregister-haarlem"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['TransportRegisterHaarlemDoc']:
+    def from_csv_line(cls, line: List[str]) -> Optional["TransportRegisterHaarlemDoc"]:
         # Return early, we'll discard it later using `is_valid`.
         if not any(parse_entry(value) for value in line[1:]):
             return None
@@ -877,19 +879,19 @@ class TransportRegisterHaarlemDoc(BaseDocument):
 
     @staticmethod
     def parse_year(datum: Optional[str]) -> Optional[int]:
-        res = re.search(r'\d{4}', datum or '')
+        res = re.search(r"\d{4}", datum or "")
         return int(res[0]) if res else None
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['datum^3', 'inhoud', 'folio_nr', 'vervolg_nr']
+        return ["datum^3", "inhoud", "folio_nr", "vervolg_nr"]
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Transportregister Haarlem'
+        return "Transportregister Haarlem"
 
     def get_title(self) -> str:
-        return self.datum or ''
+        return self.datum or ""
 
     def get_subtitle(self) -> str:
         return f"folio {self.folio_nr} {self.vervolg_nr} {self.register_nr}"
@@ -911,23 +913,23 @@ class TransportRegisterHaarlemDoc(BaseDocument):
 
 
 class HaarlemAlgemeenDoc(BaseDocument):
-    datum: Optional[str] = Text(fields={'keyword': Keyword()})
-    locatie: Optional[str] = Text(fields={'keyword': Keyword()})
-    inhoud: Optional[str] = Text(fields={'keyword': Keyword()})
-    bron: Optional[str] = Text(fields={'keyword': Keyword()})
-    getuigen: Optional[str] = Text(fields={'keyword': Keyword()})
-    bijzonderheden: Optional[str] = Text(fields={'keyword': Keyword()})
+    datum: Optional[str] = Text(fields={"keyword": Keyword()})
+    locatie: Optional[str] = Text(fields={"keyword": Keyword()})
+    inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
+    bron: Optional[str] = Text(fields={"keyword": Keyword()})
+    getuigen: Optional[str] = Text(fields={"keyword": Keyword()})
+    bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
     jaar: Optional[int] = Short()
 
     class Index:
-        name: str = 'haarlem-algemeen'
+        name: str = "haarlem-algemeen"
 
         def __new__(cls):
             return Index(name=cls.name)
 
     @classmethod
-    def from_csv_line(cls, line: List[str]) -> Optional['JaartallenDoc']:
+    def from_csv_line(cls, line: List[str]) -> Optional["JaartallenDoc"]:
         doc = cls()
         if len(line[0]) == 0:
             return None
@@ -946,17 +948,17 @@ class HaarlemAlgemeenDoc(BaseDocument):
 
     @staticmethod
     def get_multimatch_fields() -> List[str]:
-        return ['datum^3', 'locatie^3', 'inhoud^2', 'getuigen', 'bron']
+        return ["datum^3", "locatie^3", "inhoud^2", "getuigen", "bron"]
 
     @staticmethod
     def get_index_name_pretty():
-        return 'Haarlem Algemeen'
+        return "Haarlem Algemeen"
 
     def get_title(self) -> str:
-        return '{} | {}'.format(self.datum or '', self.locatie or '')
+        return "{} | {}".format(self.datum or "", self.locatie or "")
 
     def get_subtitle(self) -> str:
-        return self.bron or ''
+        return self.bron or ""
 
     def get_body_lines(self) -> List[str]:
         out = [self.inhoud, self.getuigen, self.bijzonderheden]
@@ -994,8 +996,7 @@ index_number_to_doctype = {
 
 
 index_name_to_doctype = {
-    doctype.Index.name: doctype
-    for doctype in index_number_to_doctype.values()
+    doctype.Index.name: doctype for doctype in index_number_to_doctype.values()
 }
 
 

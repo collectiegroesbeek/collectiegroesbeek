@@ -12,25 +12,26 @@ from ..controller import get_doc, get_number_of_total_docs, get_indices_and_doc_
 from ..model import BaseDocument, list_doctypes, index_name_to_doctype
 
 
-@app.route('/')
+@app.route("/")
 def home():
     n_total_docs = get_number_of_total_docs()
     n_total_docs_str = format_int(n_total_docs)
-    index_to_doc_count = {index: format_int(count) for index, count in get_indices_and_doc_counts().items()}
+    index_to_doc_count = {
+        index: format_int(count) for index, count in get_indices_and_doc_counts().items()
+    }
     return flask.render_template(
-        'index.html',
+        "index.html",
         n_total_docs=n_total_docs_str,
         doctypes=list_doctypes(),
         index_to_doc_count=index_to_doc_count,
     )
 
 
-@app.route('/zoek/')
+@app.route("/zoek/")
 def search():
-    q: str = flask.request.args.get('q')
+    q: str = flask.request.args.get("q")
     doctypes_selection: List[Type[BaseDocument]] = [
-         index_name_to_doctype[index_name]
-         for index_name in flask.request.args.getlist('index')
+        index_name_to_doctype[index_name] for index_name in flask.request.args.getlist("index")
     ]
     if not doctypes_selection:
         doctypes_selection = [list_doctypes()[0]]
@@ -40,20 +41,24 @@ def search():
     ]
     if q is None:
         return flask.render_template(
-            'search.html',
+            "search.html",
             doctypes=doctypes,
         )
     cards_per_page = 10
-    page = flask.request.args.get('page', default=1, type=int)
-    searcher = controller.Searcher(q.lower(), start=(page - 1) * cards_per_page,
-                                   size=cards_per_page, doctypes=doctypes_selection)
+    page = flask.request.args.get("page", default=1, type=int)
+    searcher = controller.Searcher(
+        q.lower(),
+        start=(page - 1) * cards_per_page,
+        size=cards_per_page,
+        doctypes=doctypes_selection,
+    )
     hits = searcher.get_results()
     hits_formatted = [format_hit(hit) for hit in hits]
     hits_total = searcher.count()
     page_range = controller.get_page_range(hits_total, page, cards_per_page)
-    query_string = f'?q={quote(q)}'
+    query_string = f"?q={quote(q)}"
     query_string = add_selected_doctypes_to_query_string(query_string, doctypes_selection)
-    query_string += '&page='
+    query_string += "&page="
 
     if page == 1:
         suggestions = controller.get_suggestions(searcher.keywords)
@@ -62,13 +67,13 @@ def search():
     suggestion_urls = {}
     for token, _suggs in suggestions.items():
         for suggestion in _suggs:
-            q_new = re.sub(r'\b{}\b'.format(token), f'{token} {suggestion}', q)
-            url = f'?q={quote(q_new)}'
+            q_new = re.sub(r"\b{}\b".format(token), f"{token} {suggestion}", q)
+            url = f"?q={quote(q_new)}"
             url = add_selected_doctypes_to_query_string(url, doctypes_selection)
             suggestion_urls[suggestion] = url
 
     return flask.render_template(
-        'cards.html',
+        "cards.html",
         hits=hits_formatted,
         hits_total=hits_total,
         q=q,
@@ -81,35 +86,34 @@ def search():
 
 
 def add_selected_doctypes_to_query_string(
-        query_string: str,
-        doctypes_selection: List[Type[BaseDocument]]
+    query_string: str, doctypes_selection: List[Type[BaseDocument]]
 ) -> str:
     for doctype in doctypes_selection:
-        query_string += f'&index={doctype.Index.name}'
+        query_string += f"&index={doctype.Index.name}"
     return query_string
 
 
 def format_hit(doc: BaseDocument) -> dict:
     return {
-        'id': doc.meta.id,
-        'score': doc.meta.score,
-        'index': doc.get_index_name_pretty(),
-        'title': doc.get_title(),
-        'subtitle': doc.get_subtitle(),
-        'body_lines': doc.get_body_lines(),
+        "id": doc.meta.id,
+        "score": doc.meta.score,
+        "index": doc.get_index_name_pretty(),
+        "title": doc.get_title(),
+        "subtitle": doc.get_subtitle(),
+        "body_lines": doc.get_body_lines(),
     }
 
 
-@app.route('/doc/<int:doc_id>')
+@app.route("/doc/<int:doc_id>")
 def get_product(doc_id):
     doc = get_doc(doc_id)
     doc_formatted = format_hit(doc)
-    return flask.render_template('card.html', hit=doc_formatted)
+    return flask.render_template("card.html", hit=doc_formatted)
 
 
-@app.route('/verken/')
+@app.route("/verken/")
 def browse():
-    index_name = flask.request.args.get('index', None)
+    index_name = flask.request.args.get("index", None)
     return flask.render_template(
         "browse.html",
         index_name=index_name,
@@ -121,21 +125,17 @@ with open("names.txt", encoding="utf-8") as f:
     NAMES = f.readlines()
 
 
-@app.route('/namen/')
+@app.route("/namen/")
 def names_ner():
-    query = flask.request.args.get('q', '').lower().strip()
-    page = int(flask.request.args.get('page', 1))
-    return flask.render_template(
-        "names_ner.html",
-        query=query,
-        page=page
-    )
+    query = flask.request.args.get("q", "").lower().strip()
+    page = int(flask.request.args.get("page", 1))
+    return flask.render_template("names_ner.html", query=query, page=page)
 
 
-@app.route('/namen/search/', methods=['GET'])
+@app.route("/namen/search/", methods=["GET"])
 def search_names_ner():
-    query = flask.request.args.get('q', '').lower().strip()
-    page = int(flask.request.args.get('page', 1))
+    query = flask.request.args.get("q", "").lower().strip()
+    page = int(flask.request.args.get("page", 1))
     per_page = 1000
     if query:
         filtered_names = [name for name in NAMES if query in name.lower()]
@@ -146,15 +146,17 @@ def search_names_ner():
     end = start + per_page
     total_pages = -(-len(filtered_names) // per_page)  # Equivalent to ceiling division
 
-    return flask.jsonify({
-        'page': page,
-        'per_page': per_page,
-        'total_pages': total_pages,
-        'names': filtered_names[start:end]
-    })
+    return flask.jsonify(
+        {
+            "page": page,
+            "per_page": per_page,
+            "total_pages": total_pages,
+            "names": filtered_names[start:end],
+        }
+    )
 
 
-@app.route('/publicaties/', methods=['GET'])
+@app.route("/publicaties/", methods=["GET"])
 def publicaties():
     _publicaties = []
     for filename in sorted(os.listdir("collectiegroesbeek/templates/publicaties")):
@@ -162,15 +164,19 @@ def publicaties():
             continue
         publicatie = filename.replace(".html", "")
         title, year = extract_date_from_filename_prefix(publicatie)
-        _publicaties.append({
-            "publicatie": publicatie,
-            "title": title,
-            "year": year,
-        })
+        _publicaties.append(
+            {
+                "publicatie": publicatie,
+                "title": title,
+                "year": year,
+            }
+        )
     return flask.render_template("publicaties.html", publicaties=_publicaties)
 
 
-@app.route('/publicaties/<publicatie>', methods=['GET'])
+@app.route("/publicaties/<publicatie>", methods=["GET"])
 def publicatie_(publicatie: str):
     template_path = "publicaties/" + publicatie + ".html"
-    return flask.render_template("publicatie.html", publicatie=publicatie, template_path=template_path)
+    return flask.render_template(
+        "publicatie.html", publicatie=publicatie, template_path=template_path
+    )

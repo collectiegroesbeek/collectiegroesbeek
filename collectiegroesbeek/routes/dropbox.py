@@ -11,15 +11,15 @@ from .. import app
 DROPBOX_TIMESTAMP_LOCK = threading.Lock()
 
 
-@app.route('/api/dropbox-webhook/', methods=['GET'])
+@app.route("/api/dropbox-webhook/", methods=["GET"])
 def dropbox_webhook_verification():
-    resp = flask.Response(flask.request.args.get('challenge'))
-    resp.headers['Content-Type'] = 'text/plain'
-    resp.headers['X-Content-Type-Options'] = 'nosniff'
+    resp = flask.Response(flask.request.args.get("challenge"))
+    resp.headers["Content-Type"] = "text/plain"
+    resp.headers["X-Content-Type-Options"] = "nosniff"
     return resp
 
 
-@app.route('/api/dropbox-webhook/', methods=['POST'])
+@app.route("/api/dropbox-webhook/", methods=["POST"])
 def dropbox_webhook():
     timestamp = int(time.time())
     with DROPBOX_TIMESTAMP_LOCK:
@@ -29,9 +29,9 @@ def dropbox_webhook():
             f.write(str(timestamp))
     if (timestamp - timestamp_last_incoming_webhook) > 300:
         with open("/var/log/dropbox.log", "a") as f_log:
-            f_log.write(f'\n{datetime.now()} incoming webhook\n')
+            f_log.write(f"\n{datetime.now()} incoming webhook\n")
             subprocess.Popen(
-                ['./run_import.sh'],
+                ["./run_import.sh"],
                 stdout=f_log,
                 stderr=f_log,
                 stdin=subprocess.DEVNULL,

@@ -14,19 +14,18 @@ import tqdm
 from collectiegroesbeek.model import BaseDocument, index_number_to_doctype
 
 
-connections.create_connection(hosts=[dotenv_values(".env")['elasticsearch_host']])
+connections.create_connection(hosts=[dotenv_values(".env")["elasticsearch_host"]])
 
 
 def logging_setup():
-    log_format = '%(asctime)s - %(levelname)-8s - %(name)s - %(message)s'
+    log_format = "%(asctime)s - %(levelname)-8s - %(name)s - %(message)s"
     logging.basicConfig(format=log_format, level=logging.DEBUG)
     logging.getLogger("requests").setLevel(logging.WARNING)
     logging.getLogger("urllib3").setLevel(logging.WARNING)
-    logging.getLogger('elasticsearch').setLevel(logging.WARNING)
+    logging.getLogger("elasticsearch").setLevel(logging.WARNING)
 
 
 class CardProcessor:
-
     def __init__(self, batch_size=500):
         self.batch_size = batch_size
         self.client = connections.get_connection()
@@ -42,7 +41,7 @@ class CardProcessor:
 
     def add(self, card: BaseDocument):
         d = card.to_dict(include_meta=True)
-        d['_index'] = self._movers[d['_index']].new_name
+        d["_index"] = self._movers[d["_index"]].new_name
         self._items.append(d)
         if len(self._items) > self.batch_size:
             self.flush()
@@ -59,7 +58,6 @@ class CardProcessor:
 
 
 class IndexMover:
-
     def __init__(self, doctype: Type[BaseDocument]):
         self.alias = doctype.Index.name
         es_index: Index = doctype.Index()
@@ -69,7 +67,7 @@ class IndexMover:
         else:
             self.old_es_index = None
             self.old_name = None
-        self.new_name = '{}_{:.0f}'.format(self.alias, time.time())
+        self.new_name = "{}_{:.0f}".format(self.alias, time.time())
         self.new_es_index = Index(name=self.new_name)
         doctype.init(index=self.new_name)
 
@@ -89,7 +87,7 @@ def filename_to_doctype(filename):
 
 def run(path, doctype_name: Optional[str]):
     processor = CardProcessor()
-    filenames = sorted(filename for filename in os.listdir(path) if filename.endswith('.csv'))
+    filenames = sorted(filename for filename in os.listdir(path) if filename.endswith(".csv"))
     pbar = tqdm.tqdm(filenames)
     for filename in pbar:
         pbar.set_postfix(filename=filename)
@@ -111,12 +109,13 @@ def run(path, doctype_name: Optional[str]):
     processor.finalize()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logging_setup()
     assert connections.get_connection().ping()
     parser = argparse.ArgumentParser()
-    parser.add_argument('--path', default='../collectiegroesbeek-data',
-                        help='Folder with the CSV data files.')
-    parser.add_argument('--doctype', required=False, help='Limit ingestion to this index only')
+    parser.add_argument(
+        "--path", default="../collectiegroesbeek-data", help="Folder with the CSV data files."
+    )
+    parser.add_argument("--doctype", required=False, help="Limit ingestion to this index only")
     options = parser.parse_args()
     run(path=options.path, doctype_name=options.doctype)

@@ -6,7 +6,7 @@ def extract_date_from_filename_prefix(filename: str) -> tuple[str, str]:
     if match:
         parts = match.group(0).split("-")
         year = parts[0]
-        filename = filename[len(match.group(0)):]
+        filename = filename[len(match.group(0)) :]
     else:
         year = ""
     return filename, year

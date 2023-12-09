@@ -11,7 +11,7 @@ PATH_DATASET = "dataset_text_pairs.p"
 
 def create_dataset():
     path = "../collectiegroesbeek-data"
-    filenames = sorted(filename for filename in os.listdir(path) if filename.endswith('.csv'))
+    filenames = sorted(filename for filename in os.listdir(path) if filename.endswith(".csv"))
     texts = []
     pbar = tqdm(filenames)
     for filename in pbar:
@@ -45,8 +45,7 @@ def run_ner():
 
     names = set()
     locations = set()
-    for pair in tqdm(text_pairs
-                     ):
+    for pair in tqdm(text_pairs):
         name = pair[0]
         if "," in name:
             name = put_van_der_in_front(name)
@@ -70,7 +69,7 @@ def run_ner():
 
 
 def put_van_der_in_front(name: str) -> str:
-    return ' '.join(name.split(",")[::-1]).strip()
+    return " ".join(name.split(",")[::-1]).strip()
 
 
 def clean():
@@ -78,13 +77,34 @@ def clean():
         names = f.readlines()
     names = [re.sub(r"\s+", " ", name).strip() for name in names]
     titles_to_remove = (
-        "jvr ", "jhr", "jonker ", "jonge ", "jonkheer ", "jonkvrouw ",
-        "juffr ", "jonghe ", "hertog ", "hertogin ", "here ", "heren ", "heere ", "heer ",
-        "grote ", "gravin ", "graaf ", "frère ", "fils de ", "filius ", "filii ", "filie ",
-        "dr "
+        "jvr ",
+        "jhr",
+        "jonker ",
+        "jonge ",
+        "jonkheer ",
+        "jonkvrouw ",
+        "juffr ",
+        "jonghe ",
+        "hertog ",
+        "hertogin ",
+        "here ",
+        "heren ",
+        "heere ",
+        "heer ",
+        "grote ",
+        "gravin ",
+        "graaf ",
+        "frère ",
+        "fils de ",
+        "filius ",
+        "filii ",
+        "filie ",
+        "dr ",
     )
-    names = [' '.join(name.split(' ')[1:]) if name.startswith(titles_to_remove) else name
-             for name in names]
+    names = [
+        " ".join(name.split(" ")[1:]) if name.startswith(titles_to_remove) else name
+        for name in names
+    ]
     names = [re.sub(r"\s+", " ", name).strip() for name in names]
     names = [name for name in names if name and name_starts_with_capital_letter(name)]
     names = [re.sub(r"\s+", " ", name).strip() for name in names]
@@ -99,12 +119,12 @@ def name_starts_with_capital_letter(name: str) -> bool:
         return True
     voorvoegsels = ("van ", "von ", "der ", "den ", "de ", "d' ")
     if name.startswith(voorvoegsels):
-        name = ' '.join(name.split(' ')[1:])
+        name = " ".join(name.split(" ")[1:])
         return name_starts_with_capital_letter(name)
     return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     create_dataset()
     run_ner()
     clean()
