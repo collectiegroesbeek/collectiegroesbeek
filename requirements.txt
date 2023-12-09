@@ -4,6 +4,7 @@ elasticsearch-dsl==7.4.*
 flask==2.2.*
 mypy
 pre-commit
+pytest
 python-dotenv==1.0.*
 ruff
 tqdm
