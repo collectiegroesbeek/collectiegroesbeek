@@ -31,7 +31,7 @@ a REST API.
 For info on how to install Elasticsearch on your system, please refer to https://www.elastic.co/.
 
 ### Security
-Newer versions of ELasticsearch have some security features by default. Since we are running only 
+Newer versions of ELasticsearch have some security features by default. Since we are running only
 a single node,  without any critical data, we'll make it easier by disabling some of those.
 
 `sudo nano /etc/elasticsearch/elasticsearch.yml`
@@ -245,7 +245,7 @@ We have some exceptions to PEP8, and other conventions:
   value = abs(some_long_value_name
               + another_value)
   ```
-- Split long strings over multiple lines using parentheses. When in doubt the space comes 
+- Split long strings over multiple lines using parentheses. When in doubt the space comes
   on the new line.
   ```
   long_string = ('This is a very long'
@@ -269,9 +269,9 @@ errors and `Mypy` to check typing.
 
 ### Auto-formatter
 
-`autopep8` is a Python application that makes code PEP8 compliant. 
+`autopep8` is a Python application that makes code PEP8 compliant.
 
-Add the option `--aggressive` or `-a` for short to also change non-white-space things. 
+Add the option `--aggressive` or `-a` for short to also change non-white-space things.
 Add it multiple times to increase the aggressivenes. It seems that above three doesn't matter.
 
 `autopep8 collectiegroesbeek --recursive --in-place -a -a -a`

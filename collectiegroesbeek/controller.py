@@ -2,7 +2,7 @@ import re
 from typing import Dict, List, Tuple, Iterable, Optional, Set, Type
 
 import elasticsearch_dsl
-from elasticsearch import Elasticsearch
+from elasticsearch import Elasticsearch  # type: ignore
 from elasticsearch_dsl import connections, Q, Search
 from elasticsearch_dsl.query import MultiMatch, Query
 
