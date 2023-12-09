@@ -82,8 +82,8 @@ Nginx can see what files exist there:
 
 ### Python
 
-Make sure your system has Python 3. In this guide I'm using `pip`, but that may be `pip3` on your
-system.
+Make sure your system has Python 3.10 or higher.
+In this guide I'm using `pip`, but that may be `pip3` on your system.
 
 ### Install nginx
 nginx is the webserver we'll use. You can install nginx with `apt`:

@@ -5,6 +5,7 @@ from typing import List, Tuple, Type
 
 import flask
 
+from ..utils import extract_date_from_filename_prefix
 from .. import app
 from .. import controller
 from ..controller import get_doc, get_number_of_total_docs, get_indices_and_doc_counts, format_int
@@ -155,18 +156,21 @@ def search_names_ner():
 
 @app.route('/publicaties/', methods=['GET'])
 def publicaties():
-    filenames = [
-        filename.replace(".html", "")
-        for filename in sorted(os.listdir("collectiegroesbeek/templates/publicaties"))
-    ]
-    return flask.render_template("publicaties.html", publicaties=filenames)
+    _publicaties = []
+    for filename in sorted(os.listdir("collectiegroesbeek/templates/publicaties")):
+        if not filename.endswith(".html"):
+            continue
+        publicatie = filename.replace(".html", "")
+        title, year = extract_date_from_filename_prefix(publicatie)
+        _publicaties.append({
+            "publicatie": publicatie,
+            "title": title,
+            "year": year,
+        })
+    return flask.render_template("publicaties.html", publicaties=_publicaties)
 
 
 @app.route('/publicaties/<publicatie>', methods=['GET'])
 def publicatie_(publicatie: str):
     template_path = "publicaties/" + publicatie + ".html"
     return flask.render_template("publicatie.html", publicatie=publicatie, template_path=template_path)
-
-
-
-
