@@ -1,11 +1,12 @@
+import json
 import os
+import posixpath
 import re
 from urllib.parse import quote
 from typing import List, Tuple, Type
 
 import flask
 
-from ..utils import extract_date_from_filename_prefix
 from .. import app
 from .. import controller
 from ..controller import get_doc, get_number_of_total_docs, get_indices_and_doc_counts, format_int
@@ -166,16 +167,20 @@ def search_names_ner():
 @app.route("/publicaties/", methods=["GET"])
 def publicaties():
     _publicaties = []
-    for filename in sorted(os.listdir("collectiegroesbeek/templates/publicaties")):
-        if not filename.endswith(".html"):
+    path = "collectiegroesbeek/templates/publicaties"
+    for filename_html in sorted(os.listdir(path)):
+        if not filename_html.endswith(".html"):
             continue
-        publicatie = filename.replace(".html", "")
-        title, year = extract_date_from_filename_prefix(publicatie)
+        filename_json = filename_html.replace(".html", ".json")
+        with open(posixpath.join(path, filename_json)) as f:
+            metadata = json.load(f)
         _publicaties.append(
             {
-                "publicatie": publicatie,
-                "title": title,
-                "year": year,
+                "publicatie": filename_html.replace(".html", ""),
+                "titel": metadata["titel"],
+                "jaar": metadata["jaar"],
+                "afkomstig_uit": metadata["afkomstig uit"],
+                "omschrijving": metadata["omschrijving"],
             }
         )
     return flask.render_template("publicaties.html", publicaties=_publicaties)
