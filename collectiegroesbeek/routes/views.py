@@ -168,7 +168,7 @@ def search_names_ner():
 def publicaties():
     _publicaties = []
     path = "collectiegroesbeek/templates/publicaties"
-    for filename_html in sorted(os.listdir(path)):
+    for filename_html in os.listdir(path):
         if not filename_html.endswith(".html"):
             continue
         filename_json = filename_html.replace(".html", ".json")
@@ -183,6 +183,7 @@ def publicaties():
                 "omschrijving": metadata["omschrijving"],
             }
         )
+    _publicaties = sorted(_publicaties, key=lambda x: x["jaar"])
     return flask.render_template("publicaties.html", publicaties=_publicaties)
 
 
