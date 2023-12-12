@@ -17,6 +17,7 @@
           <tr>
             <th scope="col">Publicatie</th>
             <th scope="col">Jaar</th>
+            <th scope="col">Afkomstig uit</th>
             <th scope="col">Omschrijving</th>
           </tr>
         </thead>
@@ -27,6 +28,7 @@
               <a href="{{ item.publicatie }}" style="display:block; padding:0.75rem">{{ item.titel | safe }}</a>
             </td>
             <td>{{ item.jaar | safe }}</td>
+            <td>{{ item.afkomstig_uit | safe }}</td>
             <td>{{ item.omschrijving | safe }}</td>
           </tr>
         {% endfor %}
