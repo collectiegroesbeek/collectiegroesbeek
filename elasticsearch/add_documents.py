@@ -82,12 +82,15 @@ class IndexMover:
             self.old_es_index.delete()
 
 
-def filename_to_doctype(filename):
+def filename_to_doctype(filename: str) -> Type[BaseDocument]:
     filename = filename.lower()
     match = re.match(r"coll gr (\d+) .*", filename)
     assert match is not None
     index_number = int(match.group(1))
-    return index_number_to_doctype[index_number]
+    try:
+        return index_number_to_doctype[index_number]
+    except KeyError:
+        raise KeyError(f"Unknown index number {index_number}, filename {filename}")
 
 
 def run(path, doctype_name: Optional[str], dryrun: bool):
