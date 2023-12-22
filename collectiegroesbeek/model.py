@@ -742,6 +742,23 @@ class TiendeEnHonderdstePenning(BaseDocument):
         )
 
 
+class TiendePenningHaarlemDoc(TiendeEnHonderdstePenning):
+
+    class Index:
+        name: str = "tiende-penning-haarlem"
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+    @staticmethod
+    def get_index_name_pretty():
+        return "10e Penning Haarlem"
+
+    @staticmethod
+    def get_description() -> str:
+        return ""
+
+
 class BaseTransportregisterDoc(BaseDocument):
     datum: Optional[str] = Text(fields={"keyword": Keyword()})
     inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
@@ -991,6 +1008,7 @@ index_number_to_doctype = {
     5: EigendomsaktenHeemskerk,
     6: TransportRegisterEgmondDoc,
     7: TransportRegisterBloemendaalDoc,
+    8: TiendePenningHaarlemDoc,
     9: TransportRegisterHaarlemDoc,
     10: TiendeEnHonderdstePenning,
     11: TransportRegisterZijpeDoc,
