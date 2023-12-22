@@ -5,6 +5,8 @@
 # Collectie Groesbeek
 Flask and Elasticsearch webapp for the Collectie Groesbeek historical index.
 
+https://www.collectiegroesbeek.nl/
+
 
 ## About
 Collectie Groesbeek is a Dutch historical index, compiled between 1925 and 1994 by
@@ -17,11 +19,6 @@ from the Noord-Holland region in the Netherlands from the Middle Ages to about 1
 
 This project contains a Flask webapp that serves as frontend to the dataset stored in an
 Elasticsearch backend.
-
-**Note that both dataset and this project are very early stage and far from complete!**
-
-A development server is running on https://collectiegroesbeek.azurewebsites.net/,
-but note that the Elasticsearch backend is currently not always enabled.
 
 
 ## Installation part 1: data
@@ -233,49 +230,3 @@ Read the most recent uWSGI and nginx log files:
 ## Contributing
 
 Contributions are welcome! Just open an issue or PR.
-
-
-## Code style guide
-
-- Maximum line width is 100 characters.
-- We use PEP8.
-
-### PEP8 exceptions
-We have some exceptions to PEP8, and other conventions:
-
-- Comparing booleans may be explicit. E.g. `if variable is True:`.
-- Line break _before_ operator. The new line starts with the operator.
-  ```
-  value = abs(some_long_value_name
-              + another_value)
-  ```
-- Split long strings over multiple lines using parentheses. When in doubt the space comes
-  on the new line.
-  ```
-  long_string = ('This is a very long'
-                 ' string.')
-  ```
-
-- Split a function definition over multiple lines as follows. Note the double indentation of
-  the arguments. Note how we can add spaces around the `=` operator for setting the default
-  values in this case.
-  ```
-  def long_function_name(
-          argument1: Optional[int] = None,
-          argument2: str = 'hi there'
-  ) -> List[int]:
-  ```
-
-### Check code quality
-
-You can check your code quality by running an analysis tool. We use `flake8` to check for PEP8
-errors and `Mypy` to check typing.
-
-### Auto-formatter
-
-`autopep8` is a Python application that makes code PEP8 compliant.
-
-Add the option `--aggressive` or `-a` for short to also change non-white-space things.
-Add it multiple times to increase the aggressivenes. It seems that above three doesn't matter.
-
-`autopep8 collectiegroesbeek --recursive --in-place -a -a -a`
