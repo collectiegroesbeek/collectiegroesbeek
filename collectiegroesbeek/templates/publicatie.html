@@ -1,6 +1,23 @@
 
 {% extends "layout.html" %}
 
+{% block css %}
+    <style>
+        table {
+            border-spacing: 5px;
+            border-collapse: separate;
+            margin-bottom: 1rem;
+        }
+        table p {
+            margin-bottom: 0;
+        }
+        thead th:nth-child(3) {
+          width: 15%;
+        }
+    </style>
+
+{% endblock css %}
+
 {% block title %}{{ publicatie }}{% endblock %}
 
 
