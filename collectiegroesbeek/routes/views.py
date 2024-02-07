@@ -197,6 +197,13 @@ def publicaties():
 @app.route("/publicaties/<publicatie>", methods=["GET"])
 def publicatie_(publicatie: str):
     template_path = "publicaties/" + publicatie + ".html"
+    with open(
+        posixpath.join("collectiegroesbeek/templates/publicaties", publicatie + ".json")
+    ) as f:
+        metadata = json.load(f)
     return flask.render_template(
-        "publicatie.html", publicatie=publicatie, template_path=template_path
+        "publicatie.html",
+        publicatie=publicatie,
+        template_path=template_path,
+        metadata=metadata,
     )

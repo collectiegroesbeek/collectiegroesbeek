@@ -3,15 +3,16 @@
 
 {% block css %}
     <style>
-        table {
+        .publicatie-content table {
             border-spacing: 5px;
             border-collapse: separate;
             margin-bottom: 1rem;
         }
-        table p {
+        .publicatie-content table p {
             margin-bottom: 0;
         }
-        thead th:nth-child(3) {
+        {# voor "Wie was Laurens Jansz. Coster?" #}
+        .publicatie-content table thead th:nth-child(3) {
           width: 15%;
         }
     </style>
@@ -26,7 +27,20 @@
 <div class="index-item border-bottom">
   <div class="row">
       <div class="col-md-12 section-heading">
+        <table class="table table-bordered" id="metadata">
+          <tbody>
+          {% for key, value in metadata.items() %}
+            <tr>
+              <td style="min-width:15%">{{ key | title | safe }}</td>
+              <td>{{ value | safe }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+
+        <div class="publicatie-content">
           {% include template_path %}
+        </div>
       </div>
   </div>
 </div>
