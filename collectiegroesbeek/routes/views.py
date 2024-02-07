@@ -167,6 +167,7 @@ def search_names_ner():
 @app.route("/publicaties/", methods=["GET"])
 def publicaties():
     _publicaties = []
+    _categorieen = set()
     path = "collectiegroesbeek/templates/publicaties"
     for filename_html in os.listdir(path):
         if not filename_html.endswith(".html"):
@@ -181,10 +182,16 @@ def publicaties():
                 "jaar": metadata["jaar"],
                 "afkomstig_uit": metadata["afkomstig uit"],
                 "omschrijving": metadata["omschrijving"],
+                "categorie": metadata["categorie"],
             }
         )
+        _categorieen.add(metadata["categorie"])
     _publicaties = sorted(_publicaties, key=lambda x: x["jaar"])
-    return flask.render_template("publicaties.html", publicaties=_publicaties)
+    return flask.render_template(
+        "publicaties.html",
+        publicaties=_publicaties,
+        categorieen=sorted(_categorieen),
+    )
 
 
 @app.route("/publicaties/<publicatie>", methods=["GET"])

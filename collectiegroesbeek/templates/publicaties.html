@@ -25,6 +25,9 @@
           border: 1px solid #dee2e6;
       }
     }
+    #filters label {
+        margin-right: 1rem;
+    }
   </style>
 {% endblock css %}
 
@@ -33,9 +36,19 @@
 
 <div class="index-item border-bottom">
   <div class="row">
-      <div class="col-md-12 section-heading">
-          <h1>Publicaties</h1>
+    <div class="col-md-12 section-heading">
+      <h1>Publicaties</h1>
 
+      <div class="form-group mb-4">
+        <div id="filters" class="form-check form-check-inline">
+          {% for categorie in categorieen %}
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" value="{{ categorie }}" checked>
+              {{ categorie }}
+            </label>
+          {% endfor %}
+        </div>
+      </div>
 
       <table class="table table-hover">
         <thead>
@@ -44,6 +57,7 @@
             <th scope="col">Datum</th>
             <th scope="col">Afkomstig uit</th>
             <th scope="col">Omschrijving</th>
+            <th scope="col">Categorie</th>
           </tr>
         </thead>
         <tbody>
@@ -55,13 +69,39 @@
             <td>{{ item.jaar | safe }}</td>
             <td>{{ item.afkomstig_uit | safe }}</td>
             <td>{{ item.omschrijving | safe }}</td>
+            <td>{{ item.categorie | safe }}</td>
           </tr>
         {% endfor %}
         </tbody>
       </table>
-      </div>
+    </div>
   </div>
 </div>
 
 
-{% endblock %}
+{% endblock content %}
+
+
+{% block js %}
+  <script>
+      document.querySelectorAll('#filters input').forEach(function (checkbox) {
+          checkbox.addEventListener('change', function () {
+              let checkedCategories = Array.from(document.querySelectorAll('#filters input:checked'))
+                  .map(function(checkbox) {
+                      return checkbox.value;
+                  });
+              let rows = document.querySelectorAll('table tbody tr');
+              rows.forEach(function (row) {
+                  let category = row.querySelector('td:last-child').textContent.trim();
+                  if (checkedCategories.length === 0 || checkedCategories.includes(category)) {
+                      row.style.display = 'table-row';
+                  } else {
+                      row.style.display = 'none';
+                  }
+              });
+          });
+      });
+
+  </script>
+
+{% endblock js %}
