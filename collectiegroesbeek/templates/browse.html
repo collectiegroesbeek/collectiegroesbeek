@@ -4,6 +4,11 @@
 
 {% block css %}
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+  <style>
+    #tagTable_filter {
+      display: none;
+    }
+  </style>
 {% endblock %}
 
 
@@ -56,6 +61,7 @@
                               data: "id",
                               title: "link",
                               orderable: false,
+                              searchable: false,
                               render: function(data, type, row, meta) {
                                   if (type === "display") {
                                       return `
@@ -75,10 +81,13 @@
                       if (table !== undefined) {
                           table.destroy(remove=true);
                       }
-                      $("#tableWrapper").html(`<table id="tagTable" class="display" style="width:100%"></table>`);
+                      $("#tableWrapper").html(`<table id="tagTable" class="display" style="width:100%"><tfoot><tr></tr></tfoot></table>`);
+                      $.each(columns_definition, function(index, value) {
+                          $('#tableWrapper tfoot tr').append($('<th></th>'));
+                      });
                       table = $('#tagTable').DataTable({
                           order: [],
-                          searching: false,
+                          searching: true,
                           serverSide: true,
                           columns : columns_definition,
                           ajax: {
@@ -91,6 +100,27 @@
                                   return JSON.stringify(d);
                               }
                           },
+                          initComplete: function () {
+                              this.api()
+                                  .columns()
+                                  .every(function () {
+                                      let column = this;
+                                      let input = document.createElement('input');
+                                      input.style = "width: 100%";
+                                      column.footer().replaceChildren(input);
+                                      input.addEventListener('keyup', (() => {
+                                          let timeout;
+                                          return function executedFunction(e) {
+                                              const later = () => {
+                                                  clearTimeout(timeout);
+                                                  column.search(e.target.value).draw();
+                                              };
+                                              clearTimeout(timeout);
+                                              timeout = setTimeout(later, 400);
+                                          };
+                                      })());
+                                  });
+                          }
                       });
                   }
               );
