@@ -25,6 +25,7 @@ def home():
         n_total_docs=n_total_docs_str,
         doctypes=list_doctypes(),
         index_to_doc_count=index_to_doc_count,
+        sort_options=controller.Searcher.get_sort_options(),
     )
 
 
@@ -44,6 +45,7 @@ def search():
         return flask.render_template(
             "search.html",
             doctypes=doctypes,
+            sort_options=controller.Searcher.get_sort_options(),
         )
     cards_per_page = 10
     page = flask.request.args.get("page", default=1, type=int)
@@ -53,12 +55,16 @@ def search():
         size=cards_per_page,
         doctypes=doctypes_selection,
     )
+    sort_by = flask.request.args.get("sort", default=None)
+    searcher.sort(sort_by=sort_by)
     hits = searcher.get_results()
     hits_formatted = [format_hit(hit) for hit in hits]
     hits_total = searcher.count()
     page_range = controller.get_page_range(hits_total, page, cards_per_page)
     query_string = f"?q={quote(q)}"
     query_string = add_selected_doctypes_to_query_string(query_string, doctypes_selection)
+    if sort_by:
+        query_string += f"&sort={sort_by}"
     query_string += "&page="
 
     if page == 1:
@@ -78,6 +84,8 @@ def search():
         hits=hits_formatted,
         hits_total=hits_total,
         q=q,
+        sort_by=sort_by,
+        sort_options=searcher.get_sort_options(),
         query_string=query_string,
         page_range=page_range,
         page=page,

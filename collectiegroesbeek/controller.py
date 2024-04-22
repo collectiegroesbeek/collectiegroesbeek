@@ -122,6 +122,18 @@ class Searcher:
         self.q = pattern.sub(repl="", string=self.q).strip()
         return year_start, year_end
 
+    def sort(self, sort_by: Optional[str]):
+        if not sort_by:
+            return
+        self.s = self.s.sort(*sort_by.split(","))
+
+    @staticmethod
+    def get_sort_options() -> Dict[str, str]:
+        return {
+            "jaar": "Jaartal (oplopend)",
+            "-jaar": "Jaartal (aflopend)",
+        }
+
     def count(self) -> int:
         return self.s.count()
 

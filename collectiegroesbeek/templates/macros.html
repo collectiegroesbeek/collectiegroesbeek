@@ -1,6 +1,6 @@
 
 
-{% macro search_input(q='', autofocus=True, doctypes=[]) %}
+{% macro search_input(q='', autofocus=True, doctypes=[], sort_options={}, sort_by="") %}
   <form action="/zoek" class="text-center">
     <div class="form-group">
       <div class="col-lg-8 offset-lg-2">
@@ -29,6 +29,17 @@
         </div>
       {% endfor %}
       </div>
+    </div>
+    <div class="form-group" >
+      <label class="">Sorteer op:
+      <select class="form-control" style="width:auto; display:inline-block;" name="sort" onchange="applySort(this)">
+          <option value=""></option>
+          {% for value, title in sort_options.items() %}
+            <option value="{{ value }}" {% if sort_by == value %}selected{% endif %}
+              >{{ title }}</option>
+          {% endfor %}
+      </select>
+      </label>
     </div>
     <button type="submit" class="btn btn-secondary mr-3">Zoek</button>
   </form>
