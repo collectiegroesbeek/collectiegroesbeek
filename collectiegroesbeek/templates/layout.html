@@ -47,10 +47,12 @@
 </header>
 
 
-<main role="main" class="container">
-{% block content %}
-{% endblock %}
-</main>
+{% block main_container %}
+  <main role="main" class="container">
+    {% block content %}
+    {% endblock content %}
+  </main>
+{% endblock main_container %}
 
 
 <footer class="footer">
