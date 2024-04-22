@@ -41,12 +41,6 @@ def search():
         (doctype.get_index_name_pretty(), doctype.Index.name, doctype in doctypes_selection)
         for doctype in list_doctypes()
     ]
-    if q is None:
-        return flask.render_template(
-            "search.html",
-            doctypes=doctypes,
-            sort_options=controller.Searcher.get_sort_options(),
-        )
     cards_per_page = 10
     page = flask.request.args.get("page", default=1, type=int)
     searcher = controller.Searcher(
