@@ -9,7 +9,47 @@
 
   <div class="row mb-2">
       <div class="col">
-        {{ macros.search_input(q=q, autofocus=False, doctypes=doctypes, sort_options=sort_options, sort_by=sort_by) }}
+        <form action="/zoek" class="text-center">
+          <div class="form-group">
+            <div class="col-lg-8 offset-lg-2">
+              <input type="text" class="form-control" name="q" autofocus
+                     placeholder="bijvoorbeeld naam (Altena), plaats (Leiden), jaartal (1316), periode (1300-1400)"
+                     value="{{ q }}"
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="text-left" style="width:auto; display:inline-block;">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" id="checkAll">
+                  alles
+                </label>
+              </div>
+            {% for name, value, checked in doctypes %}
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="index" value="{{ value }}"
+                         {% if checked %}checked{% endif %}>
+                  {{ name }}
+                </label>
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+          <div class="form-group" >
+            <label class="">Sorteer op:
+            <select class="form-control" style="width:auto; display:inline-block;" name="sort">
+                <option value=""></option>
+                {% for value, title in sort_options.items() %}
+                  <option value="{{ value }}" {% if sort_by == value %}selected{% endif %}
+                    >{{ title }}</option>
+                {% endfor %}
+            </select>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-secondary mr-3">Zoek</button>
+        </form>
       </div>
     </div>
 
@@ -79,3 +119,15 @@
   </div>
 
 {% endblock %}
+
+
+{% block js %}
+  <script>
+      $(document).ready(function () {
+          $("#checkAll").click(function () {
+              $('input:checkbox[name="index"]').not(this).prop('checked', this.checked);
+          });
+      })
+  </script>
+
+{% endblock js %}
