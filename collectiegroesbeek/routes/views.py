@@ -36,7 +36,8 @@ def search():
         index_name_to_doctype[index_name] for index_name in flask.request.args.getlist("index")
     ]
     if not doctypes_selection:
-        doctypes_selection = [list_doctypes()[0]]
+        doctypes_selection = list_doctypes()
+    check_all = len(doctypes_selection) == len(list_doctypes())
     doctypes: List[Tuple[str, str, bool]] = [
         (doctype.get_index_name_pretty(), doctype.Index.name, doctype in doctypes_selection)
         for doctype in list_doctypes()
@@ -85,6 +86,7 @@ def search():
         page=page,
         suggestions=suggestion_urls,
         doctypes=doctypes,
+        check_all=check_all,
     )
 
 

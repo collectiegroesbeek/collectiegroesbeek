@@ -22,7 +22,8 @@
             <div class="text-left" style="width:auto; display:inline-block;">
               <div class="form-check">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" id="checkAll">
+                  <input class="form-check-input" type="checkbox" id="checkAll"
+                         {% if check_all %}checked{% endif %}>
                   alles
                 </label>
               </div>
