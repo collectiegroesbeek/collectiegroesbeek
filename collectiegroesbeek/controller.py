@@ -1,4 +1,5 @@
 import re
+from collections import defaultdict
 from typing import Dict, List, Tuple, Iterable, Optional, Set, Type
 
 import elasticsearch_dsl
@@ -158,7 +159,12 @@ def get_page_range(hits_total: int, page: int, cards_per_page: int) -> List[int]
     return list(range(first_item, last_item + 1))
 
 
-def get_bronnen_list(min_doc_count: int) -> List[dict]:
+def get_grouped_bronnen() -> dict[str, int]:
+    bronnen_list = get_bronnen_list()
+    return _group_bronnen(bronnen_list)
+
+
+def get_bronnen_list() -> List[dict]:
     s = elasticsearch_dsl.Search(index="*")
     s.aggs.bucket(
         name="op_bron",
@@ -166,8 +172,6 @@ def get_bronnen_list(min_doc_count: int) -> List[dict]:
         field="bron_prefix",
         # get the 10k largest buckets, sort later
         size=10_000,
-        # exclude noisy results that are only on one card
-        min_doc_count=min_doc_count,
     )
     res = s.execute()
     bron_list: list[dict] = list(res.aggregations["op_bron"].buckets)
@@ -175,6 +179,19 @@ def get_bronnen_list(min_doc_count: int) -> List[dict]:
     bron_list = [bron_item for bron_item in bron_list if bron_item["key"]]
     # items of the form: {'key': 'Aa', 'doc_count': 117}
     return bron_list
+
+
+def _group_bronnen(bronnen_list: list[dict]) -> dict[str, int]:
+    out = defaultdict(lambda: 0)
+    for bron in bronnen_list:
+        key = bron["key"]
+        key = re.sub(r" no [\d\s,]+$", "", key)
+        key = re.sub(r" \d+-\d+$", "", key)
+        key = re.sub(r" \d+$", "", key)
+        if key.isdigit():
+            continue
+        out[key] += bron["doc_count"]
+    return out
 
 
 def get_suggestions(keywords: Iterable[str]):
