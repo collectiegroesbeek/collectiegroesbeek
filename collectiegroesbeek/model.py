@@ -1031,9 +1031,9 @@ def parse_entry_optional(entry: str) -> Optional[str]:
 
 
 def split_bron(text: str) -> list[str]:
-    parts = list(re.split(r'(:?;\s|/)', text))
+    parts = list(re.split(r'(:?;\s|/(?=\w)|,\s)', text))
     parts = [part.strip() for part in parts if len(part) > 4]
-    parts_prefix = [re.split(r'\b(?:fol|p|regest|bl|reg)\b', part)[0].strip() for part in parts]
+    parts_prefix = [re.split(r'\b(?:fol|p|regest|bl|reg|dossier \d+)\b', part)[0].strip() for part in parts]
     return parts_prefix
 
 

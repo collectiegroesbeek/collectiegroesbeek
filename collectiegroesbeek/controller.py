@@ -159,18 +159,16 @@ def get_page_range(hits_total: int, page: int, cards_per_page: int) -> List[int]
 
 
 def get_bronnen_list() -> List[dict]:
-    s = elasticsearch_dsl.Search(index="voornamen")  # TODO: all indexes
+    s = elasticsearch_dsl.Search(index="*")
     s.aggs.bucket(
         name="op_bron",
         agg_type="terms",
         field="bron_prefix",
-        order={"_key": "asc"},
+        # get the 10k largest buckets, sort later
         size=10_000,
     )
     res = s.execute()
-    bron_list: List[dict] = list(res.aggregations["op_bron"].buckets)
-    if len(bron_list) >= 10_000:
-        raise ValueError("Number of bronnen exceeded max size")
+    bron_list: List[dict] = sorted(res.aggregations["op_bron"].buckets, key=lambda x: x["key"])
     # items of the form: {'key': 'Aa', 'doc_count': 117}
     return bron_list
 

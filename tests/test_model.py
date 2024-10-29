@@ -21,6 +21,16 @@ class TestCardNameIndex:
             "Ned Leeuw jg 1922 p 47; A.R.A Holl Leenkamer no 105 fol 1v",
             ["Ned Leeuw jg 1922", "A.R.A Holl Leenkamer no 105"]
     ),
+    (
+        "Arch Culemborg Regest 10a/Sloet no 1073 bis/v.d. Bergh II no 498/Navorscher 1916 p 470",
+        [
+            "Arch Culemborg Regest 10a",
+            "Sloet no 1073 bis",
+            "v.d. Bergh II no 498",
+            "Navorscher 1916",
+        ]
+    ),
+    ("E.A. Dossiers dl III dossier 3244", ["E.A. Dossiers dl III"]),
     ("No matching word here", ["No matching word here"]),
 ])
 def test_split_bron(text, expected):
