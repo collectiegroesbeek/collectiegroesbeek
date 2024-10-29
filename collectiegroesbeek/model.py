@@ -159,6 +159,7 @@ class VoornamenDoc(BaseDocument):
     patroniem: Optional[str] = Text(fields={"keyword": Keyword()})
     inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
     bron: Optional[str] = Text(fields={"keyword": Keyword()})
+    bron_prefix: Optional[list[str]] = Keyword(multi=True)
     getuigen: Optional[str] = Text(fields={"keyword": Keyword()})
     bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
@@ -187,6 +188,8 @@ class VoornamenDoc(BaseDocument):
             return None
         if doc.datum is not None:
             doc.jaar = create_year(str(doc.datum))
+        if doc.bron is not None:
+            doc.bron_prefix = split_bron(doc.bron)
         return doc
 
     def is_valid(self):
@@ -998,6 +1001,13 @@ def parse_entry(entry: str) -> str:
 
 def parse_entry_optional(entry: str) -> Optional[str]:
     return entry.strip() or None
+
+
+def split_bron(text: str) -> list[str]:
+    parts = list(re.split(r'(:?;\s|/)', text))
+    parts = [part.strip() for part in parts if len(part) > 4]
+    parts_prefix = [re.split(r'\b(?:fol|p|regest|bl|reg)\b', part)[0].strip() for part in parts]
+    return parts_prefix
 
 
 index_number_to_doctype = {
