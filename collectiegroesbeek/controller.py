@@ -158,14 +158,16 @@ def get_page_range(hits_total: int, page: int, cards_per_page: int) -> List[int]
     return list(range(first_item, last_item + 1))
 
 
-def get_bronnen_list() -> List[dict]:
     s = elasticsearch_dsl.Search(index="*")
+def get_bronnen_list(min_doc_count: int) -> List[dict]:
     s.aggs.bucket(
         name="op_bron",
         agg_type="terms",
         field="bron_prefix",
         # get the 10k largest buckets, sort later
         size=10_000,
+        # exclude noisy results that are only on one card
+        min_doc_count=min_doc_count,
     )
     res = s.execute()
     bron_list: List[dict] = sorted(res.aggregations["op_bron"].buckets, key=lambda x: x["key"])

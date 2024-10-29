@@ -170,11 +170,12 @@ def search_names_ner():
 
 @app.route("/bronnen/")
 def bronnen():
-    bronnen_list = get_bronnen_list()
-    print(len(bronnen_list))
+    min_doc_count = 3
+    bronnen_list = get_bronnen_list(min_doc_count=min_doc_count)
     return flask.render_template(
         "bronnen.html",
         bronnen=bronnen_list,
+        min_doc_count=min_doc_count,
     )
 
 
