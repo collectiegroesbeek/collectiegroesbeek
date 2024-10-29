@@ -158,20 +158,19 @@ def get_page_range(hits_total: int, page: int, cards_per_page: int) -> List[int]
     return list(range(first_item, last_item + 1))
 
 
-def get_names_list(q: str) -> List[dict]:
-    s = elasticsearch_dsl.Search()
+def get_bronnen_list() -> List[dict]:
+    s = elasticsearch_dsl.Search(Index="voornamen")  # TODO: all indexes
     s.aggs.bucket(
-        name="op_naam",
+        name="op_bron",
         agg_type="terms",
-        field="naam_keyword",
+        field="bron_prefix",
         order={"_key": "asc"},
-        include=f"{q.title()}.*",
         size=2000,
     )
     res = s.execute()
-    names_list: List[dict] = res.aggregations["op_naam"].buckets
+    bron_list: List[dict] = res.aggregations["op_bron"].buckets
     # items of the form: {'key': 'Aa', 'doc_count': 117}
-    return names_list
+    return bron_list
 
 
 def get_suggestions(keywords: Iterable[str]):
