@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}Bronnen{% endblock %}
+
+
+{% block content %}
+
+  <div class="row">
+    <div class="col">
+      <h1>Bronnen</h1>
+      <p>
+        Hier volgt een lijst met bronnen die in de dataset voorkomen. Deze zijn gegroepeerd zonder
+          suffixen zoals folionummer, pagina of regestnummer. Tussen haakjes staat het aantal documenten dat deze
+          bron noemen. Deze lijst is gelimiteerd tot de 10&thinsp;000 meest voorkomende bronnen.
+          De lijst wordt automatisch gegenereerd en is niet perfect, maar hopelijk wel behulpzaam.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+  <div class="col-md-8 offset-md-2">
+
+    <div class="row">
+        <div class="col">
+            {% for bron, count in grouped_bronnen.items() %}
+                <a href="{{ url_for('search') }}?q=bron:&quot;{{ bron }}&quot;"
+                    >{{ bron }}</a> ({{ count }})<br />
+            {% endfor %}
+        </div>
+    </div>
+
+  </div>
+  </div>
+
+{% endblock %}

@@ -9,7 +9,8 @@ import flask
 
 from .. import app
 from .. import controller
-from ..controller import get_doc, get_number_of_total_docs, get_indices_and_doc_counts, format_int
+from ..controller import get_doc, get_number_of_total_docs, get_indices_and_doc_counts, format_int, get_bronnen_list, \
+    get_grouped_bronnen
 from ..model import BaseDocument, list_doctypes, index_name_to_doctype
 
 
@@ -165,6 +166,15 @@ def search_names_ner():
             "total_pages": total_pages,
             "names": filtered_names[start:end],
         }
+    )
+
+
+@app.route("/bronnen/")
+def bronnen():
+    grouped_bronnen = get_grouped_bronnen()
+    return flask.render_template(
+        "bronnen.html",
+        grouped_bronnen=grouped_bronnen,
     )
 
 
