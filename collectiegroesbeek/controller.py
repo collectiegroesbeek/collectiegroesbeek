@@ -170,7 +170,9 @@ def get_bronnen_list(min_doc_count: int) -> List[dict]:
         min_doc_count=min_doc_count,
     )
     res = s.execute()
-    bron_list: List[dict] = sorted(res.aggregations["op_bron"].buckets, key=lambda x: x["key"])
+    bron_list: list[dict] = list(res.aggregations["op_bron"].buckets)
+    bron_list = sorted(bron_list, key=lambda x: x["key"])
+    bron_list = [bron_item for bron_item in bron_list if bron_item["key"]]
     # items of the form: {'key': 'Aa', 'doc_count': 117}
     return bron_list
 
