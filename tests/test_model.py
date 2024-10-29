@@ -24,7 +24,7 @@ class TestCardNameIndex:
     (
         # N.B. deze zouden we eigenlijk willen splitsen
         "Arch Culemborg Regest 10a/Sloet no 1073 bis/v.d. Bergh II no 498/Navorscher 1916 p 470",
-        ["Arch Culemborg Regest 10a/Sloet no 1073 bis/v.d. Bergh II no 498/Navorscher 1916"],
+        ["Arch Culemborg Regest 10a", "Sloet no 1073 bis", "v.d. Bergh II no 498", "Navorscher 1916"],
     ),
     ("E.A. Dossiers dl III dossier 3244", ["E.A. Dossiers dl III"]),
     (
