@@ -22,7 +22,6 @@ class TestCardNameIndex:
             ["Ned Leeuw jg 1922", "A.R.A Holl Leenkamer no 105"]
     ),
     (
-        # N.B. deze zouden we eigenlijk willen splitsen
         "Arch Culemborg Regest 10a/Sloet no 1073 bis/v.d. Bergh II no 498/Navorscher 1916 p 470",
         ["Arch Culemborg Regest 10a", "Sloet no 1073 bis", "v.d. Bergh II no 498", "Navorscher 1916"],
     ),
