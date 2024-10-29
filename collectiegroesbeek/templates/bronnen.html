@@ -21,7 +21,8 @@
     <div class="row">
         <div class="col">
             {% for bron in bronnen %}
-                {{ bron.key }} ({{ bron.doc_count }})<br />
+                <a href="{{ url_for('search') }}?q=bron:&quot;{{ bron.key }}&quot;"
+                    >{{ bron.key }}</a> ({{ bron.doc_count }})<br />
             {% endfor %}
         </div>
     </div>
