@@ -86,7 +86,6 @@ def run(path, doctype_name: Optional[str], dryrun: bool):
 if __name__ == "__main__":
     logging_setup()
     setup_es_connection()
-    assert connections.get_connection().ping()
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--path", default="../collectiegroesbeek-data", help="Folder with the CSV data files."

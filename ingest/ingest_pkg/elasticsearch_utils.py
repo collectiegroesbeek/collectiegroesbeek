@@ -8,6 +8,7 @@ from elasticsearch_dsl.connections import connections
 
 def setup_es_connection():
     connections.create_connection(hosts=[dotenv_values(".env")["elasticsearch_host"]])
+    assert connections.get_connection().ping()
 
 
 class IndexMover:
