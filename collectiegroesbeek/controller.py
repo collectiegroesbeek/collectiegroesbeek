@@ -263,6 +263,7 @@ def names_ner_search(query: str, page: int, per_page: int) -> tuple[list[str], i
     query_parts = query.split(" ")
     s = NamesNerDoc.search()
     s = s.query(Q("bool", must=[Q("prefix", name_parts=part) for part in query_parts]))
+    s = s.sort("name.keyword")
     s = s[per_page * (page - 1) : per_page * page]
     s.execute()
     n_total_docs = s.count()
