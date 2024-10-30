@@ -134,9 +134,6 @@ def main():
     text_pairs = create_dataset()
     names, locations = run_ner(text_pairs)
     names_cleaned = clean(list(names))
-    with open("names_vergelijk.txt", "w") as f:
-        for name in names_cleaned:
-            print(name, f)
     store_in_elasticsearch(names_cleaned)
 
 
