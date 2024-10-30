@@ -1,3 +1,4 @@
+import logging
 import time
 from typing import Type, Optional, Dict
 
@@ -5,6 +6,9 @@ from dotenv import dotenv_values
 from elasticsearch.helpers import bulk
 from elasticsearch_dsl import Index, Document
 from elasticsearch_dsl.connections import connections
+
+
+logger = logging.getLogger(__name__)
 
 
 def setup_es_connection():
@@ -41,6 +45,7 @@ class DocProcessor:
         self.client = connections.get_connection()
         self._movers: Dict[str, IndexMover] = {}
         self._items: list[dict] = []
+        self._count = 0
 
     def register_index(self, doctype: Type[Document]):
         """Mark an index as being updated, creating an IndexMover instance."""
@@ -61,9 +66,11 @@ class DocProcessor:
     def flush(self):
         if len(self._items) > 0 and not self.dryrun:
             bulk(self.client, self._items)
+            self._count += len(self._items)
         self._items = []
 
     def finalize(self):
         self.flush()
         for mover in self._movers.values():
             mover.move_alias_to_new()
+        logger.info("Pushed %d docs to %s", self._count, ", ".join(x.new_name for x in self._movers.values()))
