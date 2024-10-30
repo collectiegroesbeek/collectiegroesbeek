@@ -1033,7 +1033,9 @@ def parse_entry_optional(entry: str) -> Optional[str]:
 def split_bron(text: str) -> list[str]:
     parts = list(re.split(r"(:?;\s|/(?=\w))", text))
     parts = [part.strip() for part in parts if len(part) > 4]
-    parts_prefix = [re.split(r'\b(?:fol|p|regest|bl|reg|dossier \d+)\b', part)[0].strip() for part in parts]
+    parts_prefix = [
+        re.split(r"\b(?:fol|p|regest|bl|reg|dossier \d+)\b", part)[0].strip() for part in parts
+    ]
     return parts_prefix
 
 
@@ -1083,6 +1085,7 @@ def list_doctypes() -> List[Type[BaseDocument]]:
 
 class NamesNerDoc(Document):
     name: str = Text(fields={"keyword": Keyword()})
+    name_parts: list[str] = Keyword(multi=True)
 
     class Index:
         name: str = "names-ner"
