@@ -250,6 +250,11 @@ def get_index_to_alias() -> Dict[str, str]:
     return {item["index"]: item["alias"] for item in aliases}
 
 
+def get_index_from_alias(alias: str) -> str:
+    es = Elasticsearch()
+    return list(es.indices.get_alias(name=alias).keys())[0]
+
+
 def format_int(num: int) -> str:
     return f"{num:,d}".replace(",", ".")
 

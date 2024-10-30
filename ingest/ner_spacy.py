@@ -4,8 +4,10 @@ import os
 import re
 
 import spacy
+from elasticsearch_dsl import Index
 from tqdm import tqdm
 
+from collectiegroesbeek.controller import get_index_from_alias
 from collectiegroesbeek.model import NamesNerDoc
 from ingest.ingest_pkg import logging_setup
 from ingest.ingest_pkg.elasticsearch_utils import setup_es_connection, DocProcessor
@@ -125,6 +127,10 @@ def store_in_elasticsearch(names: list[str]):
         doc = NamesNerDoc(name=name, name_parts=name.lower().split(" "))
         processor.add(doc)
     processor.finalize()
+
+    index = Index(get_index_from_alias(NamesNerDoc.Index.name))
+    index.settings(max_result_window=len(names))
+    index.save()
 
 
 def main():
