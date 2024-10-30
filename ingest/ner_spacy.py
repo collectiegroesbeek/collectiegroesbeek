@@ -121,8 +121,8 @@ def name_starts_with_capital_letter(name: str) -> bool:
 def store_in_elasticsearch(names: list[str]):
     processor = DocProcessor()
     processor.register_index(NamesNerDoc)
-    for name in names:
-        doc = NamesNerDoc(name=name)
+    for name in tqdm(names, desc="store in ES"):
+        doc = NamesNerDoc(name=name, name_parts=name.lower().split(" "))
         processor.add(doc)
     processor.finalize()
 
