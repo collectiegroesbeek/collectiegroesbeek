@@ -9,8 +9,14 @@ import flask
 
 from .. import app
 from .. import controller
-from ..controller import get_doc, get_number_of_total_docs, get_indices_and_doc_counts, format_int, get_bronnen_list, \
-    get_grouped_bronnen
+from ..controller import (
+    get_doc,
+    get_number_of_total_docs,
+    get_indices_and_doc_counts,
+    format_int,
+    get_grouped_bronnen,
+    names_ner_search,
+)
 from ..model import BaseDocument, list_doctypes, index_name_to_doctype
 
 
@@ -127,17 +133,6 @@ def browse():
     )
 
 
-def _load_names() -> list[str]:
-    filepath = os.path.abspath(
-        os.path.join(os.path.abspath(__file__), "..", "..", "..", "names.txt")
-    )
-    with open(filepath, encoding="utf-8") as f:
-        return f.readlines()
-
-
-NAMES = _load_names()
-
-
 @app.route("/namen/")
 def names_ner():
     query = flask.request.args.get("q", "").lower().strip()
@@ -149,22 +144,15 @@ def names_ner():
 def search_names_ner():
     query = flask.request.args.get("q", "").lower().strip()
     page = int(flask.request.args.get("page", 1))
-    per_page = 1000
-    if query:
-        filtered_names = [name for name in NAMES if query in name.lower()]
-    else:
-        filtered_names = NAMES
-    # Pagination
-    start = (page - 1) * per_page
-    end = start + per_page
-    total_pages = -(-len(filtered_names) // per_page)  # Equivalent to ceiling division
-
+    per_page = 200
+    names, n_total_docs = names_ner_search(query=query, page=page, per_page=per_page)
+    total_pages = (n_total_docs // per_page) + 1
     return flask.jsonify(
         {
             "page": page,
             "per_page": per_page,
             "total_pages": total_pages,
-            "names": filtered_names[start:end],
+            "names": names,
         }
     )
 

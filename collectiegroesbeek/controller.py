@@ -7,7 +7,14 @@ from elasticsearch import Elasticsearch  # type: ignore
 from elasticsearch_dsl import Q, Search
 from elasticsearch_dsl.query import MultiMatch, Query
 
-from .model import CardNameDoc, BaseDocument, list_doctypes, index_name_to_doctype, list_index_names
+from .model import (
+    CardNameDoc,
+    BaseDocument,
+    list_doctypes,
+    index_name_to_doctype,
+    list_index_names,
+    NamesNerDoc,
+)
 
 
 class Searcher:
@@ -243,5 +250,22 @@ def get_index_to_alias() -> Dict[str, str]:
     return {item["index"]: item["alias"] for item in aliases}
 
 
+def get_index_from_alias(alias: str) -> str:
+    es = Elasticsearch()
+    return list(es.indices.get_alias(name=alias).keys())[0]
+
+
 def format_int(num: int) -> str:
     return f"{num:,d}".replace(",", ".")
+
+
+def names_ner_search(query: str, page: int, per_page: int) -> tuple[list[str], int]:
+    query_parts = query.split(" ")
+    s = NamesNerDoc.search()
+    s = s.query(Q("bool", must=[Q("prefix", name_parts=part) for part in query_parts]))
+    s = s.sort("name.keyword")
+    s = s[per_page * (page - 1) : per_page * page]
+    s.execute()
+    n_total_docs = s.count()
+    result = [doc.name for doc in s]
+    return result, n_total_docs
