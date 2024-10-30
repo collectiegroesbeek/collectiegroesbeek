@@ -1,28 +1,16 @@
 import argparse
 import csv
-import logging
 import os
 import re
-import time
 from typing import Dict, Optional, Type
 
-from dotenv import dotenv_values
 from elasticsearch.helpers import bulk
-from elasticsearch_dsl import Index, connections
+from elasticsearch_dsl import connections
 import tqdm
 
 from collectiegroesbeek.model import BaseDocument, index_number_to_doctype
-
-
-connections.create_connection(hosts=[dotenv_values(".env")["elasticsearch_host"]])
-
-
-def logging_setup():
-    log_format = "%(asctime)s - %(levelname)-8s - %(name)s - %(message)s"
-    logging.basicConfig(format=log_format, level=logging.DEBUG)
-    logging.getLogger("requests").setLevel(logging.WARNING)
-    logging.getLogger("urllib3").setLevel(logging.WARNING)
-    logging.getLogger("elasticsearch").setLevel(logging.WARNING)
+from ingest_pkg import logging_setup
+from ingest_pkg.elasticsearch_utils import IndexMover, setup_es_connection
 
 
 class CardProcessor:
@@ -58,28 +46,6 @@ class CardProcessor:
         self.flush()
         for mover in self._movers.values():
             mover.move_alias_to_new()
-
-
-class IndexMover:
-    def __init__(self, doctype: Type[BaseDocument]):
-        self.alias = doctype.Index.name
-        es_index: Index = doctype.Index()
-        if es_index.exists():
-            self.old_name = next(iter(es_index.get_alias().keys()))
-            self.old_es_index: Optional[Index] = Index(name=self.old_name)
-        else:
-            self.old_es_index = None
-            self.old_name = None
-        self.new_name = "{}_{:.0f}".format(self.alias, time.time())
-        self.new_es_index = Index(name=self.new_name)
-        doctype.init(index=self.new_name)
-
-    def move_alias_to_new(self):
-        if self.old_es_index:
-            self.old_es_index.delete_alias(name=self.alias)
-        self.new_es_index.put_alias(name=self.alias)
-        if self.old_es_index:
-            self.old_es_index.delete()
 
 
 def filename_to_doctype(filename: str) -> Type[BaseDocument]:
@@ -119,6 +85,7 @@ def run(path, doctype_name: Optional[str], dryrun: bool):
 
 if __name__ == "__main__":
     logging_setup()
+    setup_es_connection()
     assert connections.get_connection().ping()
     parser = argparse.ArgumentParser()
     parser.add_argument(
