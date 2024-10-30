@@ -1079,3 +1079,13 @@ def list_doctypes() -> List[Type[BaseDocument]]:
 #     # remove optional timestamp
 #     index_name = re.sub(r'_\d{10}', '', index_name)
 #     return MAPPING[index_name]
+
+
+class NamesNerDoc(Document):
+    name: str = Text(fields={"keyword": Keyword()})
+
+    class Index:
+        name: str = "names-ner"
+
+        def __new__(cls):
+            return Index(name=cls.name)
