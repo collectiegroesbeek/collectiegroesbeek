@@ -73,4 +73,8 @@ class DocProcessor:
         self.flush()
         for mover in self._movers.values():
             mover.move_alias_to_new()
-        logger.info("Pushed %d docs to %s", self._count, ", ".join(x.new_name for x in self._movers.values()))
+        logger.info(
+            "Pushed %d docs to %s",
+            self._count,
+            ", ".join(x.new_name for x in self._movers.values()),
+        )
