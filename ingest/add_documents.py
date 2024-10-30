@@ -2,50 +2,14 @@ import argparse
 import csv
 import os
 import re
-from typing import Dict, Optional, Type
+from typing import Optional, Type
 
-from elasticsearch.helpers import bulk
-from elasticsearch_dsl import connections
 import tqdm
 
 from collectiegroesbeek.model import BaseDocument, index_number_to_doctype
+from ingest.ingest_pkg.elasticsearch_utils import DocProcessor
 from ingest_pkg import logging_setup
-from ingest_pkg.elasticsearch_utils import IndexMover, setup_es_connection
-
-
-class CardProcessor:
-    def __init__(self, batch_size=500, dryrun: bool = False):
-        self.batch_size = batch_size
-        self.dryrun = dryrun
-        self.client = connections.get_connection()
-        self._movers: Dict[str, IndexMover] = {}
-        self._items: list[dict] = []
-
-    def register_index(self, doctype):
-        """Mark an index as being updated, creating an IndexMover instance."""
-        key = doctype.Index.name
-        if key in self._movers:
-            return
-        if not self.dryrun:
-            self._movers[key] = IndexMover(doctype)
-
-    def add(self, card: BaseDocument):
-        d = card.to_dict(include_meta=True)
-        if not self.dryrun:
-            d["_index"] = self._movers[d["_index"]].new_name
-        self._items.append(d)
-        if len(self._items) > self.batch_size:
-            self.flush()
-
-    def flush(self):
-        if len(self._items) > 0 and not self.dryrun:
-            bulk(self.client, self._items)
-        self._items = []
-
-    def finalize(self):
-        self.flush()
-        for mover in self._movers.values():
-            mover.move_alias_to_new()
+from ingest_pkg.elasticsearch_utils import setup_es_connection
 
 
 def filename_to_doctype(filename: str) -> Type[BaseDocument]:
@@ -60,7 +24,7 @@ def filename_to_doctype(filename: str) -> Type[BaseDocument]:
 
 
 def run(path, doctype_name: Optional[str], dryrun: bool):
-    processor = CardProcessor(dryrun=dryrun)
+    processor = DocProcessor(dryrun=dryrun)
     filenames = sorted(filename for filename in os.listdir(path) if filename.endswith(".csv"))
     pbar = tqdm.tqdm(filenames)
     for filename in pbar:
