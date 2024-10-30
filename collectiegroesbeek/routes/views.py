@@ -146,7 +146,6 @@ def search_names_ner():
     page = int(flask.request.args.get("page", 1))
     per_page = 200
     names, n_total_docs = names_ner_search(query=query, page=page, per_page=per_page)
-    n_total_docs = min(n_total_docs, 10_000)
     total_pages = (n_total_docs // per_page) + 1
     return flask.jsonify(
         {
