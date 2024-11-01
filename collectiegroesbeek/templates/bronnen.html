@@ -1,35 +1,157 @@
 {% extends "layout.html" %}
 
-{% block title %}Bronnen{% endblock %}
+{% block title %}Bronnenlijst{% endblock %}
 
+
+{% block css %}
+  <style>
+      .name-list {
+          list-style-type: none;
+          padding: 0;
+      }
+  </style>
+{% endblock %}
 
 {% block content %}
-
   <div class="row">
     <div class="col">
       <h1>Bronnen</h1>
       <p>
         Hier volgt een lijst met bronnen die in de dataset voorkomen. Deze zijn gegroepeerd zonder
-          suffixen zoals folionummer, pagina of regestnummer. Tussen haakjes staat het aantal documenten dat deze
-          bron noemen. Deze lijst is gelimiteerd tot de 10&thinsp;000 meest voorkomende bronnen.
-          De lijst wordt automatisch gegenereerd en is niet perfect, maar hopelijk wel behulpzaam.
+        suffixen zoals folionummer, pagina of regestnummer. Tussen haakjes staat het aantal documenten dat deze
+        bron noemen. Deze lijst is gelimiteerd tot de 10&thinsp;000 meest voorkomende bronnen.
+        De lijst wordt automatisch gegenereerd en is niet perfect, maar hopelijk wel behulpzaam.
+      </p>
+      <p>
+        Zoeken gaat op de exacte letters van elk woord, vanaf het begin van elk woord gezien. Je kan op meerdere
+        woorden tegelijk zoeken.
       </p>
     </div>
   </div>
 
-  <div class="row">
-  <div class="col-md-8 offset-md-2">
-
-    <div class="row">
-        <div class="col">
-            {% for bron, count in grouped_bronnen.items() %}
-                <a href="{{ url_for('search') }}?q=bron:&quot;{{ bron }}&quot;"
-                    >{{ bron }}</a> ({{ count }})<br />
-            {% endfor %}
+  <div class="row mt-4">
+    <div class="col-md-6 offset-md-1 col-12">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="search-addon">Zoek</span>
         </div>
+        <input type="text" class="form-control" id="searchInput"
+               aria-label="Search" aria-describedby="search-addon"
+               value="{{ query }}">
+      </div>
+      <nav>
+        <ul id="pagination" class="pagination mt-3 justify-content-center">
+            <!-- Pagination buttons will be added here -->
+        </ul>
+      </nav>
     </div>
-
-  </div>
   </div>
 
+  <div class="row mt-4">
+    <div class="col-md-6 offset-md-2 col-10 offset-1">
+      <ul id="myList" class="name-list">
+        <!-- Content will be added here -->
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block js %}
+  <script>
+      let debounceTimeout;
+      let currentPage = {{ page }};
+      document.getElementById('searchInput').addEventListener('input', function() {
+          clearTimeout(debounceTimeout);
+          debounceTimeout = setTimeout(function() {
+            currentPage = 1; // Reset to page 1 when a new search is made
+            searchName();
+        }, 300);
+      });
+
+      async function searchName() {
+          let input = document.getElementById('searchInput');
+          let query = input.value;
+          let response = await fetch(`{{ url_for('search_bronnen') }}?q=${query}&page=${currentPage}`);
+          let data = await response.json();
+
+          history.replaceState({} , '', createUrl(query, currentPage));
+
+          let list = document.getElementById('myList');
+          list.innerHTML = ''; // Clear the list
+          console.log(data);
+          for (let bron in data.bronnen) {
+              let li = document.createElement('li');
+              li.innerHTML = `<a href="{{ url_for('search') }}?q=bron:&quot;${bron}&quot;"
+                    >${bron}</a> (${data.bronnen[bron]})<br />`;
+              list.appendChild(li);
+          }
+
+          let pagination = document.getElementById('pagination');
+          pagination.innerHTML = ''; // Clear pagination
+
+          let startPage = Math.max(currentPage - 2, 1);
+          let endPage = Math.min(currentPage + 2, data.total_pages);
+
+          // Add first page button
+          addPageButton(pagination, 1, query);
+          if (startPage > 2) addPageEllipsis(pagination);
+
+          // Add intermediate page buttons
+          for (let i = startPage; i <= endPage; i++) {
+              if (i !== 1 && i !== data.total_pages) addPageButton(pagination, i, query);
+          }
+
+          if (endPage < data.total_pages - 1) addPageEllipsis(pagination);
+          if (data.total_pages > 1) {
+              addPageButton(pagination, data.total_pages, query);
+          }
+      }
+
+      function createUrl(query, page) {
+          let query_params = {};
+          if (query.length > 0) query_params["q"] = query;
+          if (page > 1) query_params["page"] = page;
+          let url = '{{ url_for('bronnen') }}';
+          if (Object.keys(query_params).length > 0) {
+              url += '?' + new URLSearchParams(query_params).toString();
+          }
+          return(url)
+      }
+
+      function addPageButton(pagination, pageNumber, query) {
+          let li = document.createElement('li');
+          li.className = 'page-item';
+          if (pageNumber === currentPage) li.classList.add('active');
+
+          let a = document.createElement('a');
+          a.className = 'page-link';
+          a.textContent = pageNumber;
+          a.href = createUrl(query, pageNumber);
+          a.addEventListener('click', function(e) {
+              e.preventDefault();
+              currentPage = pageNumber;
+              searchName();
+          });
+
+          li.appendChild(a);
+          pagination.appendChild(li);
+      }
+
+      function addPageEllipsis(pagination) {
+          let li = document.createElement('li');
+          li.className = 'page-item disabled';
+
+          let a = document.createElement('a');
+          a.className = 'page-link';
+          a.textContent = '...';
+
+          li.appendChild(a);
+          pagination.appendChild(li);
+      }
+
+      searchName()
+
+  </script>
 {% endblock %}

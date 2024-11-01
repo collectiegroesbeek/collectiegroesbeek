@@ -1,7 +1,7 @@
 import re
 from typing import Optional, List, Type
 
-from elasticsearch_dsl import Document, Index, Text, Keyword, Short
+from elasticsearch_dsl import Document, Index, Text, Keyword, Short, Integer
 
 
 class BaseDocument(Document):
@@ -66,7 +66,6 @@ class CardNameDoc(BaseDocument):
     naam: Optional[str] = Text(fields={"keyword": Keyword()})
     inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
     bron: Optional[str] = Text(fields={"keyword": Keyword()})
-    bron_prefix: Optional[list[str]] = Keyword(multi=True)
     getuigen: Optional[str] = Text(fields={"keyword": Keyword()})
     bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
@@ -97,8 +96,6 @@ class CardNameDoc(BaseDocument):
             doc.naam_keyword = create_name_keyword(str(doc.naam))
         if doc.datum is not None:
             doc.jaar = create_year(str(doc.datum))
-        if doc.bron is not None:
-            doc.bron_prefix = split_bron(doc.bron)
         return doc
 
     def is_valid(self):
@@ -162,7 +159,6 @@ class VoornamenDoc(BaseDocument):
     patroniem: Optional[str] = Text(fields={"keyword": Keyword()})
     inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
     bron: Optional[str] = Text(fields={"keyword": Keyword()})
-    bron_prefix: Optional[list[str]] = Keyword(multi=True)
     getuigen: Optional[str] = Text(fields={"keyword": Keyword()})
     bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
@@ -191,8 +187,6 @@ class VoornamenDoc(BaseDocument):
             return None
         if doc.datum is not None:
             doc.jaar = create_year(str(doc.datum))
-        if doc.bron is not None:
-            doc.bron_prefix = split_bron(doc.bron)
         return doc
 
     def is_valid(self):
@@ -235,7 +229,6 @@ class JaartallenDoc(BaseDocument):
     locatie: Optional[str] = Text(fields={"keyword": Keyword()})
     inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
     bron: Optional[str] = Text(fields={"keyword": Keyword()})
-    bron_prefix: Optional[list[str]] = Keyword(multi=True)
     getuigen: Optional[str] = Text(fields={"keyword": Keyword()})
     bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
@@ -263,8 +256,6 @@ class JaartallenDoc(BaseDocument):
             return None
         if doc.datum is not None:
             doc.jaar = create_year(str(doc.datum))
-        if doc.bron is not None:
-            doc.bron_prefix = split_bron(doc.bron)
         return doc
 
     def is_valid(self):
@@ -317,7 +308,6 @@ class MaatboekHeemskerkDoc(BaseDocument):
     jaar: Optional[int] = Short()
 
     bron: Optional[str] = Text(fields={"keyword": Keyword()})
-    bron_prefix: Optional[list[str]] = Keyword(multi=True)
     opmerkingen: Optional[str] = Text(fields={"keyword": Keyword()})
 
     class Index:
@@ -345,8 +335,6 @@ class MaatboekHeemskerkDoc(BaseDocument):
         doc.bron = parse_entry_optional(line[8])
         doc.opmerkingen = parse_entry_optional(line[9])
         doc.jaar = cls.parse_year(doc.datum)
-        if doc.bron is not None:
-            doc.bron_prefix = split_bron(doc.bron)
         return doc
 
     @staticmethod
@@ -407,7 +395,6 @@ class MaatboekHeemstedeDoc(BaseDocument):
     datum: Optional[str] = Text(fields={"keyword": Keyword()})
     jaar: Optional[int] = Short()
     bron: Optional[str] = Text(fields={"keyword": Keyword()})
-    bron_prefix: Optional[list[str]] = Keyword(multi=True)
     opmerkingen: Optional[str] = Text(fields={"keyword": Keyword()})
 
     class Index:
@@ -431,8 +418,6 @@ class MaatboekHeemstedeDoc(BaseDocument):
         doc.bron = parse_entry_optional(line[6])
         doc.opmerkingen = parse_entry_optional(line[7])
         doc.jaar = cls.parse_year(doc.datum)
-        if doc.bron is not None:
-            doc.bron_prefix = split_bron(doc.bron)
         return doc
 
     @staticmethod
@@ -482,7 +467,6 @@ class MaatboekBroekInWaterlandDoc(BaseDocument):
     datum: Optional[str] = Text(fields={"keyword": Keyword()})
     jaar: Optional[int] = Short()
     bron: Optional[str] = Text(fields={"keyword": Keyword()})
-    bron_prefix: Optional[list[str]] = Keyword(multi=True)
     opmerkingen: Optional[str] = Text(fields={"keyword": Keyword()})
 
     class Index:
@@ -506,8 +490,6 @@ class MaatboekBroekInWaterlandDoc(BaseDocument):
         doc.bron = parse_entry_optional(line[6])
         doc.opmerkingen = parse_entry_optional(line[7])
         doc.jaar = cls.parse_year(doc.datum)
-        if doc.bron is not None:
-            doc.bron_prefix = split_bron(doc.bron)
         return doc
 
     @staticmethod
@@ -555,7 +537,6 @@ class MaatboekSuderwoude(BaseDocument):
     datum: Optional[str] = Text(fields={"keyword": Keyword()})
     jaar: Optional[int] = Short()
     bron: Optional[str] = Text(fields={"keyword": Keyword()})
-    bron_prefix: Optional[list[str]] = Keyword(multi=True)
     opmerkingen: Optional[str] = Text(fields={"keyword": Keyword()})
 
     class Index:
@@ -579,8 +560,6 @@ class MaatboekSuderwoude(BaseDocument):
         doc.bron = parse_entry_optional(line[6])
         doc.opmerkingen = parse_entry_optional(line[7])
         doc.jaar = cls.parse_year(doc.datum)
-        if doc.bron is not None:
-            doc.bron_prefix = split_bron(doc.bron)
         return doc
 
     @staticmethod
@@ -628,7 +607,6 @@ class EigendomsaktenHeemskerk(BaseDocument):
     omschrijving: Optional[str] = Text(fields={"keyword": Keyword()})
     belending: Optional[str] = Text(fields={"keyword": Keyword()})
     bron: Optional[str] = Text(fields={"keyword": Keyword()})
-    bron_prefix: Optional[list[str]] = Keyword(multi=True)
     opmerkingen: Optional[str] = Text(fields={"keyword": Keyword()})
 
     jaar: Optional[int] = Short()
@@ -655,8 +633,6 @@ class EigendomsaktenHeemskerk(BaseDocument):
         doc.bron = parse_entry_optional(line[7])
         doc.opmerkingen = parse_entry_optional(line[7])
         doc.jaar = cls.parse_year(doc.datum)
-        if doc.bron is not None:
-            doc.bron_prefix = split_bron(doc.bron)
         return doc
 
     @staticmethod
@@ -787,7 +763,6 @@ class BaseTransportregisterDoc(BaseDocument):
     datum: Optional[str] = Text(fields={"keyword": Keyword()})
     inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
     bron: Optional[str] = Text(fields={"keyword": Keyword()})
-    bron_prefix: Optional[list[str]] = Keyword(multi=True)
     getuigen: Optional[str] = Text(fields={"keyword": Keyword()})
     bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
@@ -808,8 +783,6 @@ class BaseTransportregisterDoc(BaseDocument):
             return None
         if doc.datum is not None:
             doc.jaar = create_year(str(doc.datum))
-        if doc.bron is not None:
-            doc.bron_prefix = split_bron(doc.bron)
         return doc
 
     def is_valid(self):
@@ -963,7 +936,6 @@ class HaarlemAlgemeenDoc(BaseDocument):
     locatie: Optional[str] = Text(fields={"keyword": Keyword()})
     inhoud: Optional[str] = Text(fields={"keyword": Keyword()})
     bron: Optional[str] = Text(fields={"keyword": Keyword()})
-    bron_prefix: Optional[list[str]] = Keyword(multi=True)
     getuigen: Optional[str] = Text(fields={"keyword": Keyword()})
     bijzonderheden: Optional[str] = Text(fields={"keyword": Keyword()})
 
@@ -991,8 +963,6 @@ class HaarlemAlgemeenDoc(BaseDocument):
         doc.bijzonderheden = parse_entry_optional(line[6])
         if doc.datum is not None:
             doc.jaar = create_year(str(doc.datum))
-        if doc.bron is not None:
-            doc.bron_prefix = split_bron(doc.bron)
         return doc
 
     @staticmethod
@@ -1028,15 +998,6 @@ def parse_entry(entry: str) -> str:
 
 def parse_entry_optional(entry: str) -> Optional[str]:
     return entry.strip() or None
-
-
-def split_bron(text: str) -> list[str]:
-    parts = list(re.split(r"(:?;\s|/(?=\w))", text))
-    parts = [part.strip() for part in parts if len(part) > 4]
-    parts_prefix = [
-        re.split(r"\b(?:fol|p|regest|bl|reg|dossier \d+)\b", part)[0].strip() for part in parts
-    ]
-    return parts_prefix
 
 
 index_number_to_doctype = {
@@ -1089,6 +1050,18 @@ class NamesNerDoc(Document):
 
     class Index:
         name: str = "names-ner"
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+
+class BronDoc(Document):
+    bron: str = Text(fields={"keyword": Keyword()})
+    bron_parts: list[str] = Keyword(multi=True)
+    count: int = Integer()
+
+    class Index:
+        name: str = "bronnen"
 
         def __new__(cls):
             return Index(name=cls.name)
