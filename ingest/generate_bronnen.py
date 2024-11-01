@@ -50,6 +50,10 @@ def split_multibron(multibron: str) -> list[str]:
     bronnen_prefix = [
         re.split(r"\b(?:fol|p|regest|bl|reg|dossier \d+)\b", bron)[0].strip() for bron in bronnen
     ]
+    # remove numbers from end of string
+    bronnen_prefix = [
+        re.sub(r"\bno \d+$", "", bron) for bron in bronnen_prefix
+    ]
     return bronnen_prefix
 
 
