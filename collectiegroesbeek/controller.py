@@ -276,7 +276,7 @@ def bronnen_search(query: str, page: int, per_page: int) -> tuple[dict[str, int]
     query_parts = query.split(" ")
     s = BronDoc.search()
     s = s.query(Q("bool", must=[Q("prefix", bron_parts=part) for part in query_parts]))
-    s = s.sort("-count")
+    s = s.sort("bron.keyword")
     s = s[per_page * (page - 1) : per_page * page]
     s.execute()
     n_total_docs = s.count()
