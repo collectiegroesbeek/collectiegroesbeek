@@ -14,6 +14,7 @@ from .model import (
     index_name_to_doctype,
     list_index_names,
     NamesNerDoc,
+    BronDoc,
 )
 
 
@@ -268,4 +269,16 @@ def names_ner_search(query: str, page: int, per_page: int) -> tuple[list[str], i
     s.execute()
     n_total_docs = s.count()
     result = [doc.name for doc in s]
+    return result, n_total_docs
+
+
+def bronnen_search(query: str, page: int, per_page: int) -> tuple[dict[str, int], int]:
+    query_parts = query.split(" ")
+    s = BronDoc.search()
+    s = s.query(Q("bool", must=[Q("prefix", bron_parts=part) for part in query_parts]))
+    s = s.sort("-count")
+    s = s[per_page * (page - 1) : per_page * page]
+    s.execute()
+    n_total_docs = s.count()
+    result = {doc.bron: doc.count for doc in s}
     return result, n_total_docs

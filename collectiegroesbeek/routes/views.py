@@ -16,6 +16,7 @@ from ..controller import (
     format_int,
     get_grouped_bronnen,
     names_ner_search,
+    bronnen_search,
 )
 from ..model import BaseDocument, list_doctypes, index_name_to_doctype
 
@@ -159,10 +160,25 @@ def search_names_ner():
 
 @app.route("/bronnen/")
 def bronnen():
-    grouped_bronnen = get_grouped_bronnen()
-    return flask.render_template(
-        "bronnen.html",
-        grouped_bronnen=grouped_bronnen,
+    query = flask.request.args.get("q", "").lower().strip()
+    page = int(flask.request.args.get("page", 1))
+    return flask.render_template("bronnen.html", query=query, page=page)
+
+
+@app.route("/bronnen/search/", methods=["GET"])
+def search_bronnen():
+    query = flask.request.args.get("q", "").lower().strip()
+    page = int(flask.request.args.get("page", 1))
+    per_page = 200
+    _bronnen, n_total_docs = bronnen_search(query=query, page=page, per_page=per_page)
+    total_pages = (n_total_docs // per_page) + 1
+    return flask.jsonify(
+        {
+            "page": page,
+            "per_page": per_page,
+            "total_pages": total_pages,
+            "bronnen": _bronnen,
+        }
     )
 
 
