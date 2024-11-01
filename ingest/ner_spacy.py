@@ -1,6 +1,4 @@
-import csv
 import logging
-import os
 import re
 
 import spacy
@@ -10,6 +8,7 @@ from tqdm import tqdm
 from collectiegroesbeek.controller import get_index_from_alias
 from collectiegroesbeek.model import NamesNerDoc
 from ingest.ingest_pkg import logging_setup
+from ingest.ingest_pkg.dataloader import iter_csv_files, iter_csv_file_items
 from ingest.ingest_pkg.elasticsearch_utils import setup_es_connection, DocProcessor
 
 
@@ -17,26 +16,19 @@ logger = logging.getLogger(__name__)
 
 
 def create_dataset():
-    path = "../collectiegroesbeek-data"
-    filenames = sorted(filename for filename in os.listdir(path) if filename.endswith(".csv"))
     text_pairs: list[tuple[str, str]] = []
-    pbar = tqdm(filenames)
-    for filename in pbar:
+    for filepath, filename in iter_csv_files():
         if not filename.startswith(("Coll Gr 1", "Coll Gr 2")):
             continue
-        pbar.set_postfix(filename=filename)
-        filepath = os.path.join(path, filename)
-        with open(filepath, encoding="utf-8") as f:
-            csvreader = csv.DictReader(f)
-            for item in csvreader:
-                if filename.startswith("Coll Gr 1"):
-                    field1 = item.get("naam")
-                    field2 = item.get("inhoud")
-                elif filename.startswith("Coll Gr 2"):
-                    field1 = (item.get("voornaam", "") + " " + item.get("patroniem", "")).strip()
-                    field2 = item.get("inhoud")
-                if field1 and field2:
-                    text_pairs.append((field1, field2))
+        for item in iter_csv_file_items(filepath=filepath):
+            if filename.startswith("Coll Gr 1"):
+                field1 = item.get("naam")
+                field2 = item.get("inhoud")
+            elif filename.startswith("Coll Gr 2"):
+                field1 = (item.get("voornaam", "") + " " + item.get("patroniem", "")).strip()
+                field2 = item.get("inhoud")
+            if field1 and field2:
+                text_pairs.append((field1, field2))
 
     return text_pairs
 
