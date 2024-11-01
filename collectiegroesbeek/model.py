@@ -1056,7 +1056,7 @@ class NamesNerDoc(Document):
 
 
 class BronDoc(Document):
-    bron: str = Text(fields={"keyword": Keyword(multi=True)}, multi=True)
+    bron: str = Text(fields={"keyword": Keyword()})
     bron_parts: list[str] = Keyword(multi=True)
     count: int = Integer()
 
