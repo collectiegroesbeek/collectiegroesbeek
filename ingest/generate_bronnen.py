@@ -32,6 +32,14 @@ def process_bronnen(bronnen: dict[str, int]):
     for multibron, count in bronnen.items():
         bronnen_prefix = split_multibron(multibron)
         for bron_prefix in bronnen_prefix:
+            if not bron_prefix:
+                continue
+            if len(bronnen_prefix) <= 2:
+                continue
+            if re.match(r"[\d-]+", bron_prefix):
+                continue
+            if re.match(r"[IVX]+", bron_prefix):
+                continue
             out[bron_prefix] += count
     return out
 
@@ -57,9 +65,10 @@ def store_in_elasticsearch(bronnen: dict[str, int]):
         processor.add(doc)
     processor.finalize()
 
-    index = Index(get_index_from_alias(BronDoc.Index.name))
-    index.settings(max_result_window=len(bronnen))
-    index.save()
+    if len(bronnen) > 10_000:
+        index = Index(get_index_from_alias(BronDoc.Index.name))
+        index.settings(max_result_window=int(len(bronnen) * 1.1))
+        index.save()
 
 
 def main():
