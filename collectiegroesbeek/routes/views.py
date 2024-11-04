@@ -14,9 +14,9 @@ from ..controller import (
     get_number_of_total_docs,
     get_indices_and_doc_counts,
     format_int,
-    get_grouped_bronnen,
     names_ner_search,
     bronnen_search,
+    get_all_spelling_mistake_candidates,
 )
 from ..model import BaseDocument, list_doctypes, index_name_to_doctype
 
@@ -180,6 +180,23 @@ def search_bronnen():
             "bronnen": _bronnen,
         }
     )
+
+
+@app.route("/spelling/")
+def spelling_mistake_candidates():
+    docs = get_all_spelling_mistake_candidates()
+    items = []
+    for doc in docs:
+        for candidate, candidate_count in zip(doc.candidates, doc.candidate_counts):
+            items.append(
+                {
+                    "word": doc.word,
+                    "word_count": doc.count,
+                    "candidate": candidate,
+                    "candidate_count": candidate_count,
+                }
+            )
+    return flask.render_template("spelling_mistake_candidates.html", items=items)
 
 
 @app.route("/publicaties/", methods=["GET"])

@@ -743,7 +743,6 @@ class TiendeEnHonderdstePenning(BaseDocument):
 
 
 class TiendePenningHaarlemDoc(TiendeEnHonderdstePenning):
-
     class Index:
         name: str = "tiende-penning-haarlem"
 
@@ -1062,6 +1061,20 @@ class BronDoc(Document):
 
     class Index:
         name: str = "bronnen"
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+
+class SpellingMistakeCandidateDoc(Document):
+    word: str = Keyword()
+    count: int = Integer()
+    length: int = Integer()
+    candidates: list[str] = Keyword(multi=True)
+    candidate_counts: list[int] = Integer(multi=True)
+
+    class Index:
+        name: str = "spelling-mistake-candidates"
 
         def __new__(cls):
             return Index(name=cls.name)
