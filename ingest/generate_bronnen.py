@@ -27,34 +27,27 @@ def load_bronnen() -> dict[str, int]:
     return bronnen
 
 
-def process_bronnen(bronnen: dict[str, int]):
+def process_bronnen(bronnen: dict[str, int]) -> dict[str, int]:
     out: dict[str, int] = defaultdict(lambda: 0)
     for multibron, count in bronnen.items():
         bronnen_prefix = split_multibron(multibron)
         for bron_prefix in bronnen_prefix:
             if not bron_prefix:
                 continue
-            if len(bronnen_prefix) <= 2:
-                continue
-            if re.match(r"[\d-]+", bron_prefix):
-                continue
-            if re.match(r"[IVX]+", bron_prefix):
-                continue
             out[bron_prefix] += count
     return out
 
 
 def split_multibron(multibron: str) -> list[str]:
-    bronnen = list(re.split(r"(:?;\s|/(?=\w))", multibron))
-    bronnen = [bron.strip() for bron in bronnen if len(bron) > 4]
-    bronnen_prefix = [
-        re.split(r"\b(?:fol|p|regest|bl|reg|dossier \d+)\b", bron)[0].strip() for bron in bronnen
+    bronnen = [bron.strip() for bron in multibron.split(";")]
+    # remove subbron
+    bronnen = [re.split(r"/\s?(?=\w)", bron)[0].strip() for bron in bronnen]
+    # remove numbers
+    bronnen = [
+        re.sub(r"\b(?:fol|p|regest|bl|reg|dossier|no) [\d\s,v]+\b", "", bron).strip()
+        for bron in bronnen
     ]
-    # remove numbers from end of string
-    bronnen_prefix = [
-        re.sub(r"\bno \d+$", "", bron) for bron in bronnen_prefix
-    ]
-    return bronnen_prefix
+    return bronnen
 
 
 def store_in_elasticsearch(bronnen: dict[str, int]):
