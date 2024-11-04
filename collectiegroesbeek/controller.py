@@ -190,7 +190,7 @@ def get_bronnen_list() -> List[dict]:
 
 
 def _group_bronnen(bronnen_list: list[dict]) -> dict[str, int]:
-    out = defaultdict(lambda: 0)
+    out: dict[str, int] = defaultdict(lambda: 0)
     for bron in bronnen_list:
         key = bron["key"]
         key = re.sub(r" no [\d\s,]+$", "", key)
