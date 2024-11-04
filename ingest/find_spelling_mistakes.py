@@ -7,7 +7,8 @@ from tqdm import tqdm
 
 from ingest.ingest_pkg import logging_setup
 from ingest.ingest_pkg.dataloader import iter_csv_files, iter_csv_file_items
-
+from ingest.ingest_pkg.elasticsearch_utils import setup_es_connection, DocProcessor
+from model import SpellingMistakeCandidateDoc
 
 logger = logging.getLogger(__name__)
 
@@ -30,7 +31,7 @@ def load_data() -> dict[str, int]:
 
 def find_mistakes(words: dict[str, int]) -> dict[str, list[str]]:
     errors: dict[str, list[str]] = {}
-    for word, count in tqdm(words.items(), total=len(words)):
+    for word, count in tqdm(words.items(), desc="find mistakes", total=len(words)):
         candidates = find_edit_distance_1(word=word, all_words=words)
         if not candidates:
             continue
@@ -55,7 +56,7 @@ def filter_mistakes(
     errors: dict[str, list[str]], word_counts: dict[str, int]
 ) -> dict[str, list[str]]:
     errors_filtered: dict[str, list[str]] = defaultdict(list)
-    for word, candidates in errors.items():
+    for word, candidates in tqdm(errors.items(), desc="filter mistakes", total=len(errors)):
         for candidate in candidates:
             if len(word) < 4:
                 continue
@@ -65,12 +66,28 @@ def filter_mistakes(
     return errors_filtered
 
 
+def store_in_elasticsearch(errors: dict[str, list[str]], word_counts: dict[str, int]):
+    processor = DocProcessor()
+    processor.register_index(SpellingMistakeCandidateDoc)
+    for word, candidates in tqdm(errors.items(), desc="store in ES", total=len(errors)):
+        doc = SpellingMistakeCandidateDoc(
+            word=word,
+            count=word_counts[word],
+            candidates=candidates,
+            candidate_counts=[word_counts[candidate] for candidate in candidates],
+        )
+        processor.add(doc)
+    processor.finalize()
+
+
 def main():
     logging_setup()
+    setup_es_connection()
 
     data = load_data()
     errors = find_mistakes(words=data)
     errors = filter_mistakes(errors=errors, word_counts=data)
+    store_in_elasticsearch(errors=errors, word_counts=data)
 
 
 if __name__ == "__main__":
