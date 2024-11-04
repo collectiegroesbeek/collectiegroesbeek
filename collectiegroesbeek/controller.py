@@ -15,6 +15,7 @@ from .model import (
     list_index_names,
     NamesNerDoc,
     BronDoc,
+    SpellingMistakeCandidateDoc,
 )
 
 
@@ -282,3 +283,13 @@ def bronnen_search(query: str, page: int, per_page: int) -> tuple[dict[str, int]
     n_total_docs = s.count()
     result = {doc.bron: doc.count for doc in s}
     return result, n_total_docs
+
+
+def get_all_spelling_mistake_candidates() -> list[SpellingMistakeCandidateDoc]:
+    s = SpellingMistakeCandidateDoc.search()
+    s = s.sort("-length")
+    count_docs = s.count()
+    if count_docs > 10_000:
+        raise ValueError("Number of spelling mistake docs exceeds window size")
+    s = s[:count_docs]
+    return list(s)

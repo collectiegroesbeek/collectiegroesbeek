@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}Mogelijke spelfouten{% endblock %}
+
+
+{% block content %}
+  <div class="row">
+    <div class="col">
+      <h1>Mogelijke spelfouten</h1>
+
+      <p>
+        Op deze pagina proberen we mogelijke spelfouten zichtbaar te maken. Met deze lijst kunnen we
+        handmatig fouten verbeteren in de brondata.
+
+        Hiervoor maken we een lijst met alle woorden. Vervolgens zoeken we voor elk woord welke
+        andere woorden een edit distance van 1 hebben, dit zijn kandidaten voor spelfouten. Daarna
+        filteren we de kandidaten: ze moeten vier tekens of langer zijn, en ze moeten vijf keer
+        minder voorkomen dan het basiswoord.
+      </p>
+
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Woord</th>
+            <th scope="col">Woordfrequentie</th>
+            <th scope="col">Mogelijke spelfout</th>
+            <th scope="col">Spelfoutfrequentie</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+          <tr>
+            <td>
+              <a href="{{ url_for('search') }}?q=&quot;{{ item.word }}&quot;">{{ item.word }}</a>
+            </td>
+            <td>{{ item.word_count }}</td>
+            <td>
+              <a href="{{ url_for('search') }}?q=&quot;{{ item.candidate }}&quot;">{{ item.candidate }}</a>
+            </td>
+            <td>{{ item.candidate_count }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+{% endblock %}
