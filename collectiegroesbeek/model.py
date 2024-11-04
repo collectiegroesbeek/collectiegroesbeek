@@ -1069,6 +1069,7 @@ class BronDoc(Document):
 class SpellingMistakeCandidateDoc(Document):
     word: str = Keyword()
     count: int = Integer()
+    length: int = Integer()
     candidates: list[str] = Keyword(multi=True)
     candidate_counts: list[int] = Integer(multi=True)
 

@@ -73,6 +73,7 @@ def store_in_elasticsearch(errors: dict[str, list[str]], word_counts: dict[str, 
         doc = SpellingMistakeCandidateDoc(
             word=word,
             count=word_counts[word],
+            length=len(word),
             candidates=candidates,
             candidate_counts=[word_counts[candidate] for candidate in candidates],
         )
