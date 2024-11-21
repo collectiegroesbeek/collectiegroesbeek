@@ -1,5 +1,3 @@
-import pytest
-
 from collectiegroesbeek.model import create_year
 
 

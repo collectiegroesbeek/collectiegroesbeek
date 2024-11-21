@@ -31,11 +31,10 @@ def datatables_api():
             for item in req["order"]
         ]
     )
-    for column in req['columns']:
-        if column['search']['value']:
+    for column in req["columns"]:
+        if column["search"]["value"]:
             s = s.query(
-                "match",
-                **{column['data']: {"query": column['search']['value'], "operator": "and"}}
+                "match", **{column["data"]: {"query": column["search"]["value"], "operator": "and"}}
             )
     res = s.execute()
     docs = []

@@ -47,7 +47,21 @@ def split_multibron(multibron: str) -> list[str]:
     bronnen = [re.split(r"/\s?(?=\w)", bron)[0].strip() for bron in bronnen]
     # remove numbers
     words = [
-        "fol", "p", "regest", "bl", "reg", "dossier", "inv", "jg", "post", "voor", "vóór", "doos", "no", "dl", "noot",
+        "fol",
+        "p",
+        "regest",
+        "bl",
+        "reg",
+        "dossier",
+        "inv",
+        "jg",
+        "post",
+        "voor",
+        "vóór",
+        "doos",
+        "no",
+        "dl",
+        "noot",
         "lade",
     ]
     regex = re.compile(
