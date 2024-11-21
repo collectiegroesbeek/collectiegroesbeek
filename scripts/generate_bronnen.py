@@ -1,5 +1,4 @@
 import logging
-import re
 from collections import defaultdict
 
 from elasticsearch_dsl import Index
@@ -8,6 +7,7 @@ from tqdm import tqdm
 from collectiegroesbeek.controller import get_index_from_alias
 from collectiegroesbeek.model import BronDoc
 from ingest import logging_setup
+from ingest.bronnen import split_multibron
 from ingest.dataloader import iter_csv_files, iter_csv_file_items
 from ingest.elasticsearch_utils import setup_es_connection, DocProcessor
 
@@ -39,39 +39,6 @@ def process_bronnen(bronnen: dict[str, int]) -> dict[str, int]:
                 continue
             out[bron_prefix] += count
     return out
-
-
-def split_multibron(multibron: str) -> list[str]:
-    bronnen = [bron.strip() for bron in multibron.split(";")]
-    # remove subbron
-    bronnen = [re.split(r"/\s?(?=\w)", bron)[0].strip() for bron in bronnen]
-    # remove comments
-    bronnen = [re.sub(r"\s\([\w\d\s]+\)(\s|$)", "", bron, flags=re.I).strip() for bron in bronnen]
-    # remove numbers
-    words = [
-        "fol",
-        "p",
-        "regest",
-        "bl",
-        "reg",
-        "dossier",
-        "inv",
-        "jg",
-        "post",
-        "voor",
-        "vóór",
-        "doos",
-        "no",
-        "dl",
-        "noot",
-        "lade",
-    ]
-    regex = re.compile(
-        rf"( ((en|copie) )?({'|'.join(map(re.escape, words))})?\b( no )?([\d\s,v-]|(?-i:[IVXLC]))+([abc],?)?( copie(en)?)?)+$",
-        flags=re.IGNORECASE,
-    )
-    bronnen = [re.sub(regex, "", bron).strip() for bron in bronnen]
-    return bronnen
 
 
 def store_in_elasticsearch(bronnen: dict[str, int]):

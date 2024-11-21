@@ -1,6 +1,6 @@
 import pytest
 
-from scripts.generate_bronnen import split_multibron
+from ingest.bronnen import split_multibron
 
 
 @pytest.mark.parametrize(
