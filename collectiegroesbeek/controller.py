@@ -79,8 +79,6 @@ class Searcher:
             fields.append(words[-1].strip(" "))
             if len(words[:-1]) > 0:
                 keywords_sets.append(" ".join(words[:-1]).strip(" "))
-            else:
-                keywords_sets.append("")
         keywords_sets.append(parts[-1].strip(" "))
         # Edge case when question starts with a normal search term
         if len(keywords_sets) > len(fields):
