@@ -1,6 +1,6 @@
 import pytest
 
-from ingest.generate_bronnen import split_multibron
+from scripts.generate_bronnen import split_multibron
 
 
 @pytest.mark.parametrize(
@@ -20,9 +20,9 @@ from ingest.generate_bronnen import split_multibron
         ("E.A. Dossiers dl III dossier 3244", ["E.A. Dossiers"]),
         (
             "Mr van Overvoorde: Arch Kloosters regest 1193, 1207 (klooster Engelendaal)",
-            ["Mr van Overvoorde: Arch Kloosters regest 1193, 1207 (klooster Engelendaal)"],
+            ["Mr van Overvoorde: Arch Kloosters"],
         ),
-        ("Inv no 1081 p 72 (1 omslag)", ["Inv no 1081 p 72 (1 omslag)"]),
+        ("Inv no 1081 p 72 (1 omslag)", ["Inv"]),
         ("A.R.A. Graf Rekenkamer 2158/Rek Rentmeester Land van Arkel", ["A.R.A. Graf Rekenkamer"]),
         ("A.R.A. Leenkamer 32 Copieen fol 1/EL 25 fol 1", ["A.R.A. Leenkamer"]),
         ("A.R.A. Leenkamer 117b, Copie fol 121/Reg Charolais fol 59", ["A.R.A. Leenkamer"]),
@@ -30,6 +30,14 @@ from ingest.generate_bronnen import split_multibron
         ("Alg Ned Familieblad 1889 VI p 75 en p 52", ["Alg Ned Familieblad"]),
         ("Alg Ned Familieblad jg 1889 VI p 139/Taxandria 1914 p 39", ["Alg Ned Familieblad"]),
         ("Alg Ned Familieblad 1889, dl 6 p 139", ["Alg Ned Familieblad"]),
+        (
+            "Alg Ned Familieblad 1886 p 305, 317 en 1887 p 9 (genealogie), 137",
+            ["Alg Ned Familieblad 1886 p 305, 317 en 1887 p 9 (genealogie),"],
+        ),
+        (
+            "A.R.A. Arch Abdij Leeuwenhorst Inv no 709 regest 412 (regestenlijst)/Vangassen no 363 p 200",
+            ["A.R.A. Arch Abdij Leeuwenhorst"],
+        ),
         ("No matching word here", ["No matching word here"]),
     ],
 )
