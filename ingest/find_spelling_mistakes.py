@@ -3,12 +3,16 @@ import re
 import string
 from collections import defaultdict
 
+from elasticsearch_dsl import Index
 from tqdm import tqdm
 
+from collectiegroesbeek.controller import get_index_from_alias
 from ingest.ingest_pkg import logging_setup
 from ingest.ingest_pkg.dataloader import iter_csv_files, iter_csv_file_items
 from ingest.ingest_pkg.elasticsearch_utils import setup_es_connection, DocProcessor
-from model import SpellingMistakeCandidateDoc
+
+from collectiegroesbeek.model import SpellingMistakeCandidateDoc
+
 
 logger = logging.getLogger(__name__)
 
@@ -17,15 +21,12 @@ def load_data() -> dict[str, int]:
     words: dict[str, int] = defaultdict(lambda: 0)
     for filepath, filename in iter_csv_files():
         for item in iter_csv_file_items(filepath=filepath):
-            try:
-                bron = item["bron"]
-            except KeyError:
-                continue
-            # split on any of the characters
-            for word in re.split(r"[-,;:.\s]", bron):
-                word = word.strip().lower()
-                if word.isalpha() and len(word) > 2:
-                    words[word] += 1
+            for text in item.values():
+                # split on any of the characters
+                for word in re.split(r"[-,;:.\s]", text):
+                    word = word.strip().lower()
+                    if word.isalpha() and len(word) > 2:
+                        words[word] += 1
     return words
 
 
@@ -79,6 +80,11 @@ def store_in_elasticsearch(errors: dict[str, list[str]], word_counts: dict[str, 
         )
         processor.add(doc)
     processor.finalize()
+
+    if len(errors) > 10_000:
+        index = Index(get_index_from_alias(SpellingMistakeCandidateDoc.Index.name))
+        index.settings(max_result_window=int(len(errors) * 1.1))
+        index.save()
 
 
 def main():
