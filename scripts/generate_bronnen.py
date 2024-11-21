@@ -7,9 +7,9 @@ from tqdm import tqdm
 
 from collectiegroesbeek.controller import get_index_from_alias
 from collectiegroesbeek.model import BronDoc
-from ingest.ingest_pkg import logging_setup
-from ingest.ingest_pkg.dataloader import iter_csv_files, iter_csv_file_items
-from ingest.ingest_pkg.elasticsearch_utils import setup_es_connection, DocProcessor
+from ingest import logging_setup
+from ingest.dataloader import iter_csv_files, iter_csv_file_items
+from ingest.elasticsearch_utils import setup_es_connection, DocProcessor
 
 
 logger = logging.getLogger(__name__)
