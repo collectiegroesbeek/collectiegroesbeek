@@ -27,7 +27,7 @@ jobs:
 
     - name: Run Ruff linter
       run: |
-        ruff . --fix
+        ruff check .
 
     - name: Run Ruff formatter
       run: |
