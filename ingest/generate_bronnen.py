@@ -34,6 +34,9 @@ def process_bronnen(bronnen: dict[str, int]) -> dict[str, int]:
         for bron_prefix in bronnen_prefix:
             if not bron_prefix:
                 continue
+            if len(bron_prefix) < 5:
+                # bit of a hack to remove some garbage like just numbers
+                continue
             out[bron_prefix] += count
     return out
 
@@ -43,10 +46,15 @@ def split_multibron(multibron: str) -> list[str]:
     # remove subbron
     bronnen = [re.split(r"/\s?(?=\w)", bron)[0].strip() for bron in bronnen]
     # remove numbers
-    bronnen = [
-        re.sub(r"\b(?:fol|p|regest|bl|reg|dossier|no) [\d\s,v]+\b", "", bron).strip()
-        for bron in bronnen
+    words = [
+        "fol", "p", "regest", "bl", "reg", "dossier", "inv", "jg", "post", "voor", "vóór", "doos", "no", "dl", "noot",
+        "lade",
     ]
+    regex = re.compile(
+        rf"( ((en|copie) )?({'|'.join(map(re.escape, words))})?\b( no )?([\d\s,v-]|(?-i:[IVXLC]))+([abc],?)?( copie(en)?)?)+$",
+        flags=re.IGNORECASE,
+    )
+    bronnen = [re.sub(regex, "", bron).strip() for bron in bronnen]
     return bronnen
 
 
