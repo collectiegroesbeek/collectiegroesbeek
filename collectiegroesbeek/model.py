@@ -1066,6 +1066,16 @@ class BronDoc(Document):
             return Index(name=cls.name)
 
 
+class LocationDoc(Document):
+    location: str = Text(fields={"keyword": Keyword()})
+
+    class Index:
+        name: str = "locations"
+
+        def __new__(cls):
+            return Index(name=cls.name)
+
+
 class SpellingMistakeCandidateDoc(Document):
     word: str = Keyword()
     count: int = Integer()
