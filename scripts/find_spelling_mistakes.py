@@ -3,10 +3,8 @@ import re
 import string
 from collections import defaultdict
 
-from elasticsearch_dsl import Index
 from tqdm import tqdm
 
-from collectiegroesbeek.controller import get_index_from_alias
 from ingest import logging_setup
 from ingest.dataloader import iter_csv_files, iter_csv_file_items
 from ingest.elasticsearch_utils import setup_es_connection, DocProcessor
@@ -17,6 +15,11 @@ from collectiegroesbeek.model import SpellingMistakeCandidateDoc
 logger = logging.getLogger(__name__)
 
 
+MIN_WORD_LENGTH = 6
+WORD_COUNT_RATIO = 10
+MISTAKE_MAX_COUNT = 5
+
+
 def load_data() -> dict[str, int]:
     words: dict[str, int] = defaultdict(lambda: 0)
     for filepath, filename in iter_csv_files():
@@ -25,7 +28,7 @@ def load_data() -> dict[str, int]:
                 # split on any of the characters
                 for word in re.split(r"[-,;:.\s]", text):
                     word = word.strip().lower()
-                    if word.isalpha() and len(word) > 2:
+                    if word.isalpha() and len(word) > MIN_WORD_LENGTH:
                         words[word] += 1
     return words
 
@@ -59,9 +62,9 @@ def filter_mistakes(
     errors_filtered: dict[str, list[str]] = defaultdict(list)
     for word, candidates in tqdm(errors.items(), desc="filter mistakes", total=len(errors)):
         for candidate in candidates:
-            if len(word) < 4:
+            if word_counts[word] < WORD_COUNT_RATIO * word_counts[candidate]:
                 continue
-            if word_counts[word] < 5 * word_counts[candidate]:
+            if word_counts[candidate] > MISTAKE_MAX_COUNT:
                 continue
             errors_filtered[word].append(candidate)
     return errors_filtered
@@ -80,11 +83,6 @@ def store_in_elasticsearch(errors: dict[str, list[str]], word_counts: dict[str, 
         )
         processor.add(doc)
     processor.finalize()
-
-    if len(errors) > 10_000:
-        index = Index(get_index_from_alias(SpellingMistakeCandidateDoc.Index.name))
-        index.settings(max_result_window=int(len(errors) * 1.1))
-        index.save()
 
 
 def main():

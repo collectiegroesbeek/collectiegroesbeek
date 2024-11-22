@@ -287,7 +287,4 @@ def bronnen_search(query: str, page: int, per_page: int) -> tuple[dict[str, int]
 
 def get_all_spelling_mistake_candidates() -> list[SpellingMistakeCandidateDoc]:
     s = SpellingMistakeCandidateDoc.search()
-    s = s.sort("-length")
-    count_docs = s.count()
-    s = s[:count_docs]
-    return list(s)
+    return list(s.scan())

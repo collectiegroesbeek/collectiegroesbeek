@@ -186,7 +186,7 @@ def search_bronnen():
 def spelling_mistake_candidates():
     docs = get_all_spelling_mistake_candidates()
     items = []
-    for doc in docs:
+    for doc in sorted(docs, key=lambda d: len(d.word), reverse=True):
         for candidate, candidate_count in zip(doc.candidates, doc.candidate_counts):
             items.append(
                 {
