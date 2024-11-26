@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}Locaties{% endblock %}
+
+
+{% block css %}
+  <style>
+      .location-list {
+          list-style-type: none;
+          padding: 0;
+      }
+  </style>
+{% endblock %}
+
+
+{% block content %}
+  <div class="row">
+    <div class="col">
+      <h1>Locaties</h1>
+
+      <p>
+        Op deze pagina staan locaties die we op automatische wijze uit het Transportregister Haarlem hebben
+          gehaald. We verwachten niet dat deze lijst volledig is of foutloos, maar hopelijk wel handig.
+      </p>
+
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6 offset-md-2 col-10 offset-1">
+      <ul class="location-list">
+        {% for location in locations %}
+            <li>
+                <a href="{{ url_for('search') }}?q=inhoud:&quot;{{ location }}&quot&index=transportregister-haarlem"
+                    >{{ location }}</a>
+            </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+
+{% endblock %}

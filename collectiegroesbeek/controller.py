@@ -16,6 +16,7 @@ from .model import (
     NamesNerDoc,
     BronDoc,
     SpellingMistakeCandidateDoc,
+    LocationDoc,
 )
 
 
@@ -288,3 +289,9 @@ def bronnen_search(query: str, page: int, per_page: int) -> tuple[dict[str, int]
 def get_all_spelling_mistake_candidates() -> list[SpellingMistakeCandidateDoc]:
     s = SpellingMistakeCandidateDoc.search()
     return list(s.scan())
+
+
+def get_all_locations() -> list[LocationDoc]:
+    s = LocationDoc.search()
+    s = s[:10_000]
+    return list(s)

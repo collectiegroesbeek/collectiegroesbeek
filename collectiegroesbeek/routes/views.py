@@ -17,6 +17,7 @@ from ..controller import (
     names_ner_search,
     bronnen_search,
     get_all_spelling_mistake_candidates,
+    get_all_locations,
 )
 from ..model import BaseDocument, list_doctypes, index_name_to_doctype
 
@@ -197,6 +198,13 @@ def spelling_mistake_candidates():
                 }
             )
     return flask.render_template("spelling_mistake_candidates.html", items=items)
+
+
+@app.route("/locaties/")
+def locations():
+    docs = get_all_locations()
+    _locations = sorted([doc.location for doc in docs], key=lambda x: x.lower())
+    return flask.render_template("locations.html", locations=_locations)
 
 
 @app.route("/publicaties/", methods=["GET"])
