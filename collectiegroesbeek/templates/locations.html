@@ -29,10 +29,22 @@
   <div class="row mt-4">
     <div class="col-md-6 offset-md-2 col-10 offset-1">
       <ul class="location-list">
-        {% for location in locations %}
+        {% for doc in docs %}
             <li>
-                <a href="{{ url_for('search') }}?q=inhoud:&quot;{{ location }}&quot&index=transportregister-haarlem"
-                    >{{ location }}</a>
+                {% if doc.variants|length == 1 %}
+                    <a href="{{ url_for('search') }}?q=inhoud:&quot;{{ doc.location }}&quot&index=transportregister-haarlem"
+                        >{{ doc.location }}</a> ({{ doc.variant_counts[0] }})
+                {% else %}
+                    {{ doc.location }}
+                    <ul>
+                    {% for variant, count in doc.variants|zip(doc.variant_counts) %}
+                        <li>
+                            <a href="{{ url_for('search') }}?q=inhoud:&quot;{{ variant }}&quot&index=transportregister-haarlem"
+                            >{{ variant }}</a> ({{ count }})
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
             </li>
         {% endfor %}
       </ul>

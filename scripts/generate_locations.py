@@ -21,18 +21,66 @@ def load_texts() -> list[str]:
 
 
 def extract_locations(texts: list[str]) -> list[str]:
-    locations = set()
+    locations: list[str] = []
     for text in texts:
-        locations.update(extract_location(text))
-    return list(locations)
+        locations.extend(extract_location(text))
+    return locations
 
 
-def store_in_elasticsearch(locations: list[str]):
+def merge_locations(locations: list[str]) -> list[dict[str, int]]:
+    collect = {}
+    # first pass: just store everything
+    for location in locations:
+        if location not in collect:
+            collect[location] = {location: 1}
+        else:
+            collect[location][location] += 1
+
+    # second pass: merge lowercase into uppercase
+    for key in list(collect.keys()):
+        alt_key = key.lower()
+        if alt_key in collect:
+            for sub_alt_key, count in collect[alt_key].items():
+                collect[key][sub_alt_key] = count
+            collect.pop(alt_key)
+            # collect[alt_key] = collect[key]
+
+    # merge common different spellings
+    for one, two in [("aa", "ae"), ("ij", "y"), ("eeg", "ege"), ("acht", "aft"), ("en", "e"), ("i", "y")]:
+        for key in list(collect.keys()):
+            alt_key = key.replace(one, two)
+            if alt_key != key and alt_key in collect:
+                for sub_alt_key, count in collect[alt_key].items():
+                    collect[key][sub_alt_key] = count
+                collect.pop(alt_key)
+                # collect[alt_key] = collect[key]
+
+    return keep_only_unique(collect)
+
+
+def keep_only_unique(collect: dict[str, dict[str, int]]) -> list[dict[str, int]]:
+    for i, d in enumerate(collect.values()):
+        d["id"] = i
+    unique = {d["id"]: d for d in collect.values()}
+    out = list(unique.values())
+    for item in out:
+        item.pop("id")
+    return out
+
+
+def merge_nodes(collect: dict[str, dict[str, int]]):
+    pass
+
+
+def store_in_elasticsearch(collections: list[dict[str, int]]):
     processor = DocProcessor()
     processor.register_index(LocationDoc)
-    for location in tqdm(locations, desc="store in ES", total=len(locations)):
+    for item in tqdm(collections, desc="store in ES"):
+        location = sorted(item.items(), key=lambda x: x[1], reverse=True)[0][0]
         doc = LocationDoc(
             location=location,
+            variants=list(item.keys()),
+            variant_counts=list(item.values()),
         )
         processor.add(doc)
     processor.finalize()
@@ -44,7 +92,8 @@ def main():
 
     texts = load_texts()
     locations = extract_locations(texts)
-    store_in_elasticsearch(locations)
+    collections = merge_locations(locations)
+    store_in_elasticsearch(collections)
 
 
 if __name__ == "__main__":

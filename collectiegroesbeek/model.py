@@ -1068,6 +1068,8 @@ class BronDoc(Document):
 
 class LocationDoc(Document):
     location: str = Text(fields={"keyword": Keyword()})
+    variants: list[str] = Keyword(multi=True)
+    variant_counts: list[int] = Integer(multi=True)
 
     class Index:
         name: str = "locations"

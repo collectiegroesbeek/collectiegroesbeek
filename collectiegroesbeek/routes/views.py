@@ -203,8 +203,8 @@ def spelling_mistake_candidates():
 @app.route("/locaties/")
 def locations():
     docs = get_all_locations()
-    _locations = sorted([doc.location for doc in docs], key=lambda x: x.lower())
-    return flask.render_template("locations.html", locations=_locations)
+    docs = sorted(docs, key=lambda doc: doc.location)
+    return flask.render_template("locations.html", docs=docs)
 
 
 @app.route("/publicaties/", methods=["GET"])
