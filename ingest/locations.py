@@ -20,5 +20,6 @@ def extract_location(text: str) -> list[str]:
         location = match_groups[0]
         if "holland" in location.lower():
             continue
+        location = re.sub(r"^die ", "", location, flags=re.I)
         locations.append(location)
     return locations

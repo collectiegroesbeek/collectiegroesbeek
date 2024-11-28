@@ -1,3 +1,4 @@
+from itertools import chain
 import logging
 
 from tqdm import tqdm
@@ -28,34 +29,60 @@ def extract_locations(texts: list[str]) -> list[str]:
 
 
 def merge_locations(locations: list[str]) -> list[dict[str, int]]:
-    collect = {}
-    # first pass: just store everything
+    collect: dict[str, dict[str, int]] = {}
+    # get counts and normalize casing
     for location in locations:
-        if location not in collect:
-            collect[location] = {location: 1}
-        else:
-            collect[location][location] += 1
-
-    # second pass: merge lowercase into uppercase
-    for key in list(collect.keys()):
-        alt_key = key.lower()
-        if alt_key in collect:
-            for sub_alt_key, count in collect[alt_key].items():
-                collect[key][sub_alt_key] = count
-            collect.pop(alt_key)
-            # collect[alt_key] = collect[key]
+        location = location.lower()
+        collect.setdefault(location, {location: 0})
+        collect[location][location] += 1
 
     # merge common different spellings
-    for one, two in [("aa", "ae"), ("ij", "y"), ("eeg", "ege"), ("acht", "aft"), ("en", "e"), ("i", "y")]:
+    spelling_equivalents = [
+        ("aa", "ae"),
+        ("ae", "ai"),
+        ("ae", "ee"),
+        ("ll", "l"),
+        ("ij", "y"),
+        ("eeg", "ege"),
+        ("acht", "aft"),
+        ("en", "e"),
+        ("ne", "n"),
+        ("i", "y"),
+        ("f", "v"),
+        ("er", "e"),
+        ("y", "hi"),
+        ("pp", "p"),
+        ("ede", "ee"),
+        ("aef", "av"),
+        ("hy", "y"),
+        ("ees", "eis"),
+        ("ern", "er"),
+        ("cse", "cx"),
+        ("ck", "cx"),
+        ("ck", "c"),
+        ("k", "ck"),
+        ("c", "k"),
+        ("ss", "s"),
+        ("u", "ue"),
+        ("z", "s"),
+        ("ijk", "yck"),
+        ("s", ""),
+        (" ", ""),
+    ]
+    for one, two in chain(spelling_equivalents, ((b, a) for a, b in spelling_equivalents)):
+        if not one:
+            continue
         for key in list(collect.keys()):
             alt_key = key.replace(one, two)
             if alt_key != key and alt_key in collect:
-                for sub_alt_key, count in collect[alt_key].items():
-                    collect[key][sub_alt_key] = count
-                collect.pop(alt_key)
-                # collect[alt_key] = collect[key]
+                for group_key, group in collect.items():
+                    if alt_key in group:
+                        collect[key].update(group)
+                        collect[group_key] = collect[key]
 
-    return keep_only_unique(collect)
+    unique_items: list[dict[str, int]] = keep_only_unique(collect)
+    sorted_items = [dict(sorted(d.items(), key=lambda x: x[1], reverse=True)) for d in unique_items]
+    return sorted_items
 
 
 def keep_only_unique(collect: dict[str, dict[str, int]]) -> list[dict[str, int]]:
@@ -78,8 +105,8 @@ def store_in_elasticsearch(collections: list[dict[str, int]]):
     for item in tqdm(collections, desc="store in ES"):
         location = sorted(item.items(), key=lambda x: x[1], reverse=True)[0][0]
         doc = LocationDoc(
-            location=location,
-            variants=list(item.keys()),
+            location=location.title(),
+            variants=[variant.title() for variant in item.keys()],
             variant_counts=list(item.values()),
         )
         processor.add(doc)
