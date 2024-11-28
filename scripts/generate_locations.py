@@ -1,3 +1,4 @@
+from itertools import chain
 import logging
 
 from tqdm import tqdm
@@ -36,26 +37,33 @@ def merge_locations(locations: list[str]) -> list[dict[str, int]]:
         else:
             collect[location][location] += 1
 
-    # second pass: merge lowercase into uppercase
+    # second pass: merge lowercase into uppercase, then make all keys lowercase
     for key in list(collect.keys()):
         alt_key = key.lower()
-        if alt_key in collect:
-            for sub_alt_key, count in collect[alt_key].items():
-                collect[key][sub_alt_key] = count
-            collect.pop(alt_key)
-            # collect[alt_key] = collect[key]
+        add_if(collect=collect, key=key, alt_key=alt_key)
+    collect = {key.lower(): d for key, d in collect.items()}
 
     # merge common different spellings
-    for one, two in [("aa", "ae"), ("ij", "y"), ("eeg", "ege"), ("acht", "aft"), ("en", "e"), ("i", "y")]:
+    spelling_equivalents = [("aa", "ae"), ("ij", "y"), ("eeg", "ege"), ("acht", "aft"), ("en", "e"), ("i", "y"), ("f", "v"), ("er", "e"), ("y", "hi"), ("pp", "p"),
+                            ("ck", "cx"), ("ck", "c"), ("k", "ck"), ("c", "k"), ("ss", "s"), ("u", "ue"), ("z", "s"), ("ijk", "yck"), ("s", ""), (" ", "")]
+    for one, two in chain(spelling_equivalents, ((b, a) for a, b in spelling_equivalents)):
+        if not one:
+            continue
         for key in list(collect.keys()):
             alt_key = key.replace(one, two)
-            if alt_key != key and alt_key in collect:
-                for sub_alt_key, count in collect[alt_key].items():
-                    collect[key][sub_alt_key] = count
-                collect.pop(alt_key)
-                # collect[alt_key] = collect[key]
+            add_if(collect=collect, key=key, alt_key=alt_key)
 
-    return keep_only_unique(collect)
+    unique_items: list[dict[str, int]] = keep_only_unique(collect)
+    sorted_items = [dict(sorted(d.items(), key=lambda x: x[1], reverse=True)) for d in unique_items]
+    return sorted_items
+
+
+def add_if(collect: dict, key: str, alt_key: str):
+    if alt_key != key and alt_key in collect:
+        for group_key, group in collect.items():
+            if alt_key in group:
+                collect[key].update(group)
+                collect[group_key] = collect[key]
 
 
 def keep_only_unique(collect: dict[str, dict[str, int]]) -> list[dict[str, int]]:
