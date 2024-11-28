@@ -1,8 +1,6 @@
 import re
-from collections import defaultdict
 from typing import Dict, List, Tuple, Iterable, Optional, Set, Type
 
-import elasticsearch_dsl
 from elasticsearch import Elasticsearch  # type: ignore
 from elasticsearch_dsl import Q, Search
 from elasticsearch_dsl.query import MultiMatch, Query
