@@ -29,7 +29,7 @@ def extract_locations(texts: list[str]) -> list[str]:
 
 
 def merge_locations(locations: list[str]) -> list[dict[str, int]]:
-    collect = {}
+    collect: dict[str, dict[str, int]] = {}
     # get counts and normalize casing
     for location in locations:
         location = location.lower()
@@ -37,10 +37,38 @@ def merge_locations(locations: list[str]) -> list[dict[str, int]]:
         collect[location][location] += 1
 
     # merge common different spellings
-    spelling_equivalents = [("aa", "ae"), ("ae", "ai"), ("ae", "ee"), ("ll", "l"), ("ij", "y"), ("eeg", "ege"), ("acht", "aft"), ("en", "e"),
-                            ("ne", "n"), ("i", "y"), ("f", "v"), ("er", "e"), ("y", "hi"), ("pp", "p"), ("ede", "ee"), ("aef", "av"), ("hy", "y"),
-                            ("ees", "eis"), ("ern", "er"),
-                            ("cse", "cx"), ("ck", "cx"), ("ck", "c"), ("k", "ck"), ("c", "k"), ("ss", "s"), ("u", "ue"), ("z", "s"), ("ijk", "yck"), ("s", ""), (" ", "")]
+    spelling_equivalents = [
+        ("aa", "ae"),
+        ("ae", "ai"),
+        ("ae", "ee"),
+        ("ll", "l"),
+        ("ij", "y"),
+        ("eeg", "ege"),
+        ("acht", "aft"),
+        ("en", "e"),
+        ("ne", "n"),
+        ("i", "y"),
+        ("f", "v"),
+        ("er", "e"),
+        ("y", "hi"),
+        ("pp", "p"),
+        ("ede", "ee"),
+        ("aef", "av"),
+        ("hy", "y"),
+        ("ees", "eis"),
+        ("ern", "er"),
+        ("cse", "cx"),
+        ("ck", "cx"),
+        ("ck", "c"),
+        ("k", "ck"),
+        ("c", "k"),
+        ("ss", "s"),
+        ("u", "ue"),
+        ("z", "s"),
+        ("ijk", "yck"),
+        ("s", ""),
+        (" ", ""),
+    ]
     for one, two in chain(spelling_equivalents, ((b, a) for a, b in spelling_equivalents)):
         if not one:
             continue
