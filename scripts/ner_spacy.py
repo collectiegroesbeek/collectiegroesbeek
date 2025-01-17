@@ -21,6 +21,7 @@ def create_dataset():
         if not filename.startswith(("Coll Gr 1", "Coll Gr 2")):
             continue
         for item in iter_csv_file_items(filepath=filepath):
+            field1, field2 = None, None
             if filename.startswith("Coll Gr 1"):
                 field1 = item.get("naam")
                 field2 = item.get("inhoud")

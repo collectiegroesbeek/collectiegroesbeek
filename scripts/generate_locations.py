@@ -62,13 +62,16 @@ def merge_locations(locations: list[str]) -> list[dict[str, int]]:
         ("ck", "c"),
         ("k", "ck"),
         ("c", "k"),
-        ("ss", "s"),
         ("u", "ue"),
         ("z", "s"),
         ("ijk", "yck"),
+        ("t", "dt"),
+        ("ye", "y"),
+        ("ss", "s"),
         ("s", ""),
         (" ", ""),
     ]
+    assert len(spelling_equivalents) == len(set(spelling_equivalents))
     for one, two in chain(spelling_equivalents, ((b, a) for a, b in spelling_equivalents)):
         if not one:
             continue
