@@ -1,0 +1,8 @@
+[Service]
+User=www-data
+WorkingDirectory=/opt/collgroesbeek
+ExecStart=/opt/collgroesbeek/venv/bin/uwsgi --ini collectiegroesbeek.ini
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
