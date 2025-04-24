@@ -1,12 +1,11 @@
 import logging
 import time
-from typing import Type, Optional, Dict
+from typing import Dict, Optional, Type
 
 from dotenv import dotenv_values
 from elasticsearch.helpers import bulk
-from elasticsearch_dsl import Index, Document
+from elasticsearch_dsl import Document, Index
 from elasticsearch_dsl.connections import connections
-
 
 logger = logging.getLogger(__name__)
 

@@ -2,24 +2,23 @@ import json
 import os
 import posixpath
 import re
-from urllib.parse import quote
 from typing import List, Tuple, Type
+from urllib.parse import quote
 
 import flask
 
-from .. import app
-from .. import controller
+from .. import app, controller
 from ..controller import (
-    get_doc,
-    get_number_of_total_docs,
-    get_indices_and_doc_counts,
-    format_int,
-    names_ner_search,
     bronnen_search,
-    get_all_spelling_mistake_candidates,
+    format_int,
     get_all_locations,
+    get_all_spelling_mistake_candidates,
+    get_doc,
+    get_indices_and_doc_counts,
+    get_number_of_total_docs,
+    names_ner_search,
 )
-from ..model import BaseDocument, list_doctypes, index_name_to_doctype
+from ..model import BaseDocument, index_name_to_doctype, list_doctypes
 
 
 @app.route("/")

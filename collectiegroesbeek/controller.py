@@ -1,20 +1,20 @@
 import re
-from typing import Dict, List, Tuple, Iterable, Optional, Set, Type
+from typing import Dict, Iterable, List, Optional, Set, Tuple, Type
 
 from elasticsearch import Elasticsearch  # type: ignore
 from elasticsearch_dsl import Q, Search
 from elasticsearch_dsl.query import MultiMatch, Query
 
 from .model import (
-    CardNameDoc,
     BaseDocument,
-    list_doctypes,
-    index_name_to_doctype,
-    list_index_names,
-    NamesNerDoc,
     BronDoc,
-    SpellingMistakeCandidateDoc,
+    CardNameDoc,
     LocationDoc,
+    NamesNerDoc,
+    SpellingMistakeCandidateDoc,
+    index_name_to_doctype,
+    list_doctypes,
+    list_index_names,
 )
 
 

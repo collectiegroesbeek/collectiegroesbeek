@@ -1,7 +1,7 @@
 import re
-from typing import Optional, List, Type
+from typing import List, Optional, Type
 
-from elasticsearch_dsl import Document, Index, Text, Keyword, Short, Integer
+from elasticsearch_dsl import Document, Index, Integer, Keyword, Short, Text
 
 
 class BaseDocument(Document):

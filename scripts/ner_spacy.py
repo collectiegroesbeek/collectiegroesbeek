@@ -8,9 +8,8 @@ from tqdm import tqdm
 from collectiegroesbeek.controller import get_index_from_alias
 from collectiegroesbeek.model import NamesNerDoc
 from ingest import logging_setup
-from ingest.dataloader import iter_csv_files, iter_csv_file_items
-from ingest.elasticsearch_utils import setup_es_connection, DocProcessor
-
+from ingest.dataloader import iter_csv_file_items, iter_csv_files
+from ingest.elasticsearch_utils import DocProcessor, setup_es_connection
 
 logger = logging.getLogger(__name__)
 

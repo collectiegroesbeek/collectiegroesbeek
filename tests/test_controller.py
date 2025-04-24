@@ -1,5 +1,6 @@
 import pytest
 from elasticsearch_dsl.query import Q
+
 from collectiegroesbeek.controller import Searcher
 from collectiegroesbeek.model import list_doctypes
 

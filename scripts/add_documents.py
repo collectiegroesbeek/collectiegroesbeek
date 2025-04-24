@@ -7,9 +7,8 @@ from typing import Optional, Type
 import tqdm
 
 from collectiegroesbeek.model import BaseDocument, index_number_to_doctype
-from ingest.elasticsearch_utils import DocProcessor
 from ingest import logging_setup
-from ingest.elasticsearch_utils import setup_es_connection
+from ingest.elasticsearch_utils import DocProcessor, setup_es_connection
 
 
 def filename_to_doctype(filename: str) -> Type[BaseDocument]:

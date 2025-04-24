@@ -5,7 +5,6 @@ from elasticsearch_dsl.connections import connections
 
 from collectiegroesbeek import app
 
-
 _config = dotenv_values(".env")
 app.config["elasticsearch_host"] = _config["elasticsearch_host"]
 

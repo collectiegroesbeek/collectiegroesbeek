@@ -1,12 +1,12 @@
-from itertools import chain
 import logging
+from itertools import chain
 
 from tqdm import tqdm
 
 from collectiegroesbeek.model import LocationDoc
 from ingest import logging_setup
-from ingest.dataloader import iter_csv_files, iter_csv_file_items
-from ingest.elasticsearch_utils import setup_es_connection, DocProcessor
+from ingest.dataloader import iter_csv_file_items, iter_csv_files
+from ingest.elasticsearch_utils import DocProcessor, setup_es_connection
 from ingest.locations import extract_location
 
 logger = logging.getLogger(__name__)
