@@ -60,7 +60,7 @@ class Searcher:
             queries.extend(query_list)
         if q:
             queries.append(self.get_regular_query(q))
-            keywords = q.split()
+            keywords.extend(q.split())
         keywords = [word.strip('"') for word in keywords]
         self.keywords.update(keywords)
         if len(queries) == 0:
