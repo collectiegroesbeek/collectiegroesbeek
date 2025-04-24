@@ -1,7 +1,7 @@
 import pytest
 from elasticsearch_dsl.query import Q
 from collectiegroesbeek.controller import Searcher
-from model import list_doctypes
+from collectiegroesbeek.model import list_doctypes
 
 
 @pytest.mark.parametrize(
