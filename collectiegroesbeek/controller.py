@@ -29,11 +29,12 @@ class Searcher:
         self.q: str = q
         self.start: int = start
         self.size: int = size
-        if doctypes is None:
-            doctypes = list_doctypes()
         self.multimatch_fields = [
             field for doctype in doctypes for field in doctype.get_multimatch_fields()
         ]
+        self.possible_field_names = {
+            field for doctype in doctypes for field in doctype.get_columns()
+        }
         year_range: Optional[Tuple[int, int]] = self.parse_year_range()
         queries_must = []
         self.keywords: Set[str] = set()
@@ -53,12 +54,13 @@ class Searcher:
     def get_query(self, q) -> Query:
         """Turn the user entry q into a Elasticsearch query."""
         queries: List[Query] = []
+        keywords: List[str] = []
         if ":" in q:
-            query_list, keywords = self.handle_specific_field_request(q)
+            query_list, keywords, q = self.handle_specific_field_request(q)
             queries.extend(query_list)
-        else:
+        if q:
             queries.append(self.get_regular_query(q))
-            keywords = q.split()
+            keywords.extend(q.split())
         keywords = [word.strip('"') for word in keywords]
         self.keywords.update(keywords)
         if len(queries) == 0:
@@ -68,30 +70,29 @@ class Searcher:
         else:
             return Q("bool", must=queries)
 
-    def handle_specific_field_request(self, q) -> Tuple[List[Query], List[str]]:
-        """Get queries when user specified field by using a colon."""
-        parts: List[str] = q.split(":")
-        fields: List[str] = []
-        keywords_sets: List[str] = []
-        for part in parts[:-1]:
-            words: List[str] = part.split(" ")
-            fields.append(words[-1].strip(" "))
-            if len(words[:-1]) > 0:
-                keywords_sets.append(" ".join(words[:-1]).strip(" "))
-        keywords_sets.append(parts[-1].strip(" "))
-        # Edge case when question starts with a normal search term
-        if len(keywords_sets) > len(fields):
-            fields = ["alles"] + fields
-        queries: List[Query] = []
-        keywords: List[str] = []
-        for i in range(len(fields)):
-            if fields[i] == "alles":
-                queries.append(self.get_regular_query(keywords_sets[i]))
-            else:
-                queries.append(self.get_specific_field_query(fields[i], keywords_sets[i]))
-            for keyword in keywords_sets[i].split(" "):
-                keywords.append(keyword)
-        return queries, keywords
+    def handle_specific_field_request(self, q: str) -> Tuple[List[Q], List[str], str]:
+        """Process the query to extract field-specific queries and return the stripped query."""
+        queries = []
+        keywords = []
+
+        # Create a regex pattern with possible fields
+        field_pattern = re.compile(
+            rf'({"|".join(re.escape(field) for field in self.possible_field_names)}):"([^"]+)"|'
+            rf'({"|".join(re.escape(field) for field in self.possible_field_names)}):(\S+)'
+        )
+        # Process field-specific matches
+        matches = field_pattern.findall(q)
+        for match in matches:
+            field = match[0] or match[2]
+            value = match[1].strip('"') or match[3]
+            queries.append(self.get_specific_field_query(field, value))
+            keywords.extend(value.split())
+
+        # Remove matched parts from the query
+        stripped_query = field_pattern.sub("", q).strip()
+        stripped_query = re.sub(r"\s+", " ", stripped_query)
+
+        return queries, keywords, stripped_query
 
     @staticmethod
     def get_specific_field_query(field: str, keywords: str) -> Query:
