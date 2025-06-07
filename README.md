@@ -46,16 +46,16 @@ You will see that an index has been made and that `docs.count` shows data has be
 ## Installation part 2: webserver
 At this point you can run the Flask debug server to start developing. The following points are
 for a production environment, we're setting up a webserver. Note that these instructions
-are for a Ubuntu environment.
+are for an Ubuntu environment.
 
 In the `deployment` folder are the necessary files and scripts to set this up. We assume
 you have a user with sudo-rights on the server, and you can SSH into it.
 
 1. Run the commands from `initial_setup.sh` in the remote SSH session to create the required folder
    `/opt/collgroesbeek`.
-2. Manually download an Elasticsearch .deb file and place it on the server.
-3. Update `deployment/install.sh` to point to that .deb file.
-4. Copy the repository to `/opt/collgroesbeek`.
+2. Copy `deployment/.env.example` to `deployment/.env` and fill in the correct values.
+3. Copy the repository to `/opt/collgroesbeek`. 
+4. Manually download an Elasticsearch .deb file to `/opt/collgroesbeek/deployment/`
 5. Run the `install.sh` script on the server.
 
 
@@ -68,7 +68,7 @@ Check the status of the uWSGI and nginx services:
 
 Read the most recent uWSGI and nginx log files:
 
-`less /var/log/uwsgi/uwsgi.log`
+`less /var/log/uwsgi/collgroesbeek.log`
 
 `less /var/log/nginx/error.log`
 

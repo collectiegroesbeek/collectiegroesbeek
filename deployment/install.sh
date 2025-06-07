@@ -10,7 +10,7 @@ sudo apt update
 sudo apt install -y python3 python3-pip python3-venv nginx
 
 # Install the downloaded Elasticsearch .deb file
-sudo dpkg -i /opt/collgroesbeek/deployment/elasticsearch-8.17.4-amd64.deb
+sudo dpkg -i /opt/collgroesbeek/deployment/elasticsearch-*-amd64.deb
 # If there are dependency issues, resolve them with
 sudo apt-get install -f
 

@@ -1,5 +1,3 @@
-# add my user to www-data
-sudo usermod -a -G www-data frank
 # Create your application directory
 sudo mkdir -p /opt/collgroesbeek
 # Set proper ownership
