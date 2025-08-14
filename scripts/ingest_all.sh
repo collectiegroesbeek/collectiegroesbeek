@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 source .venv/bin/activate
 
 echo "Running add_documents.py"
